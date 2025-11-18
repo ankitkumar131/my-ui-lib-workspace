@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { AccordionComponent } from './accordion.component';
-import { AccordionItemComponent } from './accordion-item.component';
-import { AccordionTriggerComponent } from './accordion-trigger.component';
-import { AccordionContentComponent } from './accordion-content.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
+import { AccordionTriggerComponent } from './components/accordion-trigger/accordion-trigger.component';
+import { AccordionContentComponent } from './components/accordion-content/accordion-content.component';
 
 @NgModule({
   imports: [
