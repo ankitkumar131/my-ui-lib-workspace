@@ -1,0 +1,33 @@
+.accordion {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &[data-type="single"] {
+    ui-accordion-item:not(:last-child) {
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+/* CSS Variables for shadcn-style theming */
+:root {
+  --radius: 0.5rem;
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --background: #ffffff;
+  --foreground: hsl(222.2, 47.4%, 11.2%);
+  --muted: hsl(215.4, 16.3%, 96.9%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: hsl(217.2, 32.6%, 17.5%);
+    --background: hsl(222.2, 47.4%, 11.2%);
+    --foreground: hsl(210, 40%, 98%);
+    --muted: hsl(215.4, 16.3%, 22.9%);
+    --muted-foreground: hsl(215.4, 16.3%, 65.1%);
+  }
+}
