@@ -1,0 +1,12 @@
+<button 
+  type="button" 
+  [attr.data-variant]="variant" 
+  [attr.data-size]="size" 
+  [attr.data-rounded]="rounded ? '' : null"
+  [disabled]="disabled || loading"
+  [class.loading]="loading"
+  class="button-container">
+  <ng-content select="[slot='icon']"></ng-content>
+  <span class="content" *ngIf="!loading"><ng-content></ng-content></span>
+  <span class="spinner" *ngIf="loading"></span>
+</button>

@@ -21,6 +21,9 @@
       ],
       "@my-ui/aspect-ratio": [
         "projects/my-ui/aspect-ratio/index.ts"
+      ],
+      "@my-ui/button": [
+        "projects/my-ui/button/index.ts"
       ]
     }
   },

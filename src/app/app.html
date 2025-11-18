@@ -9,6 +9,9 @@
       <li class="toc-item">
         <a href="#aspect-ratio-demo" class="toc-link">Aspect Ratio</a>
       </li>
+      <li class="toc-item">
+        <a href="#button-demo" class="toc-link">Button</a>
+      </li>
     </ul>
   </nav>
 
@@ -82,6 +85,158 @@
         <ui-aspect-ratio [ratio]="21/9">
           <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80" alt="Landscape view" />
         </ui-aspect-ratio>
+      </div>
+    </div>
+  </section>
+
+  <!-- Button Section -->
+  <section id="button-demo" class="mt-8">
+    <h1>Button Demo</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <!-- Variants -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Variants</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button>Default</ui-button>
+          <ui-button [variant]="ButtonVariant.Destructive">Destructive</ui-button>
+          <ui-button [variant]="ButtonVariant.Outline">Outline</ui-button>
+          <ui-button [variant]="ButtonVariant.Secondary">Secondary</ui-button>
+          <ui-button [variant]="ButtonVariant.Ghost">Ghost</ui-button>
+          <ui-button [variant]="ButtonVariant.Link">Link</ui-button>
+        </div>
+      </div>
+      
+      <!-- Sizes -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Sizes</h2>
+        <div class="flex flex-wrap items-center gap-2">
+          <ui-button [size]="ButtonSize.Small">Small</ui-button>
+          <ui-button>Default</ui-button>
+          <ui-button [size]="ButtonSize.Large">Large</ui-button>
+        </div>
+      </div>
+      
+      <!-- Icon Sizes -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Icon Sizes</h2>
+        <div class="flex flex-wrap items-center gap-2">
+          <ui-button [size]="ButtonSize.IconSmall">A</ui-button>
+          <ui-button [size]="ButtonSize.Icon">B</ui-button>
+          <ui-button [size]="ButtonSize.IconLarge">C</ui-button>
+        </div>
+      </div>
+      
+      <!-- Disabled States -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Disabled States</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button disabled>Default</ui-button>
+          <ui-button [variant]="ButtonVariant.Destructive" disabled>Destructive</ui-button>
+          <ui-button [variant]="ButtonVariant.Outline" disabled>Outline</ui-button>
+        </div>
+      </div>
+      
+      <!-- Rounded Buttons -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Rounded Buttons</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button [rounded]="true">Default</ui-button>
+          <ui-button [variant]="ButtonVariant.Destructive" [rounded]="true">Destructive</ui-button>
+          <ui-button [variant]="ButtonVariant.Outline" [rounded]="true">Outline</ui-button>
+        </div>
+      </div>
+      
+      <!-- With Icons -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">With Icons</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button class="wide-icon-spacing">
+            <span slot="icon">
+              <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+                <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/>
+              </svg>
+            </span>
+            Back
+          </ui-button>
+          <ui-button>
+            Continue
+            <span slot="icon">
+              <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+                <path d="m5.29 21.71 10 10a1 1 0 0 0 1.41 0l10-10-1.41-1.41L17 28.59V0h-2v28.59l-8.29-8.29z"/>
+              </svg>
+            </span>
+          </ui-button>
+        </div>
+      </div>
+      
+      <!-- Loading State -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Loading State</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button [loading]="true">Default</ui-button>
+          <ui-button [variant]="ButtonVariant.Destructive" [loading]="true">Destructive</ui-button>
+          <ui-button [variant]="ButtonVariant.Outline" [loading]="true">Outline</ui-button>
+        </div>
+      </div>
+      
+      <!-- Button Groups -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Button Groups</h2>
+        <div class="flex flex-col gap-4">
+          <ui-button-group>
+            <ui-button [variant]="ButtonVariant.Outline">First</ui-button>
+            <ui-button [variant]="ButtonVariant.Outline">Second</ui-button>
+            <ui-button [variant]="ButtonVariant.Outline">Third</ui-button>
+          </ui-button-group>
+          
+          <ui-button-group [rounded]="true">
+            <ui-button [variant]="ButtonVariant.Outline">First</ui-button>
+            <ui-button [variant]="ButtonVariant.Outline">Second</ui-button>
+            <ui-button [variant]="ButtonVariant.Outline">Third</ui-button>
+          </ui-button-group>
+        </div>
+      </div>
+      
+      <!-- Custom Styled Buttons with CSS Classes -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Styled Buttons (CSS Classes)</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button 
+            class="custom-primary-button">
+            Custom Primary
+          </ui-button>
+          
+          <ui-button 
+            [variant]="ButtonVariant.Outline"
+            class="custom-outline-button">
+            Custom Outline
+          </ui-button>
+          
+          <ui-button 
+            [variant]="ButtonVariant.Ghost"
+            class="custom-ghost-button">
+            Custom Ghost
+          </ui-button>
+        </div>
+      </div>
+      
+      <!-- Link Button Customization -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Link Button Customization</h2>
+        <div class="flex flex-wrap gap-2">
+          <ui-button 
+            [variant]="ButtonVariant.Link"
+            class="no-underline-link">
+            No Underline
+          </ui-button>
+          
+          <ui-button 
+            [variant]="ButtonVariant.Link"
+            class="always-underline-link">
+            Always Underlined
+          </ui-button>
+        </div>
       </div>
     </div>
   </section>
