@@ -18,6 +18,9 @@
     "paths": {
       "@my-ui/accordion": [
         "projects/my-ui/accordion/index.ts"
+      ],
+      "@my-ui/aspect-ratio": [
+        "projects/my-ui/aspect-ratio/index.ts"
       ]
     }
   },

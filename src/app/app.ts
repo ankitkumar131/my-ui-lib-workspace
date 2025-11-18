@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
   AccordionType
 } from '@my-ui/accordion';
+import { AspectRatio } from '@my-ui/aspect-ratio';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import {
     Accordion,
     AccordionContent,
     AccordionItem,
-    AccordionTrigger
+    AccordionTrigger,
+    AspectRatio
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

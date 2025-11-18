@@ -1,29 +1,88 @@
 <div class="container">
-  <h1>Accordion Demo</h1>
-  
-  <ui-accordion [type]="AccordionType.Single" [collapsible]="true">
-    <ui-accordion-item value="item-1">
-      <ui-accordion-trigger>Product Information</ui-accordion-trigger>
-      <ui-accordion-content>
-        <p>Our flagship product combines cutting-edge technology with sleek design. Built with premium materials, it offers unparalleled performance and reliability.</p>
-        <p>Key features include advanced processing capabilities, and an intuitive user interface designed for both beginners and experts.</p>
-      </ui-accordion-content>
-    </ui-accordion-item>
-    
-    <ui-accordion-item value="item-2">
-      <ui-accordion-trigger>Shipping Details</ui-accordion-trigger>
-      <ui-accordion-content>
-        <p>We offer worldwide shipping through trusted courier partners. Standard delivery takes 3-5 business days, while express shipping ensures delivery within 1-2 business days.</p>
-        <p>All orders are carefully packaged and fully insured. Track your shipment in real-time through our dedicated tracking portal.</p>
-      </ui-accordion-content>
-    </ui-accordion-item>
-    
-    <ui-accordion-item value="item-3">
-      <ui-accordion-trigger>Return Policy</ui-accordion-trigger>
-      <ui-accordion-content>
-        <p>We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.</p>
-        <p>Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.</p>
-      </ui-accordion-content>
-    </ui-accordion-item>
-  </ui-accordion>
+  <!-- Table of Contents -->
+  <nav class="toc">
+    <h2 class="toc-title">Components</h2>
+    <ul class="toc-list">
+      <li class="toc-item">
+        <a href="#accordion-demo" class="toc-link">Accordion</a>
+      </li>
+      <li class="toc-item">
+        <a href="#aspect-ratio-demo" class="toc-link">Aspect Ratio</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Accordion Section -->
+  <section id="accordion-demo">
+    <h1>Accordion Demo</h1>
+
+    <ui-accordion [type]="AccordionType.Single" [collapsible]="true">
+      <ui-accordion-item value="item-1">
+        <ui-accordion-trigger>Product Information</ui-accordion-trigger>
+        <ui-accordion-content>
+          <p>Our flagship product combines cutting-edge technology with sleek design. Built with premium materials, it
+            offers unparalleled performance and reliability.</p>
+          <p>Key features include advanced processing capabilities, and an intuitive user interface designed for both
+            beginners and experts.</p>
+        </ui-accordion-content>
+      </ui-accordion-item>
+
+      <ui-accordion-item value="item-2">
+        <ui-accordion-trigger>Shipping Details</ui-accordion-trigger>
+        <ui-accordion-content>
+          <p>We offer worldwide shipping through trusted courier partners. Standard delivery takes 3-5 business days,
+            while express shipping ensures delivery within 1-2 business days.</p>
+          <p>All orders are carefully packaged and fully insured. Track your shipment in real-time through our dedicated
+            tracking portal.</p>
+        </ui-accordion-content>
+      </ui-accordion-item>
+
+      <ui-accordion-item value="item-3">
+        <ui-accordion-trigger>Return Policy</ui-accordion-trigger>
+        <ui-accordion-content>
+          <p>We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied,
+            simply return the item in its original condition.</p>
+          <p>Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of
+            receiving the returned item.</p>
+        </ui-accordion-content>
+      </ui-accordion-item>
+    </ui-accordion>
+  </section>
+
+  <!-- Aspect Ratio Section -->
+  <section id="aspect-ratio-demo" class="mt-8">
+    <h1>Aspect Ratio Demo</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div>
+        <h2 class="text-lg font-semibold mb-2">16:9 Aspect Ratio</h2>
+        <ui-aspect-ratio [ratio]="16/9">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&dpr=2&q=80"
+            alt="Mountain landscape" />
+        </ui-aspect-ratio>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-2">4:3 Aspect Ratio</h2>
+        <ui-aspect-ratio [ratio]="4/3">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&dpr=2&q=80"
+            alt="Nature landscape" />
+        </ui-aspect-ratio>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-2">1:1 Aspect Ratio (Square)</h2>
+        <ui-aspect-ratio [ratio]="1/1">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&dpr=2&q=80" alt="Scenic view" />
+        </ui-aspect-ratio>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold mb-2">21:9 Aspect Ratio (Ultrawide)</h2>
+        <ui-aspect-ratio [ratio]="21/9">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80" alt="Landscape view" />
+        </ui-aspect-ratio>
+      </div>
+    </div>
+  </section>
 </div>
