@@ -86,6 +86,32 @@
           }
         }
       }
+    },
+    "my-ui": {
+      "projectType": "library",
+      "root": "projects/my-ui",
+      "sourceRoot": "projects/my-ui",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/my-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

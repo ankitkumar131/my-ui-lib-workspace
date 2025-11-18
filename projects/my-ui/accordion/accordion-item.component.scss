@@ -1,0 +1,29 @@
+.accordion-item {
+  overflow: hidden;
+  
+  &:first-child {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+  }
+  
+  &:last-child {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+  }
+  
+  .accordion-content-wrapper {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: 
+      height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  &.open {
+    .accordion-content-wrapper {
+      height: var(--accordion-content-height);
+      opacity: 1;
+    }
+  }
+}

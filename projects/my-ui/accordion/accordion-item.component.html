@@ -1,0 +1,6 @@
+<div class="accordion-item" [class.open]="isOpen">
+  <ng-content select="ui-accordion-trigger"></ng-content>
+  <div class="accordion-content-wrapper" #contentWrapper>
+    <ng-content select="ui-accordion-content"></ng-content>
+  </div>
+</div>
