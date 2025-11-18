@@ -110,3 +110,63 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.custom-primary-button {
+  --background-color: #ff5733;
+  --color: white;
+  --hover-background-color: #cc4528;
+}
+
+.custom-outline-button {
+  --background-color: transparent;
+  --border-color: #ff5733;
+  --color: #ff5733;
+  --hover-background-color: #fff5f0;
+  --hover-color: #cc4528;
+  --hover-border-color: #cc4528;
+}
+
+.custom-ghost-button {
+  --background-color: transparent;
+  --color: #28a745;
+  --hover-background-color: #f0fff4;
+  --hover-color: #1e7e34;
+}
+
+// Link button customization
+.no-underline-link {
+  --link-decoration: none;
+  --link-hover-decoration: none;
+}
+
+.always-underline-link {
+  --link-decoration: underline;
+  --link-hover-decoration: underline;
+}
+
+// Icon spacing customization
+.wide-icon-spacing {
+  --icon-spacing: 50px;
+}
+
+// Button icon styling
+.button-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor; // Inherits text color
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

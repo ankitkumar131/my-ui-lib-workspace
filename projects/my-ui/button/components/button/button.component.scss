@@ -1,0 +1,296 @@
+:host {
+  // Define CSS variables locally to avoid global pollution
+  --radius: 0.5rem;
+  --font-size: 0.875rem;
+  --font-size-sm: 0.75rem;
+  --font-size-lg: 1rem;
+  --font-weight-medium: 500;
+  --icon-spacing: 0.5rem;
+  
+  // Light theme (default)
+  --background: #ffffff;
+  --foreground: hsl(222.2, 47.4%, 11.2%);
+  
+  --primary: hsl(221.2, 83.2%, 53.3%);
+  --primary-foreground: #ffffff;
+  --primary-hover: hsl(221.2, 83.2%, 45%);
+  --primary-active: hsl(221.2, 83.2%, 40%);
+  
+  --secondary: hsl(210, 40%, 96.1%);
+  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  --secondary-hover: hsl(210, 40%, 92%);
+  --secondary-active: hsl(210, 40%, 88%);
+  
+  --destructive: hsl(12, 74%, 49%);
+  --destructive-foreground: #ffffff;
+  --destructive-hover: hsl(12, 74%, 40%);
+  --destructive-active: hsl(12, 74%, 35%);
+  
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --accent: hsl(210, 40%, 96.1%);
+  --accent-active: hsl(210, 40%, 90%);
+  
+  --muted: hsl(215.4, 16.3%, 96.9%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  
+  display: inline-flex;
+  
+  // Dark theme (media query)
+  @media (prefers-color-scheme: dark) {
+    --background: hsl(222.2, 47.4%, 11.2%);
+    --foreground: hsl(210, 40%, 98%);
+    
+    --primary: hsl(217.2, 91.2%, 59.8%);
+    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+    --primary-hover: hsl(217.2, 91.2%, 50%);
+    --primary-active: hsl(217.2, 91.2%, 45%);
+    
+    --secondary: hsl(215, 27.9%, 16.9%);
+    --secondary-foreground: hsl(210, 40%, 98%);
+    --secondary-hover: hsl(215, 27.9%, 22%);
+    --secondary-active: hsl(215, 27.9%, 27%);
+    
+    --destructive: hsl(12, 74%, 49%);
+    --destructive-foreground: hsl(210, 40%, 98%);
+    --destructive-hover: hsl(12, 74%, 40%);
+    --destructive-active: hsl(12, 74%, 35%);
+    
+    --border: hsl(217.2, 32.6%, 17.5%);
+    --accent: hsl(215, 27.9%, 16.9%);
+    --accent-active: hsl(215, 27.9%, 22%);
+    
+    --muted: hsl(215.4, 16.3%, 22.9%);
+    --muted-foreground: hsl(215.4, 16.3%, 65.1%);
+  }
+}
+
+:host ::ng-deep button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  gap: var(--icon-spacing, 0.5rem);
+  
+  // Allow external CSS classes to override styles
+  &.custom-button {
+    background-color: var(--background-color, var(--background, inherit));
+    color: var(--color, var(--foreground, inherit));
+    border-color: var(--border-color, var(--border, inherit));
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--hover-background, inherit));
+      color: var(--hover-color, var(--hover-foreground, inherit));
+      border-color: var(--hover-border-color, var(--hover-border, inherit));
+    }
+  }
+  
+  // Base styles
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  // Rounded variant
+  &[data-rounded] {
+    border-radius: 9999px;
+  }
+  
+  // Loading state
+  &.loading {
+    pointer-events: none;
+    
+    .content {
+      visibility: hidden;
+    }
+    
+    .spinner {
+      visibility: visible;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .spinner {
+    visibility: hidden;
+  }
+  
+  // Variants
+  &[data-variant="default"] {
+    background-color: var(--background-color, var(--primary));
+    color: var(--color, var(--primary-foreground));
+    border-color: var(--border-color, transparent);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--primary-hover));
+      color: var(--hover-color, var(--primary-foreground));
+      border-color: var(--hover-border-color, transparent);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--primary-active);
+      color: var(--primary-foreground);
+    }
+  }
+  
+  &[data-variant="destructive"] {
+    background-color: var(--background-color, var(--destructive));
+    color: var(--color, var(--destructive-foreground));
+    border-color: var(--border-color, transparent);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--destructive-hover));
+      color: var(--hover-color, var(--destructive-foreground));
+      border-color: var(--hover-border-color, transparent);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--destructive-active);
+      color: var(--destructive-foreground);
+    }
+  }
+  
+  &[data-variant="outline"] {
+    background-color: var(--background-color, var(--background));
+    color: var(--color, var(--foreground));
+    border: 1px solid var(--border-color, var(--border));
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--accent));
+      color: var(--hover-color, var(--foreground));
+      border-color: var(--hover-border-color, var(--border));
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--accent-active);
+      color: var(--foreground);
+    }
+  }
+  
+  &[data-variant="secondary"] {
+    background-color: var(--background-color, var(--secondary));
+    color: var(--color, var(--secondary-foreground));
+    border-color: var(--border-color, transparent);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--secondary-hover));
+      color: var(--hover-color, var(--secondary-foreground));
+      border-color: var(--hover-border-color, transparent);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--secondary-active);
+      color: var(--secondary-foreground);
+    }
+  }
+  
+  &[data-variant="ghost"] {
+    background-color: var(--background-color, transparent);
+    color: var(--color, var(--foreground));
+    border-color: var(--border-color, transparent);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--hover-background-color, var(--accent));
+      color: var(--hover-color, var(--foreground));
+      border-color: var(--hover-border-color, transparent);
+    }
+    
+    &:active:not(:disabled) {
+      background-color: var(--accent-active);
+      color: var(--foreground);
+    }
+  }
+  
+  &[data-variant="link"] {
+    background-color: var(--background-color, transparent);
+    color: var(--color, var(--primary));
+    text-decoration: var(--link-decoration, none);
+    text-underline-offset: 4px;
+    border: none;
+    border-color: var(--border-color, transparent);
+    
+    &:hover:not(:disabled) {
+      color: var(--hover-color, var(--primary-hover));
+      background-color: var(--hover-background-color, transparent);
+      border-color: var(--hover-border-color, transparent);
+      text-decoration: var(--link-hover-decoration, underline);
+    }
+    
+    &:active:not(:disabled) {
+      color: var(--primary-active);
+      background-color: var(--background-color, transparent);
+    }
+  }
+  
+  // Sizes
+  &[data-size="default"] {
+    height: 40px;
+    padding: 0 16px;
+    min-width: 40px;
+  }
+  
+  &[data-size="sm"] {
+    height: 36px;
+    padding: 0 12px;
+    min-width: 36px;
+    font-size: var(--font-size-sm);
+  }
+  
+  &[data-size="lg"] {
+    height: 44px;
+    padding: 0 20px;
+    min-width: 44px;
+    font-size: var(--font-size-lg);
+  }
+  
+  &[data-size="icon"] {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+  }
+  
+  &[data-size="icon-sm"] {
+    height: 36px;
+    width: 36px;
+    padding: 0;
+  }
+  
+  &[data-size="icon-lg"] {
+    height: 44px;
+    width: 44px;
+    padding: 0;
+  }
+}

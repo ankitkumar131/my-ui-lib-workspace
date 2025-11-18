@@ -1,0 +1,32 @@
+.button-group {
+    display: inline-flex;
+    border-radius: calc(var(--radius) - 2px);
+}
+
+.button-group.rounded {
+    border-radius: 9999px;
+}
+
+.button-group ::ng-deep ui-button:not(:first-child):not(:last-child) button {
+    border-radius: 0;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.button-group ::ng-deep ui-button:first-child button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 1px solid var(--border);
+}
+
+.button-group ::ng-deep ui-button:last-child button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid var(--border);
+}
+
+.button-group ::ng-deep ui-button:only-child button {
+    border-radius: calc(var(--radius) - 2px);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}

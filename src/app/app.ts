@@ -8,6 +8,7 @@ import {
   AccordionType
 } from '@my-ui/accordion';
 import { AspectRatio } from '@my-ui/aspect-ratio';
+import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/button';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ import { AspectRatio } from '@my-ui/aspect-ratio';
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-    AspectRatio
+    AspectRatio,
+    Button,
+    ButtonGroup
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -25,4 +28,6 @@ import { AspectRatio } from '@my-ui/aspect-ratio';
 export class App {
   protected readonly title = signal('my-ui-lib-workspace');
   protected readonly AccordionType = AccordionType;
+  protected readonly ButtonVariant = ButtonVariant;
+  protected readonly ButtonSize = ButtonSize;
 }
