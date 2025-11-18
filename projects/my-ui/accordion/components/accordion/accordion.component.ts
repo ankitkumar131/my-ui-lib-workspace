@@ -1,6 +1,6 @@
 import { Component, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
-import { AccordionType } from './accordion-type.enum';
-import { AccordionItemComponent } from './accordion-item.component';
+import { AccordionType } from '../../accordion-type.enum';
+import { AccordionItemComponent } from '../../components/accordion-item/accordion-item.component';
 
 @Component({
   selector: 'ui-accordion',
