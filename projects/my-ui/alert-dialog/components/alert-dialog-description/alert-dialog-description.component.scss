@@ -1,0 +1,19 @@
+:host {
+    --description-color: hsl(215.4, 16.3%, 46.9%);
+
+    display: block;
+
+    @media (prefers-color-scheme: dark) {
+        --description-color: hsl(215.4, 16.3%, 65.1%);
+    }
+}
+
+.dialog-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--description-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}

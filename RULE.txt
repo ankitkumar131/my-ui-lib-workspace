@@ -247,3 +247,8 @@ Quick enforcement checklist (put in PR template)
  Responsive verified at required breakpoints
 
  Documentation updated
+
+
+
+ "ng-packagr": "^20.0.0",
+    // "ng-packagr" : "^18.2.1",
