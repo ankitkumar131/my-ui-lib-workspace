@@ -27,6 +27,9 @@
       ],
       "@my-ui/alert-dialog": [
         "projects/my-ui/alert-dialog/index.ts"
+      ],
+      "@my-ui/alert": [
+        "projects/my-ui/alert/index.ts"
       ]
     }
   },

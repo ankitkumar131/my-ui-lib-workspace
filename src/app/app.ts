@@ -20,6 +20,12 @@ import {
   AlertDialogTitleComponent,
   AlertDialogTriggerComponent
 } from '@my-ui/alert-dialog';
+import {
+  AlertComponent,
+  AlertTitleComponent,
+  AlertDescriptionComponent,
+  AlertVariant
+} from '@my-ui/alert';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +46,10 @@ import {
     AlertDialogFooterComponent,
     AlertDialogHeaderComponent,
     AlertDialogTitleComponent,
-    AlertDialogTriggerComponent
+    AlertDialogTriggerComponent,
+    AlertComponent,
+    AlertTitleComponent,
+    AlertDescriptionComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -50,4 +59,5 @@ export class App {
   protected readonly AccordionType = AccordionType;
   protected readonly ButtonVariant = ButtonVariant;
   protected readonly ButtonSize = ButtonSize;
+  protected readonly AlertVariant = AlertVariant;
 }
