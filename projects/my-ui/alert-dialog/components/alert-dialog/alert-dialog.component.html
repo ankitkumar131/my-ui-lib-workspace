@@ -1,0 +1,7 @@
+<div (click)="openDialog()" class="trigger-wrapper">
+  <ng-content select="ui-alert-dialog-trigger"></ng-content>
+</div>
+
+<div class="alert-dialog-portal" *ngIf="isOpen">
+  <ng-content select="ui-alert-dialog-content"></ng-content>
+</div>

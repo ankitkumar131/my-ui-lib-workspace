@@ -12,6 +12,9 @@
       <li class="toc-item">
         <a href="#button-demo" class="toc-link">Button</a>
       </li>
+      <li class="toc-item">
+        <a href="#alert-dialog-demo" class="toc-link">Alert Dialog</a>
+      </li>
     </ul>
   </nav>
 
@@ -83,7 +86,8 @@
       <div>
         <h2 class="text-lg font-semibold mb-2">21:9 Aspect Ratio (Ultrawide)</h2>
         <ui-aspect-ratio [ratio]="21/9">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80" alt="Landscape view" />
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80"
+            alt="Landscape view" />
         </ui-aspect-ratio>
       </div>
     </div>
@@ -92,7 +96,7 @@
   <!-- Button Section -->
   <section id="button-demo" class="mt-8">
     <h1>Button Demo</h1>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
       <!-- Variants -->
       <div>
@@ -106,7 +110,7 @@
           <ui-button [variant]="ButtonVariant.Link">Link</ui-button>
         </div>
       </div>
-      
+
       <!-- Sizes -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Sizes</h2>
@@ -116,7 +120,7 @@
           <ui-button [size]="ButtonSize.Large">Large</ui-button>
         </div>
       </div>
-      
+
       <!-- Icon Sizes -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Icon Sizes</h2>
@@ -126,7 +130,7 @@
           <ui-button [size]="ButtonSize.IconLarge">C</ui-button>
         </div>
       </div>
-      
+
       <!-- Disabled States -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Disabled States</h2>
@@ -136,7 +140,7 @@
           <ui-button [variant]="ButtonVariant.Outline" disabled>Outline</ui-button>
         </div>
       </div>
-      
+
       <!-- Rounded Buttons -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Rounded Buttons</h2>
@@ -146,7 +150,7 @@
           <ui-button [variant]="ButtonVariant.Outline" [rounded]="true">Outline</ui-button>
         </div>
       </div>
-      
+
       <!-- With Icons -->
       <div>
         <h2 class="text-lg font-semibold mb-2">With Icons</h2>
@@ -154,7 +158,7 @@
           <ui-button class="wide-icon-spacing">
             <span slot="icon">
               <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
-                <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/>
+                <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
               </svg>
             </span>
             Back
@@ -163,13 +167,13 @@
             Continue
             <span slot="icon">
               <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
-                <path d="m5.29 21.71 10 10a1 1 0 0 0 1.41 0l10-10-1.41-1.41L17 28.59V0h-2v28.59l-8.29-8.29z"/>
+                <path d="m5.29 21.71 10 10a1 1 0 0 0 1.41 0l10-10-1.41-1.41L17 28.59V0h-2v28.59l-8.29-8.29z" />
               </svg>
             </span>
           </ui-button>
         </div>
       </div>
-      
+
       <!-- Loading State -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Loading State</h2>
@@ -179,7 +183,7 @@
           <ui-button [variant]="ButtonVariant.Outline" [loading]="true">Outline</ui-button>
         </div>
       </div>
-      
+
       <!-- Button Groups -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Button Groups</h2>
@@ -189,7 +193,7 @@
             <ui-button [variant]="ButtonVariant.Outline">Second</ui-button>
             <ui-button [variant]="ButtonVariant.Outline">Third</ui-button>
           </ui-button-group>
-          
+
           <ui-button-group [rounded]="true">
             <ui-button [variant]="ButtonVariant.Outline">First</ui-button>
             <ui-button [variant]="ButtonVariant.Outline">Second</ui-button>
@@ -197,46 +201,100 @@
           </ui-button-group>
         </div>
       </div>
-      
+
       <!-- Custom Styled Buttons with CSS Classes -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Custom Styled Buttons (CSS Classes)</h2>
         <div class="flex flex-wrap gap-2">
-          <ui-button 
-            class="custom-primary-button">
+          <ui-button class="custom-primary-button">
             Custom Primary
           </ui-button>
-          
-          <ui-button 
-            [variant]="ButtonVariant.Outline"
-            class="custom-outline-button">
+
+          <ui-button [variant]="ButtonVariant.Outline" class="custom-outline-button">
             Custom Outline
           </ui-button>
-          
-          <ui-button 
-            [variant]="ButtonVariant.Ghost"
-            class="custom-ghost-button">
+
+          <ui-button [variant]="ButtonVariant.Ghost" class="custom-ghost-button">
             Custom Ghost
           </ui-button>
         </div>
       </div>
-      
+
       <!-- Link Button Customization -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Link Button Customization</h2>
         <div class="flex flex-wrap gap-2">
-          <ui-button 
-            [variant]="ButtonVariant.Link"
-            class="no-underline-link">
+          <ui-button [variant]="ButtonVariant.Link" class="no-underline-link">
             No Underline
           </ui-button>
-          
-          <ui-button 
-            [variant]="ButtonVariant.Link"
-            class="always-underline-link">
+
+          <ui-button [variant]="ButtonVariant.Link" class="always-underline-link">
             Always Underlined
           </ui-button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alert Dialog Section -->
+  <section id="alert-dialog-demo" class="mt-8">
+    <h1>Alert Dialog Demo</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <!-- Basic Alert Dialog -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Basic Alert Dialog</h2>
+        <ui-alert-dialog>
+          <ui-alert-dialog-trigger>
+            <ui-button [variant]="ButtonVariant.Outline">Show Dialog</ui-button>
+          </ui-alert-dialog-trigger>
+
+          <ui-alert-dialog-content>
+            <ui-alert-dialog-header>
+              <ui-alert-dialog-title>Are you absolutely sure?</ui-alert-dialog-title>
+              <ui-alert-dialog-description>
+                This action cannot be undone. This will permanently delete your account
+                and remove your data from our servers.
+              </ui-alert-dialog-description>
+            </ui-alert-dialog-header>
+
+            <ui-alert-dialog-footer>
+              <ui-alert-dialog-cancel>Cancel</ui-alert-dialog-cancel>
+              <ui-alert-dialog-action>Continue</ui-alert-dialog-action>
+            </ui-alert-dialog-footer>
+          </ui-alert-dialog-content>
+        </ui-alert-dialog>
+      </div>
+
+      <!-- Destructive Action -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Destructive Action</h2>
+        <ui-alert-dialog>
+          <ui-alert-dialog-trigger>
+            <ui-button [variant]="ButtonVariant.Destructive">Delete Account</ui-button>
+          </ui-alert-dialog-trigger>
+
+          <ui-alert-dialog-content>
+            <ui-alert-dialog-header>
+              <ui-alert-dialog-title>Delete Account</ui-alert-dialog-title>
+              <ui-alert-dialog-description>
+                This will permanently delete your account. All your data, projects, and settings
+                will be lost forever. This action cannot be undone.This will permanently delete your account. All your data, projects, and settings
+                will be lost forever. This action cannot be undone.This will permanently delete your account. All your data, projects, and settings
+                will be lost forever. This action cannot be undone.This will permanently delete your account. All your data, projects, and settings
+                will be lost forever. This action cannot be undone.This will permanently delete your account. All your data, projects, and settings
+                will be lost forever. This action cannot be undone.
+              </ui-alert-dialog-description>
+            </ui-alert-dialog-header>
+
+            <ui-alert-dialog-footer>
+              <ui-alert-dialog-cancel>Cancel</ui-alert-dialog-cancel>
+              <ui-alert-dialog-action [variant]="ButtonVariant.Destructive">
+                Delete Account
+              </ui-alert-dialog-action>
+            </ui-alert-dialog-footer>
+          </ui-alert-dialog-content>
+        </ui-alert-dialog>
       </div>
     </div>
   </section>

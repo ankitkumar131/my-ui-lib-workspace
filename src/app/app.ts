@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -9,6 +9,17 @@ import {
 } from '@my-ui/accordion';
 import { AspectRatio } from '@my-ui/aspect-ratio';
 import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/button';
+import {
+  AlertDialogComponent,
+  AlertDialogActionComponent,
+  AlertDialogCancelComponent,
+  AlertDialogContentComponent,
+  AlertDialogDescriptionComponent,
+  AlertDialogFooterComponent,
+  AlertDialogHeaderComponent,
+  AlertDialogTitleComponent,
+  AlertDialogTriggerComponent
+} from '@my-ui/alert-dialog';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +31,16 @@ import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/button';
     AccordionTrigger,
     AspectRatio,
     Button,
-    ButtonGroup
+    ButtonGroup,
+    AlertDialogComponent,
+    AlertDialogActionComponent,
+    AlertDialogCancelComponent,
+    AlertDialogContentComponent,
+    AlertDialogDescriptionComponent,
+    AlertDialogFooterComponent,
+    AlertDialogHeaderComponent,
+    AlertDialogTitleComponent,
+    AlertDialogTriggerComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

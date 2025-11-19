@@ -1,0 +1,17 @@
+:host {
+    --title-color: hsl(222.2, 47.4%, 11.2%);
+
+    display: block;
+
+    @media (prefers-color-scheme: dark) {
+        --title-color: hsl(210, 40%, 98%);
+    }
+}
+
+.dialog-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--title-color);
+}
