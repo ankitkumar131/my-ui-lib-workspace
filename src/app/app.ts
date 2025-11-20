@@ -26,6 +26,11 @@ import {
   AlertDescriptionComponent,
   AlertVariant
 } from '@my-ui/alert';
+import {
+  AvatarComponent,
+  AvatarImageComponent,
+  AvatarFallbackComponent
+} from '@my-ui/avatar';
 
 @Component({
   selector: 'app-root',
@@ -49,7 +54,10 @@ import {
     AlertDialogTriggerComponent,
     AlertComponent,
     AlertTitleComponent,
-    AlertDescriptionComponent
+    AlertDescriptionComponent,
+    AvatarComponent,
+    AvatarImageComponent,
+    AvatarFallbackComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

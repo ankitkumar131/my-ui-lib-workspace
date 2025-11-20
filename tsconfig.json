@@ -30,6 +30,9 @@
       ],
       "@my-ui/alert": [
         "projects/my-ui/alert/index.ts"
+      ],
+      "@my-ui/avatar": [
+        "projects/my-ui/avatar/index.ts"
       ]
     }
   },
