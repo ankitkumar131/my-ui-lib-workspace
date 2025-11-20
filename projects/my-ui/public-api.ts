@@ -3,3 +3,4 @@ export * from './aspect-ratio/public-api';
 export * from './button/public-api';
 export * from './alert-dialog/public-api';
 export * from './alert/public-api';
+export * from './avatar/public-api';
