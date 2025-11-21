@@ -25,6 +25,9 @@
       <li class="toc-item">
         <a href="#badge-demo" class="toc-link">Badge</a>
       </li>
+      <li class="toc-item">
+        <a href="#dropdown-menu-demo" class="toc-link">Dropdown Menu</a>
+      </li>
     </ul>
   </nav>
 
@@ -238,7 +241,7 @@
               Custom Ghost
             </ui-button>
 
-            <ui-button  class="qq">
+            <ui-button class="qq">
               Custom Ghost
             </ui-button>
           </div>
@@ -538,7 +541,7 @@
         <div>
           <h2 class="text-lg font-semibold mb-2">Custom Styled</h2>
           <div class="flex flex-wrap items-center gap-2">
-            <ui-badge [rounded]="true" class="tt" >
+            <ui-badge [rounded]="true" class="tt">
               Success
             </ui-badge>
             <ui-badge style="background-color: #f59e0b; color: white;">
@@ -569,6 +572,357 @@
     </section>
   </section>
 
-</div>
+  <!-- Dropdown Menu Section -->
+  <section id="dropdown-menu-demo">
+    <h1>Dropdown Menu Demo</h1>
+
+    <section class="demo-section">
+      <h2>Basic Dropdown Menu</h2>
+      <p class="demo-description">
+        A simple dropdown menu with clickable items. Click the button to open the menu.
+      </p>
+      <div class="demo-container">
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="basicMenu">
+            Open Menu
+          </ui-button>
+
+          <ng-template #basicMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Profile</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Settings</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Logout</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Menu with Labels and Separators</h2>
+      <p class="demo-description">
+        Organize menu items with labels and visual separators for better grouping.
+      </p>
+      <div class="demo-container">
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="labeledMenu">
+            My Account
+          </ui-button>
+
+          <ng-template #labeledMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-label>My Account</ui-dropdown-menu-label>
+              <ui-dropdown-menu-separator />
+              <ui-dropdown-menu-item>Profile</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Billing</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Team</ui-dropdown-menu-item>
+              <ui-dropdown-menu-separator />
+              <ui-dropdown-menu-item>Logout</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Menu with Keyboard Shortcuts</h2>
+      <p class="demo-description">
+        Display keyboard shortcuts alongside menu items for better discoverability.
+      </p>
+      <div class="demo-container">
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="shortcutMenu">
+            File Actions
+          </ui-button>
+
+          <ng-template #shortcutMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>
+                New File
+                <ui-dropdown-menu-shortcut>⌘N</ui-dropdown-menu-shortcut>
+              </ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>
+                Open File
+                <ui-dropdown-menu-shortcut>⌘O</ui-dropdown-menu-shortcut>
+              </ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>
+                Save
+                <ui-dropdown-menu-shortcut>⌘S</ui-dropdown-menu-shortcut>
+              </ui-dropdown-menu-item>
+              <ui-dropdown-menu-separator />
+              <ui-dropdown-menu-item>
+                Print
+                <ui-dropdown-menu-shortcut>⌘P</ui-dropdown-menu-shortcut>
+              </ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Grouped Menu Items</h2>
+      <p class="demo-description">
+        Use groups to logically organize related menu items.
+      </p>
+      <div class="demo-container">
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="groupedMenu">
+            Edit Options
+          </ui-button>
+
+          <ng-template #groupedMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-label>Edit</ui-dropdown-menu-label>
+              <ui-dropdown-menu-separator />
+
+              <ui-dropdown-menu-group>
+                <ui-dropdown-menu-item>
+                  Undo
+                  <ui-dropdown-menu-shortcut>⌘Z</ui-dropdown-menu-shortcut>
+                </ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>
+                  Redo
+                  <ui-dropdown-menu-shortcut>⌘⇧Z</ui-dropdown-menu-shortcut>
+                </ui-dropdown-menu-item>
+              </ui-dropdown-menu-group>
+
+              <ui-dropdown-menu-separator />
+
+              <ui-dropdown-menu-group>
+                <ui-dropdown-menu-item>
+                  Cut
+                  <ui-dropdown-menu-shortcut>⌘X</ui-dropdown-menu-shortcut>
+                </ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>
+                  Copy
+                  <ui-dropdown-menu-shortcut>⌘C</ui-dropdown-menu-shortcut>
+                </ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>
+                  Paste
+                  <ui-dropdown-menu-shortcut>⌘V</ui-dropdown-menu-shortcut>
+                </ui-dropdown-menu-item>
+              </ui-dropdown-menu-group>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Alignment Options</h2>
+      <p class="demo-description">
+        Control the horizontal alignment of the dropdown menu relative to the trigger button.
+      </p>
+      <div class="demo-container" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="startMenu" align="start">
+            Align Start
+          </ui-button>
+
+          <ng-template #startMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Aligned to start</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Second item</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Third item</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="centerMenu" align="center">
+            Align Center
+          </ui-button>
+
+          <ng-template #centerMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Aligned to center</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Second item</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Third item</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="endMenu" align="end">
+            Align End
+          </ui-button>
+
+          <ng-template #endMenu>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item class="mnk">Aligned to end</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item class="mnk">Second item</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item class="mnk">Third item</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Button Variants</h2>
+      <ui-dropdown-menu>
+        
+      </ui-dropdown-menu>
+      <p class="demo-description">
+        Dropdown menus work with all button variants.
+      </p>
+      <div class="demo-container" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+        <ui-dropdown-menu>
+            <ui-dropdown-menu>
+  <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="endMenu" align="start">
+    Align Start
+  </ui-button>
+
+  <ng-template #endMenu>
+    <ui-dropdown-menu-content style="--dropdown-min-width: 68px; --dropdown-max-width: 83px;">
+      <ui-dropdown-menu-item>Aligned to end</ui-dropdown-menu-item>
+      <ui-dropdown-menu-item>Second item</ui-dropdown-menu-item>
+      <ui-dropdown-menu-item>Third item</ui-dropdown-menu-item>
+    </ui-dropdown-menu-content>
+  </ng-template>
+</ui-dropdown-menu>
+      <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="defaultVariant">
+            Default
+          </ui-button>
+
+          <ng-template #defaultVariant>
+            <ui-dropdown-menu-content class="ppq">
+              <ui-dropdown-menu-item>Action 1 </ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+              <ui-dropdown-menu-content>
+                <ui-dropdown-menu-item>
+                  action 2.1
+                </ui-dropdown-menu-item>
+              </ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        
+
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="outlineVariant"
+            [variant]="ButtonVariant.Outline">
+            Outline
+          </ui-button>
+
+          <ng-template #outlineVariant>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="ghostVariant" [variant]="ButtonVariant.Ghost">
+            Ghost
+          </ui-button>
+
+          <ng-template #ghostVariant>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+
+        <ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="linkVariant" [variant]="ButtonVariant.Link">
+            Link
+          </ui-button>
+
+          <ng-template #linkVariant>
+            <ui-dropdown-menu-content>
+              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+
+        <ui-dropdown-menu>
+
+          <ui-avatar class="ER" align="center" uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="accountMenu">
+            <ui-avatar-fallback>JD</ui-avatar-fallback>
+          </ui-avatar>
+          <ng-template #accountMenu>
+            <ui-dropdown-menu-content class="mnk">
+              <div class="featue-card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Automatically adapts to system dark mode preferences.</p>
+              </div>
+              <div class="feature-card">
+                <h3>✨ Smooth Animations</h3>
+                <p>Elegant fade-in animation with subtle upward movement.</p>
+              </div>
+              <div class="feature-card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Automatically adapts to system dark mode preferences.</p>
+              </div>
+            </ui-dropdown-menu-content>
+          </ng-template>
+        </ui-dropdown-menu>
+    
 
 
+        <!-- Nested Dropdown Menu Demo Section -->
+<section class="demo-section">
+  <h2>Nested Dropdown Menu (Submenu)</h2>
+  <p class="demo-description">
+    Click "File Actions" → then click "Export ▶" or "Share ▶" to open submenus!
+  </p>
+  <div class="demo-container">
+    <ui-dropdown-menu>
+      <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="nestedMenu">
+        File Actions
+      </ui-button>
+
+      <ng-template #nestedMenu>
+        <ui-dropdown-menu-content>
+          <ui-dropdown-menu-item>New File</ui-dropdown-menu-item>
+          <ui-dropdown-menu-item>Open File</ui-dropdown-menu-item>
+          <ui-dropdown-menu-item>Save</ui-dropdown-menu-item>
+          <ui-dropdown-menu-separator />
+          
+          <!-- Export Submenu -->
+          <ui-dropdown-menu>
+            <ui-dropdown-menu-item uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="exportSubmenu">
+              Export ▶
+            </ui-dropdown-menu-item>
+            
+            <ng-template #exportSubmenu>
+              <ui-dropdown-menu-content>
+                <ui-dropdown-menu-item>Export as PDF</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Export as PNG</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Export as SVG</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Export as JSON</ui-dropdown-menu-item>
+              </ui-dropdown-menu-content>
+            </ng-template>
+          </ui-dropdown-menu>
+
+          <!-- Share Submenu -->
+          <ui-dropdown-menu>
+            <ui-dropdown-menu-item uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="shareSubmenu">
+              Share ▶
+            </ui-dropdown-menu-item>
+            
+            <ng-template #shareSubmenu>
+              <ui-dropdown-menu-content>
+                <ui-dropdown-menu-item>Share via Email</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Share via Link</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Share on Social Media</ui-dropdown-menu-item>
+              </ui-dropdown-menu-content>
+            </ng-template>
+          </ui-dropdown-menu>
+
+          <ui-dropdown-menu-separator />
+          <ui-dropdown-menu-item>Print</ui-dropdown-menu-item>
+          <ui-dropdown-menu-item>Close</ui-dropdown-menu-item>
+        </ui-dropdown-menu-content>
+      </ng-template>
+    </ui-dropdown-menu>
+  </div>
+</section>
