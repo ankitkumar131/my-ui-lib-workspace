@@ -33,6 +33,9 @@
       ],
       "@my-ui/avatar": [
         "projects/my-ui/avatar/index.ts"
+      ],
+      "@my-ui/badge": [
+        "projects/my-ui/badge/index.ts"
       ]
     }
   },

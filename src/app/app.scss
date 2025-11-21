@@ -165,9 +165,63 @@ section {
 }
 
 @layer base {
-
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+}
+
+// Badge customization using CSS custom properties
+// This overrides all variants to ensure custom colors apply
+.qw {
+  // Colors
+  --ui-badge-bg: #007bff;
+  --ui-badge-color: white;
+  --ui-badge-border-color: #007bff;
+  --ui-badge-hover-bg: #0056b3;
+  
+  // Border radius - customize as needed
+  --ui-badge-border-radius: 20px;  // Change this value to adjust roundness
+  
+  // Override variant-specific variables
+  --ui-badge-default-bg: #007bff;
+  --ui-badge-default-color: white;
+  --ui-badge-default-border: #007bff;
+  --ui-badge-default-hover-bg: #0056b3;
+  
+  --ui-badge-secondary-bg: #007bff;
+  --ui-badge-secondary-color: white;
+  --ui-badge-secondary-border: #007bff;
+  --ui-badge-secondary-hover-bg: #0056b3;
+  
+  --ui-badge-destructive-bg: #007bff;
+  --ui-badge-destructive-color: white;
+  --ui-badge-destructive-border: #007bff;
+  --ui-badge-destructive-hover-bg: #0056b3;
+  
+  --ui-badge-outline-bg: #007bff;
+  --ui-badge-outline-color: white;
+  --ui-badge-outline-border: #007bff;
+  --ui-badge-outline-hover-bg: #0056b3;
+}
+
+.qq{
+  border-radius:0px;
+  --ui-button-default-bg : aqua;
+  --background-color: aqua;
+}
+
+
+.custom-primary {
+  --background-color: aqua;
+  --color: white;
+  --hover-background-color: #cc4528;
+}
+
+.tt{
+  --ui-badge-default-bg: #e1f40f;
+  --ui-badge-default-color: white;
+  --ui-badge-default-border: #38d100;
+  --ui-badge-default-hover-bg: #d0dae4;
+  cursor: pointer;
 }

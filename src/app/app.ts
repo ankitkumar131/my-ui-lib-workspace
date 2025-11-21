@@ -31,6 +31,10 @@ import {
   AvatarImageComponent,
   AvatarFallbackComponent
 } from '@my-ui/avatar';
+import {
+  BadgeComponent,
+  BadgeVariant
+} from '@my-ui/badge';
 
 @Component({
   selector: 'app-root',
@@ -57,7 +61,8 @@ import {
     AlertDescriptionComponent,
     AvatarComponent,
     AvatarImageComponent,
-    AvatarFallbackComponent
+    AvatarFallbackComponent,
+    BadgeComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -68,4 +73,5 @@ export class App {
   protected readonly ButtonVariant = ButtonVariant;
   protected readonly ButtonSize = ButtonSize;
   protected readonly AlertVariant = AlertVariant;
+  protected readonly BadgeVariant = BadgeVariant;
 }
