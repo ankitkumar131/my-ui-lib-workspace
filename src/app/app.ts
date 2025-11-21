@@ -35,6 +35,16 @@ import {
   BadgeComponent,
   BadgeVariant
 } from '@my-ui/badge';
+import {
+  DropdownMenuComponent,
+  DropdownMenuTriggerDirective,
+  DropdownMenuContentComponent,
+  DropdownMenuItemComponent,
+  DropdownMenuLabelComponent,
+  DropdownMenuSeparatorComponent,
+  DropdownMenuGroupComponent,
+  DropdownMenuShortcutComponent
+} from '@my-ui/dropdown-menu';
 
 @Component({
   selector: 'app-root',
@@ -62,7 +72,15 @@ import {
     AvatarComponent,
     AvatarImageComponent,
     AvatarFallbackComponent,
-    BadgeComponent
+    BadgeComponent,
+    DropdownMenuComponent,
+    DropdownMenuTriggerDirective,
+    DropdownMenuContentComponent,
+    DropdownMenuItemComponent,
+    DropdownMenuLabelComponent,
+    DropdownMenuSeparatorComponent,
+    DropdownMenuGroupComponent,
+    DropdownMenuShortcutComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

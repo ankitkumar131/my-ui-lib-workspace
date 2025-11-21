@@ -225,3 +225,19 @@ section {
   --ui-badge-default-hover-bg: #d0dae4;
   cursor: pointer;
 }
+
+.ER{
+  cursor: pointer;
+  :hover{
+    background-color: #5a7189;
+  }
+}
+
+.ppq{
+  width: 50%;
+}
+.mnk{
+  --dropdown-min-width: 100px; 
+  text-wrap: pretty;
+  --dropdown-max-width: 70px;
+}

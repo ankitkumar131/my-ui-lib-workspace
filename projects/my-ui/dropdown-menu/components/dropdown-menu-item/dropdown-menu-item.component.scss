@@ -1,0 +1,40 @@
+:host {
+    --dropdown-item-padding: 0.5rem 0.75rem;
+    --dropdown-item-hover-bg: hsl(210, 40%, 96.1%);
+    --dropdown-item-font-size: 0.875rem;
+    --dropdown-item-radius: 0.375rem;
+
+    @media (prefers-color-scheme: dark) {
+        --dropdown-item-hover-bg: hsl(215, 27.9%, 16.9%);
+    }
+}
+
+.dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--dropdown-item-padding);
+    font-size: var(--dropdown-item-font-size);
+    border-radius: var(--dropdown-item-radius);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+    outline: none;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+
+    &:hover:not(.disabled) {
+        background-color: var(--dropdown-item-hover-bg);
+    }
+
+    &:focus-visible {
+        background-color: var(--dropdown-item-hover-bg);
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
