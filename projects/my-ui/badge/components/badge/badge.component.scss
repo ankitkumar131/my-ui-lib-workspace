@@ -1,0 +1,66 @@
+:host {
+    display: inline-block;
+}
+
+.ui-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Use CSS custom properties for easy customization */
+    border-radius: var(--ui-badge-border-radius, 0);
+    /* Default: no border-radius */
+    padding: var(--ui-badge-padding, 4px 10px);
+    font-size: var(--ui-badge-font-size, 12px);
+    font-weight: var(--ui-badge-font-weight, 500);
+    line-height: var(--ui-badge-line-height, 1);
+    transition: var(--ui-badge-transition, background-color 0.2s, color 0.2s);
+    white-space: var(--ui-badge-white-space, nowrap);
+    border: var(--ui-badge-border, 1px solid transparent);
+
+    /* Colors - allow full override */
+    background-color: var(--ui-badge-bg, hsl(222, 47%, 11%));
+    color: var(--ui-badge-color, hsl(210, 40%, 98%));
+    border-color: var(--ui-badge-border-color, transparent);
+}
+
+.ui-badge:hover {
+    background-color: var(--ui-badge-hover-bg, var(--ui-badge-bg));
+}
+
+/* Rounded modifier - applies 15px border radius when rounded=true */
+.ui-badge--rounded {
+    --ui-badge-border-radius: 15px;
+}
+
+/* Default variant */
+.ui-badge--default {
+    --ui-badge-bg: var(--ui-badge-default-bg, hsl(222, 47%, 11%));
+    --ui-badge-color: var(--ui-badge-default-color, hsl(210, 40%, 98%));
+    --ui-badge-border-color: var(--ui-badge-default-border, hsl(222, 47%, 11%));
+    --ui-badge-hover-bg: var(--ui-badge-default-hover-bg, hsl(222, 47%, 15%));
+}
+
+/* Secondary variant */
+.ui-badge--secondary {
+    --ui-badge-bg: var(--ui-badge-secondary-bg, hsl(210, 40%, 96.1%));
+    --ui-badge-color: var(--ui-badge-secondary-color, hsl(222.2, 47.4%, 11.2%));
+    --ui-badge-border-color: var(--ui-badge-secondary-border, hsl(210, 40%, 96.1%));
+    --ui-badge-hover-bg: var(--ui-badge-secondary-hover-bg, hsl(210, 40%, 92%));
+}
+
+/* Destructive variant */
+.ui-badge--destructive {
+    --ui-badge-bg: var(--ui-badge-destructive-bg, hsl(0, 84.2%, 60.2%));
+    --ui-badge-color: var(--ui-badge-destructive-color, hsl(210, 40%, 98%));
+    --ui-badge-border-color: var(--ui-badge-destructive-border, hsl(0, 84.2%, 60.2%));
+    --ui-badge-hover-bg: var(--ui-badge-destructive-hover-bg, hsl(0, 84.2%, 55%));
+}
+
+/* Outline variant */
+.ui-badge--outline {
+    --ui-badge-bg: var(--ui-badge-outline-bg, transparent);
+    --ui-badge-color: var(--ui-badge-outline-color, hsl(222.2, 47.4%, 11.2%));
+    --ui-badge-border-color: var(--ui-badge-outline-border, hsl(214.3, 31.8%, 91.4%));
+    --ui-badge-hover-bg: var(--ui-badge-outline-hover-bg, hsl(210, 40%, 96.1%));
+}

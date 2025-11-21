@@ -1,4 +1,5 @@
 <div class="container">
+
   <!-- Table of Contents -->
   <nav class="toc">
     <h2 class="toc-title">Components</h2>
@@ -20,6 +21,9 @@
       </li>
       <li class="toc-item">
         <a href="#avatar-demo" class="toc-link">Avatar</a>
+      </li>
+      <li class="toc-item">
+        <a href="#badge-demo" class="toc-link">Badge</a>
       </li>
     </ul>
   </nav>
@@ -222,7 +226,7 @@
 
         <!-- Custom Styled Buttons with CSS Classes -->
         <div>
-          <h2 class="text-lg font-semibold mb-2">Custom Styled Buttons (CSS Classes)</h2>
+          <h2 class="text-lg font-semibold mb-2 ">Custom Styled Buttons (CSS Classes)</h2>
           <div class="flex flex-wrap gap-2">
             <ui-button class="custom-primary-button"> Custom Primary </ui-button>
 
@@ -231,6 +235,10 @@
             </ui-button>
 
             <ui-button [variant]="ButtonVariant.Ghost" class="custom-ghost-button">
+              Custom Ghost
+            </ui-button>
+
+            <ui-button  class="qq">
               Custom Ghost
             </ui-button>
           </div>
@@ -456,5 +464,111 @@
         </div>
       </div>
     </section>
+
+    <!-- Badge Section -->
+    <section id="badge-demo" class="mt-8">
+      <h1>Badge Demo</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <!-- Basic Variants -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Variants</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <ui-badge>Default</ui-badge>
+            <ui-badge [variant]="BadgeVariant.Secondary">Secondary</ui-badge>
+            <ui-badge [variant]="BadgeVariant.Destructive">Destructive</ui-badge>
+            <ui-badge [variant]="BadgeVariant.Outline">Outline</ui-badge>
+          </div>
+        </div>
+
+        <!-- Badge with Icons -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Badge with Icons</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <ui-badge [variant]="BadgeVariant.Secondary" class="qw">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Verified
+            </ui-badge>
+          </div>
+        </div>
+
+        <!-- Notification Badges (Circular) -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Notification Badges</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <ui-badge
+              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+              8
+            </ui-badge>
+            <ui-badge [variant]="BadgeVariant.Destructive"
+              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+              99
+            </ui-badge>
+            <ui-badge [variant]="BadgeVariant.Outline"
+              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+              20+
+            </ui-badge>
+          </div>
+        </div>
+
+        <!-- Inline with Text -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Inline with Text</h2>
+          <div class="flex flex-col gap-2">
+            <p>
+              New features available
+              <ui-badge [variant]="BadgeVariant.Destructive">New</ui-badge>
+            </p>
+            <p>
+              Version 2.0
+              <ui-badge [variant]="BadgeVariant.Secondary">Beta</ui-badge>
+            </p>
+            <p>
+              Status:
+              <ui-badge>Active</ui-badge>
+            </p>
+          </div>
+        </div>
+
+        <!-- Custom Styled -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Custom Styled</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <ui-badge [rounded]="true" class="tt" >
+              Success
+            </ui-badge>
+            <ui-badge style="background-color: #f59e0b; color: white;">
+              Warning
+            </ui-badge>
+            <ui-badge style="background-color: #8b5cf6; color: white;">
+              Premium
+            </ui-badge>
+          </div>
+        </div>
+
+        <!-- Different Sizes -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Different Sizes</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <ui-badge style="font-size: 10px; padding: 1px 6px;">
+              Small
+            </ui-badge>
+            <ui-badge>
+              Default
+            </ui-badge>
+            <ui-badge style="font-size: 14px; padding: 4px 12px;">
+              Large
+            </ui-badge>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
+
 </div>
+
+

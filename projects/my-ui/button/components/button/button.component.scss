@@ -1,6 +1,6 @@
 :host {
   // Define CSS variables locally to avoid global pollution
-  --radius: 0.5rem;
+  --radius: 0;  // Default: no border-radius
   --font-size: 0.875rem;
   --font-size-sm: 0.75rem;
   --font-size-lg: 1rem;
@@ -108,7 +108,7 @@
     opacity: 0.5;
   }
   
-  // Rounded variant
+  // Rounded variant - applies pill-shaped border radius when rounded=true
   &[data-rounded] {
     border-radius: 9999px;
   }
