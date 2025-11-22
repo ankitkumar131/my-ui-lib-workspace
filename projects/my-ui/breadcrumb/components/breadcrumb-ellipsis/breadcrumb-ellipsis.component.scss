@@ -1,12 +1,6 @@
 :host {
-  --breadcrumb-ellipsis-color: 222.2 47.4% 11.2%;
-
   display: inline-flex;
   align-items: center;
-
-  @media (prefers-color-scheme: dark) {
-    --breadcrumb-ellipsis-color: 210 40% 98%;
-  }
 }
 
 .breadcrumb-ellipsis {
@@ -15,7 +9,11 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  color: hsl(var(--breadcrumb-ellipsis-color));
+  color: var(--breadcrumb-ellipsis-color, #09090b);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--breadcrumb-ellipsis-color, #fafafa);
+  }
 
   svg {
     width: 16px;

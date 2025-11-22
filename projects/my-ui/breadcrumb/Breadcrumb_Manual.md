@@ -178,25 +178,127 @@ Ellipsis indicator for collapsed items.
 
 ## CSS Customization
 
+The breadcrumb components support full theming via CSS variables. All variables accept **standard color formats**: hex, rgb, rgba, hsl, and named colors.
+
 ### Available CSS Variables
 
-| Variable                        | Default (Light)     | Default (Dark)      | Description            |
-| ------------------------------- | ------------------- | ------------------- | ---------------------- |
-| `--breadcrumb-foreground`       | `222.2 47.4% 11.2%` | `210 40% 98%`       | Text color (HSL)       |
-| `--breadcrumb-muted-foreground` | `215.4 16.3% 46.9%` | `215.4 16.3% 65.1%` | Muted text (HSL)       |
-| `--breadcrumb-separator-color`  | `215.4 16.3% 46.9%` | `215.4 16.3% 65.1%` | Separator color (HSL)  |
-| `--breadcrumb-link-hover`       | `222.2 47.4% 11.2%` | `210 40% 98%`       | Link hover color (HSL) |
-| `--breadcrumb-ellipsis-color`   | `222.2 47.4% 11.2%` | `210 40% 98%`       | Ellipsis color (HSL)   |
+| Variable | Controls | Default (Light) | Default (Dark) |
+| -------------------------------- | -------------------- | --------------- | -------------- |
+| `--breadcrumb-foreground` | Text color | `#09090b` | `#fafafa` |
+| `--breadcrumb-link-hover` | Link hover/focus | `#09090b` | `#fafafa` |
+| `--breadcrumb-separator-color` | Separator icons | `#71717a` | `#a1a1aa` |
+| `--breadcrumb-page-color` | Current page (muted) | `#71717a` | `#a1a1aa` |
+| `--breadcrumb-ellipsis-color` | Ellipsis icon | `#09090b` | `#fafafa` |
 
-### Customization Example
+### Customization Methods
+
+#### 1. Global Styling (app.scss)
+
+Override defaults for all breadcrumbs:
+
+```scss
+:root {
+  --breadcrumb-link-hover: #2196f3;
+  --breadcrumb-separator-color: rgba(0, 0, 0, 0.3);
+  --breadcrumb-foreground: #333333;
+}
+```
+
+#### 2. Class-based Styling (Recommended)
+
+Create themed breadcrumb variants in your `app.scss`:
+
+```scss
+.primary-breadcrumb {
+  --breadcrumb-link-hover: #2196f3;
+  --breadcrumb-separator-color: #90caf9;
+}
+
+.danger-breadcrumb {
+  --breadcrumb-link-hover: rgb(244, 67, 54);
+  --breadcrumb-separator-color: rgba(244, 67, 54, 0.5);
+  --breadcrumb-page-color: #e57373;
+}
+
+.custom-theme {
+  --breadcrumb-foreground: orange;
+  --breadcrumb-link-hover: #ff5722;
+  --breadcrumb-separator-color: rgba(255, 87, 34, 0.6);
+}
+```
+
+Then apply via class in HTML:
+
+```html
+<ui-breadcrumb class="primary-breadcrumb">
+  <!-- breadcrumb items -->
+</ui-breadcrumb>
+```
+
+#### 3. Component-level (Inline - if needed)
+
+For one-off customization:
+
+```html
+<ui-breadcrumb style="--breadcrumb-link-hover: #ff5722">
+  <!-- breadcrumb items -->
+</ui-breadcrumb>
+```
+
+### Complete Example
+
+**app.scss:**
+```scss
+.product-breadcrumb {
+  --breadcrumb-foreground: #1a1a1a;
+  --breadcrumb-link-hover: #ff9800;
+  --breadcrumb-separator-color: #bdbdbd;
+  --breadcrumb-page-color: #757575;
+}
+```
+
+**component.html:**
+```html
+<ui-breadcrumb class="product-breadcrumb">
+  <ui-breadcrumb-list>
+    <ui-breadcrumb-item>
+      <ui-breadcrumb-link href="/">Home</ui-breadcrumb-link>
+    </ui-breadcrumb-item>
+    <ui-breadcrumb-separator></ui-breadcrumb-separator>
+    <ui-breadcrumb-item>
+      <ui-breadcrumb-link href="/products">Products</ui-breadcrumb-link>
+    </ui-breadcrumb-item>
+    <ui-breadcrumb-separator></ui-breadcrumb-separator>
+    <ui-breadcrumb-item>
+      <ui-breadcrumb-page>Laptops</ui-breadcrumb-page>
+    </ui-breadcrumb-item>
+  </ui-breadcrumb-list>
+</ui-breadcrumb>
+```
+
+### Dark Mode
+
+Dark mode is handled automatically via `@media (prefers-color-scheme: dark)`. You can override dark mode defaults:
 
 ```scss
 .custom-breadcrumb {
-  --breadcrumb-foreground: 220 50% 15%;
-  --breadcrumb-muted-foreground: 220 20% 50%;
-  --breadcrumb-separator-color: 220 20% 50%;
+  --breadcrumb-link-hover: #64b5f6; /* Light mode */
+
+  @media (prefers-color-scheme: dark) {
+    --breadcrumb-link-hover: #90caf9; /* Dark mode */
+  }
 }
 ```
+
+### Best Practices
+
+- ✅ Define theme variants in `app.scss` for reusability
+- ✅ Use semantic class names (e.g., `.admin-breadcrumb`)
+- ✅ Keep inline styles minimal
+- ✅ Test in both light and dark modes
+- ❌ No need for `::ng-deep` (deprecated)
+- ❌ Avoid color formats like `hsl(var(...))` - use direct values
+
 
 ---
 

@@ -1,18 +1,16 @@
 :host {
-  --breadcrumb-separator-color: 215.4 16.3% 46.9%;
-
   display: inline-flex;
-
-  @media (prefers-color-scheme: dark) {
-    --breadcrumb-separator-color: 215.4 16.3% 65.1%;
-  }
 }
 
 .breadcrumb-separator {
   display: inline-flex;
   align-items: center;
-  color: hsl(var(--breadcrumb-separator-color));
+  color: var(--breadcrumb-separator-color, #71717a);
   user-select: none;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--breadcrumb-separator-color, #a1a1aa);
+  }
 
   svg {
     width: 16px;

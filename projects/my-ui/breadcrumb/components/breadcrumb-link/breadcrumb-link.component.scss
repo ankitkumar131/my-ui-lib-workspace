@@ -1,11 +1,5 @@
 :host {
-  --breadcrumb-link-hover: 222.2 47.4% 11.2%;
-
   display: inline-flex;
-
-  @media (prefers-color-scheme: dark) {
-    --breadcrumb-link-hover: 210 40% 98%;
-  }
 }
 
 .breadcrumb-link {
@@ -16,13 +10,21 @@
   outline: none;
 
   &:hover {
-    color: hsl(var(--breadcrumb-link-hover));
+    color: var(--breadcrumb-link-hover, #09090b);
     text-decoration: underline;
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--breadcrumb-link-hover, #fafafa);
+    }
   }
 
   &:focus-visible {
-    outline: 2px solid hsl(var(--breadcrumb-link-hover));
+    outline: 2px solid var(--breadcrumb-link-hover, #09090b);
     outline-offset: 2px;
     border-radius: 2px;
+
+    @media (prefers-color-scheme: dark) {
+      outline-color: var(--breadcrumb-link-hover, #fafafa);
+    }
   }
 }

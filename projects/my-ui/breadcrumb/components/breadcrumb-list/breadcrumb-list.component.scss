@@ -1,11 +1,5 @@
 :host {
-  --breadcrumb-foreground: 222.2 47.4% 11.2%;
-
   display: block;
-
-  @media (prefers-color-scheme: dark) {
-    --breadcrumb-foreground: 210 40% 98%;
-  }
 }
 
 .breadcrumb-list {
@@ -16,7 +10,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  color: hsl(var(--breadcrumb-foreground));
+  color: var(--breadcrumb-foreground, #09090b);
   font-size: 14px;
   line-height: 1.5;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--breadcrumb-foreground, #fafafa);
+  }
 }
