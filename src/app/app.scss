@@ -241,3 +241,10 @@ section {
   text-wrap: pretty;
   --dropdown-max-width: 70px;
 }
+
+
+.bread{
+  --breadcrumb-separator-color: orange;
+  --breadcrumb-link-hover:rgb(236, 0, 0);
+  --breadcrumb-foreground:black;
+}
