@@ -1,0 +1,15 @@
+:host {
+  --breadcrumb-muted-foreground: 215.4 16.3% 46.9%;
+
+  display: inline-flex;
+
+  @media (prefers-color-scheme: dark) {
+    --breadcrumb-muted-foreground: 215.4 16.3% 65.1%;
+  }
+}
+
+.breadcrumb-page {
+  color: hsl(var(--breadcrumb-muted-foreground));
+  font-weight: 400;
+  cursor: default;
+}

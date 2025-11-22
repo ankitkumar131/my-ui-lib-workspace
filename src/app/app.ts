@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionType
+  AccordionType,
 } from '@my-ui/accordion';
 import { AspectRatio } from '@my-ui/aspect-ratio';
 import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/button';
@@ -18,23 +18,16 @@ import {
   AlertDialogFooterComponent,
   AlertDialogHeaderComponent,
   AlertDialogTitleComponent,
-  AlertDialogTriggerComponent
+  AlertDialogTriggerComponent,
 } from '@my-ui/alert-dialog';
 import {
   AlertComponent,
   AlertTitleComponent,
   AlertDescriptionComponent,
-  AlertVariant
+  AlertVariant,
 } from '@my-ui/alert';
-import {
-  AvatarComponent,
-  AvatarImageComponent,
-  AvatarFallbackComponent
-} from '@my-ui/avatar';
-import {
-  BadgeComponent,
-  BadgeVariant
-} from '@my-ui/badge';
+import { AvatarComponent, AvatarImageComponent, AvatarFallbackComponent } from '@my-ui/avatar';
+import { BadgeComponent, BadgeVariant } from '@my-ui/badge';
 import {
   DropdownMenuComponent,
   DropdownMenuTriggerDirective,
@@ -43,8 +36,18 @@ import {
   DropdownMenuLabelComponent,
   DropdownMenuSeparatorComponent,
   DropdownMenuGroupComponent,
-  DropdownMenuShortcutComponent
+  DropdownMenuShortcutComponent,
 } from '@my-ui/dropdown-menu';
+
+import {
+  BreadcrumbComponent,
+  BreadcrumbListComponent,
+  BreadcrumbItemComponent,
+  BreadcrumbLinkComponent,
+  BreadcrumbPageComponent,
+  BreadcrumbSeparatorComponent,
+  BreadcrumbEllipsisComponent,
+} from '@my-ui/breadcrumb';
 
 @Component({
   selector: 'app-root',
@@ -80,10 +83,17 @@ import {
     DropdownMenuLabelComponent,
     DropdownMenuSeparatorComponent,
     DropdownMenuGroupComponent,
-    DropdownMenuShortcutComponent
+    DropdownMenuShortcutComponent,
+    BreadcrumbComponent,
+    BreadcrumbListComponent,
+    BreadcrumbItemComponent,
+    BreadcrumbLinkComponent,
+    BreadcrumbPageComponent,
+    BreadcrumbSeparatorComponent,
+    BreadcrumbEllipsisComponent,
   ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('my-ui-lib-workspace');

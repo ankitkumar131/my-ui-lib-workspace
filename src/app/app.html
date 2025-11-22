@@ -1,5 +1,4 @@
 <div class="container">
-
   <!-- Table of Contents -->
   <nav class="toc">
     <h2 class="toc-title">Components</h2>
@@ -27,6 +26,9 @@
       </li>
       <li class="toc-item">
         <a href="#dropdown-menu-demo" class="toc-link">Dropdown Menu</a>
+      </li>
+      <li class="toc-item">
+        <a href="#breadcrumb-demo" class="toc-link">Breadcrumb</a>
       </li>
     </ul>
   </nav>
@@ -87,32 +89,40 @@
         <div>
           <h2 class="text-lg font-semibold mb-2">16:9 Aspect Ratio</h2>
           <ui-aspect-ratio [ratio]="16 / 9">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&dpr=2&q=80"
-              alt="Mountain landscape" />
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&dpr=2&q=80"
+              alt="Mountain landscape"
+            />
           </ui-aspect-ratio>
         </div>
 
         <div>
           <h2 class="text-lg font-semibold mb-2">4:3 Aspect Ratio</h2>
           <ui-aspect-ratio [ratio]="4 / 3">
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&dpr=2&q=80"
-              alt="Nature landscape" />
+            <img
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&dpr=2&q=80"
+              alt="Nature landscape"
+            />
           </ui-aspect-ratio>
         </div>
 
         <div>
           <h2 class="text-lg font-semibold mb-2">1:1 Aspect Ratio (Square)</h2>
           <ui-aspect-ratio [ratio]="1 / 1">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&dpr=2&q=80"
-              alt="Scenic view" />
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&dpr=2&q=80"
+              alt="Scenic view"
+            />
           </ui-aspect-ratio>
         </div>
 
         <div>
           <h2 class="text-lg font-semibold mb-2">21:9 Aspect Ratio (Ultrawide)</h2>
           <ui-aspect-ratio [ratio]="21 / 9">
-            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80"
-              alt="Landscape view" />
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&dpr=2&q=80"
+              alt="Landscape view"
+            />
           </ui-aspect-ratio>
         </div>
       </div>
@@ -171,7 +181,9 @@
           <h2 class="text-lg font-semibold mb-2">Rounded Buttons</h2>
           <div class="flex flex-wrap gap-2">
             <ui-button [rounded]="true">Default</ui-button>
-            <ui-button [variant]="ButtonVariant.Destructive" [rounded]="true">Destructive</ui-button>
+            <ui-button [variant]="ButtonVariant.Destructive" [rounded]="true"
+              >Destructive</ui-button
+            >
             <ui-button [variant]="ButtonVariant.Outline" [rounded]="true">Outline</ui-button>
           </div>
         </div>
@@ -182,8 +194,16 @@
           <div class="flex flex-wrap gap-2">
             <ui-button class="wide-icon-spacing">
               <span slot="icon">
-                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
-                  <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
+                <svg
+                  class="button-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"
+                  />
                 </svg>
               </span>
               Back
@@ -191,8 +211,16 @@
             <ui-button>
               Continue
               <span slot="icon">
-                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
-                  <path d="m5.29 21.71 10 10a1 1 0 0 0 1.41 0l10-10-1.41-1.41L17 28.59V0h-2v28.59l-8.29-8.29z" />
+                <svg
+                  class="button-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="m5.29 21.71 10 10a1 1 0 0 0 1.41 0l10-10-1.41-1.41L17 28.59V0h-2v28.59l-8.29-8.29z"
+                  />
                 </svg>
               </span>
             </ui-button>
@@ -204,7 +232,9 @@
           <h2 class="text-lg font-semibold mb-2">Loading State</h2>
           <div class="flex flex-wrap gap-2">
             <ui-button [loading]="true">Default</ui-button>
-            <ui-button [variant]="ButtonVariant.Destructive" [loading]="true">Destructive</ui-button>
+            <ui-button [variant]="ButtonVariant.Destructive" [loading]="true"
+              >Destructive</ui-button
+            >
             <ui-button [variant]="ButtonVariant.Outline" [loading]="true">Outline</ui-button>
           </div>
         </div>
@@ -229,7 +259,7 @@
 
         <!-- Custom Styled Buttons with CSS Classes -->
         <div>
-          <h2 class="text-lg font-semibold mb-2 ">Custom Styled Buttons (CSS Classes)</h2>
+          <h2 class="text-lg font-semibold mb-2">Custom Styled Buttons (CSS Classes)</h2>
           <div class="flex flex-wrap gap-2">
             <ui-button class="custom-primary-button"> Custom Primary </ui-button>
 
@@ -241,9 +271,7 @@
               Custom Ghost
             </ui-button>
 
-            <ui-button class="qq">
-              Custom Ghost
-            </ui-button>
+            <ui-button class="qq"> Custom Ghost </ui-button>
           </div>
         </div>
 
@@ -337,8 +365,15 @@
         <!-- Default Alert -->
         <ui-alert>
           <span slot="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
               <line x1="4" y1="22" x2="4" y2="15"></line>
             </svg>
@@ -352,8 +387,15 @@
         <!-- Destructive Alert -->
         <ui-alert [variant]="AlertVariant.Destructive">
           <span slot="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="12"></line>
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -451,7 +493,7 @@
         <div>
           <h2 class="text-lg font-semibold mb-2">Different Sizes</h2>
           <div class="flex flex-wrap items-center gap-6">
-            <ui-avatar style="width: 32px; height: 32px; font-size: 12px;">
+            <ui-avatar style="width: 32px; height: 32px; font-size: 12px">
               <ui-avatar-image src="https://github.com/shadcn.png" alt="Small" />
               <ui-avatar-fallback>SM</ui-avatar-fallback>
             </ui-avatar>
@@ -459,7 +501,7 @@
               <ui-avatar-image src="https://github.com/shadcn.png" alt="Default" />
               <ui-avatar-fallback>MD</ui-avatar-fallback>
             </ui-avatar>
-            <ui-avatar style="width: 64px; height: 64px; font-size: 18px;">
+            <ui-avatar style="width: 64px; height: 64px; font-size: 18px">
               <ui-avatar-image src="https://github.com/shadcn.png" alt="Large" />
               <ui-avatar-fallback>LG</ui-avatar-fallback>
             </ui-avatar>
@@ -489,8 +531,16 @@
           <h2 class="text-lg font-semibold mb-2">Badge with Icons</h2>
           <div class="flex flex-wrap items-center gap-2">
             <ui-badge [variant]="BadgeVariant.Secondary" class="qw">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="margin-right: 4px"
+              >
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
@@ -504,15 +554,38 @@
           <h2 class="text-lg font-semibold mb-2">Notification Badges</h2>
           <div class="flex flex-wrap items-center gap-2">
             <ui-badge
-              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+              style="
+                height: 20px;
+                min-width: 20px;
+                border-radius: 50%;
+                padding: 0 4px;
+                font-family: monospace;
+              "
+            >
               8
             </ui-badge>
-            <ui-badge [variant]="BadgeVariant.Destructive"
-              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+            <ui-badge
+              [variant]="BadgeVariant.Destructive"
+              style="
+                height: 20px;
+                min-width: 20px;
+                border-radius: 50%;
+                padding: 0 4px;
+                font-family: monospace;
+              "
+            >
               99
             </ui-badge>
-            <ui-badge [variant]="BadgeVariant.Outline"
-              style="height: 20px; min-width: 20px; border-radius: 50%; padding: 0 4px; font-family: monospace;">
+            <ui-badge
+              [variant]="BadgeVariant.Outline"
+              style="
+                height: 20px;
+                min-width: 20px;
+                border-radius: 50%;
+                padding: 0 4px;
+                font-family: monospace;
+              "
+            >
               20+
             </ui-badge>
           </div>
@@ -541,15 +614,9 @@
         <div>
           <h2 class="text-lg font-semibold mb-2">Custom Styled</h2>
           <div class="flex flex-wrap items-center gap-2">
-            <ui-badge [rounded]="true" class="tt">
-              Success
-            </ui-badge>
-            <ui-badge style="background-color: #f59e0b; color: white;">
-              Warning
-            </ui-badge>
-            <ui-badge style="background-color: #8b5cf6; color: white;">
-              Premium
-            </ui-badge>
+            <ui-badge [rounded]="true" class="tt"> Success </ui-badge>
+            <ui-badge style="background-color: #f59e0b; color: white"> Warning </ui-badge>
+            <ui-badge style="background-color: #8b5cf6; color: white"> Premium </ui-badge>
           </div>
         </div>
 
@@ -557,20 +624,16 @@
         <div>
           <h2 class="text-lg font-semibold mb-2">Different Sizes</h2>
           <div class="flex flex-wrap items-center gap-2">
-            <ui-badge style="font-size: 10px; padding: 1px 6px;">
-              Small
-            </ui-badge>
-            <ui-badge>
-              Default
-            </ui-badge>
-            <ui-badge style="font-size: 14px; padding: 4px 12px;">
-              Large
-            </ui-badge>
+            <ui-badge style="font-size: 10px; padding: 1px 6px"> Small </ui-badge>
+            <ui-badge> Default </ui-badge>
+            <ui-badge style="font-size: 14px; padding: 4px 12px"> Large </ui-badge>
           </div>
         </div>
       </div>
     </section>
   </section>
+
+  
 
   <!-- Dropdown Menu Section -->
   <section id="dropdown-menu-demo">
@@ -662,9 +725,7 @@
 
     <section class="demo-section">
       <h2>Grouped Menu Items</h2>
-      <p class="demo-description">
-        Use groups to logically organize related menu items.
-      </p>
+      <p class="demo-description">Use groups to logically organize related menu items.</p>
       <div class="demo-container">
         <ui-dropdown-menu>
           <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="groupedMenu">
@@ -714,7 +775,7 @@
       <p class="demo-description">
         Control the horizontal alignment of the dropdown menu relative to the trigger button.
       </p>
-      <div class="demo-container" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div class="demo-container" style="display: flex; gap: 1rem; flex-wrap: wrap">
         <ui-dropdown-menu>
           <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="startMenu" align="start">
             Align Start
@@ -761,28 +822,29 @@
 
     <section class="demo-section">
       <h2>Button Variants</h2>
-      <ui-dropdown-menu>
-        
-      </ui-dropdown-menu>
-      <p class="demo-description">
-        Dropdown menus work with all button variants.
-      </p>
-      <div class="demo-container" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+      <ui-dropdown-menu> </ui-dropdown-menu>
+      <p class="demo-description">Dropdown menus work with all button variants.</p>
+      <div
+        class="demo-container"
+        style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center"
+      >
         <ui-dropdown-menu>
-            <ui-dropdown-menu>
-  <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="endMenu" align="start">
-    Align Start
-  </ui-button>
+          <ui-dropdown-menu>
+            <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="endMenu" align="start">
+              Align Start
+            </ui-button>
 
-  <ng-template #endMenu>
-    <ui-dropdown-menu-content style="--dropdown-min-width: 68px; --dropdown-max-width: 83px;">
-      <ui-dropdown-menu-item>Aligned to end</ui-dropdown-menu-item>
-      <ui-dropdown-menu-item>Second item</ui-dropdown-menu-item>
-      <ui-dropdown-menu-item>Third item</ui-dropdown-menu-item>
-    </ui-dropdown-menu-content>
-  </ng-template>
-</ui-dropdown-menu>
-      <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="defaultVariant">
+            <ng-template #endMenu>
+              <ui-dropdown-menu-content
+                style="--dropdown-min-width: 68px; --dropdown-max-width: 83px"
+              >
+                <ui-dropdown-menu-item>Aligned to end</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Second item</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Third item</ui-dropdown-menu-item>
+              </ui-dropdown-menu-content>
+            </ng-template>
+          </ui-dropdown-menu>
+          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="defaultVariant">
             Default
           </ui-button>
 
@@ -791,138 +853,295 @@
               <ui-dropdown-menu-item>Action 1 </ui-dropdown-menu-item>
               <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
               <ui-dropdown-menu-content>
-                <ui-dropdown-menu-item>
-                  action 2.1
-                </ui-dropdown-menu-item>
+                <ui-dropdown-menu-item> action 2.1 </ui-dropdown-menu-item>
               </ui-dropdown-menu-content>
               <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
             </ui-dropdown-menu-content>
           </ng-template>
-        
 
-        <ui-dropdown-menu>
-          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="outlineVariant"
-            [variant]="ButtonVariant.Outline">
-            Outline
-          </ui-button>
-
-          <ng-template #outlineVariant>
-            <ui-dropdown-menu-content>
-              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
-            </ui-dropdown-menu-content>
-          </ng-template>
-        </ui-dropdown-menu>
-
-        <ui-dropdown-menu>
-          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="ghostVariant" [variant]="ButtonVariant.Ghost">
-            Ghost
-          </ui-button>
-
-          <ng-template #ghostVariant>
-            <ui-dropdown-menu-content>
-              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
-            </ui-dropdown-menu-content>
-          </ng-template>
-        </ui-dropdown-menu>
-
-        <ui-dropdown-menu>
-          <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="linkVariant" [variant]="ButtonVariant.Link">
-            Link
-          </ui-button>
-
-          <ng-template #linkVariant>
-            <ui-dropdown-menu-content>
-              <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
-              <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
-            </ui-dropdown-menu-content>
-          </ng-template>
-        </ui-dropdown-menu>
-
-        <ui-dropdown-menu>
-
-          <ui-avatar class="ER" align="center" uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="accountMenu">
-            <ui-avatar-fallback>JD</ui-avatar-fallback>
-          </ui-avatar>
-          <ng-template #accountMenu>
-            <ui-dropdown-menu-content class="mnk">
-              <div class="featue-card">
-                <h3>🌙 Dark Mode</h3>
-                <p>Automatically adapts to system dark mode preferences.</p>
-              </div>
-              <div class="feature-card">
-                <h3>✨ Smooth Animations</h3>
-                <p>Elegant fade-in animation with subtle upward movement.</p>
-              </div>
-              <div class="feature-card">
-                <h3>🌙 Dark Mode</h3>
-                <p>Automatically adapts to system dark mode preferences.</p>
-              </div>
-            </ui-dropdown-menu-content>
-          </ng-template>
-        </ui-dropdown-menu>
-    
-
-
-        <!-- Nested Dropdown Menu Demo Section -->
-<section class="demo-section">
-  <h2>Nested Dropdown Menu (Submenu)</h2>
-  <p class="demo-description">
-    Click "File Actions" → then click "Export ▶" or "Share ▶" to open submenus!
-  </p>
-  <div class="demo-container">
-    <ui-dropdown-menu>
-      <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="nestedMenu">
-        File Actions
-      </ui-button>
-
-      <ng-template #nestedMenu>
-        <ui-dropdown-menu-content>
-          <ui-dropdown-menu-item>New File</ui-dropdown-menu-item>
-          <ui-dropdown-menu-item>Open File</ui-dropdown-menu-item>
-          <ui-dropdown-menu-item>Save</ui-dropdown-menu-item>
-          <ui-dropdown-menu-separator />
-          
-          <!-- Export Submenu -->
           <ui-dropdown-menu>
-            <ui-dropdown-menu-item uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="exportSubmenu">
-              Export ▶
-            </ui-dropdown-menu-item>
-            
-            <ng-template #exportSubmenu>
+            <ui-button
+              uiDropdownMenuTrigger
+              [uiDropdownMenuTriggerFor]="outlineVariant"
+              [variant]="ButtonVariant.Outline"
+            >
+              Outline
+            </ui-button>
+
+            <ng-template #outlineVariant>
               <ui-dropdown-menu-content>
-                <ui-dropdown-menu-item>Export as PDF</ui-dropdown-menu-item>
-                <ui-dropdown-menu-item>Export as PNG</ui-dropdown-menu-item>
-                <ui-dropdown-menu-item>Export as SVG</ui-dropdown-menu-item>
-                <ui-dropdown-menu-item>Export as JSON</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
               </ui-dropdown-menu-content>
             </ng-template>
           </ui-dropdown-menu>
 
-          <!-- Share Submenu -->
           <ui-dropdown-menu>
-            <ui-dropdown-menu-item uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="shareSubmenu">
-              Share ▶
-            </ui-dropdown-menu-item>
-            
-            <ng-template #shareSubmenu>
+            <ui-button
+              uiDropdownMenuTrigger
+              [uiDropdownMenuTriggerFor]="ghostVariant"
+              [variant]="ButtonVariant.Ghost"
+            >
+              Ghost
+            </ui-button>
+
+            <ng-template #ghostVariant>
               <ui-dropdown-menu-content>
-                <ui-dropdown-menu-item>Share via Email</ui-dropdown-menu-item>
-                <ui-dropdown-menu-item>Share via Link</ui-dropdown-menu-item>
-                <ui-dropdown-menu-item>Share on Social Media</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
               </ui-dropdown-menu-content>
             </ng-template>
           </ui-dropdown-menu>
 
-          <ui-dropdown-menu-separator />
-          <ui-dropdown-menu-item>Print</ui-dropdown-menu-item>
-          <ui-dropdown-menu-item>Close</ui-dropdown-menu-item>
-        </ui-dropdown-menu-content>
-      </ng-template>
-    </ui-dropdown-menu>
-  </div>
-</section>
+          <ui-dropdown-menu>
+            <ui-button
+              uiDropdownMenuTrigger
+              [uiDropdownMenuTriggerFor]="linkVariant"
+              [variant]="ButtonVariant.Link"
+            >
+              Link
+            </ui-button>
+
+            <ng-template #linkVariant>
+              <ui-dropdown-menu-content>
+                <ui-dropdown-menu-item>Action 1</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 2</ui-dropdown-menu-item>
+                <ui-dropdown-menu-item>Action 3</ui-dropdown-menu-item>
+              </ui-dropdown-menu-content>
+            </ng-template>
+          </ui-dropdown-menu>
+
+          <ui-dropdown-menu>
+            <ui-avatar
+              class="ER"
+              align="center"
+              uiDropdownMenuTrigger
+              [uiDropdownMenuTriggerFor]="accountMenu"
+            >
+              <ui-avatar-fallback>JD</ui-avatar-fallback>
+            </ui-avatar>
+            <ng-template #accountMenu>
+              <ui-dropdown-menu-content class="mnk">
+                <div class="featue-card">
+                  <h3>🌙 Dark Mode</h3>
+                  <p>Automatically adapts to system dark mode preferences.</p>
+                </div>
+                <div class="feature-card">
+                  <h3>✨ Smooth Animations</h3>
+                  <p>Elegant fade-in animation with subtle upward movement.</p>
+                </div>
+                <div class="feature-card">
+                  <h3>🌙 Dark Mode</h3>
+                  <p>Automatically adapts to system dark mode preferences.</p>
+                </div>
+              </ui-dropdown-menu-content>
+            </ng-template>
+          </ui-dropdown-menu>
+
+          <!-- Nested Dropdown Menu Demo Section -->
+          <section class="demo-section">
+            <h2>Nested Dropdown Menu (Submenu)</h2>
+            <p class="demo-description">
+              Click "File Actions" → then click "Export ▶" or "Share ▶" to open submenus!
+            </p>
+            <div class="demo-container">
+              <ui-dropdown-menu>
+                <ui-button uiDropdownMenuTrigger [uiDropdownMenuTriggerFor]="nestedMenu">
+                  File Actions
+                </ui-button>
+
+                <ng-template #nestedMenu>
+                  <ui-dropdown-menu-content>
+                    <ui-dropdown-menu-item>New File</ui-dropdown-menu-item>
+                    <ui-dropdown-menu-item>Open File</ui-dropdown-menu-item>
+                    <ui-dropdown-menu-item>Save</ui-dropdown-menu-item>
+                    <ui-dropdown-menu-separator />
+
+                    <!-- Export Submenu -->
+                    <ui-dropdown-menu>
+                      <ui-dropdown-menu-item
+                        uiDropdownMenuTrigger
+                        [uiDropdownMenuTriggerFor]="exportSubmenu"
+                      >
+                        Export ▶
+                      </ui-dropdown-menu-item>
+
+                      <ng-template #exportSubmenu>
+                        <ui-dropdown-menu-content>
+                          <ui-dropdown-menu-item>Export as PDF</ui-dropdown-menu-item>
+                          <ui-dropdown-menu-item>Export as PNG</ui-dropdown-menu-item>
+                          <ui-dropdown-menu-item>Export as SVG</ui-dropdown-menu-item>
+                          <ui-dropdown-menu-item>Export as JSON</ui-dropdown-menu-item>
+                        </ui-dropdown-menu-content>
+                      </ng-template>
+                    </ui-dropdown-menu>
+
+                    <!-- Share Submenu -->
+                    <ui-dropdown-menu>
+                      <ui-dropdown-menu-item
+                        uiDropdownMenuTrigger
+                        [uiDropdownMenuTriggerFor]="shareSubmenu"
+                      >
+                        Share ▶
+                      </ui-dropdown-menu-item>
+
+                      <ng-template #shareSubmenu>
+                        <ui-dropdown-menu-content>
+                          <ui-dropdown-menu-item>Share via Email</ui-dropdown-menu-item>
+                          <ui-dropdown-menu-item>Share via Link</ui-dropdown-menu-item>
+                          <ui-dropdown-menu-item>Share on Social Media</ui-dropdown-menu-item>
+                        </ui-dropdown-menu-content>
+                      </ng-template>
+                    </ui-dropdown-menu>
+
+                    <ui-dropdown-menu-separator />
+                    <ui-dropdown-menu-item>Print</ui-dropdown-menu-item>
+                    <ui-dropdown-menu-item>Close</ui-dropdown-menu-item>
+                  </ui-dropdown-menu-content>
+                </ng-template>
+              </ui-dropdown-menu>
+            </div>
+          </section></ui-dropdown-menu
+        >
+      </div>
+    </section>
+  </section>
+
+
+  <!-- Breadcrumb Section -->
+  <section id="breadcrumb-demo" class="mt-8">
+    <h1>Breadcrumb Demo</h1>
+
+    <div class="grid grid-cols-1 gap-6 mt-4">
+      <!-- Basic Breadcrumb -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Basic Breadcrumb</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          A simple breadcrumb navigation showing the current page hierarchy.
+        </p>
+        <ui-breadcrumb>
+          <ui-breadcrumb-list>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/">Home</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/components">Components</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+            </ui-breadcrumb-item>
+          </ui-breadcrumb-list>
+        </ui-breadcrumb>
+      </div>
+
+      <!-- Breadcrumb with Custom Separator -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Separator (Dash)</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Breadcrumb with custom separator using inline SVG.
+        </p>
+        <ui-breadcrumb>
+          <ui-breadcrumb-list>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/">Home</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/docs">Documentation</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-page>Guide</ui-breadcrumb-page>
+            </ui-breadcrumb-item>
+          </ui-breadcrumb-list>
+        </ui-breadcrumb>
+      </div>
+
+      <!-- Breadcrumb with Ellipsis -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">With Ellipsis (Collapsed Items)</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Use ellipsis to indicate hidden intermediate navigation levels.
+        </p>
+        <ui-breadcrumb>
+          <ui-breadcrumb-list>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/">Home</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-ellipsis></ui-breadcrumb-ellipsis>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/components">Components</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-page>Breadcrumb</ui-breadcrumb-page>
+            </ui-breadcrumb-item>
+          </ui-breadcrumb-list>
+        </ui-breadcrumb>
+      </div>
+
+      <!-- Multi-level Breadcrumb -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Multi-level Navigation</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Deep navigation hierarchy with multiple levels.
+        </p>
+        <ui-breadcrumb>
+          <ui-breadcrumb-list>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/">Dashboard</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/products">Products</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/products/electronics">Electronics</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="/products/electronics/laptops">Laptops</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-page>ThinkPad X1</ui-breadcrumb-page>
+            </ui-breadcrumb-item>
+          </ui-breadcrumb-list>
+        </ui-breadcrumb>
+      </div>
+    </div>
+  </section>
+</div>

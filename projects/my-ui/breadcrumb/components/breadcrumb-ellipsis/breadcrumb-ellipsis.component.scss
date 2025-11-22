@@ -1,0 +1,36 @@
+:host {
+  --breadcrumb-ellipsis-color: 222.2 47.4% 11.2%;
+
+  display: inline-flex;
+  align-items: center;
+
+  @media (prefers-color-scheme: dark) {
+    --breadcrumb-ellipsis-color: 210 40% 98%;
+  }
+}
+
+.breadcrumb-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: hsl(var(--breadcrumb-ellipsis-color));
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

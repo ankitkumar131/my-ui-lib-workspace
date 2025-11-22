@@ -37,6 +37,9 @@
       "@my-ui/badge": [
         "projects/my-ui/badge/index.ts"
       ],
+      "@my-ui/breadcrumb": [
+        "projects/my-ui/breadcrumb/index.ts"
+      ],
       "@my-ui/dropdown-menu": [
         "projects/my-ui/dropdown-menu/index.ts"
       ]

@@ -1,0 +1,21 @@
+:host {
+  --breadcrumb-separator-color: 215.4 16.3% 46.9%;
+
+  display: inline-flex;
+
+  @media (prefers-color-scheme: dark) {
+    --breadcrumb-separator-color: 215.4 16.3% 65.1%;
+  }
+}
+
+.breadcrumb-separator {
+  display: inline-flex;
+  align-items: center;
+  color: hsl(var(--breadcrumb-separator-color));
+  user-select: none;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}

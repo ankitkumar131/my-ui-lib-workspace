@@ -1,0 +1,9 @@
+:host {
+  display: inline-flex;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
