@@ -30,6 +30,9 @@
       <li class="toc-item">
         <a href="#breadcrumb-demo" class="toc-link">Breadcrumb</a>
       </li>
+      <li class="toc-item">
+        <a href="#label-demo" class="toc-link">Label</a>
+      </li>
     </ul>
   </nav>
 
@@ -1141,6 +1144,204 @@
             </ui-breadcrumb-item>
           </ui-breadcrumb-list>
         </ui-breadcrumb>
+      </div>
+    </div>
+  </section>
+
+  <!-- Label Section -->
+  <section id="label-demo" class="mt-8">
+    <h1>Label Demo</h1>
+
+    <div class="grid grid-cols-1 gap-6 mt-4">
+      <!-- Basic Label -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Basic Label with Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          A simple label associated with a text input using htmlFor attribute.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="basic-input">Email Address</ui-label>
+          <input
+            type="email"
+            id="basic-input"
+            placeholder="Enter your email"
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <!-- Multiple Form Fields -->
+      <div >
+        <h2 class="text-lg font-semibold mb-2">Contact Form Example</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Multiple labels in a form with different input types.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px">
+          <div style="display: flex; flex-direction: column; gap: 6px" class="form-field">
+            <ui-label htmlFor="name-input">Full Name</ui-label>
+            <input
+              type="text"
+              id="name-input"
+              placeholder="John Doe"
+              style="
+                padding: 8px 12px;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                font-size: 14px;
+              "
+            />
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px" class="form-field">
+            <ui-label htmlFor="message-input">Message</ui-label>
+            <textarea
+              id="message-input"
+              rows="4"
+              placeholder="Your message here..."
+              style="
+                padding: 8px 12px;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                font-size: 14px;
+                resize: vertical;
+              "
+            ></textarea>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px" class="form-field">
+            <ui-label htmlFor="country-select">Country</ui-label>
+            <select
+              id="country-select"
+              style="
+                padding: 8px 12px;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                font-size: 14px;
+              "
+            >
+              <option>Select a country</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>India</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Required Field -->
+      <div class="form-field">
+        <h2 class="text-lg font-semibold mb-2">Required Field Label</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Label with automatic asterisk using [required]="true" attribute.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="required-input" [required]="true">
+            Email Address
+          </ui-label>
+          <input
+            type="email"
+            id="required-input"
+            required
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <!-- Disabled State -->
+      <div class="form-field">
+        <h2 class="text-lg font-semibold mb-2">Disabled Input with Label</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Label automatically styles when associated input is disabled.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 6px; max-width: 400px">
+          <ui-label htmlFor="disabled-input" aria-disabled="true">
+            Disabled Field
+          </ui-label>
+          <input
+            type="text"
+            id="disabled-input"
+            value="Cannot edit this field"
+            disabled
+            style="
+              padding: 8px 12px;
+              border: 1px solid #e5e7eb;
+              border-radius: 6px;
+              font-size: 14px;
+              opacity: 0.6;
+              cursor: not-allowed;
+            "
+          />
+        </div>
+      </div>
+
+      <!-- Custom Styled Labels -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Styled Labels & Required Symbols</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Labels with customized required symbols and colors using CSS variables.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px">
+          <div class="form-field">
+            <ui-label
+              htmlFor="primary-input"
+              [required]="true"
+              style="--label-foreground: #2196f3; font-size: 16px; font-weight: 600"
+            >
+              Primary Label (Blue, default "*")
+            </ui-label>
+            <input
+              type="text"
+              id="primary-input"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-field">
+            <ui-label
+              htmlFor="custom-symbol"
+              [required]="true"
+              class="custom-required-symbol"
+            >
+              Custom Symbol "!" (Orange)
+            </ui-label>
+            <input
+              type="text"
+              id="custom-symbol"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-field">
+            <ui-label
+              htmlFor="custom-color"
+              [required]="true"
+              class="custom-required-color"
+            >
+              Custom Color (Blue "*")
+            </ui-label>
+            <input
+              type="text"
+              id="custom-color"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-field">
+            <ui-label
+              htmlFor="checkmark"
+              [required]="true"
+              class="custom-required-both"
+            >
+              Custom Symbol & Color (Green "✓")
+            </ui-label>
+            <input
+              type="text"
+              id="checkmark"
+              class="form-input"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>

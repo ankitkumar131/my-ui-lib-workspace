@@ -7,3 +7,4 @@ export * from './avatar/public-api';
 export * from './badge/public-api';
 export * from './breadcrumb/public-api';
 export * from './dropdown-menu/public-api';
+export * from './label/public-api';

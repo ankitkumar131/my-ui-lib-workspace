@@ -248,3 +248,49 @@ section {
   --breadcrumb-link-hover:rgb(236, 0, 0);
   --breadcrumb-foreground:black;
 }
+
+// Label Demo Styles
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 400px;
+  --label-foreground: #1a1a1a;
+  --label-disabled: #999999;
+}
+
+.form-input {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  
+  &:focus {
+    outline: 2px solid #2196f3;
+    outline-offset: 2px;
+    border-color: #2196f3;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+  }
+}
+
+// Custom required symbol - change "*" to "!"
+.custom-required-symbol {
+  --label-required-symbol: ' !';
+  --label-required-color: #ff9800;
+}
+
+// Custom required color - blue asterisk
+.custom-required-color {
+  --label-required-color: #2196f3;
+}
+
+// Custom both - green checkmark
+.custom-required-both {
+  --label-required-symbol: ' ✓';
+  --label-required-color: #22c55e;
+}

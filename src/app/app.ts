@@ -49,6 +49,8 @@ import {
   BreadcrumbEllipsisComponent,
 } from '@my-ui/breadcrumb';
 
+import { LabelComponent } from '@my-ui/label';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -91,6 +93,7 @@ import {
     BreadcrumbPageComponent,
     BreadcrumbSeparatorComponent,
     BreadcrumbEllipsisComponent,
+    LabelComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
