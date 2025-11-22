@@ -5,4 +5,5 @@ export * from './alert-dialog/public-api';
 export * from './alert/public-api';
 export * from './avatar/public-api';
 export * from './badge/public-api';
+export * from './breadcrumb/public-api';
 export * from './dropdown-menu/public-api';
