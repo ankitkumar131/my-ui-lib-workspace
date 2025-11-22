@@ -42,6 +42,9 @@
       ],
       "@my-ui/dropdown-menu": [
         "projects/my-ui/dropdown-menu/index.ts"
+      ],
+      "@my-ui/label": [
+        "projects/my-ui/label/index.ts"
       ]
     }
   },
