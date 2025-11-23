@@ -1362,12 +1362,11 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="text-input">Full Name</ui-label>
-          <input
+          <ui-input
             type="text"
             id="text-input"
             placeholder="Enter your name"
-            uiInput
-          />
+          ></ui-input>
         </div>
       </div>
 
@@ -1379,12 +1378,11 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="email-input" [required]="true">Email Address</ui-label>
-          <input
+          <ui-input
             type="email"
             id="email-input"
             placeholder="you@example.com"
-            uiInput
-          />
+          ></ui-input>
         </div>
       </div>
 
@@ -1396,12 +1394,11 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="password-input" [required]="true">Password</ui-label>
-          <input
+          <ui-input
             type="password"
             id="password-input"
             placeholder="Enter password"
-            uiInput
-          />
+          ></ui-input>
         </div>
       </div>
 
@@ -1413,14 +1410,13 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="number-input">Quantity</ui-label>
-          <input
+          <ui-input
             type="number"
             id="number-input"
             placeholder="0"
             min="0"
             max="100"
-            uiInput
-          />
+          ></ui-input>
         </div>
       </div>
 
@@ -1432,11 +1428,10 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="file-input">Upload File</ui-label>
-          <input
+          <ui-input
             type="file"
             id="file-input"
-            uiInput
-          />
+          ></ui-input>
         </div>
       </div>
 
@@ -1448,13 +1443,12 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="disabled-input" aria-disabled="true">Disabled Field</ui-label>
-          <input
+          <ui-input
             type="text"
             id="disabled-input"
             value="Cannot edit this"
-            disabled
-            uiInput
-          />
+            [disabled]="true"
+          ></ui-input>
         </div>
       </div>
 
@@ -1462,20 +1456,20 @@
       <div>
         <h2 class="text-lg font-semibold mb-2">Error State Input</h2>
         <p class="text-sm text-muted-foreground mb-3">
-          Input with error validation using aria-invalid attribute.
+          Input with error validation using showError and ui-input-error.
         </p>
         <div class="form-field">
           <ui-label htmlFor="error-input" [required]="true">Email (Invalid)</ui-label>
-          <input
+          <ui-input
             type="email"
             id="error-input"
-            value="invalid-email"
-            aria-invalid="true"
-            uiInput
-          />
-          <span style="color: #dc2626; font-size: 12px; margin-top: 4px;">
+            
+            [showError]="true"
+            ariaDescribedby="error-input-message"
+          ></ui-input>
+          <ui-input-error class="kk">
             Please enter a valid email address
-          </span>
+          </ui-input-error>
         </div>
       </div>
 
@@ -1488,18 +1482,17 @@
         <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px">
           <div class="form-field">
             <ui-label htmlFor="custom-blue">Custom Blue Focus</ui-label>
-            <input
+            <ui-input
               type="text"
               id="custom-blue"
               placeholder="Focus to see blue ring"
               style="--input-focus-border: #2196f3; --input-focus-ring: rgba(33, 150, 243, 0.2)"
-              uiInput
-            />
+            ></ui-input>
           </div>
 
           <div class="form-field">
             <ui-label htmlFor="custom-green">Custom Green Theme</ui-label>
-            <input
+            <ui-input
               type="text"
               id="custom-green"
               placeholder="Green themed input"
@@ -1508,13 +1501,12 @@
                 --input-focus-border: #16a34a;
                 --input-focus-ring: rgba(34, 197, 94, 0.2)
               "
-              uiInput
-            />
+            ></ui-input>
           </div>
 
           <div class="form-field">
             <ui-label htmlFor="custom-orange">Custom Orange Theme</ui-label>
-            <input
+            <ui-input
               type="text"
               id="custom-orange"
               placeholder="Orange themed input"
@@ -1523,8 +1515,7 @@
                 --input-focus-border: rgb(249, 115, 22);
                 --input-focus-ring: rgba(251, 146, 60, 0.2)
               "
-              uiInput
-            />
+            ></ui-input>
           </div>
         </div>
       </div>
@@ -1533,16 +1524,16 @@
       <div>
         <h2 class="text-lg font-semibold mb-2">Textarea</h2>
         <p class="text-sm text-muted-foreground mb-3">
-          Multi-line textarea with uiInput directive.
+          Multi-line textarea using ui-input component.
         </p>
         <div class="form-field">
           <ui-label htmlFor="textarea-input">Message</ui-label>
-          <textarea
+          <ui-input
             id="textarea-input"
             placeholder="Enter your message..."
-            rows="4"
-            uiInput
-          ></textarea>
+            [rows]="4"
+            [isTextarea]="true"
+          ></ui-input>
         </div>
       </div>
     </div>

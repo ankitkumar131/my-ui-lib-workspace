@@ -1,0 +1,110 @@
+input.ui-input,
+textarea.ui-input {
+  display: flex;
+  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #09090b;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+input.ui-input::placeholder,
+textarea.ui-input::placeholder {
+  color: #9ca3af;
+}
+
+input.ui-input:focus,
+textarea.ui-input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+input.ui-input:disabled,
+textarea.ui-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #f5f5f5;
+  color: #a1a1aa;
+}
+
+input.ui-input[type="file"] {
+  padding: 6px;
+  cursor: pointer;
+}
+
+input.ui-input[type="file"]::file-selector-button {
+  margin-right: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  color: #09090b;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+input.ui-input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+// Error state
+input.ui-input.error,
+input.ui-input[aria-invalid="true"],
+textarea.ui-input.error,
+textarea.ui-input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+input.ui-input.error:focus,
+input.ui-input[aria-invalid="true"]:focus,
+textarea.ui-input.error:focus,
+textarea.ui-input[aria-invalid="true"]:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+// Textarea specific
+textarea.ui-input {
+  min-height: 80px;
+  resize: vertical;
+  height: auto;
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  input.ui-input,
+  textarea.ui-input {
+    background-color: #18181b;
+    border-color: #27272a;
+    color: #fafafa;
+  }
+  
+  input.ui-input::placeholder,
+  textarea.ui-input::placeholder {
+    color: #71717a;
+  }
+  
+  input.ui-input:disabled,
+  textarea.ui-input:disabled {
+    background-color: #09090b;
+    color: #52525b;
+  }
+  
+  input.ui-input[type="file"]::file-selector-button {
+    background-color: #27272a;
+    border-color: #3f3f46;
+  }
+  
+  input.ui-input[type="file"]::file-selector-button:hover {
+    background-color: #3f3f46;
+  }
+}

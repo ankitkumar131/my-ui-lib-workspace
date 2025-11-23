@@ -2,15 +2,55 @@
 
 ## Overview
 
-The Input component is a directive-based enhancement for native `<input>` and `<textarea>` elements. It provides consistent styling, customizable colors via CSS variables, focus states, error validation support, and full accessibility features.
+The Input component is a customizable form input wrapper that provides consistent styling, error validation, accessibility features, and full customization via CSS variables. It includes both the main `ui-input` component and a companion `ui-input-error` component for displaying validation messages.
 
 ---
 
 ## Import
 
 ```typescript
-import { InputDirective } from '@my-ui/input';
+import { InputComponent, InputErrorComponent } from '@my-ui/input';
 ```
+
+---
+
+## Component Imports
+
+Add both components to your Angular component's `imports` array:
+
+```typescript
+import { Component } from '@angular/core';
+import { InputComponent, InputErrorComponent } from '@my-ui/input';
+import { LabelComponent } from '@my-ui/label';
+
+@Component({
+  selector: 'app-my-form',
+  standalone: true,
+  imports: [
+    LabelComponent,
+    InputComponent,
+    InputErrorComponent  // Required to use ui-input-error
+  ],
+  templateUrl: './my-form.component.html'
+})
+export class MyFormComponent {
+  // Component logic
+}
+```
+
+**Important:** If you use `ui-input-error` in your template, you **must** import `InputErrorComponent` in your component's `imports` array.
+
+---
+
+## Components
+
+### 1. InputComponent (`ui-input`)
+
+Main input component that wraps native `<input>` and `<textarea>` elements.
+
+### 2. InputErrorComponent (`ui-input-error`)
+
+Companion component for displaying error messages below inputs.
 
 ---
 
@@ -19,96 +59,160 @@ import { InputDirective } from '@my-ui/input';
 ### Simple Text Input
 
 ```html
-<input type="text" placeholder="Enter text" uiInput />
+<ui-label htmlFor="name">Name</ui-label>
+<ui-input type="text" id="name" placeholder="Enter your name"></ui-input>
 ```
 
 ### With Label
 
 ```html
 <ui-label htmlFor="email">Email Address</ui-label>
-<input type="email" id="email" placeholder="you@example.com" uiInput />
+<ui-input type="email" id="email" placeholder="you@example.com"></ui-input>
 ```
 
 ### Password Input
 
 ```html
 <ui-label htmlFor="password" [required]="true">Password</ui-label>
-<input type="password" id="password" placeholder="Enter password" uiInput />
+<ui-input type="password" id="password" placeholder="Enter password"></ui-input>
 ```
 
 ### Number Input
 
 ```html
 <ui-label htmlFor="quantity">Quantity</ui-label>
-<input type="number" id="quantity" min="0" max="100" uiInput />
+<ui-input type="number" id="quantity" [min]="0" [max]="100"></ui-input>
 ```
 
 ### File Input
 
 ```html
-<ui-label htmlFor="file">Upload File</ui-label> <input type="file" id="file" uiInput />
+<ui-label htmlFor="file">Upload File</ui-label> <ui-input type="file" id="file"></ui-input>
 ```
 
 ### Textarea
 
 ```html
 <ui-label htmlFor="message">Message</ui-label>
-<textarea id="message" rows="4" placeholder="Enter your message..." uiInput></textarea>
+<ui-input
+  id="message"
+  [isTextarea]="true"
+  [rows]="4"
+  placeholder="Enter your message..."
+></ui-input>
+```
+
+### Disabled Input
+
+```html
+<ui-label htmlFor="disabled">Disabled Field</ui-label>
+<ui-input type="text" id="disabled" value="Cannot edit this" [disabled]="true"></ui-input>
+```
+
+---
+
+## Error Messages
+
+### With Error Message Component
+
+Use `ui-input-error` to display validation errors:
+
+```html
+<ui-label htmlFor="email-error" [required]="true">Email</ui-label>
+<ui-input
+  type="email"
+  id="email-error"
+  [showError]="true"
+  ariaDescribedby="email-error-message"
+></ui-input>
+<ui-input-error id="email-error-message"> Please enter a valid email address </ui-input-error>
+```
+
+### Dynamic Error Display
+
+```html
+<ui-label htmlFor="username" [required]="true">Username</ui-label>
+<ui-input
+  type="text"
+  id="username"
+  [showError]="usernameInvalid"
+  ariaDescribedby="username-error"
+></ui-input>
+@if (usernameInvalid) {
+<ui-input-error id="username-error"> Username must be at least 3 characters </ui-input-error>
+}
 ```
 
 ---
 
 ## API Reference
 
-### InputDirective
+### InputComponent
 
-Enhances native input and textarea elements with consistent styling and customization.
-
-| Selector            | Type      | Description                      |
-| ------------------- | --------- | -------------------------------- |
-| `input[uiInput]`    | Directive | Applies to `<input>` elements    |
-| `textarea[uiInput]` | Directive | Applies to `<textarea>` elements |
-
-**Usage:**
-
-```html
-<input type="text" uiInput /> <textarea uiInput></textarea>
-```
+| Property          | Type               | Default  | Description                                            |
+| ----------------- | ------------------ | -------- | ------------------------------------------------------ |
+| `type`            | `string`           | `'text'` | Input type (text, email, password, number, file, etc.) |
+| `placeholder`     | `string`           | -        | Placeholder text                                       |
+| `value`           | `string`           | -        | Input value                                            |
+| `disabled`        | `boolean`          | `false`  | Whether input is disabled                              |
+| `required`        | `boolean`          | `false`  | Whether input is required                              |
+| `id`              | `string`           | -        | Input ID for label association                         |
+| `name`            | `string`           | -        | Input name attribute                                   |
+| `min`             | `string \| number` | -        | Minimum value (for number inputs)                      |
+| `max`             | `string \| number` | -        | Maximum value (for number inputs)                      |
+| `minlength`       | `number`           | -        | Minimum length                                         |
+| `maxlength`       | `number`           | -        | Maximum length                                         |
+| `pattern`         | `string`           | -        | Validation pattern (regex)                             |
+| `readonly`        | `boolean`          | `false`  | Whether input is read-only                             |
+| `showError`       | `boolean`          | `false`  | Shows error styling (red border/focus ring)            |
+| `ariaDescribedby` | `string`           | -        | ID of error message for accessibility                  |
+| `autocomplete`    | `string`           | -        | Autocomplete attribute                                 |
+| `accept`          | `string`           | -        | Accepted file types (for file inputs)                  |
+| `rows`            | `number`           | `4`      | Number of rows (for textarea)                          |
+| `isTextarea`      | `boolean`          | `false`  | Render as textarea instead of input                    |
 
 **Supported Input Types:**
 
-- `text`
-- `email`
-- `password`
-- `number`
-- `tel`
-- `url`
-- `search`
-- `file`
-- And all other standard HTML5 input types
+- `text`, `email`, `password`, `number`, `tel`, `url`, `search`, `date`, `time`, `datetime-local`, `month`, `week`, `color`, `file`, and all other standard HTML5 input types
+
+### InputErrorComponent
+
+| Property | Type     | Default | Description                             |
+| -------- | -------- | ------- | --------------------------------------- |
+| `id`     | `string` | -       | Error message ID (for aria-describedby) |
+
+**Content:** Accepts any text or HTML content via `<ng-content>`.
 
 ---
 
 ## CSS Customization
 
-The Input component supports full theming via CSS variables. All variables accept **standard color formats**: hex, rgb, rgba, hsl, and named colors.
+The Input component is fully customizable using CSS variables. All variables support **standard color formats**: hex, rgb, rgba, hsl, and named colors.
 
 ### Available CSS Variables
 
-| Variable                    | Default (Light)        | Default (Dark)         | Description            |
-| --------------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `--input-background`        | `#ffffff`              | `#18181b`              | Background color       |
-| `--input-foreground`        | `#09090b`              | `#fafafa`              | Text color             |
-| `--input-border`            | `#e5e7eb`              | `#27272a`              | Border color           |
-| `--input-placeholder`       | `#9ca3af`              | `#71717a`              | Placeholder text color |
-| `--input-focus-border`      | `#2196f3`              | `#2196f3`              | Focus border color     |
-| `--input-focus-ring`        | `rgba(33,150,243,0.1)` | `rgba(33,150,243,0.1)` | Focus ring/shadow      |
-| `--input-disabled-bg`       | `#f5f5f5`              | `#09090b`              | Disabled background    |
-| `--input-disabled-text`     | `#a1a1aa`              | `#52525b`              | Disabled text color    |
-| `--input-error-border`      | `#dc2626`              | `#dc2626`              | Error border color     |
-| `--input-error-ring`        | `rgba(220,38,38,0.1)`  | `rgba(220,38,38,0.1)`  | Error focus ring       |
-| `--input-file-button-bg`    | `#f9fafb`              | `#27272a`              | File button background |
-| `--input-file-button-hover` | `#f3f4f6`              | `#3f3f46`              | File button hover      |
+#### Input Component Variables
+
+| Variable                    | Default (Light) | Default (Dark) | Description                  |
+| --------------------------- | --------------- | -------------- | ---------------------------- |
+| `--input-background`        | N/A             | N/A            | Background color             |
+| `--input-foreground`        | N/A             | N/A            | Text color                   |
+| `--input-border`            | N/A             | N/A            | Border color                 |
+| `--input-placeholder`       | N/A             | N/A            | Placeholder text color       |
+| `--input-focus-border`      | N/A             | N/A            | Focus border color           |
+| `--input-focus-ring`        | N/A             | N/A            | Focus ring/shadow color      |
+| `--input-disabled-bg`       | N/A             | N/A            | Disabled background color    |
+| `--input-disabled-text`     | N/A             | N/A            | Disabled text color          |
+| `--input-file-button-bg`    | N/A             | N/A            | File button background       |
+| `--input-file-button-hover` | N/A             | N/A            | File button hover background |
+
+**Note:** The component uses inline default values in the SCSS, so CSS variables are only needed for customization.
+
+#### Error Component Variables
+
+| Variable              | Default (Light) | Default (Dark) | Description              |
+| --------------------- | --------------- | -------------- | ------------------------ |
+| `--input-error-color` | `#dc2626`       | `#f87171`      | Error message text color |
 
 ### Customization Methods
 
@@ -118,98 +222,148 @@ Override defaults for all inputs:
 
 ```scss
 :root {
-  --input-background: #ffffff;
-  --input-foreground: #1a1a1a;
-  --input-border: #d1d5db;
-  --input-focus-border: #3b82f6;
-  --input-focus-ring: rgba(59, 130, 246, 0.2);
+  --input-error-color: #ff0000;
 }
 ```
 
 #### 2. Class-based Styling (Recommended)
 
-Create themed input variants in your `app.scss`:
+Create custom variants in your `app.scss`:
 
 ```scss
+// Custom success input
 .input-success {
-  --input-border: #22c55e;
-  --input-focus-border: #16a34a;
-  --input-focus-ring: rgba(34, 197, 94, 0.2);
+  input.ui-input,
+  textarea.ui-input {
+    border-color: #22c55e;
+
+    &:focus {
+      border-color: #16a34a;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+    }
+  }
 }
 
+// Custom warning input
 .input-warning {
-  --input-border: #f59e0b;
-  --input-focus-border: #d97706;
-  --input-focus-ring: rgba(245, 158, 11, 0.2);
+  input.ui-input,
+  textarea.ui-input {
+    border-color: #f59e0b;
+
+    &:focus {
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    }
+  }
 }
 
-.input-danger {
-  --input-border: #ef4444;
-  --input-focus-border: #dc2626;
-  --input-focus-ring: rgba(239, 68, 68, 0.2);
-}
-
-.input-large {
-  height: 44px;
-  font-size: 16px;
-  padding: 10px 14px;
+// Custom error message color
+.custom-error-message {
+  --input-error-color: #ff5722;
 }
 ```
 
-Then apply via class in HTML:
+Then apply in HTML:
 
 ```html
-<input type="email" class="input-success" placeholder="Valid email" uiInput />
-<input type="text" class="input-warning" placeholder="Warning" uiInput />
-<input type="text" class="input-danger" placeholder="Error" uiInput />
-<input type="text" class="input-large" placeholder="Large input" uiInput />
+<!-- Success input -->
+<div class="input-success">
+  <ui-input type="text" placeholder="Success"></ui-input>
+</div>
+
+<!-- Warning input -->
+<div class="input-warning">
+  <ui-input type="text" placeholder="Warning"></ui-input>
+</div>
+
+<!-- Custom error color -->
+<ui-input [showError]="true"></ui-input>
+<ui-input-error class="custom-error-message"> Custom colored error </ui-input-error>
 ```
 
 #### 3. Inline Styling
 
-For one-off customization:
+For one-off customization, target the input directly:
 
 ```html
-<input
+<ui-input type="text" style="border-color: #8b5cf6; --input-error-color: #ff0000;"></ui-input>
+```
+
+---
+
+## Error States
+
+### Using showError Property
+
+The `showError` property adds error styling (red border and focus ring):
+
+```html
+<ui-input type="email" [showError]="isInvalid" ariaDescribedby="error-msg"></ui-input>
+<ui-input-error id="error-msg"> Invalid email format </ui-input-error>
+```
+
+### ARIA Accessibility
+
+Always link error messages with `aria-describedby`:
+
+```html
+<ui-label htmlFor="username" [required]="true">Username</ui-label>
+<ui-input
   type="text"
-  style="
-    --input-border: #8b5cf6;
-    --input-focus-border: #7c3aed;
-    --input-focus-ring: rgba(139, 92, 246, 0.2);
-  "
-  placeholder="Purple themed"
-  uiInput
-/>
+  id="username"
+  [showError]="hasError"
+  ariaDescribedby="username-error"
+></ui-input>
+<ui-input-error id="username-error"> Username is required </ui-input-error>
 ```
 
-### Error States
+### Custom Error Colors
 
-Use the `aria-invalid` attribute to trigger error styling:
-
-```html
-<ui-label htmlFor="email" [required]="true">Email</ui-label>
-<input type="email" id="email" value="invalid-email" aria-invalid="true" uiInput />
-<span style="color: #dc2626; font-size: 12px;"> Please enter a valid email address </span>
-```
-
-Alternatively, add the `error` class:
-
-```html
-<input type="email" class="error" uiInput />
-```
-
-### Dark Mode
-
-Dark mode is handled automatically via `@media (prefers-color-scheme: dark)`. You can override dark mode defaults:
+Customize error message colors:
 
 ```scss
-.custom-input {
-  --input-background: #ffffff;
-  --input-border: #e5e7eb;
+// In app.scss
+.blue-error {
+  --input-error-color: #1900ff;
+}
 
-  @media (prefers-color-scheme: dark) {
-    --input-background: #1f2937;
-    --input-border: #374151;
+.orange-error {
+  --input-error-color: #ff6b00;
+}
+```
+
+```html
+<ui-input [showError]="true"></ui-input>
+<ui-input-error class="blue-error"> Blue error message </ui-input-error>
+
+<ui-input [showError]="true"></ui-input>
+<ui-input-error class="orange-error"> Orange error message </ui-input-error>
+```
+
+---
+
+## Dark Mode
+
+Dark mode is automatic via `@media (prefers-color-scheme: dark)`:
+
+- Background: `#18181b`
+- Border: `#27272a`
+- Text: `#fafafa`
+- Placeholder: `#71717a`
+- Error color: `#f87171` (lighter red)
+
+### Custom Dark Mode
+
+Override dark mode defaults:
+
+```scss
+@media (prefers-color-scheme: dark) {
+  .custom-input {
+    input.ui-input {
+      background-color: #1f2937;
+      border-color: #374151;
+      color: #f9fafb;
+    }
   }
 }
 ```
@@ -224,78 +378,82 @@ Dark mode is handled automatically via `@media (prefers-color-scheme: dark)`. Yo
 <form>
   <div class="form-field">
     <ui-label htmlFor="username" [required]="true">Username</ui-label>
-    <input type="text" id="username" name="username" required uiInput />
+    <ui-input type="text" id="username" name="username" required></ui-input>
   </div>
 
   <div class="form-field">
     <ui-label htmlFor="password" [required]="true">Password</ui-label>
-    <input type="password" id="password" name="password" required uiInput />
+    <ui-input type="password" id="password" name="password" required></ui-input>
   </div>
 
   <button type="submit">Sign In</button>
 </form>
 ```
 
-### Contact Form
+### Contact Form with Validation
 
 ```html
 <form>
   <div class="form-field">
     <ui-label htmlFor="name" [required]="true">Full Name</ui-label>
-    <input type="text" id="name" required uiInput />
+    <ui-input
+      type="text"
+      id="name"
+      [showError]="nameInvalid"
+      ariaDescribedby="name-error"
+    ></ui-input>
+    @if (nameInvalid) {
+    <ui-input-error id="name-error"> Name is required </ui-input-error>
+    }
   </div>
 
   <div class="form-field">
     <ui-label htmlFor="email" [required]="true">Email</ui-label>
-    <input type="email" id="email" required uiInput />
+    <ui-input
+      type="email"
+      id="email"
+      [showError]="emailInvalid"
+      ariaDescribedby="email-error"
+    ></ui-input>
+    @if (emailInvalid) {
+    <ui-input-error id="email-error"> Please enter a valid email address </ui-input-error>
+    }
   </div>
 
   <div class="form-field">
     <ui-label htmlFor="message">Message</ui-label>
-    <textarea id="message" rows="5" uiInput></textarea>
+    <ui-input id="message" [isTextarea]="true" [rows]="5"></ui-input>
   </div>
 
   <button type="submit">Send Message</button>
 </form>
 ```
 
+### File Upload with Error
+
+```html
+<div class="form-field">
+  <ui-label htmlFor="avatar" [required]="true">Profile Picture</ui-label>
+  <ui-input
+    type="file"
+    id="avatar"
+    accept="image/*"
+    [showError]="fileError"
+    ariaDescribedby="file-error"
+  ></ui-input>
+  @if (fileError) {
+  <ui-input-error id="file-error"> File size must be less than 5MB </ui-input-error>
+  }
+</div>
+```
+
 ### Search Input with Button
 
 ```html
 <div style="display: flex; gap: 8px;">
-  <input type="search" placeholder="Search..." uiInput />
+  <ui-input type="search" placeholder="Search..."></ui-input>
   <ui-button>Search</ui-button>
 </div>
-```
-
-### File Upload
-
-```html
-<div class="form-field">
-  <ui-label htmlFor="avatar">Profile Picture</ui-label>
-  <input type="file" id="avatar" accept="image/*" uiInput />
-  <span style="font-size: 12px; color: #6b7280;"> Accepted formats: JPG, PNG, GIF (Max 5MB) </span>
-</div>
-```
-
-### Form with Validation
-
-```html
-<form>
-  <div class="form-field">
-    <ui-label htmlFor="email" [required]="true">Email</ui-label>
-    <input
-      type="email"
-      id="email"
-      [attr.aria-invalid]="emailInvalid ? 'true' : null"
-      (blur)="validateEmail()"
-      uiInput
-    />
-    @if (emailInvalid) {
-    <span style="color: #dc2626; font-size: 12px;"> Please enter a valid email address </span>
-    }
-  </div>
-</form>
 ```
 
 ---
@@ -304,96 +462,100 @@ Dark mode is handled automatically via `@media (prefers-color-scheme: dark)`. Yo
 
 ### Form Association
 
-Always associate inputs with labels using the `htmlFor` attribute:
+Always associate inputs with labels using `htmlFor` and matching `id`:
 
 ```html
 <!-- ✅ Correct -->
 <ui-label htmlFor="email">Email</ui-label>
-<input type="email" id="email" uiInput />
+<ui-input type="email" id="email"></ui-input>
 
 <!-- ❌ Incorrect - missing association -->
 <ui-label>Email</ui-label>
-<input type="email" uiInput />
+<ui-input type="email"></ui-input>
 ```
 
-### ARIA Attributes
+### Error Messages
 
-**For invalid inputs:**
+Link error messages with `aria-describedby`:
 
 ```html
-<input type="email" aria-invalid="true" aria-describedby="email-error" uiInput />
-<span id="email-error">Please enter a valid email</span>
+<ui-input type="email" [showError]="true" ariaDescribedby="email-error"></ui-input>
+<ui-input-error id="email-error"> Invalid email format </ui-input-error>
 ```
 
-**For required fields:**
+### Required Fields
+
+Mark required fields properly:
 
 ```html
-<input type="text" required aria-required="true" uiInput />
+<ui-label htmlFor="name" [required]="true">Name</ui-label>
+<ui-input type="text" id="name" [required]="true"></ui-input>
 ```
 
 ### Keyboard Navigation
 
-- All inputs are keyboard accessible by default
-- `Tab` to navigate between inputs
-- `Enter` to submit forms
-- `Shift + Tab` to navigate backwards
+- `Tab` - Navigate between inputs
+- `Shift + Tab` - Navigate backwards
+- `Enter` - Submit form (if in form)
+- All native keyboard shortcuts work
 
 ### Screen Reader Support
 
 - Proper semantic HTML (`<input>`, `<textarea>`)
-- ARIA attributes supported (`aria-invalid`, `aria-describedby`, `aria-required`)
-- Clear focus indicators for keyboard navigation
+- ARIA attributes (`aria-invalid`, `aria-describedby`, `aria-required`)
+- Clear focus indicators
+- Error announcements via linked error messages
 
 ---
 
 ## Features
 
 ✅ **Native HTML** - Uses standard `<input>` and `<textarea>` elements  
-✅ **All Input Types** - Supports text, email, password, number, file, etc.  
-✅ **Focus States** - Customizable focus ring and border colors  
-✅ **Error States** - Via `aria-invalid` or `.error` class  
+✅ **All Input Types** - Supports all HTML5 input types  
+✅ **Error Messages** - Built-in `ui-input-error` component  
+✅ **Focus States** - Blue focus ring with customizable colors  
+✅ **Error States** - Red border and focus ring via `showError`  
 ✅ **Disabled States** - Visual feedback for disabled inputs  
-✅ **Placeholder Styling** - Customizable placeholder color  
 ✅ **File Input Support** - Styled file selector button  
-✅ **Textarea Support** - Works with multi-line textareas  
+✅ **Textarea Support** - Via `isTextarea` property  
 ✅ **Dark Mode** - Automatic dark mode support  
-✅ **Customizable** - 12 CSS variables for full control  
+✅ **Fully Customizable** - CSS variables for all colors  
 ✅ **Standard Colors** - Supports hex, rgb, rgba, hsl  
-✅ **Accessible** - Full keyboard and screen reader support  
-✅ **No Deprecated Code** - No `::ng-deep` required
+✅ **Accessible** - Full ARIA and keyboard support  
+✅ **No Deprecated Code** - Modern, clean implementation
 
 ---
 
 ## Best Practices
 
 ✅ Always use `htmlFor` to associate labels with inputs  
-✅ Use `aria-invalid` for error states instead of custom classes when possible  
-✅ Provide helpful error messages with `aria-describedby`  
-✅ Mark required fields with `required` and `aria-required`  
-✅ Define theme variants in `app.scss` for reusability  
+✅ Use `showError` property for error styling  
+✅ Use `ui-input-error` component for error messages  
+✅ Link error messages with `ariaDescribedby`  
+✅ Mark required fields with `[required]="true"`  
 ✅ Use semantic input types (`email`, `tel`, `url`, etc.)  
 ✅ Test in both light and dark modes  
-✅ Keep inline styles minimal - prefer class-based theming  
-❌ Don't forget to add matching `id` on inputs when using labels  
-❌ Don't use `::ng-deep` (not needed, styles are global)
+✅ Define theme variants in `app.scss` for reusability  
+❌ Don't forget `id` attribute when using labels  
+❌ Don't use inline error messages without accessibility attributes
 
 ---
 
 ## Browser Support
 
-Compatible with all modern browsers that support:
-
-- CSS custom properties (CSS variables)
-- `::placeholder` pseudo-element
-- `::file-selector-button` pseudo-element
-- `@media (prefers-color-scheme: dark)`
-
-**Supported Browsers:**
+Compatible with all modern browsers:
 
 - Chrome 88+
 - Firefox 87+
 - Safari 14+
 - Edge 88+
+
+Requires support for:
+
+- CSS custom properties
+- `::placeholder` pseudo-element
+- `::file-selector-button` pseudo-element
+- `@media (prefers-color-scheme: dark)`
 
 ---
 
@@ -401,77 +563,48 @@ Compatible with all modern browsers that support:
 
 ### Input styles not applying
 
-**Problem:** The `uiInput` directive doesn't seem to work.
+**Problem:** The input doesn't have proper styling.
 
-**Solution:** Make sure you've:
+**Solution:** Ensure you've:
 
-1. Imported `InputDirective` in your component
-2. Added the directive to your component's `imports` array
-3. Used the `uiInput` attribute on the input element
+1. Imported `InputComponent` in your component
+2. Added it to the `imports` array
+3. Used the component correctly: `<ui-input>`
 
-```typescript
-import { InputDirective } from '@my-ui/input';
+### Error message color not changing
 
-@Component({
-  imports: [InputDirective]
-})
+**Problem:** Error message color doesn't change with CSS variable.
+
+**Solution:** Apply the CSS variable to the `ui-input-error` element:
+
+```html
+<ui-input-error style="--input-error-color: #ff0000;"> Error message </ui-input-error>
 ```
 
-### Custom colors not working
+Or use a class:
 
-**Problem:** CSS variables aren't changing the colors.
+```scss
+.my-error {
+  --input-error-color: #ff0000;
+}
+```
 
-**Solution:** Ensure you're using standard color formats:
+```html
+<ui-input-error class="my-error"> Error message </ui-input-error>
+```
+
+### Error styling not showing
+
+**Problem:** Red border doesn't appear when `showError` is true.
+
+**Solution:** Make sure you're setting `[showError]="true"` with square brackets:
 
 ```html
 <!-- ✅ Correct -->
-<input style="--input-border: #3b82f6" uiInput />
-<input style="--input-border: rgb(59, 130, 246)" uiInput />
-<input style="--input-border: rgba(59, 130, 246, 0.5)" uiInput />
+<ui-input [showError]="true"></ui-input>
 
 <!-- ❌ Incorrect -->
-<input style="--input-border: 217 70% 60%" uiInput />
-```
-
-### Focus ring not visible
-
-**Problem:** The focus ring doesn't appear when focusing inputs.
-
-**Solution:** Check that you haven't overridden the focus styles with `outline: none` without providing an alternative focus indicator.
-
-### File input button not styled
-
-**Problem:** The file input button doesn't have custom styling.
-
-**Solution:** Ensure you're using a browser that supports `::file-selector-button`. For older browsers, consider using a custom file upload component.
-
----
-
-## Migration from Other Libraries
-
-### From Native HTML
-
-Simply add the `uiInput` directive:
-
-```html
-<!-- Before -->
-<input type="text" />
-
-<!-- After -->
-<input type="text" uiInput />
-```
-
-### From Material Angular
-
-```html
-<!-- Before -->
-<mat-form-field>
-  <input matInput type="text" />
-</mat-form-field>
-
-<!-- After -->
-<ui-label htmlFor="input">Label</ui-label>
-<input type="text" id="input" uiInput />
+<ui-input showError="true"></ui-input>
 ```
 
 ---
@@ -486,23 +619,42 @@ Simply add the `uiInput` directive:
 
   <div class="form-field">
     <ui-label htmlFor="fullname" [required]="true">Full Name</ui-label>
-    <input type="text" id="fullname" required uiInput />
+    <ui-input
+      type="text"
+      id="fullname"
+      [showError]="nameError"
+      ariaDescribedby="fullname-error"
+    ></ui-input>
+    @if (nameError) {
+    <ui-input-error id="fullname-error"> Name must be at least 2 characters </ui-input-error>
+    }
   </div>
 
   <div class="form-field">
     <ui-label htmlFor="email" [required]="true">Email Address</ui-label>
-    <input type="email" id="email" required uiInput />
+    <ui-input
+      type="email"
+      id="email"
+      [showError]="emailError"
+      ariaDescribedby="email-error"
+    ></ui-input>
+    @if (emailError) {
+    <ui-input-error id="email-error"> Please enter a valid email address </ui-input-error>
+    }
   </div>
 
   <div class="form-field">
     <ui-label htmlFor="password" [required]="true">Password</ui-label>
-    <input type="password" id="password" required minlength="8" uiInput />
-    <span style="font-size: 12px; color: #6b7280;"> Minimum 8 characters </span>
-  </div>
-
-  <div class="form-field">
-    <ui-label htmlFor="confirm-password" [required]="true"> Confirm Password </ui-label>
-    <input type="password" id="confirm-password" required uiInput />
+    <ui-input
+      type="password"
+      id="password"
+      [minlength]="8"
+      [showError]="passwordError"
+      ariaDescribedby="password-error"
+    ></ui-input>
+    @if (passwordError) {
+    <ui-input-error id="password-error"> Password must be at least 8 characters </ui-input-error>
+    }
   </div>
 
   <button type="submit">Create Account</button>
@@ -513,15 +665,15 @@ Simply add the `uiInput` directive:
 
 ## Summary
 
-The Input component is a simple, powerful directive that enhances native HTML inputs with:
+The Input component provides:
 
-- 🎨 **12 customizable CSS variables** for complete theming control
+- 🎨 **Clean, modern design** matching shadcn/ui aesthetics
+- 🎯 **Error message component** (`ui-input-error`) for validation
 - ♿ **Full accessibility** with ARIA support
 - 🌗 **Automatic dark mode** support
-- 🎯 **Focus states** with customizable colors and rings
-- ⚠️ **Error states** for validation feedback
-- 📁 **File input** styling with custom button
-- 📝 **Textarea** support with vertical resize
+- 📝 **Textarea support** via `isTextarea` property
+- 📁 **File input** with styled button
+- 🎨 **Fully customizable** via CSS variables
 - 🚫 **No deprecated code** - modern, clean implementation
 
-Use it to create beautiful, accessible forms with minimal effort!
+Use it to create beautiful, accessible forms with built-in error handling!

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { InputDirective } from './directives/input.directive';
+import { InputComponent } from './components/input/input.component';
+import { InputErrorComponent } from './components/input-error/input-error.component';
 
 @NgModule({
-  imports: [InputDirective],
-  exports: [InputDirective]
+  imports: [InputComponent, InputErrorComponent],
+  exports: [InputComponent, InputErrorComponent]
 })
 export class UiInputModule { }

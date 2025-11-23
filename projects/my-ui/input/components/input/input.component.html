@@ -1,0 +1,40 @@
+@if (!isTextarea) {
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value || ''"
+    [disabled]="disabled"
+    [required]="required"
+    [id]="id"
+    [name]="name"
+    [attr.min]="min"
+    [attr.max]="max"
+    [attr.minlength]="minlength"
+    [attr.maxlength]="maxlength"
+    [pattern]="pattern"
+    [readonly]="readonly"
+    [attr.aria-invalid]="showError ? 'true' : null"
+    [attr.aria-describedby]="ariaDescribedby"
+    [autocomplete]="autocomplete"
+    [accept]="accept"
+    class="ui-input"
+    [class.error]="showError"
+  />
+} @else {
+  <textarea
+    [placeholder]="placeholder"
+    [value]="value || ''"
+    [disabled]="disabled"
+    [required]="required"
+    [id]="id"
+    [name]="name"
+    [attr.minlength]="minlength"
+    [attr.maxlength]="maxlength"
+    [readonly]="readonly"
+    [attr.aria-invalid]="showError ? 'true' : null"
+    [attr.aria-describedby]="ariaDescribedby"
+    [rows]="rows"
+    class="ui-input"
+    [class.error]="showError"
+  ></textarea>
+}

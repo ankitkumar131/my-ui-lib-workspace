@@ -1,0 +1,15 @@
+.ui-input-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--input-error-color, #dc2626);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  .ui-input-error {
+    color: var(--input-error-color, #f87171);
+  }
+}
