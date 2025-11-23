@@ -1,5 +1,7 @@
 export * from './accordion/public-api';
 export * from './aspect-ratio/public-api';
+export * from './accordion/public-api';
+export * from './aspect-ratio/public-api';
 export * from './button/public-api';
 export * from './alert-dialog/public-api';
 export * from './alert/public-api';
@@ -8,3 +10,4 @@ export * from './badge/public-api';
 export * from './breadcrumb/public-api';
 export * from './dropdown-menu/public-api';
 export * from './label/public-api';
+export * from './input/public-api';

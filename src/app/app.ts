@@ -50,6 +50,7 @@ import {
 } from '@my-ui/breadcrumb';
 
 import { LabelComponent } from '@my-ui/label';
+import { InputDirective } from '@my-ui/input';
 
 @Component({
   selector: 'app-root',
@@ -94,6 +95,7 @@ import { LabelComponent } from '@my-ui/label';
     BreadcrumbSeparatorComponent,
     BreadcrumbEllipsisComponent,
     LabelComponent,
+    InputDirective,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

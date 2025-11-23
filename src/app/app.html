@@ -33,6 +33,9 @@
       <li class="toc-item">
         <a href="#label-demo" class="toc-link">Label</a>
       </li>
+      <li class="toc-item">
+        <a href="#input-demo" class="toc-link">Input</a>
+      </li>
     </ul>
   </nav>
 
@@ -1341,6 +1344,205 @@
               class="form-input"
             />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Input Section -->
+  <section id="input-demo" class="mt-8">
+    <h1>Input Demo</h1>
+
+    <div class="grid grid-cols-1 gap-6 mt-4">
+      <!-- Basic Text Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Basic Text Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Simple text input with placeholder.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="text-input">Full Name</ui-label>
+          <input
+            type="text"
+            id="text-input"
+            placeholder="Enter your name"
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- Email Input with Label -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Email Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Email input with proper type and validation.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="email-input" [required]="true">Email Address</ui-label>
+          <input
+            type="email"
+            id="email-input"
+            placeholder="you@example.com"
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Password Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Password input with masked characters.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="password-input" [required]="true">Password</ui-label>
+          <input
+            type="password"
+            id="password-input"
+            placeholder="Enter password"
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- Number Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Number Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Number input with step controls.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="number-input">Quantity</ui-label>
+          <input
+            type="number"
+            id="number-input"
+            placeholder="0"
+            min="0"
+            max="100"
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- File Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">File Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          File input with styled file selector button.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="file-input">Upload File</ui-label>
+          <input
+            type="file"
+            id="file-input"
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- Disabled Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Disabled Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Input in disabled state with visual feedback.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="disabled-input" aria-disabled="true">Disabled Field</ui-label>
+          <input
+            type="text"
+            id="disabled-input"
+            value="Cannot edit this"
+            disabled
+            uiInput
+          />
+        </div>
+      </div>
+
+      <!-- Error State Input -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Error State Input</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Input with error validation using aria-invalid attribute.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="error-input" [required]="true">Email (Invalid)</ui-label>
+          <input
+            type="email"
+            id="error-input"
+            value="invalid-email"
+            aria-invalid="true"
+            uiInput
+          />
+          <span style="color: #dc2626; font-size: 12px; margin-top: 4px;">
+            Please enter a valid email address
+          </span>
+        </div>
+      </div>
+
+      <!-- Custom Styled Inputs -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Styled Inputs</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Inputs with custom colors using CSS variables.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px">
+          <div class="form-field">
+            <ui-label htmlFor="custom-blue">Custom Blue Focus</ui-label>
+            <input
+              type="text"
+              id="custom-blue"
+              placeholder="Focus to see blue ring"
+              style="--input-focus-border: #2196f3; --input-focus-ring: rgba(33, 150, 243, 0.2)"
+              uiInput
+            />
+          </div>
+
+          <div class="form-field">
+            <ui-label htmlFor="custom-green">Custom Green Theme</ui-label>
+            <input
+              type="text"
+              id="custom-green"
+              placeholder="Green themed input"
+              style="
+                --input-border: #22c55e;
+                --input-focus-border: #16a34a;
+                --input-focus-ring: rgba(34, 197, 94, 0.2)
+              "
+              uiInput
+            />
+          </div>
+
+          <div class="form-field">
+            <ui-label htmlFor="custom-orange">Custom Orange Theme</ui-label>
+            <input
+              type="text"
+              id="custom-orange"
+              placeholder="Orange themed input"
+              style="
+                --input-border: rgb(251, 146, 60);
+                --input-focus-border: rgb(249, 115, 22);
+                --input-focus-ring: rgba(251, 146, 60, 0.2)
+              "
+              uiInput
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Textarea</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Multi-line textarea with uiInput directive.
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="textarea-input">Message</ui-label>
+          <textarea
+            id="textarea-input"
+            placeholder="Enter your message..."
+            rows="4"
+            uiInput
+          ></textarea>
         </div>
       </div>
     </div>
