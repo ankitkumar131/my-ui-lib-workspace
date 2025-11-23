@@ -48,6 +48,9 @@
       ],
       "@my-ui/input": [
         "projects/my-ui/input/index.ts"
+      ],
+      "@my-ui/select": [
+        "projects/my-ui/select/index.ts"
       ]
     }
   },

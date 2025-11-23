@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  position: relative;
+}
+
+.ui-select-wrapper {
+  display: contents; // Makes wrapper transparent in layout
+  // CSS variables from :host automatically inherit to this wrapper
+  // and then to all child components
+}

@@ -11,3 +11,4 @@ export * from './breadcrumb/public-api';
 export * from './dropdown-menu/public-api';
 export * from './label/public-api';
 export * from './input/public-api';
+export * from './select/public-api';

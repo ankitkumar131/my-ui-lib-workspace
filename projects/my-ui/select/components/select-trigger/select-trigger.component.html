@@ -1,0 +1,9 @@
+<button 
+  type="button"
+  role="combobox"
+  [attr.aria-expanded]="selectService.isOpen()"
+  tabindex="0"
+  class="ui-select-trigger">
+  <ng-content></ng-content>
+  <span class="ui-select-icon">▼</span>
+</button>
