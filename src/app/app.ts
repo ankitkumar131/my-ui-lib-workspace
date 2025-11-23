@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
 import {
   Accordion,
   AccordionContent,
@@ -38,7 +37,6 @@ import {
   DropdownMenuGroupComponent,
   DropdownMenuShortcutComponent,
 } from '@my-ui/dropdown-menu';
-
 import {
   BreadcrumbComponent,
   BreadcrumbListComponent,
@@ -48,13 +46,12 @@ import {
   BreadcrumbSeparatorComponent,
   BreadcrumbEllipsisComponent,
 } from '@my-ui/breadcrumb';
-
 import { LabelComponent } from '@my-ui/label';
+import { InputComponent, InputErrorComponent } from '@my-ui/input';
 
 @Component({
   selector: 'app-root',
   imports: [
-    // RouterOutlet,
     Accordion,
     AccordionContent,
     AccordionItem,
@@ -94,6 +91,8 @@ import { LabelComponent } from '@my-ui/label';
     BreadcrumbSeparatorComponent,
     BreadcrumbEllipsisComponent,
     LabelComponent,
+    InputComponent,
+    InputErrorComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

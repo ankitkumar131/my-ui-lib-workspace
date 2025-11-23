@@ -1,0 +1,93 @@
+.ui-input {
+  display: flex;
+  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--input-border, #e5e7eb);
+  background-color: var(--input-background, #ffffff);
+  color: var(--input-foreground, #09090b);
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  
+  &::placeholder {
+    color: var(--input-placeholder, #9ca3af);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--input-focus-border, #2196f3);
+    box-shadow: 0 0 0 3px var(--input-focus-ring, rgba(33, 150, 243, 0.1));
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: var(--input-disabled-bg, #f5f5f5);
+    color: var(--input-disabled-text, #a1a1aa);
+  }
+  
+  &[type="file"] {
+    padding: 6px;
+    cursor: pointer;
+    
+    &::file-selector-button {
+      margin-right: 8px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--input-border, #e5e7eb);
+      background-color: var(--input-file-button-bg, #f9fafb);
+      color: var(--input-foreground, #09090b);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      
+      &:hover {
+        background-color: var(--input-file-button-hover, #f3f4f6);
+      }
+    }
+  }
+  
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--input-background, #18181b);
+    border-color: var(--input-border, #27272a);
+    color: var(--input-foreground, #fafafa);
+    
+    &::placeholder {
+      color: var(--input-placeholder, #71717a);
+    }
+    
+    &:disabled {
+      background-color: var(--input-disabled-bg, #09090b);
+      color: var(--input-disabled-text, #52525b);
+    }
+    
+    &[type="file"]::file-selector-button {
+      background-color: var(--input-file-button-bg, #27272a);
+      border-color: var(--input-border, #3f3f46);
+      
+      &:hover {
+        background-color: var(--input-file-button-hover, #3f3f46);
+      }
+    }
+  }
+}
+
+// Error state
+.ui-input.error,
+.ui-input[aria-invalid="true"] {
+  border-color: var(--input-error-border, #dc2626);
+  
+  &:focus {
+    border-color: var(--input-error-border, #dc2626);
+    box-shadow: 0 0 0 3px var(--input-error-ring, rgba(220, 38, 38, 0.1));
+  }
+}
+
+// Textarea specific
+textarea.ui-input {
+  min-height: 80px;
+  resize: vertical;
+}

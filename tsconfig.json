@@ -45,6 +45,9 @@
       ],
       "@my-ui/label": [
         "projects/my-ui/label/index.ts"
+      ],
+      "@my-ui/input": [
+        "projects/my-ui/input/index.ts"
       ]
     }
   },
