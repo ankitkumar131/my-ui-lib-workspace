@@ -1,0 +1,65 @@
+:host {
+  display: contents;
+}
+
+.ui-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--select-trigger-width, 100%);
+  min-width: var(--select-trigger-min-width, 180px);
+  max-width: var(--select-trigger-max-width, none);
+  height: var(--select-trigger-height, 36px);
+  padding: var(--select-trigger-padding, 0 12px);
+  border-radius: var(--select-trigger-border-radius, 6px);
+  border: 1px solid var(--select-trigger-border-color, #e5e7eb);
+  background-color: var(--select-trigger-bg, #ffffff);
+  color: var(--select-trigger-color, #09090b);
+  font-size: var(--select-trigger-font-size, 14px);
+  font-weight: var(--select-trigger-font-weight, 400);
+  cursor: pointer;
+  transition: var(--select-trigger-transition, border-color 0.2s, box-shadow 0.2s);
+  
+  &:hover:not(:disabled) {
+    border-color: var(--select-trigger-hover-border-color, #d1d5db);
+    background-color: var(--select-trigger-hover-bg, #ffffff);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--select-trigger-focus-border-color, #2196f3);
+    box-shadow: var(--select-trigger-focus-shadow, 0 0 0 3px rgba(33, 150, 243, 0.1));
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--select-trigger-disabled-opacity, 0.6);
+    background-color: var(--select-trigger-disabled-bg, #f5f5f5);
+  }
+  
+  .ui-select-icon {
+    margin-left: var(--select-icon-margin, 8px);
+    font-size: var(--select-icon-size, 12px);
+    color: var(--select-icon-color, inherit);
+    transition: var(--select-icon-transition, transform 0.2s);
+  }
+  
+  &[aria-expanded="true"] .ui-select-icon {
+    transform: var(--select-icon-open-transform, rotate(180deg));
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--select-trigger-bg, #18181b);
+    border-color: var(--select-trigger-border-color, #27272a);
+    color: var(--select-trigger-color, #fafafa);
+    
+    &:hover:not(:disabled) {
+      border-color: var(--select-trigger-hover-border-color, #3f3f46);
+      background-color: var(--select-trigger-hover-bg, #18181b);
+    }
+    
+    &:disabled {
+      background-color: var(--select-trigger-disabled-bg, #09090b);
+    }
+  }
+}

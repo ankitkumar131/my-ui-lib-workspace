@@ -1,0 +1,64 @@
+:host {
+  display: block;
+}
+
+.ui-select-content {
+  min-width: var(--select-content-min-width, 180px);
+  max-width: var(--select-content-max-width, 400px);
+  max-height: var(--select-content-max-height, 300px);
+  overflow-y: auto;
+  padding: var(--select-content-padding, 4px);
+  border-radius: var(--select-content-border-radius, 6px);
+  border: 1px solid var(--select-content-border-color, #e5e7eb);
+  background-color: var(--select-content-bg, #ffffff);
+  box-shadow: var(--select-content-shadow, 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05));
+  
+  /* Custom Scrollbar */
+  &::-webkit-scrollbar {
+    width: var(--select-scrollbar-width, 8px);
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--select-scrollbar-track-bg, #f1f1f1);
+    border-radius: var(--select-scrollbar-border-radius, 4px);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--select-scrollbar-thumb-bg, #888);
+    border-radius: var(--select-scrollbar-border-radius, 4px);
+    
+    &:hover {
+      background: var(--select-scrollbar-thumb-hover-bg, #555);
+    }
+  }
+  
+  /* Firefox Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--select-scrollbar-thumb-bg, #888) 
+                   var(--select-scrollbar-track-bg, #f1f1f1);
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--select-content-bg, #18181b);
+    border-color: var(--select-content-border-color, #27272a);
+    box-shadow: var(--select-content-shadow,
+      0 10px 15px -3px rgba(0, 0, 0, 0.3),
+      0 4px 6px -2px rgba(0, 0, 0, 0.2));
+    
+    &::-webkit-scrollbar-track {
+      background: var(--select-scrollbar-track-bg, #27272a);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--select-scrollbar-thumb-bg, #52525b);
+      
+      &:hover {
+        background: var(--select-scrollbar-thumb-hover-bg, #71717a);
+      }
+    }
+    
+    scrollbar-color: var(--select-scrollbar-thumb-bg, #52525b) 
+                     var(--select-scrollbar-track-bg, #27272a);
+  }
+}

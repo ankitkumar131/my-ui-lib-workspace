@@ -1,0 +1,12 @@
+<div 
+  role="option"
+  [attr.aria-selected]="isSelected()"
+  [attr.tabindex]="disabled ? -1 : 0"
+  [class.selected]="isSelected()"
+  [class.disabled]="disabled"
+  class="ui-select-item">
+  <ng-content></ng-content>
+  @if (isSelected()) {
+    <span class="ui-select-item-indicator">✓</span>
+  }
+</div>

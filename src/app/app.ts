@@ -48,6 +48,16 @@ import {
 } from '@my-ui/breadcrumb';
 import { LabelComponent } from '@my-ui/label';
 import { InputComponent, InputErrorComponent } from '@my-ui/input';
+import {
+  SelectComponent,
+  SelectTriggerComponent,
+  SelectValueComponent,
+  SelectContentComponent,
+  SelectItemComponent,
+  SelectGroupComponent,
+  SelectLabelComponent,
+  SelectSeparatorComponent
+} from '@my-ui/select';
 
 @Component({
   selector: 'app-root',
@@ -93,6 +103,14 @@ import { InputComponent, InputErrorComponent } from '@my-ui/input';
     LabelComponent,
     InputComponent,
     InputErrorComponent,
+    SelectComponent,
+    SelectTriggerComponent,
+    SelectValueComponent,
+    SelectContentComponent,
+    SelectItemComponent,
+    SelectGroupComponent,
+    SelectLabelComponent,
+    SelectSeparatorComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

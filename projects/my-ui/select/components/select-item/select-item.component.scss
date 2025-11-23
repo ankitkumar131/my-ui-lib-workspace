@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.ui-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--select-item-padding, 8px 12px);
+  border-radius: var(--select-item-border-radius, 4px);
+  font-size: var(--select-item-font-size, 14px);
+  font-weight: var(--select-item-font-weight, 400);
+  cursor: pointer;
+  transition: var(--select-item-transition, background-color 0.2s);
+  outline: none;
+  
+  &:hover:not(.disabled) {
+    background-color: var(--select-item-hover-bg, #f9fafb);
+  }
+  
+  &.selected {
+    background-color: var(--select-item-selected-bg, #eff6ff);
+    color: var(--select-item-selected-color, #2196f3);
+    font-weight: var(--select-item-selected-font-weight, 500);
+  }
+  
+  &.disabled {
+    opacity: var(--select-item-disabled-opacity, 0.5);
+    cursor: not-allowed;
+  }
+
+  .ui-select-item-indicator {
+    margin-left: var(--select-indicator-margin, 8px);
+    font-size: var(--select-indicator-size, 16px);
+    font-weight: var(--select-indicator-font-weight, bold);
+    color: var(--select-indicator-color, inherit);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    &:hover:not(.disabled) {
+      background-color: var(--select-item-hover-bg, #27272a);
+    }
+    
+    &.selected {
+      background-color: var(--select-item-selected-bg, #1e3a8a);
+      color: var(--select-item-selected-color, #60a5fa);
+    }
+  }
+}

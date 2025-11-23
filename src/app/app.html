@@ -36,6 +36,9 @@
       <li class="toc-item">
         <a href="#input-demo" class="toc-link">Input</a>
       </li>
+      <li class="toc-item">
+        <a href="#select-demo" class="toc-link">Select</a>
+      </li>
     </ul>
   </nav>
 
@@ -639,8 +642,6 @@
     </section>
   </section>
 
-  
-
   <!-- Dropdown Menu Section -->
   <section id="dropdown-menu-demo">
     <h1>Dropdown Menu Demo</h1>
@@ -1015,7 +1016,6 @@
     </section>
   </section>
 
-
   <!-- Breadcrumb Section -->
   <section id="breadcrumb-demo" class="mt-8">
     <h1>Breadcrumb Demo</h1>
@@ -1164,17 +1164,12 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="basic-input">Email Address</ui-label>
-          <input
-            type="email"
-            id="basic-input"
-            placeholder="Enter your email"
-            class="form-input"
-          />
+          <input type="email" id="basic-input" placeholder="Enter your email" class="form-input" />
         </div>
       </div>
 
       <!-- Multiple Form Fields -->
-      <div >
+      <div>
         <h2 class="text-lg font-semibold mb-2">Contact Form Example</h2>
         <p class="text-sm text-muted-foreground mb-3">
           Multiple labels in a form with different input types.
@@ -1239,15 +1234,8 @@
           Label with automatic asterisk using [required]="true" attribute.
         </p>
         <div class="form-field">
-          <ui-label htmlFor="required-input" [required]="true">
-            Email Address
-          </ui-label>
-          <input
-            type="email"
-            id="required-input"
-            required
-            class="form-input"
-          />
+          <ui-label htmlFor="required-input" [required]="true"> Email Address </ui-label>
+          <input type="email" id="required-input" required class="form-input" />
         </div>
       </div>
 
@@ -1258,9 +1246,7 @@
           Label automatically styles when associated input is disabled.
         </p>
         <div style="display: flex; flex-direction: column; gap: 6px; max-width: 400px">
-          <ui-label htmlFor="disabled-input" aria-disabled="true">
-            Disabled Field
-          </ui-label>
+          <ui-label htmlFor="disabled-input" aria-disabled="true"> Disabled Field </ui-label>
           <input
             type="text"
             id="disabled-input"
@@ -1293,56 +1279,28 @@
             >
               Primary Label (Blue, default "*")
             </ui-label>
-            <input
-              type="text"
-              id="primary-input"
-              class="form-input"
-            />
+            <input type="text" id="primary-input" class="form-input" />
           </div>
 
           <div class="form-field">
-            <ui-label
-              htmlFor="custom-symbol"
-              [required]="true"
-              class="custom-required-symbol"
-            >
+            <ui-label htmlFor="custom-symbol" [required]="true" class="custom-required-symbol">
               Custom Symbol "!" (Orange)
             </ui-label>
-            <input
-              type="text"
-              id="custom-symbol"
-              class="form-input"
-            />
+            <input type="text" id="custom-symbol" class="form-input" />
           </div>
 
           <div class="form-field">
-            <ui-label
-              htmlFor="custom-color"
-              [required]="true"
-              class="custom-required-color"
-            >
+            <ui-label htmlFor="custom-color" [required]="true" class="custom-required-color">
               Custom Color (Blue "*")
             </ui-label>
-            <input
-              type="text"
-              id="custom-color"
-              class="form-input"
-            />
+            <input type="text" id="custom-color" class="form-input" />
           </div>
 
           <div class="form-field">
-            <ui-label
-              htmlFor="checkmark"
-              [required]="true"
-              class="custom-required-both"
-            >
+            <ui-label htmlFor="checkmark" [required]="true" class="custom-required-both">
               Custom Symbol & Color (Green "✓")
             </ui-label>
-            <input
-              type="text"
-              id="checkmark"
-              class="form-input"
-            />
+            <input type="text" id="checkmark" class="form-input" />
           </div>
         </div>
       </div>
@@ -1357,16 +1315,10 @@
       <!-- Basic Text Input -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Basic Text Input</h2>
-        <p class="text-sm text-muted-foreground mb-3">
-          Simple text input with placeholder.
-        </p>
+        <p class="text-sm text-muted-foreground mb-3">Simple text input with placeholder.</p>
         <div class="form-field">
           <ui-label htmlFor="text-input">Full Name</ui-label>
-          <ui-input
-            type="text"
-            id="text-input"
-            placeholder="Enter your name"
-          ></ui-input>
+          <ui-input type="text" id="text-input" placeholder="Enter your name"></ui-input>
         </div>
       </div>
 
@@ -1378,45 +1330,27 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="email-input" [required]="true">Email Address</ui-label>
-          <ui-input
-            type="email"
-            id="email-input"
-            placeholder="you@example.com"
-          ></ui-input>
+          <ui-input type="email" id="email-input" placeholder="you@example.com"></ui-input>
         </div>
       </div>
 
       <!-- Password Input -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Password Input</h2>
-        <p class="text-sm text-muted-foreground mb-3">
-          Password input with masked characters.
-        </p>
+        <p class="text-sm text-muted-foreground mb-3">Password input with masked characters.</p>
         <div class="form-field">
           <ui-label htmlFor="password-input" [required]="true">Password</ui-label>
-          <ui-input
-            type="password"
-            id="password-input"
-            placeholder="Enter password"
-          ></ui-input>
+          <ui-input type="password" id="password-input" placeholder="Enter password"></ui-input>
         </div>
       </div>
 
       <!-- Number Input -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Number Input</h2>
-        <p class="text-sm text-muted-foreground mb-3">
-          Number input with step controls.
-        </p>
+        <p class="text-sm text-muted-foreground mb-3">Number input with step controls.</p>
         <div class="form-field">
           <ui-label htmlFor="number-input">Quantity</ui-label>
-          <ui-input
-            type="number"
-            id="number-input"
-            placeholder="0"
-            min="0"
-            max="100"
-          ></ui-input>
+          <ui-input type="number" id="number-input" placeholder="0" min="0" max="100"></ui-input>
         </div>
       </div>
 
@@ -1428,10 +1362,7 @@
         </p>
         <div class="form-field">
           <ui-label htmlFor="file-input">Upload File</ui-label>
-          <ui-input
-            type="file"
-            id="file-input"
-          ></ui-input>
+          <ui-input type="file" id="file-input"></ui-input>
         </div>
       </div>
 
@@ -1463,13 +1394,10 @@
           <ui-input
             type="email"
             id="error-input"
-            
             [showError]="true"
             ariaDescribedby="error-input-message"
           ></ui-input>
-          <ui-input-error class="kk">
-            Please enter a valid email address
-          </ui-input-error>
+          <ui-input-error class="kk"> Please enter a valid email address </ui-input-error>
         </div>
       </div>
 
@@ -1499,7 +1427,7 @@
               style="
                 --input-border: #22c55e;
                 --input-focus-border: #16a34a;
-                --input-focus-ring: rgba(34, 197, 94, 0.2)
+                --input-focus-ring: rgba(34, 197, 94, 0.2);
               "
             ></ui-input>
           </div>
@@ -1513,7 +1441,7 @@
               style="
                 --input-border: rgb(251, 146, 60);
                 --input-focus-border: rgb(249, 115, 22);
-                --input-focus-ring: rgba(251, 146, 60, 0.2)
+                --input-focus-ring: rgba(251, 146, 60, 0.2);
               "
             ></ui-input>
           </div>
@@ -1533,7 +1461,6 @@
             placeholder="Enter your message..."
             [rows]="5"
             [isTextarea]="true"
-            
           ></ui-input>
         </div>
       </div>
@@ -1557,4 +1484,293 @@
       </div>
     </div>
   </section>
+
+  <!-- Select Section -->
+  <section id="select-demo" class="mt-8">
+    <h1>Select Demo</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <!-- Basic Select -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Basic Select</h2>
+        <p class="text-sm text-muted-foreground mb-3">Simple select with a few options.</p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select a fruit"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="apple">Apple</ui-select-item>
+            <ui-select-item value="banana">Banana</ui-select-item>
+            <ui-select-item value="orange">Orange</ui-select-item>
+            <ui-select-item value="grape">Grape</ui-select-item>
+            <ui-select-item value="pineapple">Pineapple</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Theme Selection -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Theme Selection</h2>
+        <p class="text-sm text-muted-foreground mb-3">Select with theme-related options.</p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select theme"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="light">Light</ui-select-item>
+            <ui-select-item value="dark">Dark</ui-select-item>
+            <ui-select-item value="es">Spanish</ui-select-item>
+            <ui-select-item value="fr">French</ui-select-item>
+            <ui-select-item value="de">German</ui-select-item>
+            <ui-select-item value="it">Italian</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Grouped Select (Timezones) -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Grouped Select</h2>
+        <p class="text-sm text-muted-foreground mb-3">Select with grouped options and labels.</p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select a timezone"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-group>
+              <ui-select-label>North America</ui-select-label>
+              <ui-select-item value="est">Eastern Standard Time (EST)</ui-select-item>
+              <ui-select-item value="cst">Central Standard Time (CST)</ui-select-item>
+              <ui-select-item value="mst">Mountain Standard Time (MST)</ui-select-item>
+              <ui-select-item value="pst">Pacific Standard Time (PST)</ui-select-item>
+            </ui-select-group>
+
+            <ui-select-separator></ui-select-separator>
+
+            <ui-select-group>
+              <ui-select-label>Europe</ui-select-label>
+              <ui-select-item value="gmt">Greenwich Mean Time (GMT)</ui-select-item>
+              <ui-select-item value="cet">Central European Time (CET)</ui-select-item>
+              <ui-select-item value="eet">Eastern European Time (EET)</ui-select-item>
+            </ui-select-group>
+
+            <ui-select-separator></ui-select-separator>
+
+            <ui-select-group>
+              <ui-select-label>Asia</ui-select-label>
+              <ui-select-item value="ist">India Standard Time (IST)</ui-select-item>
+              <ui-select-item value="jst">Japan Standard Time (JST)</ui-select-item>
+              <ui-select-item value="kst">Korea Standard Time (KST)</ui-select-item>
+            </ui-select-group>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Scrollable with Many Options -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Scrollable Select</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Select with many options that scroll automatically.
+        </p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select a country"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="us">United States</ui-select-item>
+            <ui-select-item value="uk">United Kingdom</ui-select-item>
+            <ui-select-item value="ca">Canada</ui-select-item>
+            <ui-select-item value="au">Australia</ui-select-item>
+            <ui-select-item value="de">Germany</ui-select-item>
+            <ui-select-item value="fr">France</ui-select-item>
+            <ui-select-item value="it">Italy</ui-select-item>
+            <ui-select-item value="es">Spain</ui-select-item>
+            <ui-select-item value="jp">Japan</ui-select-item>
+            <ui-select-item value="cn">China</ui-select-item>
+            <ui-select-item value="in">India</ui-select-item>
+            <ui-select-item value="br">Brazil</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- With Disabled Item -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Disabled Item</h2>
+        <p class="text-sm text-muted-foreground mb-3">Select with one disabled option.</p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select option"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="option1">Option 1</ui-select-item>
+            <ui-select-item value="option2" [disabled]="true"> Option 2 (Disabled) </ui-select-item>
+            <ui-select-item value="option3">Option 3</ui-select-item>
+            <ui-select-item value="option4">Option 4</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Size/Priority Options -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Priority Select</h2>
+        <p class="text-sm text-muted-foreground mb-3">Select for priority levels.</p>
+        <ui-select>
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select priority"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="low">Low Priority</ui-select-item>
+            <ui-select-item value="medium">Medium Priority</ui-select-item>
+            <ui-select-item value="high">High Priority</ui-select-item>
+            <ui-select-item value="urgent">Urgent</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Custom Styled - Green Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Green Theme</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Customized with CSS variables for green color scheme.
+        </p>
+        <ui-select
+          style="
+            --select-trigger-border-color: #10b981;
+            --select-trigger-focus-border-color: #059669;
+            --select-trigger-focus-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            --select-item-selected-bg: #d1fae5;
+            --select-item-selected-color: #059669;
+            --select-item-hover-bg: #ecfdf5;
+          "
+        >
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select status"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="active">Active</ui-select-item>
+            <ui-select-item value="pending">Pending</ui-select-item>
+            <ui-select-item value="completed">Completed</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Custom Styled - Purple Theme with Large Size -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Large Purple Theme</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Larger size with purple colors and custom icon.
+        </p>
+        <ui-select
+          style="
+            --select-trigger-height: 48px;
+            --select-trigger-font-size: 16px;
+            --select-trigger-border-color: #8b5cf6;
+            --select-trigger-focus-border-color: #7c3aed;
+            --select-trigger-focus-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            --select-item-selected-bg: #ede9fe;
+            --select-item-selected-color: #7c3aed;
+            --select-item-hover-bg: #f5f3ff;
+            --select-item-padding: 12px 16px;
+            --select-item-font-size: 16px;
+            --select-icon-size: 14px;
+          "
+        >
+          <ui-select-trigger>
+            <ui-select-value placeholder="Choose category"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="design">Design</ui-select-item>
+            <ui-select-item value="development">Development</ui-select-item>
+            <ui-select-item value="marketing">Marketing</ui-select-item>
+            <ui-select-item value="sales">Sales</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Custom Width -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Width</h2>
+        <p class="text-sm text-muted-foreground mb-3">Extra wide select with custom dimensions.</p>
+        <ui-select style="--select-trigger-min-width: 300px; --select-content-min-width: 300px">
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select a long option"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="opt1">This is a very long option name</ui-select-item>
+            <ui-select-item value="opt2">Another lengthy option description</ui-select-item>
+            <ui-select-item value="opt3">Extended option with more text</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Custom Scrollbar -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Scrollbar</h2>
+        <p class="text-sm text-muted-foreground mb-3">Custom scrollbar colors and size.</p>
+        <ui-select
+          style="
+            --select-scrollbar-width: 12px;
+            --select-scrollbar-track-bg: #fef3c7;
+            --select-scrollbar-thumb-bg: #f59e0b;
+            --select-scrollbar-thumb-hover-bg: #d97706;
+          "
+        >
+          <ui-select-trigger>
+            <ui-select-value placeholder="Select number"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="1">Option 1</ui-select-item>
+            <ui-select-item value="2">Option 2</ui-select-item>
+            <ui-select-item value="3">Option 3</ui-select-item>
+            <ui-select-item value="4">Option 4</ui-select-item>
+            <ui-select-item value="5">Option 5</ui-select-item>
+            <ui-select-item value="6">Option 6</ui-select-item>
+            <ui-select-item value="7">Option 7</ui-select-item>
+            <ui-select-item value="8">Option 8</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+
+      <!-- Compact Size -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Compact Size</h2>
+        <p class="text-sm text-muted-foreground mb-3">Smaller, compact select for tight spaces.</p>
+        <ui-select
+          style="
+            --select-trigger-height: 28px;
+            --select-trigger-font-size: 12px;
+            --select-trigger-padding: 0 8px;
+            --select-item-padding: 6px 8px;
+            --select-item-font-size: 12px;
+            --select-icon-size: 10px;
+          "
+        >
+          <ui-select-trigger>
+            <ui-select-value placeholder="Size"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="xs">Extra Small</ui-select-item>
+            <ui-select-item value="s">Small</ui-select-item>
+            <ui-select-item value="m">Medium</ui-select-item>
+            <ui-select-item value="l">Large</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Colors</h2>
+        <p class="text-sm text-muted-foreground mb-3">Custom colors for select trigger and items.</p>
+        <ui-select class="ll">
+          <ui-select-trigger>
+            <ui-select-value placeholder="Size"></ui-select-value>
+          </ui-select-trigger>
+          <ui-select-content>
+            <ui-select-item value="xs">Extra Small</ui-select-item>
+            <ui-select-item value="s">Small</ui-select-item>
+            <ui-select-item value="m">Medium</ui-select-item>
+            <ui-select-item value="l">Large</ui-select-item>
+          </ui-select-content>
+        </ui-select>
+      </div>
+    </div>
+  </section>
 </div>
+
