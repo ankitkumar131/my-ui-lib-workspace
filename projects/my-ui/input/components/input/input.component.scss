@@ -79,6 +79,11 @@ textarea.ui-input {
   height: auto;
 }
 
+// Non-expandable textarea (no resize handle)
+textarea.ui-input:not([data-expandable]) {
+  resize: none;
+}
+
 // Dark mode
 @media (prefers-color-scheme: dark) {
   input.ui-input,

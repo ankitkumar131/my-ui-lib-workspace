@@ -34,6 +34,7 @@
     [attr.aria-invalid]="showError ? 'true' : null"
     [attr.aria-describedby]="ariaDescribedby"
     [rows]="rows"
+    [attr.data-expandable]="isExpandable ? '' : null"
     class="ui-input"
     [class.error]="showError"
   ></textarea>

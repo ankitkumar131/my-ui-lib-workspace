@@ -1531,8 +1531,27 @@
           <ui-input
             id="textarea-input"
             placeholder="Enter your message..."
+            [rows]="5"
+            [isTextarea]="true"
+            
+          ></ui-input>
+        </div>
+      </div>
+
+      <!-- Non-Expandable Textarea -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Non-Expandable Textarea</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Textarea with resize handle disabled using [isExpandable]="false".
+        </p>
+        <div class="form-field">
+          <ui-label htmlFor="non-expandable-textarea">Fixed Size Message</ui-label>
+          <ui-input
+            id="non-expandable-textarea"
+            placeholder="This textarea cannot be resized..."
             [rows]="4"
             [isTextarea]="true"
+            [isExpandable]="false"
           ></ui-input>
         </div>
       </div>

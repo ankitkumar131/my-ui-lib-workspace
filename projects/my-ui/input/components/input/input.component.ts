@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation, booleanAttribute } from '@angular/core';
 
 @Component({
   selector: 'ui-input',
@@ -28,4 +28,5 @@ export class InputComponent {
   @Input() accept?: string;
   @Input() rows?: number = 4;
   @Input() isTextarea?: boolean = false;
+  @Input({ transform: booleanAttribute }) isExpandable?: boolean = true;
 }

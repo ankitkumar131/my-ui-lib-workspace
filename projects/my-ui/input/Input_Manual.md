@@ -29,9 +29,9 @@ import { LabelComponent } from '@my-ui/label';
   imports: [
     LabelComponent,
     InputComponent,
-    InputErrorComponent  // Required to use ui-input-error
+    InputErrorComponent, // Required to use ui-input-error
   ],
-  templateUrl: './my-form.component.html'
+  templateUrl: './my-form.component.html',
 })
 export class MyFormComponent {
   // Component logic
@@ -99,6 +99,21 @@ Companion component for displaying error messages below inputs.
   [isTextarea]="true"
   [rows]="4"
   placeholder="Enter your message..."
+></ui-input>
+```
+
+### Non-Expandable Textarea
+
+Disable the resize handle by setting `[isExpandable]="false"`:
+
+```html
+<ui-label htmlFor="fixed-message">Fixed Size Message</ui-label>
+<ui-input
+  id="fixed-message"
+  [isTextarea]="true"
+  [rows]="4"
+  [isExpandable]="false"
+  placeholder="This textarea cannot be resized..."
 ></ui-input>
 ```
 
@@ -170,6 +185,7 @@ Use `ui-input-error` to display validation errors:
 | `accept`          | `string`           | -        | Accepted file types (for file inputs)                  |
 | `rows`            | `number`           | `4`      | Number of rows (for textarea)                          |
 | `isTextarea`      | `boolean`          | `false`  | Render as textarea instead of input                    |
+| `isExpandable`    | `boolean`          | `true`   | Allow textarea to be resizable (show resize handle)    |
 
 **Supported Input Types:**
 
@@ -518,6 +534,7 @@ Mark required fields properly:
 ✅ **Disabled States** - Visual feedback for disabled inputs  
 ✅ **File Input Support** - Styled file selector button  
 ✅ **Textarea Support** - Via `isTextarea` property  
+✅ **Textarea Resize Control** - Control resize handle with `isExpandable`  
 ✅ **Dark Mode** - Automatic dark mode support  
 ✅ **Fully Customizable** - CSS variables for all colors  
 ✅ **Standard Colors** - Supports hex, rgb, rgba, hsl  
