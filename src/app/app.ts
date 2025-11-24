@@ -58,6 +58,11 @@ import {
   SelectLabelComponent,
   SelectSeparatorComponent
 } from '@my-ui/select';
+import {
+  PopoverComponent,
+  PopoverTriggerDirective,
+  PopoverContentComponent
+} from '@my-ui/popover';
 
 @Component({
   selector: 'app-root',
@@ -110,7 +115,10 @@ import {
     SelectItemComponent,
     SelectGroupComponent,
     SelectLabelComponent,
-    SelectSeparatorComponent
+    SelectSeparatorComponent,
+    PopoverComponent,
+    PopoverTriggerDirective,
+    PopoverContentComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
