@@ -1760,7 +1760,9 @@
       </div>
       <div>
         <h2 class="text-lg font-semibold mb-2">Custom Colors</h2>
-        <p class="text-sm text-muted-foreground mb-3">Custom colors for select trigger and items.</p>
+        <p class="text-sm text-muted-foreground mb-3">
+          Custom colors for select trigger and items.
+        </p>
         <ui-select class="ll">
           <ui-select-trigger>
             <ui-select-value placeholder="Size"></ui-select-value>
@@ -1787,9 +1789,11 @@
         <ui-popover>
           <ui-button uiPopoverTrigger>Open Popover</ui-button>
           <ui-popover-content>
-            <div style="padding: 8px;">
-              <p style="font-weight: 600; margin-bottom: 8px;">Popover Title</p>
-              <p style="font-size: 14px; color: #6b7280;">This is a basic popover with some content.</p>
+            <div style="padding: 8px">
+              <p style="font-weight: 600; margin-bottom: 8px">Popover Title</p>
+              <p style="font-size: 14px; color: #6b7280">
+                This is a basic popover with some content.
+              </p>
             </div>
           </ui-popover-content>
         </ui-popover>
@@ -1801,15 +1805,23 @@
         <p class="text-sm text-muted-foreground mb-6">
           Click each button to see the popover in different positions.
         </p>
-        
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 32px;">
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-top: 32px;
+          "
+        >
           <!-- Top Row -->
-          <div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 8px">
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">TL</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">TL</ui-button>
               <ui-popover-content side="top" align="start">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1817,10 +1829,10 @@
             </ui-popover>
 
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">Top</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">Top</ui-button>
               <ui-popover-content side="top" align="center">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1828,10 +1840,10 @@
             </ui-popover>
 
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">TR</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">TR</ui-button>
               <ui-popover-content side="top" align="end">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1840,13 +1852,15 @@
           </div>
 
           <!-- Middle Row (Left and Right) -->
-          <div style="display: flex; justify-content: space-between; align-items: center; width: 432px;">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; width: 432px"
+          >
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">LT</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">LT</ui-button>
                 <ui-popover-content side="left" align="start">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1854,10 +1868,10 @@
               </ui-popover>
 
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">Left</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">Left</ui-button>
                 <ui-popover-content side="left" align="center">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1865,10 +1879,10 @@
               </ui-popover>
 
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">LB</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">LB</ui-button>
                 <ui-popover-content side="left" align="end">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1876,12 +1890,12 @@
               </ui-popover>
             </div>
 
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">RT</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">RT</ui-button>
                 <ui-popover-content side="right" align="start">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1889,10 +1903,10 @@
               </ui-popover>
 
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">Right</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">Right</ui-button>
                 <ui-popover-content side="right" align="center">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1900,10 +1914,10 @@
               </ui-popover>
 
               <ui-popover>
-                <ui-button uiPopoverTrigger style="width: 80px;">RB</ui-button>
+                <ui-button uiPopoverTrigger style="width: 80px">RB</ui-button>
                 <ui-popover-content side="right" align="end">
                   <div>
-                    <p style="font-weight: 600;">Title</p>
+                    <p style="font-weight: 600">Title</p>
                     <p>Content</p>
                     <p>Content</p>
                   </div>
@@ -1913,12 +1927,12 @@
           </div>
 
           <!-- Bottom Row -->
-          <div style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 8px">
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">BL</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">BL</ui-button>
               <ui-popover-content side="bottom" align="start">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1926,10 +1940,10 @@
             </ui-popover>
 
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">Bottom</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">Bottom</ui-button>
               <ui-popover-content side="bottom" align="center">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1937,10 +1951,10 @@
             </ui-popover>
 
             <ui-popover>
-              <ui-button uiPopoverTrigger style="width: 80px;">BR</ui-button>
+              <ui-button uiPopoverTrigger style="width: 80px">BR</ui-button>
               <ui-popover-content side="bottom" align="end">
                 <div>
-                  <p style="font-weight: 600;">Title</p>
+                  <p style="font-weight: 600">Title</p>
                   <p>Content</p>
                   <p>Content</p>
                 </div>
@@ -1956,17 +1970,17 @@
         <ui-popover>
           <ui-button uiPopoverTrigger>Edit Profile</ui-button>
           <ui-popover-content>
-            <div style="width: 280px;">
-              <h3 style="font-weight: 600; margin-bottom: 12px;">Update Profile</h3>
-              <div style="margin-bottom: 12px;">
+            <div style="width: 280px">
+              <h3 style="font-weight: 600; margin-bottom: 12px">Update Profile</h3>
+              <div style="margin-bottom: 12px">
                 <ui-label>Name</ui-label>
                 <ui-input type="text" placeholder="Your name"></ui-input>
               </div>
-              <div style="margin-bottom: 12px;">
+              <div style="margin-bottom: 12px">
                 <ui-label>Email</ui-label>
                 <ui-input type="email" placeholder="you@example.com"></ui-input>
               </div>
-              <ui-button style="width: 100%;">Save</ui-button>
+              <ui-button style="width: 100%">Save</ui-button>
             </div>
           </ui-popover-content>
         </ui-popover>
@@ -1978,19 +1992,19 @@
         <ui-popover>
           <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">Settings</ui-button>
           <ui-popover-content side="bottom" align="end">
-            <div style="width: 200px;">
-              <div style="padding: 8px; cursor: pointer; border-radius: 4px;">
-                <span style="font-size: 14px;">⚙️ Preferences</span>
+            <div style="width: 200px">
+              <div style="padding: 8px; cursor: pointer; border-radius: 4px">
+                <span style="font-size: 14px">⚙️ Preferences</span>
               </div>
-              <div style="padding: 8px; cursor: pointer; border-radius: 4px;">
-                <span style="font-size: 14px;">👤 Account</span>
+              <div style="padding: 8px; cursor: pointer; border-radius: 4px">
+                <span style="font-size: 14px">👤 Account</span>
               </div>
-              <div style="padding: 8px; cursor: pointer; border-radius: 4px;">
-                <span style="font-size: 14px;">🔔 Notifications</span>
+              <div style="padding: 8px; cursor: pointer; border-radius: 4px">
+                <span style="font-size: 14px">🔔 Notifications</span>
               </div>
-              <div style="height: 1px; background: #e5e7eb; margin: 8px 0;"></div>
-              <div style="padding: 8px; cursor: pointer; border-radius: 4px;">
-                <span style="font-size: 14px; color: #dc2626;">🚪 Logout</span>
+              <div style="height: 1px; background: #e5e7eb; margin: 8px 0"></div>
+              <div style="padding: 8px; cursor: pointer; border-radius: 4px">
+                <span style="font-size: 14px; color: #dc2626">🚪 Logout</span>
               </div>
             </div>
           </ui-popover-content>
@@ -2003,7 +2017,7 @@
         <p class="text-sm text-muted-foreground mb-3">
           Custom colors, width, radius, and shadow using CSS variables and panelClass.
         </p>
-        
+
         <style>
           .custom-blue-popover {
             --popover-bg: #eff6ff;
@@ -2017,26 +2031,28 @@
         </style>
 
         <ui-popover>
-          <ui-button uiPopoverTrigger style="background-color: #3b82f6; color: white;">
+          <ui-button uiPopoverTrigger style="background-color: #3b82f6; color: white">
             Custom Style
           </ui-button>
           <ui-popover-content panelClass="custom-blue-popover">
-            <div style="text-align: center;">
-              <div style="font-size: 32px; margin-bottom: 8px;">✨</div>
-              <h3 style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Special Offer!</h3>
-              <p style="font-size: 14px; opacity: 0.9; margin-bottom: 16px;">
+            <div style="text-align: center">
+              <div style="font-size: 32px; margin-bottom: 8px">✨</div>
+              <h3 style="font-weight: 700; font-size: 18px; margin-bottom: 8px">Special Offer!</h3>
+              <p style="font-size: 14px; opacity: 0.9; margin-bottom: 16px">
                 Get 50% off on your premium subscription today.
               </p>
-              <button style="
-                background: #1e3a8a; 
-                color: white; 
-                border: none; 
-                padding: 8px 16px; 
-                border-radius: 8px; 
-                font-weight: 600;
-                cursor: pointer;
-                width: 100%;
-              ">
+              <button
+                style="
+                  background: #1e3a8a;
+                  color: white;
+                  border: none;
+                  padding: 8px 16px;
+                  border-radius: 8px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  width: 100%;
+                "
+              >
                 Claim Now
               </button>
             </div>
@@ -2045,5 +2061,182 @@
       </div>
     </div>
   </section>
-</div>
 
+  <!-- Custom Popover Demos -->
+  <section class="mt-8">
+    <h1>Custom Popover Demos - CSS Variables</h1>
+    <p class="text-sm text-muted-foreground mb-4">
+      Comprehensive examples showcasing all CSS variable customization options.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <!-- Success Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Success Theme Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Green success colors with custom border.</p>
+        <ui-popover class="popover-success-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">✓ Success</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Operation Successful</h3>
+            <p style="font-size: 14px">Your changes have been saved successfully.</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Warning Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Warning Theme Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Orange warning colors with custom shadow.</p>
+        <ui-popover class="popover-warning-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">⚠ Warning</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Warning</h3>
+            <p style="font-size: 14px">Please review this action carefully.</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Danger Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Danger Theme Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Red danger colors with thick border.</p>
+        <ui-popover class="popover-danger-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Destructive">⨯ Danger</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Destructive Action</h3>
+            <p style="font-size: 14px">This action cannot be undone!</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Info Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Info Theme Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Blue info colors with rounded corners.</p>
+        <ui-popover class="popover-info-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">ℹ Info</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Information</h3>
+            <p style="font-size: 14px">This feature is in beta testing.</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Large Custom Size -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Large Size Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">
+          Extra large with more padding and custom width.
+        </p>
+        <ui-popover class="popover-large-custom">
+          <ui-button uiPopoverTrigger>Large Popover</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 12px">Large Content Area</h3>
+            <p style="font-size: 14px; margin-bottom: 12px">
+              This popover has custom dimensions with more width and padding.
+            </p>
+            <p style="font-size: 13px; color: #6b7280">
+              Perfect for detailed information or forms.
+            </p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Compact Size -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Compact Size Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Small and compact with minimal padding.</p>
+        <ui-popover class="popover-compact-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">Compact</ui-button>
+          <ui-popover-content>
+            <p style="font-size: 12px">Compact size</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Scrollable Popover -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Scrollable Popover</h2>
+        <p class="text-sm text-muted-foreground mb-3">Fixed height with scrollable content.</p>
+        <ui-popover class="popover-scrollable-custom">
+          <ui-button uiPopoverTrigger>Scrollable Content</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Scrollable List</h3>
+            <div style="font-size: 14px">
+              <p style="margin-bottom: 8px">Item 1</p>
+              <p style="margin-bottom: 8px">Item 2</p>
+              <p style="margin-bottom: 8px">Item 3</p>
+              <p style="margin-bottom: 8px">Item 4</p>
+              <p style="margin-bottom: 8px">Item 5</p>
+              <p style="margin-bottom: 8px">Item 6</p>
+              <p style="margin-bottom: 8px">Item 7</p>
+              <p>Item 8</p>
+            </div>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Slide Down Animation -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Slide Down Animation</h2>
+        <p class="text-sm text-muted-foreground mb-3">Custom animation sliding from top.</p>
+        <ui-popover class="popover-slide-down-custom">
+          <ui-button uiPopoverTrigger>Slide Down</ui-button>
+          <ui-popover-content side="bottom">
+            <p style="font-size: 14px">Slides down smoothly!</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Square Corners with Shadow -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Square & Elevated</h2>
+        <p class="text-sm text-muted-foreground mb-3">Square corners with elevated shadow.</p>
+        <ui-popover class="popover-square-elevated">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">Square</ui-button>
+          <ui-popover-content>
+            <p style="font-size: 14px">Sharp corners, elevated appearance</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Custom Typography -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Custom Typography</h2>
+        <p class="text-sm text-muted-foreground mb-3">Custom font size, weight, and line height.</p>
+        <ui-popover class="popover-custom-typography">
+          <ui-button uiPopoverTrigger>Custom Font</ui-button>
+          <ui-popover-content>
+            <h3 style="margin-bottom: 8px">Custom Typography</h3>
+            <p>Adjusted font size and line height for better readability.</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- No Animation -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">No Animation</h2>
+        <p class="text-sm text-muted-foreground mb-3">Appears instantly without animation.</p>
+        <ui-popover class="popover-no-animation-custom">
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Ghost">Instant</ui-button>
+          <ui-popover-content>
+            <p style="font-size: 14px">No animation - instant appearance!</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+
+      <!-- Dark Purple Theme -->
+      <div>
+        <h2 class="text-lg font-semibold mb-2">Dark Purple Theme</h2>
+        <p class="text-sm text-muted-foreground mb-3">Custom dark purple gradient theme.</p>
+        <ui-popover class="popover-purple-custom">
+          <ui-button uiPopoverTrigger>Purple Theme</ui-button>
+          <ui-popover-content>
+            <h3 style="font-weight: 600; margin-bottom: 8px">Premium Feature</h3>
+            <p style="font-size: 14px">Elegant purple theme for premium content.</p>
+          </ui-popover-content>
+        </ui-popover>
+      </div>
+    </div>
+  </section>
+</div>

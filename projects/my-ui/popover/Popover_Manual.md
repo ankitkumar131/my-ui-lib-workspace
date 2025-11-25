@@ -195,109 +195,234 @@ Controls the alignment when using top/bottom positioning:
 
 ## CSS Customization
 
-The Popover component uses standard SCSS with customizable properties. All colors support **standard formats**: hex, rgb, rgba, hsl, and named colors.
+The Popover component uses **CSS variables** for comprehensive customization. All styles can be overridden using CSS custom properties, allowing you to customize every aspect of the popover appearance and behavior.
 
-### Default Styling
+### Available CSS Variables
+
+The popover supports the following CSS variables (all with fallback defaults):
+
+#### Dimensions
+
+| Variable               | Default | Description            |
+| ---------------------- | ------- | ---------------------- |
+| `--popover-width`      | `auto`  | Fixed width of popover |
+| `--popover-min-width`  | `200px` | Minimum width          |
+| `--popover-max-width`  | `400px` | Maximum width          |
+| `--popover-height`     | `auto`  | Fixed height           |
+| `--popover-min-height` | `auto`  | Minimum height         |
+| `--popover-max-height` | `none`  | Maximum height         |
+| `--popover-z-index`    | `50`    | Stacking order         |
+
+#### Spacing
+
+| Variable                   | Default                  | Description                    |
+| -------------------------- | ------------------------ | ------------------------------ |
+| `--popover-padding`        | `16px`                   | All-sides padding (base value) |
+| `--popover-padding-top`    | `var(--popover-padding)` | Top padding                    |
+| `--popover-padding-right`  | `var(--popover-padding)` | Right padding                  |
+| `--popover-padding-bottom` | `var(--popover-padding)` | Bottom padding                 |
+| `--popover-padding-left`   | `var(--popover-padding)` | Left padding                   |
+| `--popover-margin`         | `0`                      | Margin around popover          |
+
+#### Border & Corners
+
+| Variable                 | Default                               | Description      |
+| ------------------------ | ------------------------------------- | ---------------- |
+| `--popover-radius`       | `8px`                                 | Border radius    |
+| `--popover-border-width` | `1px`                                 | Border thickness |
+| `--popover-border-style` | `solid`                               | Border style     |
+| `--popover-border-color` | `#e5e7eb` (light)<br>`#27272a` (dark) | Border color     |
+
+#### Colors
+
+| Variable          | Default                               | Description      |
+| ----------------- | ------------------------------------- | ---------------- |
+| `--popover-bg`    | `#ffffff` (light)<br>`#18181b` (dark) | Background color |
+| `--popover-color` | `#09090b` (light)<br>`#fafafa` (dark) | Text color       |
+
+#### Shadow
+
+| Variable           | Default            | Description       |
+| ------------------ | ------------------ | ----------------- |
+| `--popover-shadow` | Multi-layer shadow | Box shadow effect |
+
+#### Scrollbar
+
+| Variable                             | Default                               | Description                      |
+| ------------------------------------ | ------------------------------------- | -------------------------------- |
+| `--popover-scrollbar-width`          | `8px`                                 | Scrollbar width                  |
+| `--popover-scrollbar-border-radius`  | `4px`                                 | Scrollbar border radius          |
+| `--popover-scrollbar-track-bg`       | `#f1f1f1` (light)<br>`#27272a` (dark) | Scrollbar track background       |
+| `--popover-scrollbar-thumb-bg`       | `#888` (light)<br>`#52525b` (dark)    | Scrollbar thumb background       |
+| `--popover-scrollbar-thumb-hover-bg` | `#555` (light)<br>`#71717a` (dark)    | Scrollbar thumb hover background |
+
+#### Typography
+
+| Variable                   | Default   | Description    |
+| -------------------------- | --------- | -------------- |
+| `--popover-font-size`      | `14px`    | Base font size |
+| `--popover-font-weight`    | `400`     | Font weight    |
+| `--popover-font-family`    | `inherit` | Font family    |
+| `--popover-line-height`    | `1.5`     | Line height    |
+| `--popover-letter-spacing` | `normal`  | Letter spacing |
+
+#### Animation
+
+| Variable                       | Default         | Description             |
+| ------------------------------ | --------------- | ----------------------- |
+| `--popover-animation-name`     | `popoverFadeIn` | Animation keyframe name |
+| `--popover-animation-duration` | `0.2s`          | Animation duration      |
+| `--popover-animation-timing`   | `ease-out`      | Timing function         |
+| `--popover-animation-fill`     | `forwards`      | Fill mode               |
+| `--popover-transform-origin`   | `center`        | Transform origin point  |
+
+#### Overflow & Display
+
+| Variable               | Default                   | Description            |
+| ---------------------- | ------------------------- | ---------------------- |
+| `--popover-overflow`   | `visible`                 | Base overflow behavior |
+| `--popover-overflow-x` | `var(--popover-overflow)` | Horizontal overflow    |
+| `--popover-overflow-y` | `var(--popover-overflow)` | Vertical overflow      |
+| `--popover-cursor`     | `default`                 | Cursor style           |
+
+---
+
+## Customization Examples
+
+### Using CSS Variables
+
+Apply customizations via CSS classes in your `app.scss` or component styles:
 
 ```scss
-.popover-content {
-  position: absolute;
-  z-index: 50;
-  min-width: 200px;
-  max-width: 400px;
-  padding: 16px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  color: #09090b;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+// Large popover with custom colors
+.popover-large {
+  --popover-min-width: 400px;
+  --popover-max-width: 600px;
+  --popover-padding: 24px;
+  --popover-bg: #f0f9ff;
+  --popover-border-color: #0ea5e9;
+  --popover-color: #0369a1;
 }
-```
 
-### Custom Styling
+// Compact popover
+.popover-compact {
+  --popover-min-width: 150px;
+  --popover-max-width: 250px;
+  --popover-padding: 8px;
+  --popover-font-size: 12px;
+}
 
-#### 1. Inline Styles
-
-```html
-<ui-popover-content>
-  <div style="background-color: #f0f9ff; border: 1px solid #0ea5e9; padding: 16px;">
-    <p style="color: #0369a1;">Custom styled content</p>
-  </div>
-</ui-popover-content>
-```
-
-#### 2. Class-based Styling
-
-Define custom styles in your `app.scss`:
-
-```scss
-// Large popover
-.popover-lg {
-  .popover-content {
-    min-width: 400px;
-    max-width: 600px;
-  }
+// Custom height with scrolling
+.popover-scrollable {
+  --popover-max-height: 300px;
+  --popover-overflow-y: auto;
 }
 
 // Success theme
 .popover-success {
-  .popover-content {
-    border-color: #22c55e;
-    background-color: #f0fdf4;
-
-    h3 {
-      color: #16a34a;
-    }
-  }
+  --popover-bg: #f0fdf4;
+  --popover-border-color: #22c55e;
+  --popover-border-width: 2px;
+  --popover-color: #16a34a;
 }
 
 // Warning theme
 .popover-warning {
-  .popover-content {
-    border-color: #f59e0b;
-    background-color: #fffbeb;
+  --popover-bg: #fffbeb;
+  --popover-border-color: #f59e0b;
+  --popover-color: #d97706;
+  --popover-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+}
 
-    h3 {
-      color: #d97706;
-    }
-  }
+// Error/Danger theme
+.popover-danger {
+  --popover-bg: #fef2f2;
+  --popover-border-color: #dc2626;
+  --popover-border-width: 2px;
+  --popover-color: #991b1b;
+}
+
+// Custom animation (slide down)
+.popover-slide-down {
+  --popover-animation-name: popoverSlideDown;
+  --popover-animation-duration: 0.3s;
+}
+
+// Custom animation (slide up)
+.popover-slide-up {
+  --popover-animation-name: popoverSlideUp;
+  --popover-animation-duration: 0.3s;
+}
+
+// No animation
+.popover-no-animation {
+  --popover-animation-name: none;
+}
+
+// Custom shadow
+.popover-elevated {
+  --popover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+// Rounded corners
+.popover-rounded {
+  --popover-radius: 16px;
+}
+
+// Square corners
+.popover-square {
+  --popover-radius: 0;
 }
 ```
 
-Apply via class:
+### Usage in HTML
 
 ```html
-<ui-popover class="popover-lg">
+<!-- Apply custom class -->
+<ui-popover class="popover-large">
   <ui-button uiPopoverTrigger>Large Popover</ui-button>
   <ui-popover-content>
-    <p>Larger content area</p>
+    <p>This is a larger popover</p>
+  </ui-popover-content>
+</ui-popover>
+
+<!-- Multiple classes -->
+<ui-popover class="popover-compact popover-success">
+  <ui-button uiPopoverTrigger>Success</ui-button>
+  <ui-popover-content>
+    <p>✓ Operation successful!</p>
   </ui-popover-content>
 </ui-popover>
 ```
 
 ---
 
+## Available Animations
+
+The component includes several pre-built animation keyframes:
+
+- `popoverFadeIn` - Default fade and scale (default)
+- `popoverSlideDown` - Slide from top
+- `popoverSlideUp` - Slide from bottom
+- `popoverSlideLeft` - Slide from right
+- `popoverSlideRight` - Slide from left
+
+Use via `--popover-animation-name` variable.
+
+---
+
 ## Dark Mode
 
-Dark mode is automatic via `@media (prefers-color-scheme: dark)`:
-
-- Background: `#18181b`
-- Border: `#27272a`
-- Text: `#fafafa`
-- Shadow: Darker for better visibility
-
-### Custom Dark Mode
-
-Override dark mode styles:
+Dark mode is automatic via `@media (prefers-color-scheme: dark)` but uses the **same CSS variables**. To customize for dark mode specifically:
 
 ```scss
-@media (prefers-color-scheme: dark) {
-  .custom-popover {
-    .popover-content {
-      background-color: #1f2937;
-      border-color: #374151;
-      color: #f9fafb;
-    }
+.my-custom-popover {
+  --popover-bg: #e0f2fe;
+  --popover-color: #0c4a6e;
+
+  @media (prefers-color-scheme: dark) {
+    --popover-bg: #1e3a8a;
+    --popover-color: #93c5fd;
   }
 }
 ```
