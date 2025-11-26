@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--card-header-gap, 16px);
+  padding: var(--card-padding, 24px);
+  padding-bottom: var(--card-header-padding-bottom, 0);
+}

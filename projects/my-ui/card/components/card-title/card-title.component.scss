@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  font-size: var(--card-title-font-size, 24px);
+  font-weight: var(--card-title-font-weight, 600);
+  line-height: var(--card-title-line-height, 1.2);
+  letter-spacing: var(--card-title-letter-spacing, -0.01em);
+  color: var(--card-title-color, inherit);
+  margin-bottom: var(--card-title-margin-bottom, 4px);
+}

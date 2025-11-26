@@ -1,0 +1,7 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: var(--card-footer-gap, 8px);
+  padding: var(--card-padding, 24px);
+  padding-top: var(--card-footer-padding-top, 16px);
+}

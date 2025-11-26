@@ -45,6 +45,9 @@
       <li class="toc-item">
         <a href="#calendar-demo" class="toc-link">Calendar</a>
       </li>
+      <li class="toc-item">
+        <a href="#card-demo" class="toc-link">Card</a>
+      </li>
     </ul>
   </nav>
 
@@ -2320,8 +2323,531 @@
               <li><code class="bg-white px-1 rounded">--select-item-hover-bg</code></li>
             </ul>
           </div>
-        </div>
+
       </div>
     </div>
+
+
+  <!-- Card Component Demo (Rose/Red Theme) -->
+  <section class="mt-8" id="card-demo">
+    <h1>Card Component Demo</h1>
+    <p class="text-sm text-muted-foreground mb-4">
+      A versatile container component with header, content, and footer sections matching shadcn
+      design.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+      <!-- Basic Card -->
+      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
+        <ui-card-header>
+          <ui-card-title style="color: #e11d48">Card Title</ui-card-title>
+          <ui-card-description style="color: #f43f5e">Rose Theme</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <p style="color: #881337">This is the main content area of the card. You can add any content here.</p>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button [variant]="ButtonVariant.Default" style="background: #e11d48; color: white">Action</ui-button>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- Login Form Card -->
+      <ui-card style="max-width: 400px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
+        <ui-card-header>
+          <div style="flex: 1">
+            <ui-card-title style="color: #e11d48">Login to your account</ui-card-title>
+            <ui-card-description style="color: #f43f5e">Enter your email below to login</ui-card-description>
+          </div>
+          <ui-card-action>
+            <ui-button [variant]="ButtonVariant.Link" style="color: #e11d48">Sign Up</ui-button>
+          </ui-card-action>
+        </ui-card-header>
+        <ui-card-content>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div style="display: grid; gap: 8px">
+              <ui-label style="color: #881337">Email</ui-label>
+              <ui-input type="email" placeholder="m@example.com" style="border-color: #f43f5e; background: white"></ui-input>
+            </div>
+            <div style="display: grid; gap: 8px">
+              <ui-label style="color: #881337">Password</ui-label>
+              <ui-input type="password" style="border-color: #f43f5e; background: white"></ui-input>
+            </div>
+          </div>
+        </ui-card-content>
+        <ui-card-footer style="flex-direction: column; gap: 8px; align-items: stretch">
+          <ui-button style="width: 100%; background: #e11d48; color: white">Login</ui-button>
+          <ui-button [variant]="ButtonVariant.Outline" style="width: 100%; border-color: #e11d48; color: #e11d48"
+            >Login with Google</ui-button
+          >
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- Product Card -->
+      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
+        <ui-card-header>
+          <ui-card-title style="color: #e11d48">Premium Plan</ui-card-title>
+          <ui-card-description style="color: #f43f5e">Everything you need to get started</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <div style="margin-bottom: 16px">
+            <span style="font-size: 36px; font-weight: 700; color: #be123c">$29</span>
+            <span style="color: #f43f5e; font-size: 14px">/month</span>
+          </div>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            "
+          >
+            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+              <span style="color: #e11d48">✓</span> Unlimited projects
+            </li>
+            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+              <span style="color: #e11d48">✓</span> 100GB Storage
+            </li>
+            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+              <span style="color: #e11d48">✓</span> Priority support
+            </li>
+          </ul>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button style="width: 100%; background: #e11d48; color: white">Get Started</ui-button>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- Stats Card -->
+      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
+        <ui-card-header>
+          <ui-card-title style="color: #e11d48">Total Revenue</ui-card-title>
+          <ui-card-description style="color: #f43f5e">January - March 2025</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <div style="font-size: 32px; font-weight: 700; margin-bottom: 8px; color: #be123c">$45,231.89</div>
+          <p style="font-size: 14px; color: #e11d48">
+            <span style="font-weight: 600">+20.1%</span> from last month
+          </p>
+        </ui-card-content>
+      </ui-card>
+
+      <!-- Notification Card -->
+      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
+        <ui-card-header>
+          <div style="flex: 1">
+            <ui-card-title style="color: #e11d48">Notifications</ui-card-title>
+            <ui-card-description style="color: #f43f5e">You have 3 unread messages</ui-card-description>
+          </div>
+          <ui-card-action>
+            <ui-badge style="background: #e11d48">3</ui-badge>
+          </ui-card-action>
+        </ui-card-header>
+        <ui-card-content>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                padding: 8px;
+                border-radius: 6px;
+                background: white;
+                border: 1px solid #fecdd3;
+              "
+            >
+              <div
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: #ffe4e6;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-shrink: 0;
+                  color: #e11d48;
+                "
+              >
+                👤
+              </div>
+              <div style="flex: 1">
+                <p style="font-weight: 500; font-size: 14px; margin-bottom: 2px; color: #881337">New user signup</p>
+                <p style="font-size: 12px; color: #f43f5e">2 minutes ago</p>
+              </div>
+            </div>
+          </div>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button [variant]="ButtonVariant.Outline" style="width: 100%; border-color: #e11d48; color: #e11d48">View All</ui-button>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- Custom Styled Card -->
+      <ui-card style="max-width: 350px; --card-border-color: #8b5cf6; --card-bg: #faf5ff">
+        <ui-card-header>
+          <ui-card-title style="color: #7c3aed">Custom Styled Card</ui-card-title>
+          <ui-card-description>Using CSS variables for theming</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <p>This card uses custom CSS variables to override the default purple theme.</p>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button style="background: #8b5cf6; color: white">Purple Action</ui-button>
+        </ui-card-footer>
+      </ui-card>
+    </div>
   </section>
-</div>
+
+  <!-- MUI-Inspired Card Demos (Teal/Emerald Theme) -->
+  <section class="mt-12 mb-20" id="mui-card-demos">
+    <h1>MUI-Inspired Card Demos</h1>
+    <p class="text-sm text-muted-foreground mb-6">
+      Recreations of popular Material UI card examples using our component.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1. Media Card -->
+      <ui-card style="max-width: 345px; height: 320px; display: flex; flex-direction: column; --card-border-color: #10b981; --card-bg: #ecfdf5;">
+        <div
+          style="
+            height: 140px;
+            background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+        <ui-card-content style="flex: 1">
+          <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
+          <p style="color: #047857; font-size: 14px; line-height: 1.5">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+          </p>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 0">SHARE</ui-button>
+          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">LEARN MORE</ui-button>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- 2. Recipe Review Card -->
+      <ui-card style="max-width: 345px; height: auto; --card-border-color: #10b981; --card-bg: #ecfdf5;">
+        <ui-card-header style="align-items: center">
+          <div
+            style="
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #ef4444;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            R
+          </div>
+          <div style="flex: 1; margin-left: 12px">
+            <ui-card-title style="font-size: 16px; color: #059669">Shrimp and Chorizo Paella</ui-card-title>
+            <ui-card-description style="color: #047857">September 14, 2016</ui-card-description>
+          </div>
+          <ui-card-action>
+            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⋮</ui-button>
+          </ui-card-action>
+        </ui-card-header>
+        <div
+          style="
+            height: 194px;
+            background-image: url('https://mui.com/static/images/cards/paella.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+        <ui-card-content>
+          <p style="color: #047857; font-size: 14px">
+            This impressive paella is a perfect party dish and a fun meal to cook together with your
+            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          </p>
+        </ui-card-content>
+        <ui-card-footer style="justify-content: space-between">
+          <div>
+            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">❤️</ui-button>
+            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">🔗</ui-button>
+          </div>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- 3. UI Controls Card -->
+      <ui-card style="display: flex; width: 100%; max-width: 350px; height: 180px; --card-border-color: #10b981; --card-bg: #ecfdf5;">
+        <div style="display: flex; flex-direction: column; flex: 1">
+          <ui-card-content style="flex: 1 0 auto">
+            <ui-card-title style="font-size: 20px; color: #059669">Live From Space</ui-card-title>
+            <ui-card-description style="font-size: 16px; color: #047857">Mac Miller</ui-card-description>
+          </ui-card-content>
+          <div style="display: flex; align-items: center; padding-left: 16px; padding-bottom: 16px">
+            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏮</ui-button>
+            <ui-button [variant]="ButtonVariant.Ghost" style="font-size: 24px; color: #059669">▶</ui-button>
+            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏭</ui-button>
+          </div>
+        </div>
+        <div
+          style="
+            width: 151px;
+            background-image: url('https://mui.com/static/images/cards/live-from-space.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+      </ui-card>
+
+      <!-- 4. Outlined Card -->
+      <ui-card style="max-width: 275px; height: 220px; display: flex; flex-direction: column; --card-border-color: #10b981; --card-bg: #ecfdf5;">
+        <ui-card-content style="flex: 1">
+          <p style="font-size: 14px; color: #047857; margin-bottom: 12px">Word of the Day</p>
+          <ui-card-title style="font-size: 32px; margin-bottom: 12px; color: #059669">be•nev•o•lent</ui-card-title>
+          <p style="color: #047857; margin-bottom: 12px">adjective</p>
+          <p style="font-size: 14px; color: #065f46">
+            well meaning and kindly.
+            <br />
+            "a benevolent smile"
+          </p>
+        </ui-card-content>
+        <ui-card-footer>
+          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 8px">LEARN MORE</ui-button>
+        </ui-card-footer>
+      </ui-card>
+
+      <!-- 5. Action Area Card -->
+      <ui-card
+        style="
+          max-width: 345px;
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          transition: box-shadow 0.3s;
+          --card-border-color: #10b981;
+          --card-bg: #ecfdf5;
+        "
+        class="hover:shadow-lg"
+      >
+        <div
+          style="
+            height: 140px;
+            background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 16px;
+          "
+        ></div>
+        <ui-card-content style="flex: 1">
+          <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
+          <p style="color: #047857; font-size: 14px; line-height: 1.5">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+          </p>
+        </ui-card-content>
+      </ui-card>
+    </div>
+  </section>
+
+          <!-- Customization Verification -->
+          <section class="mt-12 mb-20" id="custom-card-demo">
+            <h1>Customization Verification</h1>
+            <p class="text-sm text-muted-foreground mb-6">
+              Proof that every single style aspect can be overridden via CSS variables to create a
+              completely unique look.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Super Custom Card -->
+              <ui-card
+                style="
+                  --card-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  --card-color: white;
+                  --card-border-width: 0;
+                  --card-radius: 24px;
+                  --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                  --card-padding: 40px;
+                  --card-title-font-size: 32px;
+                  --card-title-color: white;
+                  --card-description-color: rgba(255, 255, 255, 0.8);
+                  max-width: 500px;
+                "
+              >
+                <ui-card-header>
+                  <ui-card-title>Super Custom Card</ui-card-title>
+                  <ui-card-description>Every variable overridden</ui-card-description>
+                </ui-card-header>
+                <ui-card-content>
+                  <p style="font-size: 18px; line-height: 1.6; opacity: 0.9">
+                    This card demonstrates that you can completely transform the look and feel by
+                    overriding CSS variables. Background, typography, spacing, borders, and shadows
+                    are all customizable.
+                  </p>
+                </ui-card-content>
+                <ui-card-footer>
+                  <ui-button
+                    style="
+                      background: rgba(255, 255, 255, 0.2);
+                      backdrop-filter: blur(10px);
+                      border: 1px solid rgba(255, 255, 255, 0.3);
+                      color: white;
+                      width: 100%;
+                      height: 48px;
+                      font-size: 16px;
+                    "
+                  >
+                    Glassmorphism Action
+                  </ui-button>
+                </ui-card-footer>
+              </ui-card>
+            </div>
+          </section>
+
+          <!-- Advanced Demos (MD3 & Angular Material) -->
+          <section class="mt-12 mb-20" id="advanced-card-demos">
+            <h1>Advanced Demos (MD3 & Angular Material)</h1>
+            <p class="text-sm text-muted-foreground mb-6">
+              Implementations of Material Design 3 and Angular Material card patterns.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- High Contrast Elevated Card -->
+              <ui-card
+                style="
+                  --card-bg: #ffffff;
+                  --card-color: #09090b;
+                  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                  --card-radius: 12px;
+                  --card-border-width: 0;
+                  max-width: 350px;
+                "
+              >
+                <ui-card-header>
+                  <ui-card-title style="font-size: 22px; font-weight: 600"
+                    >Elevated Card</ui-card-title
+                  >
+                  <ui-card-description>High Contrast Shadow</ui-card-description>
+                </ui-card-header>
+                <ui-card-content>
+                  <p>
+                    Elevated cards contain content and are separated from the background by a drop
+                    shadow.
+                  </p>
+                </ui-card-content>
+                <ui-card-footer style="justify-content: flex-end">
+                  <ui-button
+                    [variant]="ButtonVariant.Default"
+                    style="background: #09090b; color: white"
+                    >Action</ui-button
+                  >
+                </ui-card-footer>
+              </ui-card>
+
+              <!-- Blue Filled Card -->
+              <ui-card
+                style="
+                  --card-bg: #2563eb;
+                  --card-color: #ffffff;
+                  --card-description-color: #dbeafe;
+                  --card-border-width: 0;
+                  --card-shadow: none;
+                  --card-radius: 12px;
+                  max-width: 350px;
+                "
+              >
+                <ui-card-header>
+                  <ui-card-title style="font-size: 22px; font-weight: 600"
+                    >Filled Card</ui-card-title
+                  >
+                  <ui-card-description style="color: #dbeafe">Blue Theme</ui-card-description>
+                </ui-card-header>
+                <ui-card-content>
+                  <p>
+                    Filled cards provide subtle separation from the background. This one uses a
+                    high-contrast blue.
+                  </p>
+                </ui-card-content>
+                <ui-card-footer style="justify-content: flex-end">
+                  <ui-button
+                    [variant]="ButtonVariant.Secondary"
+                    style="background: white; color: #2563eb; border: none"
+                    >Action</ui-button
+                  >
+                </ui-card-footer>
+              </ui-card>
+
+              <!-- Blue Outlined Card -->
+              <ui-card
+                style="
+                  --card-bg: #ffffff;
+                  --card-border-color: #2563eb;
+                  --card-border-width: 2px;
+                  --card-color: #1e3a8a;
+                  --card-shadow: none;
+                  --card-radius: 12px;
+                  max-width: 350px;
+                "
+              >
+                <ui-card-header>
+                  <ui-card-title style="font-size: 22px; font-weight: 600; color: #2563eb"
+                    >Outlined Card</ui-card-title
+                  >
+                  <ui-card-description style="color: #60a5fa">Blue Border</ui-card-description>
+                </ui-card-header>
+                <ui-card-content>
+                  <p>Outlined cards have a visual boundary. This one uses a bold blue border.</p>
+                </ui-card-content>
+                <ui-card-footer style="justify-content: flex-end">
+                  <ui-button
+                    [variant]="ButtonVariant.Outline"
+                    style="color: #2563eb; border-color: #2563eb"
+                    >Action</ui-button
+                  >
+                </ui-card-footer>
+              </ui-card>
+
+              <!-- Angular Material Horizontal Card -->
+              <ui-card
+                style="
+                  display: flex;
+                  flex-direction: row;
+                  max-width: 500px;
+                  overflow: hidden;
+                  grid-column: 1 / -1;
+                  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                "
+              >
+                <div
+                  style="
+                    width: 200px;
+                    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+                    background-size: cover;
+                    background-position: center;
+                  "
+                ></div>
+                <div style="flex: 1; display: flex; flex-direction: column">
+                  <ui-card-header>
+                    <ui-card-title>Shiba Inu</ui-card-title>
+                    <ui-card-description>Dog Breed</ui-card-description>
+                  </ui-card-header>
+                  <ui-card-content style="flex: 1">
+                    <p style="color: #71717a">
+                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of
+                      dog from Japan.
+                    </p>
+                  </ui-card-content>
+                  <ui-card-footer style="justify-content: flex-end">
+                    <ui-button [variant]="ButtonVariant.Ghost">LIKE</ui-button>
+                    <ui-button [variant]="ButtonVariant.Ghost">SHARE</ui-button>
+                  </ui-card-footer>
+                </div>
+              </ui-card>
+            </div>
+          </section>
+        </div>
+    
