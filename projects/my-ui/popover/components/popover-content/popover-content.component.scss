@@ -1,16 +1,14 @@
 .popover-content {
   position: absolute;
-  z-index: 50;
+  z-index: var(--popover-z-index, 50);
   
-  // CSS Variables for customization
-  --popover-bg: #ffffff;
-  --popover-color: #09090b;
-  --popover-border: 1px solid #e5e7eb;
-  --popover-radius: 8px;
-  --popover-padding: 16px;
-  --popover-min-width: 200px;
-  --popover-max-width: 400px;
-  --popover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  // Dimensions
+  width: var(--popover-width, auto);
+  min-width: var(--popover-min-width, 200px);
+  max-width: var(--popover-max-width, 400px);
+  height: var(--popover-height, auto);
+  min-height: var(--popover-min-height, auto);
+  max-height: var(--popover-max-height, none);
   
   min-width: var(--popover-min-width);
   max-width: var(--popover-max-width);
@@ -23,7 +21,45 @@
   overflow: visible;
   
   // Animation
-  animation: popoverFadeIn 0.2s ease-out;
+  animation-name: var(--popover-animation-name, popoverFadeIn);
+  animation-duration: var(--popover-animation-duration, 0.2s);
+  animation-timing-function: var(--popover-animation-timing, ease-out);
+  animation-fill-mode: var(--popover-animation-fill, forwards);
+  
+  // Transform
+  transform-origin: var(--popover-transform-origin, center);
+  
+  // Overflow
+  overflow: var(--popover-overflow, visible);
+  overflow-x: var(--popover-overflow-x, var(--popover-overflow, visible));
+  overflow-y: var(--popover-overflow-y, var(--popover-overflow, visible));
+  
+  // Cursor
+  cursor: var(--popover-cursor, default);
+  
+  /* Custom Scrollbar */
+  &::-webkit-scrollbar {
+    width: var(--popover-scrollbar-width, 8px);
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--popover-scrollbar-track-bg, #f1f1f1);
+    border-radius: var(--popover-scrollbar-border-radius, 4px);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--popover-scrollbar-thumb-bg, #888);
+    border-radius: var(--popover-scrollbar-border-radius, 4px);
+    
+    &:hover {
+      background: var(--popover-scrollbar-thumb-hover-bg, #555);
+    }
+  }
+  
+  /* Firefox Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--popover-scrollbar-thumb-bg, #888) 
+                   var(--popover-scrollbar-track-bg, #f1f1f1);
   
   // When calendar is inside, remove padding
   &:has(ui-calendar) {
@@ -32,10 +68,27 @@
   
   // Dark mode
   @media (prefers-color-scheme: dark) {
-    --popover-bg: #18181b;
-    --popover-color: #fafafa;
-    --popover-border: 1px solid #27272a;
-    --popover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    background-color: var(--popover-bg, #18181b);
+    color: var(--popover-color, #fafafa);
+    border-color: var(--popover-border-color, #27272a);
+    box-shadow: var(--popover-shadow, 
+      0 10px 15px -3px rgba(0, 0, 0, 0.4), 
+      0 4px 6px -2px rgba(0, 0, 0, 0.3));
+    
+    &::-webkit-scrollbar-track {
+      background: var(--popover-scrollbar-track-bg, #27272a);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--popover-scrollbar-thumb-bg, #52525b);
+      
+      &:hover {
+        background: var(--popover-scrollbar-thumb-hover-bg, #71717a);
+      }
+    }
+    
+    scrollbar-color: var(--popover-scrollbar-thumb-bg, #52525b) 
+                     var(--popover-scrollbar-track-bg, #27272a);
   }
 }
 
@@ -47,5 +100,50 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+// Custom animation keyframes that users can reference
+@keyframes popoverSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popoverSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popoverSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popoverSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
