@@ -25,21 +25,17 @@
       width: auto;
       flex: 1;
       
-      ::ng-deep ui-select-trigger {
-        font-size: 14px;
-        padding: 0 12px;
-        height: 32px;
-        font-weight: 500;
-        width: 100%;
-        justify-content: space-between;
-      }
+      // Override Select Trigger styles via variables
+      --select-trigger-font-size: 14px;
+      --select-trigger-padding: 0 12px;
+      --select-trigger-height: 32px;
+      --select-trigger-font-weight: 500;
+      --select-trigger-width: 100%;
+      --select-trigger-min-width: 0;
       
-      // Ensure dropdown content stays within bounds
-      ::ng-deep .ui-select-content {
-        max-height: 200px;
-        z-index: 100;
-        min-width: 100%;
-      }
+      // Override Select Content styles via variables
+      --select-content-max-height: 200px;
+      --select-content-min-width: 100%;
     }
   }
   

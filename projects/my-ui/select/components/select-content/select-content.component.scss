@@ -3,6 +3,9 @@
 }
 
 .ui-select-content {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
   min-width: var(--select-content-min-width, 180px);
   max-width: var(--select-content-max-width, 400px);
   max-height: var(--select-content-max-height, 300px);
