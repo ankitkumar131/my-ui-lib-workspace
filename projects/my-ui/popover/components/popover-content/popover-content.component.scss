@@ -20,9 +20,15 @@
   background-color: var(--popover-bg);
   color: var(--popover-color);
   box-shadow: var(--popover-shadow);
+  overflow: visible;
   
   // Animation
   animation: popoverFadeIn 0.2s ease-out;
+  
+  // When calendar is inside, remove padding
+  &:has(ui-calendar) {
+    padding: 0;
+  }
   
   // Dark mode
   @media (prefers-color-scheme: dark) {

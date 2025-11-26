@@ -63,6 +63,7 @@ import {
   PopoverTriggerDirective,
   PopoverContentComponent
 } from '@my-ui/popover';
+import { CalendarComponent } from '@my-ui/calendar';
 
 @Component({
   selector: 'app-root',
@@ -118,7 +119,8 @@ import {
     SelectSeparatorComponent,
     PopoverComponent,
     PopoverTriggerDirective,
-    PopoverContentComponent
+    PopoverContentComponent,
+    CalendarComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -130,4 +132,25 @@ export class App {
   protected readonly ButtonSize = ButtonSize;
   protected readonly AlertVariant = AlertVariant;
   protected readonly BadgeVariant = BadgeVariant;
+  
+  // Calendar states
+  selectedDate = signal<Date | undefined>(new Date());
+  selectedRange = signal<{from: Date; to?: Date} | undefined>({
+    from: new Date(2025, 0, 10),
+    to: new Date(2025, 0, 20)
+  });
+  selectedMultiple = signal<Date[]>([]);
+  minDate = new Date();
+  maxDate = new Date(2025, 11, 31);
+  
+  disablePastDates = (date: Date): boolean => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date < today;
+  };
+  
+  disableWeekends = (date: Date): boolean => {
+    const day = date.getDay();
+    return day === 0 || day === 6; // Sunday or Saturday
+  };
 }

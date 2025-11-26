@@ -1,0 +1,100 @@
+.ui-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--calendar-header-padding, 0);
+  margin-bottom: var(--calendar-header-margin-bottom, 12px);
+  
+  .ui-calendar-header-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ui-calendar-dropdowns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--calendar-dropdown-gap, 8px);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    ui-select {
+      min-width: var(--calendar-dropdown-min-width, 100px);
+      width: auto;
+      flex: 1;
+      
+      ::ng-deep ui-select-trigger {
+        font-size: 14px;
+        padding: 0 12px;
+        height: 32px;
+        font-weight: 500;
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      // Ensure dropdown content stays within bounds
+      ::ng-deep .ui-select-content {
+        max-height: 200px;
+        z-index: 100;
+        min-width: 100%;
+      }
+    }
+  }
+  
+  .ui-calendar-month-year {
+    font-size: var(--calendar-header-font-size, 14px);
+    font-weight: var(--calendar-header-font-weight, 600);
+    color: var(--calendar-header-color, #09090b);
+  }
+  
+  .ui-calendar-nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--calendar-nav-button-size, 28px);
+    height: var(--calendar-nav-button-size, 28px);
+    border: none;
+    border-radius: var(--calendar-nav-button-radius, 6px);
+    background-color: var(--calendar-nav-button-bg, transparent);
+    color: var(--calendar-nav-button-color, #6b7280);
+    cursor: pointer;
+    transition: var(--calendar-nav-button-transition, background-color 0.2s, color 0.2s);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--calendar-nav-button-hover-bg, #f3f4f6);
+      color: var(--calendar-nav-button-hover-color, #09090b);
+    }
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: var(--calendar-nav-button-disabled-opacity, 0.5);
+    }
+    
+    &.hidden {
+      visibility: hidden;
+    }
+    
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    .ui-calendar-month-year {
+      color: var(--calendar-header-color, #fafafa);
+    }
+    
+    .ui-calendar-nav-button {
+      color: var(--calendar-nav-button-color, #9ca3af);
+      
+      &:hover:not(:disabled) {
+        background-color: var(--calendar-nav-button-hover-bg, #27272a);
+        color: var(--calendar-nav-button-hover-color, #fafafa);
+      }
+    }
+  }
+}
