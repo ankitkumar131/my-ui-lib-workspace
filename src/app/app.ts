@@ -64,6 +64,16 @@ import {
   PopoverContentComponent
 } from '@my-ui/popover';
 import { CalendarComponent } from '@my-ui/calendar';
+import {
+  CardComponent,
+  CardHeaderComponent,
+  CardTitleComponent,
+  CardDescriptionComponent,
+  CardActionComponent,
+  CardContentComponent,
+  CardFooterComponent
+} from '@my-ui/card';
+
 
 @Component({
   selector: 'app-root',
@@ -120,7 +130,14 @@ import { CalendarComponent } from '@my-ui/calendar';
     PopoverComponent,
     PopoverTriggerDirective,
     PopoverContentComponent,
-    CalendarComponent
+    CalendarComponent,
+    CardComponent,
+    CardHeaderComponent,
+    CardTitleComponent,
+    CardDescriptionComponent,
+    CardActionComponent,
+    CardContentComponent,
+    CardFooterComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

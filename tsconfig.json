@@ -57,6 +57,9 @@
       ],
       "@my-ui/calendar": [
         "projects/my-ui/calendar/index.ts"
+      ],
+      "@my-ui/card": [
+        "projects/my-ui/card/index.ts"
       ]
     }
   },
