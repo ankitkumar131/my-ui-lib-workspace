@@ -1,0 +1,74 @@
+<div class="ui-calendar-header">
+  <!-- Navigation buttons -->
+  <button
+    type="button"
+    class="ui-calendar-nav-button"
+    (click)="onPrevious()"
+    [disabled]="!isFirstMonth"
+    [class.hidden]="!isFirstMonth"
+    aria-label="Previous month"
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M10 12L6 8L10 4"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+
+  <div class="ui-calendar-header-content">
+    @if (showDropdowns) {
+    <!-- Dropdown selectors -->
+    <div class="ui-calendar-dropdowns">
+      @if (showMonthDropdown) {
+      <ui-select [(selected)]="month" (selectedChange)="onMonthSelect($event)">
+        <ui-select-trigger>
+          {{ monthName }}
+        </ui-select-trigger>
+        <ui-select-content>
+          @for (m of months; track m.value) {
+          <ui-select-item [value]="m.value">{{ m.label }}</ui-select-item>
+          }
+        </ui-select-content>
+      </ui-select>
+      } @if (showYearDropdown) {
+      <ui-select [(selected)]="year" (selectedChange)="onYearSelect($event)">
+        <ui-select-trigger>
+          {{ year }}
+        </ui-select-trigger>
+        <ui-select-content>
+          @for (y of years; track y) {
+          <ui-select-item [value]="y">{{ y }}</ui-select-item>
+          }
+        </ui-select-content>
+      </ui-select>
+      }
+    </div>
+    } @else {
+    <!-- Traditional month/year display -->
+    <span class="ui-calendar-month-year">{{ monthName }} {{ year }}</span>
+    }
+  </div>
+
+  <button
+    type="button"
+    class="ui-calendar-nav-button"
+    (click)="onNext()"
+    [disabled]="!isLastMonth"
+    [class.hidden]="!isLastMonth"
+    aria-label="Next month"
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M6 4L10 8L6 12"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+</div>

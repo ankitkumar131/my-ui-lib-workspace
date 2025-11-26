@@ -1,0 +1,29 @@
+<div class="ui-calendar-grid">
+  <!-- Day names header -->
+  <div class="ui-calendar-weekdays">
+    @if (monthData.weeks[0]?.weekNumber !== undefined) {
+    <div class="ui-calendar-weekday week-number-cell"></div>
+    } @for (dayName of dayNames; track dayName) {
+    <div class="ui-calendar-weekday">{{ dayName }}</div>
+    }
+  </div>
+
+  <!-- Weeks -->
+  @for (week of monthData.weeks; track $index) {
+  <div class="ui-calendar-week">
+    @if (week.weekNumber !== undefined) {
+    <div class="ui-calendar-week-number">{{ week.weekNumber }}</div>
+    } @for (day of week.days; track day.date) {
+    <ui-calendar-cell
+      [day]="day"
+      [isSelected]="selectedFn(day.date)"
+      [isDisabled]="disabledFn(day.date)"
+      [isInRange]="inRangeFn(day.date)"
+      [isRangeStart]="rangeStartFn(day.date)"
+      [isRangeEnd]="rangeEndFn(day.date)"
+      (click)="onCellClick(day.date)"
+    ></ui-calendar-cell>
+    }
+  </div>
+  }
+</div>

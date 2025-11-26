@@ -10,35 +10,15 @@
   min-height: var(--popover-min-height, auto);
   max-height: var(--popover-max-height, none);
   
-  // Spacing
-  padding: var(--popover-padding, 16px);
-  padding-top: var(--popover-padding-top, var(--popover-padding, 16px));
-  padding-right: var(--popover-padding-right, var(--popover-padding, 16px));
-  padding-bottom: var(--popover-padding-bottom, var(--popover-padding, 16px));
-  padding-left: var(--popover-padding-left, var(--popover-padding, 16px));
-  margin: var(--popover-margin, 0);
-  
-  // Border
-  border-radius: var(--popover-radius, 8px);
-  border-width: var(--popover-border-width, 1px);
-  border-style: var(--popover-border-style, solid);
-  border-color: var(--popover-border-color, #e5e7eb);
-  
-  // Colors
-  background-color: var(--popover-bg, #ffffff);
-  color: var(--popover-color, #09090b);
-  
-  // Shadow
-  box-shadow: var(--popover-shadow, 
-    0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-    0 4px 6px -2px rgba(0, 0, 0, 0.05));
-  
-  // Typography
-  font-size: var(--popover-font-size, 14px);
-  font-weight: var(--popover-font-weight, 400);
-  font-family: var(--popover-font-family, inherit);
-  line-height: var(--popover-line-height, 1.5);
-  letter-spacing: var(--popover-letter-spacing, normal);
+  min-width: var(--popover-min-width);
+  max-width: var(--popover-max-width);
+  padding: var(--popover-padding);
+  border-radius: var(--popover-radius);
+  border: var(--popover-border);
+  background-color: var(--popover-bg);
+  color: var(--popover-color);
+  box-shadow: var(--popover-shadow);
+  overflow: visible;
   
   // Animation
   animation-name: var(--popover-animation-name, popoverFadeIn);
@@ -80,6 +60,11 @@
   scrollbar-width: thin;
   scrollbar-color: var(--popover-scrollbar-thumb-bg, #888) 
                    var(--popover-scrollbar-track-bg, #f1f1f1);
+  
+  // When calendar is inside, remove padding
+  &:has(ui-calendar) {
+    padding: 0;
+  }
   
   // Dark mode
   @media (prefers-color-scheme: dark) {

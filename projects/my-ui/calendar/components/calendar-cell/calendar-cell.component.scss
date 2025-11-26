@@ -1,0 +1,128 @@
+:host {
+  display: block;
+  position: relative;
+  
+  .ui-calendar-cell-button {
+    width: 100%;
+    height: var(--calendar-cell-size, 32px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: var(--calendar-cell-radius, 6px);
+    background-color: var(--calendar-cell-bg, transparent);
+    color: var(--calendar-cell-color, #09090b);
+    font-size: var(--calendar-cell-font-size, 14px);
+    font-weight: var(--calendar-cell-font-weight, 400);
+    cursor: pointer;
+    transition: var(--calendar-cell-transition, background-color 0.15s, color 0.15s);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--calendar-cell-hover-bg, #f4f4f5);
+      color: var(--calendar-cell-hover-color, #09090b);
+    }
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: var(--calendar-cell-disabled-opacity, 0.5);
+    }
+    
+    &:not(.current-month) {
+      color: var(--calendar-cell-outside-color, #a1a1aa);
+    }
+  }
+  
+  // Selected state - dark background like shadcn
+  &.selected .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-selected-bg, #09090b);
+    color: var(--calendar-cell-selected-color, #fafafa);
+    font-weight: var(--calendar-cell-selected-font-weight, 400);
+    
+    &:hover {
+      background-color: var(--calendar-cell-selected-hover-bg, #18181b);
+      color: var(--calendar-cell-selected-color, #fafafa);
+    }
+  }
+  
+  // Today indicator - light background instead of border
+  &.today .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-today-bg, #f4f4f5);
+    
+    &:hover {
+      background-color: var(--calendar-cell-today-hover-bg, #e4e4e7);
+    }
+  }
+  
+  // Today + Selected state
+  &.today.selected .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-selected-bg, #09090b);
+    color: var(--calendar-cell-selected-color, #fafafa);
+  }
+  
+  // Range states - in-between dates
+  &.in-range .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-range-bg, #f4f4f5);
+    color: var(--calendar-cell-range-color, #09090b);
+  }
+  
+  // Range start - white background like reference
+  &.range-start .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-range-start-bg, #ffffff);
+    color: var(--calendar-cell-range-start-color, #09090b);
+    border: 1px solid var(--calendar-cell-range-border, #e5e7eb);
+    border-top-right-radius: var(--calendar-cell-range-start-radius, 0);
+    border-bottom-right-radius: var(--calendar-cell-range-start-radius, 0);
+  }
+  
+  // Range end - white background like reference
+  &.range-end .ui-calendar-cell-button {
+    background-color: var(--calendar-cell-range-end-bg, #ffffff);
+    color: var(--calendar-cell-range-end-color, #09090b);
+    border: 1px solid var(--calendar-cell-range-border, #e5e7eb);
+    border-top-left-radius: var(--calendar-cell-range-end-radius, 0);
+    border-bottom-left-radius: var(--calendar-cell-range-end-radius, 0);
+  }
+  
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    .ui-calendar-cell-button {
+      color: var(--calendar-cell-color, #fafafa);
+      
+      &:hover:not(:disabled) {
+        background-color: var(--calendar-cell-hover-bg, #27272a);
+        color: var(--calendar-cell-hover-color, #fafafa);
+      }
+      
+      &:not(.current-month) {
+        color: var(--calendar-cell-outside-color, #52525b);
+      }
+    }
+    
+    &.today .ui-calendar-cell-button {
+      background-color: var(--calendar-cell-today-bg, #27272a);
+      
+      &:hover {
+        background-color: var(--calendar-cell-today-hover-bg, #3f3f46);
+      }
+    }
+    
+    &.selected .ui-calendar-cell-button {
+      background-color: var(--calendar-cell-selected-bg, #fafafa);
+      color: var(--calendar-cell-selected-color, #09090b);
+      
+      &:hover {
+        background-color: var(--calendar-cell-selected-hover-bg, #e4e4e7);
+      }
+    }
+    
+    &.today.selected .ui-calendar-cell-button {
+      background-color: var(--calendar-cell-selected-bg, #fafafa);
+      color: var(--calendar-cell-selected-color, #09090b);
+    }
+    
+    &.in-range .ui-calendar-cell-button {
+      background-color: var(--calendar-cell-range-bg, #27272a);
+      color: var(--calendar-cell-range-color, #fafafa);
+    }
+  }
+}

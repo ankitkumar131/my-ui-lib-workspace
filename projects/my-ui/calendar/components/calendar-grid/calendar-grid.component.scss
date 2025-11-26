@@ -1,0 +1,59 @@
+.ui-calendar-grid {
+  min-height: var(--calendar-grid-min-height, 240px); // Fixed height for 6 weeks (6 * 32px + gaps + weekday header)
+  
+  .ui-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: var(--calendar-grid-margin-bottom, 8px);
+    
+    &:has(.week-number-cell) {
+      grid-template-columns: var(--calendar-week-number-width, 32px) repeat(7, 1fr);
+    }
+  }
+  
+  .ui-calendar-weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--calendar-weekday-height, 32px);
+    font-size: var(--calendar-weekday-font-size, 12px);
+    font-weight: var(--calendar-weekday-font-weight, 400);
+    color: var(--calendar-weekday-color, #71717a);
+    text-transform: var(--calendar-weekday-text-transform, uppercase);
+    
+    &.week-number-cell {
+      font-size: var(--calendar-week-number-font-size, 11px);
+    }
+  }
+  
+  .ui-calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--calendar-cell-gap, 2px);
+    margin-top: var(--calendar-week-gap, 2px);
+    
+    &:has(.ui-calendar-week-number) {
+      grid-template-columns: var(--calendar-week-number-width, 32px) repeat(7, 1fr);
+    }
+  }
+  
+  .ui-calendar-week-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--calendar-week-number-font-size, 11px);
+    color: var(--calendar-week-number-color, #a1a1aa);
+    font-weight: var(--calendar-week-number-font-weight, 400);
+  }
+  
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    .ui-calendar-weekday {
+      color: var(--calendar-weekday-color, #71717a);
+    }
+    
+    .ui-calendar-week-number {
+      color: var(--calendar-week-number-color, #52525b);
+    }
+  }
+}

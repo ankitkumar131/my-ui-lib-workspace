@@ -42,6 +42,9 @@
       <li class="toc-item">
         <a href="#popover-demo" class="toc-link">Popover</a>
       </li>
+      <li class="toc-item">
+        <a href="#calendar-demo" class="toc-link">Calendar</a>
+      </li>
     </ul>
   </nav>
 
@@ -2062,180 +2065,262 @@
     </div>
   </section>
 
-  <!-- Custom Popover Demos -->
-  <section class="mt-8">
-    <h1>Custom Popover Demos - CSS Variables</h1>
+  <!-- Calendar Component Demo -->
+  <section class="mt-8" id="calendar-demo">
+    <h1>Calendar Component Demo</h1>
     <p class="text-sm text-muted-foreground mb-4">
-      Comprehensive examples showcasing all CSS variable customization options.
+      A date picker with month and year selection dropdowns.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <!-- Success Theme -->
+      <!-- Date Picker with Popover -->
       <div>
-        <h2 class="text-lg font-semibold mb-2">Success Theme Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Green success colors with custom border.</p>
-        <ui-popover class="popover-success-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">✓ Success</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Operation Successful</h3>
-            <p style="font-size: 14px">Your changes have been saved successfully.</p>
+        <h2 class="text-lg font-semibold mb-2">Date Picker</h2>
+        <p class="text-sm text-muted-foreground mb-3">Click to open calendar in popover</p>
+        <ui-popover>
+          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">
+            {{ selectedDate() ? selectedDate()?.toLocaleDateString() : 'Pick a date' }}
+          </ui-button>
+          <ui-popover-content align="start">
+            <ui-calendar [captionLayout]="'dropdown'" [(selected)]="selectedDate"></ui-calendar>
           </ui-popover-content>
         </ui-popover>
       </div>
 
-      <!-- Warning Theme -->
+      <!-- Basic Calendar -->
       <div>
-        <h2 class="text-lg font-semibold mb-2">Warning Theme Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Orange warning colors with custom shadow.</p>
-        <ui-popover class="popover-warning-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">⚠ Warning</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Warning</h3>
-            <p style="font-size: 14px">Please review this action carefully.</p>
-          </ui-popover-content>
-        </ui-popover>
+        <h2 class="text-lg font-semibold mb-2">Calendar</h2>
+        <ui-calendar [captionLayout]="'dropdown'" [(selected)]="selectedDate"></ui-calendar>
       </div>
 
-      <!-- Danger Theme -->
+      <!-- Range Selection -->
       <div>
-        <h2 class="text-lg font-semibold mb-2">Danger Theme Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Red danger colors with thick border.</p>
-        <ui-popover class="popover-danger-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Destructive">⨯ Danger</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Destructive Action</h3>
-            <p style="font-size: 14px">This action cannot be undone!</p>
-          </ui-popover-content>
-        </ui-popover>
+        <h2 class="text-lg font-semibold mb-2">Range Selection</h2>
+        <ui-calendar
+          [mode]="'range'"
+          [numberOfMonths]="2"
+          [captionLayout]="'dropdown'"
+          [(selected)]="selectedRange"
+        ></ui-calendar>
       </div>
 
-      <!-- Info Theme -->
+      <!-- Multiple Dates -->
       <div>
-        <h2 class="text-lg font-semibold mb-2">Info Theme Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Blue info colors with rounded corners.</p>
-        <ui-popover class="popover-info-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Default">ℹ Info</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Information</h3>
-            <p style="font-size: 14px">This feature is in beta testing.</p>
-          </ui-popover-content>
-        </ui-popover>
+        <h2 class="text-lg font-semibold mb-2">Multiple Dates</h2>
+        <ui-calendar
+          [mode]="'multiple'"
+          [captionLayout]="'dropdown'"
+          [(selected)]="selectedMultiple"
+        ></ui-calendar>
+      </div>
+    </div>
+
+    <!-- Customization Examples -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-2">Dropdown Customization Examples</h2>
+      <p class="text-sm text-muted-foreground mb-6">
+        Fully customize the month/year dropdowns using CSS variables. All dropdown styling is
+        customizable.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Cyan/Teal Theme -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🎨 Cyan Dropdown Theme</h3>
+          <p class="text-xs text-muted-foreground mb-3">
+            Custom teal dropdowns with matching calendar
+          </p>
+          <style>
+            .calendar-cyan-dropdown {
+              /* Calendar styling */
+              --calendar-border-color: #06b6d4;
+              --calendar-bg: #ecfeff;
+              --calendar-cell-selected-bg: #06b6d4;
+              --calendar-cell-selected-color: #ffffff;
+              --calendar-cell-today-bg: #06b6d4;
+              --calendar-cell-hover-bg: #cffafe;
+
+              /* Dropdown trigger (button) */
+              --select-trigger-bg: #ffffff;
+              --select-trigger-border-color: #06b6d4;
+              --select-trigger-color: #0e7490;
+              --select-trigger-font-weight: 600;
+              --select-trigger-hover-bg: #cffafe;
+              --select-trigger-hover-border-color: #0891b2;
+              --select-trigger-height: 36px;
+              --select-trigger-border-radius: 8px;
+
+              /* Dropdown content (popover) */
+              --select-content-bg: #ffffff;
+              --select-content-border-color: #06b6d4;
+              --select-content-shadow: 0 10px 25px rgba(6, 182, 212, 0.2);
+
+              /* Selected item */
+              --select-item-selected-bg: #06b6d4;
+              --select-item-selected-color: #ffffff;
+              --select-item-selected-font-weight: 600;
+
+              /* Hover state */
+              --select-item-hover-bg: #cffafe;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-cyan-dropdown"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate"
+          ></ui-calendar>
+        </div>
+
+        <!-- Purple Glassmorphism -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">💜 Purple Glassmorphism</h3>
+          <p class="text-xs text-muted-foreground mb-3">Frosted glass effect with purple accents</p>
+          <style>
+            .calendar-purple-glass {
+              --calendar-bg: #faf5ff;
+              --calendar-border-color: #a855f7;
+              --calendar-cell-selected-bg: #a855f7;
+              --calendar-cell-hover-bg: #f3e8ff;
+
+              /* Glass effect trigger */
+              --select-trigger-bg: rgba(250, 245, 255, 0.6);
+              --select-trigger-border-color: #a855f7;
+              --select-trigger-color: #7e22ce;
+              --select-trigger-font-weight: 500;
+              --select-trigger-hover-bg: rgba(243, 232, 255, 0.8);
+              --select-trigger-border-radius: 10px;
+
+              /* Glass dropdown */
+              --select-content-bg: rgba(255, 255, 255, 0.95);
+              --select-content-border-color: #a855f7;
+              --select-content-shadow: 0 20px 40px rgba(168, 85, 247, 0.25);
+              --select-content-border-radius: 12px;
+
+              /* Selected styling */
+              --select-item-selected-bg: #a855f7;
+              --select-item-selected-color: #ffffff;
+              --select-item-hover-bg: #f3e8ff;
+              --select-item-border-radius: 6px;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-purple-glass"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate2"
+          ></ui-calendar>
+        </div>
+
+        <!-- Dark Mode -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🌙 Dark Mode</h3>
+          <p class="text-xs text-muted-foreground mb-3">
+            Complete dark theme with custom dropdowns
+          </p>
+          <style>
+            .calendar-dark-dropdown {
+              /* Dark calendar */
+              --calendar-bg: #18181b;
+              --calendar-border-color: #3f3f46;
+              --calendar-cell-color: #fafafa;
+              --calendar-cell-selected-bg: #60a5fa;
+              --calendar-cell-selected-color: #09090b;
+              --calendar-cell-today-bg: #60a5fa;
+              --calendar-cell-hover-bg: #27272a;
+              --calendar-weekday-color: #a1a1aa;
+
+              /* Dark trigger */
+              --select-trigger-bg: #27272a;
+              --select-trigger-border-color: #3f3f46;
+              --select-trigger-color: #fafafa;
+              --select-trigger-hover-bg: #3f3f46;
+              --select-trigger-hover-border-color: #60a5fa;
+
+              /* Dark dropdown */
+              --select-content-bg: #27272a;
+              --select-content-border-color: #3f3f46;
+              --select-content-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+              /* Dark selected */
+              --select-item-selected-bg: #60a5fa;
+              --select-item-selected-color: #09090b;
+              --select-item-hover-bg: #3f3f46;
+              --select-item-hover-color: #fafafa;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-dark-dropdown"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate3"
+          ></ui-calendar>
+        </div>
+
+        <!-- Gradient Theme -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🌈 Gradient Theme</h3>
+          <p class="text-xs text-muted-foreground mb-3">Colorful gradient backgrounds</p>
+          <style>
+            .calendar-gradient {
+              --calendar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              --calendar-border-color: #667eea;
+              --calendar-cell-color: #ffffff;
+              --calendar-cell-selected-bg: #ffffff;
+              --calendar-cell-selected-color: #667eea;
+              --calendar-cell-hover-bg: rgba(255, 255, 255, 0.2);
+              --calendar-weekday-color: rgba(255, 255, 255, 0.8);
+
+              /* Gradient trigger */
+              --select-trigger-bg: #ffffff;
+              --select-trigger-border-color: #667eea;
+              --select-trigger-color: #667eea;
+              --select-trigger-font-weight: 600;
+              --select-trigger-hover-bg: #f5f3ff;
+              --select-trigger-border-radius: 10px;
+
+              /* Gradient dropdown */
+              --select-content-bg: #ffffff;
+              --select-content-border-color: #667eea;
+              --select-content-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+
+              /* Gradient selected */
+              --select-item-selected-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              --select-item-selected-color: #ffffff;
+              --select-item-hover-bg: #f5f3ff;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-gradient"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate4"
+          ></ui-calendar>
+        </div>
       </div>
 
-      <!-- Large Custom Size -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Large Size Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">
-          Extra large with more padding and custom width.
-        </p>
-        <ui-popover class="popover-large-custom">
-          <ui-button uiPopoverTrigger>Large Popover</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 12px">Large Content Area</h3>
-            <p style="font-size: 14px; margin-bottom: 12px">
-              This popover has custom dimensions with more width and padding.
-            </p>
-            <p style="font-size: 13px; color: #6b7280">
-              Perfect for detailed information or forms.
-            </p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Compact Size -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Compact Size Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Small and compact with minimal padding.</p>
-        <ui-popover class="popover-compact-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">Compact</ui-button>
-          <ui-popover-content>
-            <p style="font-size: 12px">Compact size</p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Scrollable Popover -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Scrollable Popover</h2>
-        <p class="text-sm text-muted-foreground mb-3">Fixed height with scrollable content.</p>
-        <ui-popover class="popover-scrollable-custom">
-          <ui-button uiPopoverTrigger>Scrollable Content</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Scrollable List</h3>
-            <div style="font-size: 14px">
-              <p style="margin-bottom: 8px">Item 1</p>
-              <p style="margin-bottom: 8px">Item 2</p>
-              <p style="margin-bottom: 8px">Item 3</p>
-              <p style="margin-bottom: 8px">Item 4</p>
-              <p style="margin-bottom: 8px">Item 5</p>
-              <p style="margin-bottom: 8px">Item 6</p>
-              <p style="margin-bottom: 8px">Item 7</p>
-              <p>Item 8</p>
-            </div>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Slide Down Animation -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Slide Down Animation</h2>
-        <p class="text-sm text-muted-foreground mb-3">Custom animation sliding from top.</p>
-        <ui-popover class="popover-slide-down-custom">
-          <ui-button uiPopoverTrigger>Slide Down</ui-button>
-          <ui-popover-content side="bottom">
-            <p style="font-size: 14px">Slides down smoothly!</p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Square Corners with Shadow -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Square & Elevated</h2>
-        <p class="text-sm text-muted-foreground mb-3">Square corners with elevated shadow.</p>
-        <ui-popover class="popover-square-elevated">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Outline">Square</ui-button>
-          <ui-popover-content>
-            <p style="font-size: 14px">Sharp corners, elevated appearance</p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Custom Typography -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Custom Typography</h2>
-        <p class="text-sm text-muted-foreground mb-3">Custom font size, weight, and line height.</p>
-        <ui-popover class="popover-custom-typography">
-          <ui-button uiPopoverTrigger>Custom Font</ui-button>
-          <ui-popover-content>
-            <h3 style="margin-bottom: 8px">Custom Typography</h3>
-            <p>Adjusted font size and line height for better readability.</p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- No Animation -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">No Animation</h2>
-        <p class="text-sm text-muted-foreground mb-3">Appears instantly without animation.</p>
-        <ui-popover class="popover-no-animation-custom">
-          <ui-button uiPopoverTrigger [variant]="ButtonVariant.Ghost">Instant</ui-button>
-          <ui-popover-content>
-            <p style="font-size: 14px">No animation - instant appearance!</p>
-          </ui-popover-content>
-        </ui-popover>
-      </div>
-
-      <!-- Dark Purple Theme -->
-      <div>
-        <h2 class="text-lg font-semibold mb-2">Dark Purple Theme</h2>
-        <p class="text-sm text-muted-foreground mb-3">Custom dark purple gradient theme.</p>
-        <ui-popover class="popover-purple-custom">
-          <ui-button uiPopoverTrigger>Purple Theme</ui-button>
-          <ui-popover-content>
-            <h3 style="font-weight: 600; margin-bottom: 8px">Premium Feature</h3>
-            <p style="font-size: 14px">Elegant purple theme for premium content.</p>
-          </ui-popover-content>
-        </ui-popover>
+      <!-- CSS Variables Reference -->
+      <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+        <h3 class="text-lg font-semibold mb-3">Available CSS Variables</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h4 class="font-semibold mb-2">Dropdown Trigger:</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-gray-700">
+              <li><code class="bg-white px-1 rounded">--select-trigger-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-border-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-hover-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-height</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-border-radius</code></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Dropdown Content:</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-gray-700">
+              <li><code class="bg-white px-1 rounded">--select-content-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-content-border-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-content-shadow</code></li>
+              <li><code class="bg-white px-1 rounded">--select-item-selected-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-item-hover-bg</code></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>

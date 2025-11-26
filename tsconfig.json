@@ -54,6 +54,9 @@
       ],
       "@my-ui/select": [
         "projects/my-ui/select/index.ts"
+      ],
+      "@my-ui/calendar": [
+        "projects/my-ui/calendar/index.ts"
       ]
     }
   },

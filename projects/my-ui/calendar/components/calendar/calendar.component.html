@@ -1,0 +1,30 @@
+<div class="ui-calendar">
+  <div class="ui-calendar-months">
+    @for (monthData of months(); track monthData.month) {
+    <div class="ui-calendar-month">
+      <ui-calendar-header
+        [year]="monthData.year"
+        [month]="monthData.month"
+        [isFirstMonth]="$index === 0"
+        [isLastMonth]="$index === months().length - 1"
+        [captionLayout]="captionLayout"
+        (previousClick)="previousMonth()"
+        (nextClick)="nextMonth()"
+        (monthChange)="onMonthChange($event)"
+        (yearChange)="onYearChange($event)"
+      ></ui-calendar-header>
+
+      <ui-calendar-grid
+        [monthData]="monthData"
+        [weekStartsOn]="weekStartsOn"
+        [selectedFn]="isDateSelected.bind(this)"
+        [disabledFn]="isDateDisabled.bind(this)"
+        [inRangeFn]="isDateInRange.bind(this)"
+        [rangeStartFn]="isRangeStart.bind(this)"
+        [rangeEndFn]="isRangeEnd.bind(this)"
+        (dateClick)="onDateSelect($event)"
+      ></ui-calendar-grid>
+    </div>
+    }
+  </div>
+</div>

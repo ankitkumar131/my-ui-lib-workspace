@@ -1,0 +1,34 @@
+.ui-calendar {
+  // Container - sized to match shadcn
+  width: fit-content; // Wrap tightly around content
+  max-width: 100%; // Don't overflow viewport
+  padding: var(--calendar-padding, 12px);
+  border-radius: var(--calendar-radius, 8px);
+  border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #e5e7eb);
+  background-color: var(--calendar-bg, #ffffff);
+  box-shadow: var(--calendar-shadow, none);
+  font-family: var(--calendar-font-family, inherit);
+  overflow: visible;
+  
+  .ui-calendar-months {
+    display: flex;
+    gap: var(--calendar-month-gap, 16px);
+  }
+  
+  .ui-calendar-month {
+    flex: 0 0 auto; // Don't grow or shrink
+    width: var(--calendar-month-width, 256px); // Fixed width per month
+    min-width: 0;
+  }
+  
+  // When inside popover, remove border (popover already has one)
+  .popover-content & {
+    border: none;
+  }
+  
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--calendar-bg, #18181b);
+    border-color: var(--calendar-border-color, #27272a);
+  }
+}

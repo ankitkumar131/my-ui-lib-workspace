@@ -63,6 +63,7 @@ import {
   PopoverTriggerDirective,
   PopoverContentComponent
 } from '@my-ui/popover';
+import { CalendarComponent } from '@my-ui/calendar';
 
 @Component({
   selector: 'app-root',
@@ -118,7 +119,8 @@ import {
     SelectSeparatorComponent,
     PopoverComponent,
     PopoverTriggerDirective,
-    PopoverContentComponent
+    PopoverContentComponent,
+    CalendarComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -130,4 +132,49 @@ export class App {
   protected readonly ButtonSize = ButtonSize;
   protected readonly AlertVariant = AlertVariant;
   protected readonly BadgeVariant = BadgeVariant;
+  
+  // Calendar states
+  selectedDate = signal<Date | undefined>(new Date());
+  selectedRange = signal<{from: Date; to?: Date} | undefined>({
+    from: new Date(2025, 0, 10),
+    to: new Date(2025, 0, 20)
+  });
+  selectedMultiple = signal<Date[]>([]);
+  protected customDropdownDate = signal<Date | undefined>(new Date());
+  protected customDropdownDate2 = signal<Date | undefined>(new Date(2025, 1, 14));
+  protected customDropdownDate3 = signal<Date | undefined>(new Date(2025, 2, 20));
+  protected customDropdownDate4 = signal<Date | undefined>(new Date(2025, 3, 10));
+  minDate = new Date();
+  maxDate = new Date(2025, 11, 31);
+  
+  // Custom theme calendars
+  protected customThemeRange1 = signal<{from: Date; to?: Date} | undefined>({
+    from: new Date(2025, 1, 10),
+    to: new Date(2025, 1, 15)
+  });
+  protected customThemeRange2 = signal<{from: Date; to?: Date} | undefined>({
+    from: new Date(2025, 2, 5),
+    to: new Date(2025, 2, 12)
+  });
+  protected customThemeRange3 = signal<{from: Date; to?: Date} | undefined>({
+    from: new Date(2025, 3, 1),
+    to: new Date(2025, 3, 10)
+  });
+  protected customThemeDate1 = signal<Date | undefined>(new Date(2025, 4, 15));
+  protected customThemeDate2 = signal<Date | undefined>(new Date(2025, 5, 20));
+  protected customThemeDate3 = signal<Date | undefined>(new Date(2025, 6, 8));
+  protected customThemeDate4 = signal<Date | undefined>(new Date(2025, 7, 25));
+  protected customThemeDate5 = signal<Date | undefined>(new Date(2025, 8, 12));
+  protected customThemeDate6 = signal<Date | undefined>(new Date(2025, 9, 18));
+  
+  disablePastDates = (date: Date): boolean => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date < today;
+  };
+  
+  disableWeekends = (date: Date): boolean => {
+    const day = date.getDay();
+    return day === 0 || day === 6; // Sunday or Saturday
+  };
 }
