@@ -10,8 +10,15 @@ import { SelectService } from '../../select.service';
   providers: [SelectService]
 })
 export class SelectComponent implements OnDestroy {
+  private _updatingFromParent = false;
+  
   @Input() set selected(value: any) {
+    this._updatingFromParent = true;
     this.selectService.selectedValue.set(value);
+    // Give Angular a chance to process before clearing flag
+    queueMicrotask(() => {
+      this._updatingFromParent = false;
+    });
   }
   get selected() {
     return this.selectService.selectedValue();
@@ -20,10 +27,12 @@ export class SelectComponent implements OnDestroy {
   @Output() selectedChange = new EventEmitter<any>();
 
   constructor(private selectService: SelectService) {
-    // Listen to service changes and emit output
+    // Only emit when user selects (not when parent updates)
     effect(() => {
       const value = this.selectService.selectedValue();
-      this.selectedChange.emit(value);
+      if (!this._updatingFromParent) {
+        this.selectedChange.emit(value);
+      }
     }, { injector: this.injector });
   }
 

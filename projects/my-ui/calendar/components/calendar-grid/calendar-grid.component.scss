@@ -1,4 +1,6 @@
 .ui-calendar-grid {
+  min-height: var(--calendar-grid-min-height, 240px); // Fixed height for 6 weeks (6 * 32px + gaps + weekday header)
+  
   .ui-calendar-weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

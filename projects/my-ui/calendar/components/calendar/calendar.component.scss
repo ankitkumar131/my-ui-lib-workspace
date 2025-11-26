@@ -1,7 +1,7 @@
 .ui-calendar {
   // Container - sized to match shadcn
-  width: var(--calendar-width, 280px);
-  max-width: var(--calendar-max-width, 100%);
+  width: fit-content; // Wrap tightly around content
+  max-width: 100%; // Don't overflow viewport
   padding: var(--calendar-padding, 12px);
   border-radius: var(--calendar-radius, 8px);
   border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #e5e7eb);
@@ -16,10 +16,9 @@
   }
   
   .ui-calendar-month {
-    flex: 1;
-    min-width: unset;
-    width: var(--calendar-width, 280px);
-    max-width: var(--calendar-max-width, 100%);
+    flex: 0 0 auto; // Don't grow or shrink
+    width: var(--calendar-month-width, 256px); // Fixed width per month
+    min-width: 0;
   }
   
   // When inside popover, remove border (popover already has one)

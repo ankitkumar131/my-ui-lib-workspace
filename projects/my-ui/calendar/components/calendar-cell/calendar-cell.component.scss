@@ -59,22 +59,26 @@
     color: var(--calendar-cell-selected-color, #fafafa);
   }
   
-  // Range states
+  // Range states - in-between dates
   &.in-range .ui-calendar-cell-button {
     background-color: var(--calendar-cell-range-bg, #f4f4f5);
     color: var(--calendar-cell-range-color, #09090b);
   }
   
+  // Range start - white background like reference
   &.range-start .ui-calendar-cell-button {
-    background-color: var(--calendar-cell-selected-bg, #09090b);
-    color: var(--calendar-cell-selected-color, #fafafa);
+    background-color: var(--calendar-cell-range-start-bg, #ffffff);
+    color: var(--calendar-cell-range-start-color, #09090b);
+    border: 1px solid var(--calendar-cell-range-border, #e5e7eb);
     border-top-right-radius: var(--calendar-cell-range-start-radius, 0);
     border-bottom-right-radius: var(--calendar-cell-range-start-radius, 0);
   }
   
+  // Range end - white background like reference
   &.range-end .ui-calendar-cell-button {
-    background-color: var(--calendar-cell-selected-bg, #09090b);
-    color: var(--calendar-cell-selected-color, #fafafa);
+    background-color: var(--calendar-cell-range-end-bg, #ffffff);
+    color: var(--calendar-cell-range-end-color, #09090b);
+    border: 1px solid var(--calendar-cell-range-border, #e5e7eb);
     border-top-left-radius: var(--calendar-cell-range-end-radius, 0);
     border-bottom-left-radius: var(--calendar-cell-range-end-radius, 0);
   }

@@ -42,6 +42,9 @@
       <li class="toc-item">
         <a href="#popover-demo" class="toc-link">Popover</a>
       </li>
+      <li class="toc-item">
+        <a href="#calendar-demo" class="toc-link">Calendar</a>
+      </li>
     </ul>
   </nav>
 
@@ -2063,8 +2066,8 @@
   </section>
 
   <!-- Calendar Component Demo -->
-  <section class="mt-8">
-    <h1>Calendar Component</h1>
+  <section class="mt-8" id="calendar-demo">
+    <h1>Calendar Component Demo</h1>
     <p class="text-sm text-muted-foreground mb-4">
       A date picker with month and year selection dropdowns.
     </p>
@@ -2079,10 +2082,7 @@
             {{ selectedDate() ? selectedDate()?.toLocaleDateString() : 'Pick a date' }}
           </ui-button>
           <ui-popover-content align="start">
-            <ui-calendar 
-              [captionLayout]="'dropdown'"
-              [(selected)]="selectedDate"
-            ></ui-calendar>
+            <ui-calendar [captionLayout]="'dropdown'" [(selected)]="selectedDate"></ui-calendar>
           </ui-popover-content>
         </ui-popover>
       </div>
@@ -2090,17 +2090,15 @@
       <!-- Basic Calendar -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Calendar</h2>
-        <ui-calendar 
-          [captionLayout]="'dropdown'"
-          [(selected)]="selectedDate"
-        ></ui-calendar>
+        <ui-calendar [captionLayout]="'dropdown'" [(selected)]="selectedDate"></ui-calendar>
       </div>
 
       <!-- Range Selection -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Range Selection</h2>
-        <ui-calendar 
+        <ui-calendar
           [mode]="'range'"
+          [numberOfMonths]="2"
           [captionLayout]="'dropdown'"
           [(selected)]="selectedRange"
         ></ui-calendar>
@@ -2109,11 +2107,220 @@
       <!-- Multiple Dates -->
       <div>
         <h2 class="text-lg font-semibold mb-2">Multiple Dates</h2>
-        <ui-calendar 
+        <ui-calendar
           [mode]="'multiple'"
           [captionLayout]="'dropdown'"
           [(selected)]="selectedMultiple"
         ></ui-calendar>
+      </div>
+    </div>
+
+    <!-- Customization Examples -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-2">Dropdown Customization Examples</h2>
+      <p class="text-sm text-muted-foreground mb-6">
+        Fully customize the month/year dropdowns using CSS variables. All dropdown styling is
+        customizable.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Cyan/Teal Theme -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🎨 Cyan Dropdown Theme</h3>
+          <p class="text-xs text-muted-foreground mb-3">
+            Custom teal dropdowns with matching calendar
+          </p>
+          <style>
+            .calendar-cyan-dropdown {
+              /* Calendar styling */
+              --calendar-border-color: #06b6d4;
+              --calendar-bg: #ecfeff;
+              --calendar-cell-selected-bg: #06b6d4;
+              --calendar-cell-selected-color: #ffffff;
+              --calendar-cell-today-bg: #06b6d4;
+              --calendar-cell-hover-bg: #cffafe;
+
+              /* Dropdown trigger (button) */
+              --select-trigger-bg: #ffffff;
+              --select-trigger-border-color: #06b6d4;
+              --select-trigger-color: #0e7490;
+              --select-trigger-font-weight: 600;
+              --select-trigger-hover-bg: #cffafe;
+              --select-trigger-hover-border-color: #0891b2;
+              --select-trigger-height: 36px;
+              --select-trigger-border-radius: 8px;
+
+              /* Dropdown content (popover) */
+              --select-content-bg: #ffffff;
+              --select-content-border-color: #06b6d4;
+              --select-content-shadow: 0 10px 25px rgba(6, 182, 212, 0.2);
+
+              /* Selected item */
+              --select-item-selected-bg: #06b6d4;
+              --select-item-selected-color: #ffffff;
+              --select-item-selected-font-weight: 600;
+
+              /* Hover state */
+              --select-item-hover-bg: #cffafe;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-cyan-dropdown"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate"
+          ></ui-calendar>
+        </div>
+
+        <!-- Purple Glassmorphism -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">💜 Purple Glassmorphism</h3>
+          <p class="text-xs text-muted-foreground mb-3">Frosted glass effect with purple accents</p>
+          <style>
+            .calendar-purple-glass {
+              --calendar-bg: #faf5ff;
+              --calendar-border-color: #a855f7;
+              --calendar-cell-selected-bg: #a855f7;
+              --calendar-cell-hover-bg: #f3e8ff;
+
+              /* Glass effect trigger */
+              --select-trigger-bg: rgba(250, 245, 255, 0.6);
+              --select-trigger-border-color: #a855f7;
+              --select-trigger-color: #7e22ce;
+              --select-trigger-font-weight: 500;
+              --select-trigger-hover-bg: rgba(243, 232, 255, 0.8);
+              --select-trigger-border-radius: 10px;
+
+              /* Glass dropdown */
+              --select-content-bg: rgba(255, 255, 255, 0.95);
+              --select-content-border-color: #a855f7;
+              --select-content-shadow: 0 20px 40px rgba(168, 85, 247, 0.25);
+              --select-content-border-radius: 12px;
+
+              /* Selected styling */
+              --select-item-selected-bg: #a855f7;
+              --select-item-selected-color: #ffffff;
+              --select-item-hover-bg: #f3e8ff;
+              --select-item-border-radius: 6px;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-purple-glass"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate2"
+          ></ui-calendar>
+        </div>
+
+        <!-- Dark Mode -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🌙 Dark Mode</h3>
+          <p class="text-xs text-muted-foreground mb-3">
+            Complete dark theme with custom dropdowns
+          </p>
+          <style>
+            .calendar-dark-dropdown {
+              /* Dark calendar */
+              --calendar-bg: #18181b;
+              --calendar-border-color: #3f3f46;
+              --calendar-cell-color: #fafafa;
+              --calendar-cell-selected-bg: #60a5fa;
+              --calendar-cell-selected-color: #09090b;
+              --calendar-cell-today-bg: #60a5fa;
+              --calendar-cell-hover-bg: #27272a;
+              --calendar-weekday-color: #a1a1aa;
+
+              /* Dark trigger */
+              --select-trigger-bg: #27272a;
+              --select-trigger-border-color: #3f3f46;
+              --select-trigger-color: #fafafa;
+              --select-trigger-hover-bg: #3f3f46;
+              --select-trigger-hover-border-color: #60a5fa;
+
+              /* Dark dropdown */
+              --select-content-bg: #27272a;
+              --select-content-border-color: #3f3f46;
+              --select-content-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+              /* Dark selected */
+              --select-item-selected-bg: #60a5fa;
+              --select-item-selected-color: #09090b;
+              --select-item-hover-bg: #3f3f46;
+              --select-item-hover-color: #fafafa;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-dark-dropdown"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate3"
+          ></ui-calendar>
+        </div>
+
+        <!-- Gradient Theme -->
+        <div>
+          <h3 class="text-md font-semibold mb-2">🌈 Gradient Theme</h3>
+          <p class="text-xs text-muted-foreground mb-3">Colorful gradient backgrounds</p>
+          <style>
+            .calendar-gradient {
+              --calendar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              --calendar-border-color: #667eea;
+              --calendar-cell-color: #ffffff;
+              --calendar-cell-selected-bg: #ffffff;
+              --calendar-cell-selected-color: #667eea;
+              --calendar-cell-hover-bg: rgba(255, 255, 255, 0.2);
+              --calendar-weekday-color: rgba(255, 255, 255, 0.8);
+
+              /* Gradient trigger */
+              --select-trigger-bg: #ffffff;
+              --select-trigger-border-color: #667eea;
+              --select-trigger-color: #667eea;
+              --select-trigger-font-weight: 600;
+              --select-trigger-hover-bg: #f5f3ff;
+              --select-trigger-border-radius: 10px;
+
+              /* Gradient dropdown */
+              --select-content-bg: #ffffff;
+              --select-content-border-color: #667eea;
+              --select-content-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+
+              /* Gradient selected */
+              --select-item-selected-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              --select-item-selected-color: #ffffff;
+              --select-item-hover-bg: #f5f3ff;
+            }
+          </style>
+          <ui-calendar
+            class="calendar-gradient"
+            [captionLayout]="'dropdown'"
+            [(selected)]="customDropdownDate4"
+          ></ui-calendar>
+        </div>
+      </div>
+
+      <!-- CSS Variables Reference -->
+      <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+        <h3 class="text-lg font-semibold mb-3">Available CSS Variables</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h4 class="font-semibold mb-2">Dropdown Trigger:</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-gray-700">
+              <li><code class="bg-white px-1 rounded">--select-trigger-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-border-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-hover-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-height</code></li>
+              <li><code class="bg-white px-1 rounded">--select-trigger-border-radius</code></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Dropdown Content:</h4>
+            <ul class="list-disc list-inside space-y-1 text-xs text-gray-700">
+              <li><code class="bg-white px-1 rounded">--select-content-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-content-border-color</code></li>
+              <li><code class="bg-white px-1 rounded">--select-content-shadow</code></li>
+              <li><code class="bg-white px-1 rounded">--select-item-selected-bg</code></li>
+              <li><code class="bg-white px-1 rounded">--select-item-hover-bg</code></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>

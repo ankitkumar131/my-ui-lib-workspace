@@ -1,14 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarService } from '../../services/calendar.service';
-import { SelectComponent, SelectTriggerComponent, SelectValueComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/select';
+import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/select';
 
 @Component({
   selector: 'ui-calendar-header',
   templateUrl: './calendar-header.component.html',
   styleUrls: ['./calendar-header.component.scss'],
   standalone: true,
-  imports: [CommonModule, SelectComponent, SelectTriggerComponent, SelectValueComponent, SelectContentComponent, SelectItemComponent]
+  imports: [CommonModule, SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent]
 })
 export class CalendarHeaderComponent {
   @Input() year!: number;
@@ -55,15 +55,11 @@ export class CalendarHeaderComponent {
   }
 
   onPrevious() {
-    if (this.isFirstMonth) {
-      this.previousClick.emit();
-    }
+    this.previousClick.emit();
   }
 
   onNext() {
-    if (this.isLastMonth) {
-      this.nextClick.emit();
-    }
+    this.nextClick.emit();
   }
 
   onMonthSelect(value: any) {
