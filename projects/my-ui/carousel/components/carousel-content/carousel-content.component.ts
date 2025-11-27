@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ContentChildren, QueryList, OnDestroy, Input, Optional } from '@angular/core';
+import { Component, AfterContentInit, ContentChildren, QueryList, OnDestroy, Input, Optional, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { Subscription } from 'rxjs';
@@ -26,7 +26,7 @@ export class CarouselContentComponent implements AfterContentInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   currentIndex = 0;
 
-  constructor(@Optional() private carousel: CarouselComponent) {}
+  constructor(@Optional() private carousel: CarouselComponent, private elementRef: ElementRef) {}
 
   ngAfterContentInit() {
     if (this.carousel) {
@@ -53,8 +53,8 @@ export class CarouselContentComponent implements AfterContentInit, OnDestroy {
     
     const orientation = this.carousel.orientation;
     
-    // Get the actual item width/height from the first carousel item
-    const contentElement = document.querySelector('ui-carousel-content');
+    // Get the actual item width/height from the first carousel item within THIS component
+    const contentElement = this.elementRef.nativeElement;
     const firstItem = contentElement?.querySelector('ui-carousel-item') as HTMLElement;
     
     let translateValue = 0;
@@ -82,7 +82,8 @@ export class CarouselContentComponent implements AfterContentInit, OnDestroy {
   }
 
   getItemCount(): number {
-    const contentElement = document.querySelector('ui-carousel-content');
+    // Query items within THIS component instance only
+    const contentElement = this.elementRef.nativeElement;
     if (contentElement) {
       const items = contentElement.querySelectorAll('ui-carousel-item');
       return items.length;
