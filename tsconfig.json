@@ -60,6 +60,9 @@
       ],
       "@my-ui/card": [
         "projects/my-ui/card/index.ts"
+      ],
+      "@my-ui/carousel": [
+        "projects/my-ui/carousel/index.ts"
       ]
     }
   },

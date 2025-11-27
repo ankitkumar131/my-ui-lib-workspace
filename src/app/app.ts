@@ -73,6 +73,13 @@ import {
   CardContentComponent,
   CardFooterComponent
 } from '@my-ui/card';
+import {
+  CarouselComponent,
+  CarouselContentComponent,
+  CarouselItemComponent,
+  CarouselPreviousComponent,
+  CarouselNextComponent
+} from '@my-ui/carousel';
 
 
 @Component({
@@ -137,7 +144,12 @@ import {
     CardDescriptionComponent,
     CardActionComponent,
     CardContentComponent,
-    CardFooterComponent
+    CardFooterComponent,
+    CarouselComponent,
+    CarouselContentComponent,
+    CarouselItemComponent,
+    CarouselPreviousComponent,
+    CarouselNextComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
