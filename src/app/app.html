@@ -48,6 +48,9 @@
       <li class="toc-item">
         <a href="#card-demo" class="toc-link">Card</a>
       </li>
+      <li class="toc-item">
+        <a href="#carousel-demo" class="toc-link">Carousel</a>
+      </li>
     </ul>
   </nav>
 
@@ -2850,4 +2853,655 @@
             </div>
           </section>
         </div>
-    
+
+  <!-- Carousel Section -->
+  <section id="carousel-demo" class="mt-8">
+    <h1>Carousel Demo</h1>
+
+    <div class="grid grid-cols-1 gap-12 mt-4">
+      <!-- Basic Carousel -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Basic Carousel</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          A simple carousel with navigation buttons. Click the arrows or swipe to navigate.
+        </p>
+        <div style="max-width: 360px; margin: 0 auto">
+          <ui-carousel>
+            <ui-carousel-content>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">1</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">2</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">3</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">4</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">5</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+
+      <!-- Multiple Items -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Size Variants (Multiple Items Visible)</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          Show multiple slides at once using CSS variables. This example shows 3 items at a time.
+        </p>
+        <div style="max-width: 600px; margin: 0 auto">
+          <ui-carousel [opts]="{ align: 'start' }">
+            <ui-carousel-content
+              style="
+                --carousel-content-margin: -4px;
+              "
+            >
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 33.333%;
+                  --carousel-item-padding-left: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">1</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 33.333%;
+                  --carousel-item-padding-left: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">2</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 33.333%;
+                  --carousel-item-padding-left: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">3</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 33.333%;
+                  --carousel-item-padding-left: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">4</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 33.333%;
+                  --carousel-item-padding-left: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">5</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+
+      <!-- Vertical Orientation -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Vertical Orientation</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          Set orientation to "vertical" for up/down scrolling carousel.
+        </p>
+        <div style="max-width: 320px; margin: 0 auto">
+          <ui-carousel
+            orientation="vertical"
+            [opts]="{ align: 'start' }"
+            style="--carousel-height: 300px"
+          >
+            <ui-carousel-content
+              style="
+                --carousel-content-margin: -4px;
+                height: 300px;
+              "
+            >
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-top: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">1</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-top: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">2</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-top: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">3</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-top: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">4</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-top: 4px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 1.875rem; font-weight: 600">5</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+
+      <!-- Loop Enabled -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Loop Enabled</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          Enable infinite looping by setting loop: true in options.
+        </p>
+        <div style="max-width: 360px; margin: 0 auto">
+          <ui-carousel [opts]="{ loop: true }">
+            <ui-carousel-content>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">1</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">2</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card>
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">3</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+
+      <!-- Autoplay -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Autoplay</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          Automatically advance slides every 3 seconds with autoplay enabled.
+        </p>
+        <div style="max-width: 360px; margin: 0 auto">
+          <ui-carousel [opts]="{ autoplay: true, autoplayInterval: 3000, loop: true }">
+            <ui-carousel-content>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card style="--card-bg: #fef3c7; --card-border-color: #fbbf24">
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">🚀</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card style="--card-bg: #dbeafe; --card-border-color: #3b82f6">
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">⭐</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item>
+                <div style="padding: 4px">
+                  <ui-card style="--card-bg: #dcfce7; --card-border-color: #22c55e">
+                    <ui-card-content
+                      style="
+                        display: flex;
+                        aspect-ratio: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 24px;
+                      "
+                    >
+                      <span style="font-size: 2.25rem; font-weight: 600">🎨</span>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+
+      <!-- Dark Theme Customization -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Dark Theme Customization</h2>
+        <p class="text-sm text-muted-foreground mb-4">
+          Fully customizable with CSS variables - darker colors and custom navigation styling.
+        </p>
+        <div
+          style="
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 32px;
+            border-radius: 12px;
+          "
+        >
+          <ui-carousel
+            [opts]="{ align: 'start' }"
+            style="
+              --carousel-nav-bg: rgba(15, 23, 42, 0.95);
+              --carousel-nav-border: 1px solid #334155;
+              --carousel-nav-color: #e2e8f0;
+              --carousel-nav-hover-bg: #1e293b;
+              --carousel-nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+              --carousel-nav-hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+            "
+          >
+            <ui-carousel-content style="--carousel-content-margin: -8px">
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-left: 8px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card
+                    style="
+                      --card-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+                      --card-border-color: #1d4ed8;
+                      --card-color: #ffffff;
+                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                    "
+                  >
+                    <ui-card-header>
+                      <ui-card-title style="color: #ffffff">Feature 1</ui-card-title>
+                      <ui-card-description style="color: #bfdbfe"
+                        >Advanced Analytics</ui-card-description
+                      >
+                    </ui-card-header>
+                    <ui-card-content>
+                      <p style="color: #e0e7ff; font-size: 14px">
+                        Track your metrics with powerful visualization tools and real-time data.
+                      </p>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-left: 8px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card
+                    style="
+                      --card-bg: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                      --card-border-color: #6d28d9;
+                      --card-color: #ffffff;
+                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                    "
+                  >
+                    <ui-card-header>
+                      <ui-card-title style="color: #ffffff">Feature 2</ui-card-title>
+                      <ui-card-description style="color: #ddd6fe"
+                        >Smart Automation</ui-card-description
+                      >
+                    </ui-card-header>
+                    <ui-card-content>
+                      <p style="color: #ede9fe; font-size: 14px">
+                        Automate workflows and save time with intelligent task management.
+                      </p>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-left: 8px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card
+                    style="
+                      --card-bg: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+                      --card-border-color: #be185d;
+                      --card-color: #ffffff;
+                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                    "
+                  >
+                    <ui-card-header>
+                      <ui-card-title style="color: #ffffff">Feature 3</ui-card-title>
+                      <ui-card-description style="color: #fbcfe8"
+                        >Team Collaboration</ui-card-description
+                      >
+                    </ui-card-header>
+                    <ui-card-content>
+                      <p style="color: #fce7f3; font-size: 14px">
+                        Work together seamlessly with real-time collaboration features.
+                      </p>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+              <ui-carousel-item
+                style="
+                  --carousel-item-basis: 50%;
+                  --carousel-item-padding-left: 8px;
+                "
+              >
+                <div style="padding: 4px">
+                  <ui-card
+                    style="
+                      --card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                      --card-border-color: #047857;
+                      --card-color: #ffffff;
+                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                    "
+                  >
+                    <ui-card-header>
+                      <ui-card-title style="color: #ffffff">Feature 4</ui-card-title>
+                      <ui-card-description style="color: #d1fae5"
+                        >Security First</ui-card-description
+                      >
+                    </ui-card-header>
+                    <ui-card-content>
+                      <p style="color: #ecfdf5; font-size: 14px">
+                        Enterprise-grade security with end-to-end encryption and compliance.
+                      </p>
+                    </ui-card-content>
+                  </ui-card>
+                </div>
+              </ui-carousel-item>
+            </ui-carousel-content>
+            <ui-carousel-previous />
+            <ui-carousel-next />
+          </ui-carousel>
+        </div>
+      </div>
+    </div>
+  </section>
