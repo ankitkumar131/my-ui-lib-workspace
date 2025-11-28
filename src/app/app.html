@@ -2326,1182 +2326,1364 @@
               <li><code class="bg-white px-1 rounded">--select-item-hover-bg</code></li>
             </ul>
           </div>
-
+        </div>
       </div>
-    </div>
 
+      <!-- Card Component Demo (Rose/Red Theme) -->
+      <section class="mt-8" id="card-demo">
+        <h1>Card Component Demo</h1>
+        <p class="text-sm text-muted-foreground mb-4">
+          A versatile container component with header, content, and footer sections matching shadcn
+          design.
+        </p>
 
-  <!-- Card Component Demo (Rose/Red Theme) -->
-  <section class="mt-8" id="card-demo">
-    <h1>Card Component Demo</h1>
-    <p class="text-sm text-muted-foreground mb-4">
-      A versatile container component with header, content, and footer sections matching shadcn
-      design.
-    </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+          <!-- Basic Card -->
+          <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2">
+            <ui-card-header>
+              <ui-card-title style="color: #e11d48">Card Title</ui-card-title>
+              <ui-card-description style="color: #f43f5e">Rose Theme</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p style="color: #881337">
+                This is the main content area of the card. You can add any content here.
+              </p>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button [variant]="ButtonVariant.Default" style="background: #e11d48; color: white"
+                >Action</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-      <!-- Basic Card -->
-      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
-        <ui-card-header>
-          <ui-card-title style="color: #e11d48">Card Title</ui-card-title>
-          <ui-card-description style="color: #f43f5e">Rose Theme</ui-card-description>
-        </ui-card-header>
-        <ui-card-content>
-          <p style="color: #881337">This is the main content area of the card. You can add any content here.</p>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button [variant]="ButtonVariant.Default" style="background: #e11d48; color: white">Action</ui-button>
-        </ui-card-footer>
-      </ui-card>
+          <!-- Login Form Card -->
+          <ui-card style="max-width: 400px; --card-border-color: #f43f5e; --card-bg: #fff1f2">
+            <ui-card-header>
+              <div style="flex: 1">
+                <ui-card-title style="color: #e11d48">Login to your account</ui-card-title>
+                <ui-card-description style="color: #f43f5e"
+                  >Enter your email below to login</ui-card-description
+                >
+              </div>
+              <ui-card-action>
+                <ui-button [variant]="ButtonVariant.Link" style="color: #e11d48">Sign Up</ui-button>
+              </ui-card-action>
+            </ui-card-header>
+            <ui-card-content>
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <div style="display: grid; gap: 8px">
+                  <ui-label style="color: #881337">Email</ui-label>
+                  <ui-input
+                    type="email"
+                    placeholder="m@example.com"
+                    style="border-color: #f43f5e; background: white"
+                  ></ui-input>
+                </div>
+                <div style="display: grid; gap: 8px">
+                  <ui-label style="color: #881337">Password</ui-label>
+                  <ui-input
+                    type="password"
+                    style="border-color: #f43f5e; background: white"
+                  ></ui-input>
+                </div>
+              </div>
+            </ui-card-content>
+            <ui-card-footer style="flex-direction: column; gap: 8px; align-items: stretch">
+              <ui-button style="width: 100%; background: #e11d48; color: white">Login</ui-button>
+              <ui-button
+                [variant]="ButtonVariant.Outline"
+                style="width: 100%; border-color: #e11d48; color: #e11d48"
+                >Login with Google</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
 
-      <!-- Login Form Card -->
-      <ui-card style="max-width: 400px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
-        <ui-card-header>
-          <div style="flex: 1">
-            <ui-card-title style="color: #e11d48">Login to your account</ui-card-title>
-            <ui-card-description style="color: #f43f5e">Enter your email below to login</ui-card-description>
-          </div>
-          <ui-card-action>
-            <ui-button [variant]="ButtonVariant.Link" style="color: #e11d48">Sign Up</ui-button>
-          </ui-card-action>
-        </ui-card-header>
-        <ui-card-content>
-          <div style="display: flex; flex-direction: column; gap: 16px">
-            <div style="display: grid; gap: 8px">
-              <ui-label style="color: #881337">Email</ui-label>
-              <ui-input type="email" placeholder="m@example.com" style="border-color: #f43f5e; background: white"></ui-input>
-            </div>
-            <div style="display: grid; gap: 8px">
-              <ui-label style="color: #881337">Password</ui-label>
-              <ui-input type="password" style="border-color: #f43f5e; background: white"></ui-input>
-            </div>
-          </div>
-        </ui-card-content>
-        <ui-card-footer style="flex-direction: column; gap: 8px; align-items: stretch">
-          <ui-button style="width: 100%; background: #e11d48; color: white">Login</ui-button>
-          <ui-button [variant]="ButtonVariant.Outline" style="width: 100%; border-color: #e11d48; color: #e11d48"
-            >Login with Google</ui-button
-          >
-        </ui-card-footer>
-      </ui-card>
+          <!-- Product Card -->
+          <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2">
+            <ui-card-header>
+              <ui-card-title style="color: #e11d48">Premium Plan</ui-card-title>
+              <ui-card-description style="color: #f43f5e"
+                >Everything you need to get started</ui-card-description
+              >
+            </ui-card-header>
+            <ui-card-content>
+              <div style="margin-bottom: 16px">
+                <span style="font-size: 36px; font-weight: 700; color: #be123c">$29</span>
+                <span style="color: #f43f5e; font-size: 14px">/month</span>
+              </div>
+              <ul
+                style="
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                "
+              >
+                <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+                  <span style="color: #e11d48">✓</span> Unlimited projects
+                </li>
+                <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+                  <span style="color: #e11d48">✓</span> 100GB Storage
+                </li>
+                <li style="display: flex; gap: 8px; align-items: center; color: #881337">
+                  <span style="color: #e11d48">✓</span> Priority support
+                </li>
+              </ul>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button style="width: 100%; background: #e11d48; color: white"
+                >Get Started</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
 
-      <!-- Product Card -->
-      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
-        <ui-card-header>
-          <ui-card-title style="color: #e11d48">Premium Plan</ui-card-title>
-          <ui-card-description style="color: #f43f5e">Everything you need to get started</ui-card-description>
-        </ui-card-header>
-        <ui-card-content>
-          <div style="margin-bottom: 16px">
-            <span style="font-size: 36px; font-weight: 700; color: #be123c">$29</span>
-            <span style="color: #f43f5e; font-size: 14px">/month</span>
-          </div>
-          <ul
+          <!-- Stats Card -->
+          <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2">
+            <ui-card-header>
+              <ui-card-title style="color: #e11d48">Total Revenue</ui-card-title>
+              <ui-card-description style="color: #f43f5e">January - March 2025</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <div style="font-size: 32px; font-weight: 700; margin-bottom: 8px; color: #be123c">
+                $45,231.89
+              </div>
+              <p style="font-size: 14px; color: #e11d48">
+                <span style="font-weight: 600">+20.1%</span> from last month
+              </p>
+            </ui-card-content>
+          </ui-card>
+
+          <!-- Notification Card -->
+          <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2">
+            <ui-card-header>
+              <div style="flex: 1">
+                <ui-card-title style="color: #e11d48">Notifications</ui-card-title>
+                <ui-card-description style="color: #f43f5e"
+                  >You have 3 unread messages</ui-card-description
+                >
+              </div>
+              <ui-card-action>
+                <ui-badge style="background: #e11d48">3</ui-badge>
+              </ui-card-action>
+            </ui-card-header>
+            <ui-card-content>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    padding: 8px;
+                    border-radius: 6px;
+                    background: white;
+                    border: 1px solid #fecdd3;
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      background: #ffe4e6;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-shrink: 0;
+                      color: #e11d48;
+                    "
+                  >
+                    👤
+                  </div>
+                  <div style="flex: 1">
+                    <p
+                      style="font-weight: 500; font-size: 14px; margin-bottom: 2px; color: #881337"
+                    >
+                      New user signup
+                    </p>
+                    <p style="font-size: 12px; color: #f43f5e">2 minutes ago</p>
+                  </div>
+                </div>
+              </div>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button
+                [variant]="ButtonVariant.Outline"
+                style="width: 100%; border-color: #e11d48; color: #e11d48"
+                >View All</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- Custom Styled Card -->
+          <ui-card style="max-width: 350px; --card-border-color: #8b5cf6; --card-bg: #faf5ff">
+            <ui-card-header>
+              <ui-card-title style="color: #7c3aed">Custom Styled Card</ui-card-title>
+              <ui-card-description>Using CSS variables for theming</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p>This card uses custom CSS variables to override the default purple theme.</p>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button style="background: #8b5cf6; color: white">Purple Action</ui-button>
+            </ui-card-footer>
+          </ui-card>
+        </div>
+      </section>
+
+      <!-- MUI-Inspired Card Demos (Teal/Emerald Theme) -->
+      <section class="mt-12 mb-20" id="mui-card-demos">
+        <h1>MUI-Inspired Card Demos</h1>
+        <p class="text-sm text-muted-foreground mb-6">
+          Recreations of popular Material UI card examples using our component.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 1. Media Card -->
+          <ui-card
             style="
-              list-style: none;
-              padding: 0;
-              margin: 0;
+              max-width: 345px;
+              height: 320px;
               display: flex;
               flex-direction: column;
-              gap: 8px;
+              --card-border-color: #10b981;
+              --card-bg: #ecfdf5;
             "
           >
-            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
-              <span style="color: #e11d48">✓</span> Unlimited projects
-            </li>
-            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
-              <span style="color: #e11d48">✓</span> 100GB Storage
-            </li>
-            <li style="display: flex; gap: 8px; align-items: center; color: #881337">
-              <span style="color: #e11d48">✓</span> Priority support
-            </li>
-          </ul>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button style="width: 100%; background: #e11d48; color: white">Get Started</ui-button>
-        </ui-card-footer>
-      </ui-card>
-
-      <!-- Stats Card -->
-      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
-        <ui-card-header>
-          <ui-card-title style="color: #e11d48">Total Revenue</ui-card-title>
-          <ui-card-description style="color: #f43f5e">January - March 2025</ui-card-description>
-        </ui-card-header>
-        <ui-card-content>
-          <div style="font-size: 32px; font-weight: 700; margin-bottom: 8px; color: #be123c">$45,231.89</div>
-          <p style="font-size: 14px; color: #e11d48">
-            <span style="font-weight: 600">+20.1%</span> from last month
-          </p>
-        </ui-card-content>
-      </ui-card>
-
-      <!-- Notification Card -->
-      <ui-card style="max-width: 350px; --card-border-color: #f43f5e; --card-bg: #fff1f2;">
-        <ui-card-header>
-          <div style="flex: 1">
-            <ui-card-title style="color: #e11d48">Notifications</ui-card-title>
-            <ui-card-description style="color: #f43f5e">You have 3 unread messages</ui-card-description>
-          </div>
-          <ui-card-action>
-            <ui-badge style="background: #e11d48">3</ui-badge>
-          </ui-card-action>
-        </ui-card-header>
-        <ui-card-content>
-          <div style="display: flex; flex-direction: column; gap: 12px">
             <div
               style="
-                display: flex;
-                gap: 12px;
-                padding: 8px;
-                border-radius: 6px;
-                background: white;
-                border: 1px solid #fecdd3;
+                height: 140px;
+                background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
+                background-size: cover;
+                background-position: center;
               "
-            >
+            ></div>
+            <ui-card-content style="flex: 1">
+              <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
+              <p style="color: #047857; font-size: 14px; line-height: 1.5">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species,
+                ranging across all continents except Antarctica
+              </p>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 0"
+                >SHARE</ui-button
+              >
+              <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669"
+                >LEARN MORE</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- 2. Recipe Review Card -->
+          <ui-card
+            style="max-width: 345px; height: auto; --card-border-color: #10b981; --card-bg: #ecfdf5"
+          >
+            <ui-card-header style="align-items: center">
               <div
                 style="
                   width: 40px;
                   height: 40px;
                   border-radius: 50%;
-                  background: #ffe4e6;
+                  background-color: #ef4444;
+                  color: white;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  flex-shrink: 0;
-                  color: #e11d48;
                 "
               >
-                👤
+                R
               </div>
-              <div style="flex: 1">
-                <p style="font-weight: 500; font-size: 14px; margin-bottom: 2px; color: #881337">New user signup</p>
-                <p style="font-size: 12px; color: #f43f5e">2 minutes ago</p>
+              <div style="flex: 1; margin-left: 12px">
+                <ui-card-title style="font-size: 16px; color: #059669"
+                  >Shrimp and Chorizo Paella</ui-card-title
+                >
+                <ui-card-description style="color: #047857">September 14, 2016</ui-card-description>
+              </div>
+              <ui-card-action>
+                <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⋮</ui-button>
+              </ui-card-action>
+            </ui-card-header>
+            <div
+              style="
+                height: 194px;
+                background-image: url('https://mui.com/static/images/cards/paella.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <ui-card-content>
+              <p style="color: #047857; font-size: 14px">
+                This impressive paella is a perfect party dish and a fun meal to cook together with
+                your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+              </p>
+            </ui-card-content>
+            <ui-card-footer style="justify-content: space-between">
+              <div>
+                <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">❤️</ui-button>
+                <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">🔗</ui-button>
+              </div>
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- 3. UI Controls Card -->
+          <ui-card
+            style="
+              display: flex;
+              width: 100%;
+              max-width: 350px;
+              height: 180px;
+              --card-border-color: #10b981;
+              --card-bg: #ecfdf5;
+            "
+          >
+            <div style="display: flex; flex-direction: column; flex: 1">
+              <ui-card-content style="flex: 1 0 auto">
+                <ui-card-title style="font-size: 20px; color: #059669"
+                  >Live From Space</ui-card-title
+                >
+                <ui-card-description style="font-size: 16px; color: #047857"
+                  >Mac Miller</ui-card-description
+                >
+              </ui-card-content>
+              <div
+                style="display: flex; align-items: center; padding-left: 16px; padding-bottom: 16px"
+              >
+                <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏮</ui-button>
+                <ui-button [variant]="ButtonVariant.Ghost" style="font-size: 24px; color: #059669"
+                  >▶</ui-button
+                >
+                <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏭</ui-button>
               </div>
             </div>
-          </div>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button [variant]="ButtonVariant.Outline" style="width: 100%; border-color: #e11d48; color: #e11d48">View All</ui-button>
-        </ui-card-footer>
-      </ui-card>
+            <div
+              style="
+                width: 151px;
+                background-image: url('https://mui.com/static/images/cards/live-from-space.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+          </ui-card>
 
-      <!-- Custom Styled Card -->
-      <ui-card style="max-width: 350px; --card-border-color: #8b5cf6; --card-bg: #faf5ff">
-        <ui-card-header>
-          <ui-card-title style="color: #7c3aed">Custom Styled Card</ui-card-title>
-          <ui-card-description>Using CSS variables for theming</ui-card-description>
-        </ui-card-header>
-        <ui-card-content>
-          <p>This card uses custom CSS variables to override the default purple theme.</p>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button style="background: #8b5cf6; color: white">Purple Action</ui-button>
-        </ui-card-footer>
-      </ui-card>
+          <!-- 4. Outlined Card -->
+          <ui-card
+            style="
+              max-width: 275px;
+              height: 220px;
+              display: flex;
+              flex-direction: column;
+              --card-border-color: #10b981;
+              --card-bg: #ecfdf5;
+            "
+          >
+            <ui-card-content style="flex: 1">
+              <p style="font-size: 14px; color: #047857; margin-bottom: 12px">Word of the Day</p>
+              <ui-card-title style="font-size: 32px; margin-bottom: 12px; color: #059669"
+                >be•nev•o•lent</ui-card-title
+              >
+              <p style="color: #047857; margin-bottom: 12px">adjective</p>
+              <p style="font-size: 14px; color: #065f46">
+                well meaning and kindly.
+                <br />
+                "a benevolent smile"
+              </p>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 8px"
+                >LEARN MORE</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- 5. Action Area Card -->
+          <ui-card
+            style="
+              max-width: 345px;
+              height: 300px;
+              display: flex;
+              flex-direction: column;
+              cursor: pointer;
+              transition: box-shadow 0.3s;
+              --card-border-color: #10b981;
+              --card-bg: #ecfdf5;
+            "
+            class="hover:shadow-lg"
+          >
+            <div
+              style="
+                height: 140px;
+                background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 16px;
+              "
+            ></div>
+            <ui-card-content style="flex: 1">
+              <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
+              <p style="color: #047857; font-size: 14px; line-height: 1.5">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species,
+                ranging across all continents except Antarctica
+              </p>
+            </ui-card-content>
+          </ui-card>
+        </div>
+      </section>
+
+      <!-- Customization Verification -->
+      <section class="mt-12 mb-20" id="custom-card-demo">
+        <h1>Customization Verification</h1>
+        <p class="text-sm text-muted-foreground mb-6">
+          Proof that every single style aspect can be overridden via CSS variables to create a
+          completely unique look.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Super Custom Card -->
+          <ui-card
+            style="
+              --card-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              --card-color: white;
+              --card-border-width: 0;
+              --card-radius: 24px;
+              --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+              --card-padding: 40px;
+              --card-title-font-size: 32px;
+              --card-title-color: white;
+              --card-description-color: rgba(255, 255, 255, 0.8);
+              max-width: 500px;
+            "
+          >
+            <ui-card-header>
+              <ui-card-title>Super Custom Card</ui-card-title>
+              <ui-card-description>Every variable overridden</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p style="font-size: 18px; line-height: 1.6; opacity: 0.9">
+                This card demonstrates that you can completely transform the look and feel by
+                overriding CSS variables. Background, typography, spacing, borders, and shadows are
+                all customizable.
+              </p>
+            </ui-card-content>
+            <ui-card-footer>
+              <ui-button
+                style="
+                  background: rgba(255, 255, 255, 0.2);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  color: white;
+                  width: 100%;
+                  height: 48px;
+                  font-size: 16px;
+                "
+              >
+                Glassmorphism Action
+              </ui-button>
+            </ui-card-footer>
+          </ui-card>
+        </div>
+      </section>
+
+      <!-- Advanced Demos (MD3 & Angular Material) -->
+      <section class="mt-12 mb-20" id="advanced-card-demos">
+        <h1>Advanced Demos (MD3 & Angular Material)</h1>
+        <p class="text-sm text-muted-foreground mb-6">
+          Implementations of Material Design 3 and Angular Material card patterns.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- High Contrast Elevated Card -->
+          <ui-card
+            style="
+              --card-bg: #ffffff;
+              --card-color: #09090b;
+              --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+              --card-radius: 12px;
+              --card-border-width: 0;
+              max-width: 350px;
+            "
+          >
+            <ui-card-header>
+              <ui-card-title style="font-size: 22px; font-weight: 600">Elevated Card</ui-card-title>
+              <ui-card-description>High Contrast Shadow</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p>
+                Elevated cards contain content and are separated from the background by a drop
+                shadow.
+              </p>
+            </ui-card-content>
+            <ui-card-footer style="justify-content: flex-end">
+              <ui-button [variant]="ButtonVariant.Default" style="background: #09090b; color: white"
+                >Action</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- Blue Filled Card -->
+          <ui-card
+            style="
+              --card-bg: #2563eb;
+              --card-color: #ffffff;
+              --card-description-color: #dbeafe;
+              --card-border-width: 0;
+              --card-shadow: none;
+              --card-radius: 12px;
+              max-width: 350px;
+            "
+          >
+            <ui-card-header>
+              <ui-card-title style="font-size: 22px; font-weight: 600">Filled Card</ui-card-title>
+              <ui-card-description style="color: #dbeafe">Blue Theme</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p>
+                Filled cards provide subtle separation from the background. This one uses a
+                high-contrast blue.
+              </p>
+            </ui-card-content>
+            <ui-card-footer style="justify-content: flex-end">
+              <ui-button
+                [variant]="ButtonVariant.Secondary"
+                style="background: white; color: #2563eb; border: none"
+                >Action</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- Blue Outlined Card -->
+          <ui-card
+            style="
+              --card-bg: #ffffff;
+              --card-border-color: #2563eb;
+              --card-border-width: 2px;
+              --card-color: #1e3a8a;
+              --card-shadow: none;
+              --card-radius: 12px;
+              max-width: 350px;
+            "
+          >
+            <ui-card-header>
+              <ui-card-title style="font-size: 22px; font-weight: 600; color: #2563eb"
+                >Outlined Card</ui-card-title
+              >
+              <ui-card-description style="color: #60a5fa">Blue Border</ui-card-description>
+            </ui-card-header>
+            <ui-card-content>
+              <p>Outlined cards have a visual boundary. This one uses a bold blue border.</p>
+            </ui-card-content>
+            <ui-card-footer style="justify-content: flex-end">
+              <ui-button
+                [variant]="ButtonVariant.Outline"
+                style="color: #2563eb; border-color: #2563eb"
+                >Action</ui-button
+              >
+            </ui-card-footer>
+          </ui-card>
+
+          <!-- Angular Material Horizontal Card -->
+          <ui-card
+            style="
+              display: flex;
+              flex-direction: row;
+              max-width: 500px;
+              overflow: hidden;
+              grid-column: 1 / -1;
+              --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <div
+              style="
+                width: 200px;
+                background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div style="flex: 1; display: flex; flex-direction: column">
+              <ui-card-header>
+                <ui-card-title>Shiba Inu</ui-card-title>
+                <ui-card-description>Dog Breed</ui-card-description>
+              </ui-card-header>
+              <ui-card-content style="flex: 1">
+                <p style="color: #71717a">
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
+                  from Japan.
+                </p>
+              </ui-card-content>
+              <ui-card-footer style="justify-content: flex-end">
+                <ui-button [variant]="ButtonVariant.Ghost">LIKE</ui-button>
+                <ui-button [variant]="ButtonVariant.Ghost">SHARE</ui-button>
+              </ui-card-footer>
+            </div>
+          </ui-card>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <!-- MUI-Inspired Card Demos (Teal/Emerald Theme) -->
-  <section class="mt-12 mb-20" id="mui-card-demos">
-    <h1>MUI-Inspired Card Demos</h1>
-    <p class="text-sm text-muted-foreground mb-6">
-      Recreations of popular Material UI card examples using our component.
-    </p>
+    <!-- Carousel Section -->
+    <section id="carousel-demo" class="mt-8">
+      <h1>Carousel Demo</h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- 1. Media Card -->
-      <ui-card style="max-width: 345px; height: 320px; display: flex; flex-direction: column; --card-border-color: #10b981; --card-bg: #ecfdf5;">
-        <div
-          style="
-            height: 140px;
-            background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-        <ui-card-content style="flex: 1">
-          <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
-          <p style="color: #047857; font-size: 14px; line-height: 1.5">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+      <div class="grid grid-cols-1 gap-12 mt-4">
+        <!-- Basic Carousel -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Basic Carousel</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            A simple carousel with navigation buttons. Click the arrows or swipe to navigate.
           </p>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 0">SHARE</ui-button>
-          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">LEARN MORE</ui-button>
-        </ui-card-footer>
-      </ui-card>
+          <div style="max-width: 360px; margin: 0 auto">
+            <ui-carousel>
+              <ui-carousel-content>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">1</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">2</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">3</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">4</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">5</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
 
-      <!-- 2. Recipe Review Card -->
-      <ui-card style="max-width: 345px; height: auto; --card-border-color: #10b981; --card-bg: #ecfdf5;">
-        <ui-card-header style="align-items: center">
+        <!-- Multiple Items -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Size Variants (Multiple Items Visible)</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            Show multiple slides at once using CSS variables. This example shows 3 items at a time.
+          </p>
+          <div style="max-width: 600px; margin: 0 auto">
+            <ui-carousel [opts]="{ align: 'start' }">
+              <ui-carousel-content style="--carousel-content-margin: -4px">
+                <ui-carousel-item
+                  style="--carousel-item-basis: 33.333%; --carousel-item-padding-left: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">1</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 33.333%; --carousel-item-padding-left: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">2</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 33.333%; --carousel-item-padding-left: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">3</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 33.333%; --carousel-item-padding-left: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">4</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 33.333%; --carousel-item-padding-left: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">5</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+
+        <!-- Vertical Orientation -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Vertical Orientation</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            Set orientation to "vertical" for up/down scrolling carousel.
+          </p>
+          <div style="max-width: 320px; margin: 0 auto">
+            <ui-carousel
+              orientation="vertical"
+              [opts]="{ align: 'start' }"
+              style="--carousel-height: 300px"
+            >
+              <ui-carousel-content style="--carousel-content-margin: -4px; height: 300px">
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-top: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">1</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-top: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">2</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-top: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">3</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-top: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">4</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-top: 4px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 1.875rem; font-weight: 600">5</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+
+        <!-- Loop Enabled -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Loop Enabled</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            Enable infinite looping by setting loop: true in options.
+          </p>
+          <div style="max-width: 360px; margin: 0 auto">
+            <ui-carousel [opts]="{ loop: true }">
+              <ui-carousel-content>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">1</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">2</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card>
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">3</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+
+        <!-- Autoplay -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Autoplay</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            Automatically advance slides every 3 seconds with autoplay enabled.
+          </p>
+          <div style="max-width: 360px; margin: 0 auto">
+            <ui-carousel [opts]="{ autoplay: true, autoplayInterval: 3000, loop: true }">
+              <ui-carousel-content>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card style="--card-bg: #fef3c7; --card-border-color: #fbbf24">
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">🚀</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card style="--card-bg: #dbeafe; --card-border-color: #3b82f6">
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">⭐</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item>
+                  <div style="padding: 4px">
+                    <ui-card style="--card-bg: #dcfce7; --card-border-color: #22c55e">
+                      <ui-card-content
+                        style="
+                          display: flex;
+                          aspect-ratio: 1;
+                          align-items: center;
+                          justify-content: center;
+                          padding: 24px;
+                        "
+                      >
+                        <span style="font-size: 2.25rem; font-weight: 600">🎨</span>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+
+        <!-- Dark Theme Customization -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Dark Theme Customization</h2>
+          <p class="text-sm text-muted-foreground mb-4">
+            Fully customizable with CSS variables - darker colors and custom navigation styling.
+          </p>
           <div
             style="
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              background-color: #ef4444;
-              color: white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+              max-width: 600px;
+              margin: 0 auto;
+              background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+              padding: 32px;
+              border-radius: 12px;
             "
           >
-            R
-          </div>
-          <div style="flex: 1; margin-left: 12px">
-            <ui-card-title style="font-size: 16px; color: #059669">Shrimp and Chorizo Paella</ui-card-title>
-            <ui-card-description style="color: #047857">September 14, 2016</ui-card-description>
-          </div>
-          <ui-card-action>
-            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⋮</ui-button>
-          </ui-card-action>
-        </ui-card-header>
-        <div
-          style="
-            height: 194px;
-            background-image: url('https://mui.com/static/images/cards/paella.jpg');
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-        <ui-card-content>
-          <p style="color: #047857; font-size: 14px">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
-          </p>
-        </ui-card-content>
-        <ui-card-footer style="justify-content: space-between">
-          <div>
-            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">❤️</ui-button>
-            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">🔗</ui-button>
-          </div>
-        </ui-card-footer>
-      </ui-card>
-
-      <!-- 3. UI Controls Card -->
-      <ui-card style="display: flex; width: 100%; max-width: 350px; height: 180px; --card-border-color: #10b981; --card-bg: #ecfdf5;">
-        <div style="display: flex; flex-direction: column; flex: 1">
-          <ui-card-content style="flex: 1 0 auto">
-            <ui-card-title style="font-size: 20px; color: #059669">Live From Space</ui-card-title>
-            <ui-card-description style="font-size: 16px; color: #047857">Mac Miller</ui-card-description>
-          </ui-card-content>
-          <div style="display: flex; align-items: center; padding-left: 16px; padding-bottom: 16px">
-            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏮</ui-button>
-            <ui-button [variant]="ButtonVariant.Ghost" style="font-size: 24px; color: #059669">▶</ui-button>
-            <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">⏭</ui-button>
-          </div>
-        </div>
-        <div
-          style="
-            width: 151px;
-            background-image: url('https://mui.com/static/images/cards/live-from-space.jpg');
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-      </ui-card>
-
-      <!-- 4. Outlined Card -->
-      <ui-card style="max-width: 275px; height: 220px; display: flex; flex-direction: column; --card-border-color: #10b981; --card-bg: #ecfdf5;">
-        <ui-card-content style="flex: 1">
-          <p style="font-size: 14px; color: #047857; margin-bottom: 12px">Word of the Day</p>
-          <ui-card-title style="font-size: 32px; margin-bottom: 12px; color: #059669">be•nev•o•lent</ui-card-title>
-          <p style="color: #047857; margin-bottom: 12px">adjective</p>
-          <p style="font-size: 14px; color: #065f46">
-            well meaning and kindly.
-            <br />
-            "a benevolent smile"
-          </p>
-        </ui-card-content>
-        <ui-card-footer>
-          <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669; padding-left: 8px">LEARN MORE</ui-button>
-        </ui-card-footer>
-      </ui-card>
-
-      <!-- 5. Action Area Card -->
-      <ui-card
-        style="
-          max-width: 345px;
-          height: 300px;
-          display: flex;
-          flex-direction: column;
-          cursor: pointer;
-          transition: box-shadow 0.3s;
-          --card-border-color: #10b981;
-          --card-bg: #ecfdf5;
-        "
-        class="hover:shadow-lg"
-      >
-        <div
-          style="
-            height: 140px;
-            background-image: url('https://mui.com/static/images/cards/contemplative-reptile.jpg');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 16px;
-          "
-        ></div>
-        <ui-card-content style="flex: 1">
-          <ui-card-title style="font-size: 20px; color: #059669">Lizard</ui-card-title>
-          <p style="color: #047857; font-size: 14px; line-height: 1.5">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </p>
-        </ui-card-content>
-      </ui-card>
-    </div>
-  </section>
-
-          <!-- Customization Verification -->
-          <section class="mt-12 mb-20" id="custom-card-demo">
-            <h1>Customization Verification</h1>
-            <p class="text-sm text-muted-foreground mb-6">
-              Proof that every single style aspect can be overridden via CSS variables to create a
-              completely unique look.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <!-- Super Custom Card -->
-              <ui-card
-                style="
-                  --card-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                  --card-color: white;
-                  --card-border-width: 0;
-                  --card-radius: 24px;
-                  --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-                    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-                  --card-padding: 40px;
-                  --card-title-font-size: 32px;
-                  --card-title-color: white;
-                  --card-description-color: rgba(255, 255, 255, 0.8);
-                  max-width: 500px;
-                "
-              >
-                <ui-card-header>
-                  <ui-card-title>Super Custom Card</ui-card-title>
-                  <ui-card-description>Every variable overridden</ui-card-description>
-                </ui-card-header>
-                <ui-card-content>
-                  <p style="font-size: 18px; line-height: 1.6; opacity: 0.9">
-                    This card demonstrates that you can completely transform the look and feel by
-                    overriding CSS variables. Background, typography, spacing, borders, and shadows
-                    are all customizable.
-                  </p>
-                </ui-card-content>
-                <ui-card-footer>
-                  <ui-button
-                    style="
-                      background: rgba(255, 255, 255, 0.2);
-                      backdrop-filter: blur(10px);
-                      border: 1px solid rgba(255, 255, 255, 0.3);
-                      color: white;
-                      width: 100%;
-                      height: 48px;
-                      font-size: 16px;
-                    "
-                  >
-                    Glassmorphism Action
-                  </ui-button>
-                </ui-card-footer>
-              </ui-card>
-            </div>
-          </section>
-
-          <!-- Advanced Demos (MD3 & Angular Material) -->
-          <section class="mt-12 mb-20" id="advanced-card-demos">
-            <h1>Advanced Demos (MD3 & Angular Material)</h1>
-            <p class="text-sm text-muted-foreground mb-6">
-              Implementations of Material Design 3 and Angular Material card patterns.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <!-- High Contrast Elevated Card -->
-              <ui-card
-                style="
-                  --card-bg: #ffffff;
-                  --card-color: #09090b;
-                  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-                  --card-radius: 12px;
-                  --card-border-width: 0;
-                  max-width: 350px;
-                "
-              >
-                <ui-card-header>
-                  <ui-card-title style="font-size: 22px; font-weight: 600"
-                    >Elevated Card</ui-card-title
-                  >
-                  <ui-card-description>High Contrast Shadow</ui-card-description>
-                </ui-card-header>
-                <ui-card-content>
-                  <p>
-                    Elevated cards contain content and are separated from the background by a drop
-                    shadow.
-                  </p>
-                </ui-card-content>
-                <ui-card-footer style="justify-content: flex-end">
-                  <ui-button
-                    [variant]="ButtonVariant.Default"
-                    style="background: #09090b; color: white"
-                    >Action</ui-button
-                  >
-                </ui-card-footer>
-              </ui-card>
-
-              <!-- Blue Filled Card -->
-              <ui-card
-                style="
-                  --card-bg: #2563eb;
-                  --card-color: #ffffff;
-                  --card-description-color: #dbeafe;
-                  --card-border-width: 0;
-                  --card-shadow: none;
-                  --card-radius: 12px;
-                  max-width: 350px;
-                "
-              >
-                <ui-card-header>
-                  <ui-card-title style="font-size: 22px; font-weight: 600"
-                    >Filled Card</ui-card-title
-                  >
-                  <ui-card-description style="color: #dbeafe">Blue Theme</ui-card-description>
-                </ui-card-header>
-                <ui-card-content>
-                  <p>
-                    Filled cards provide subtle separation from the background. This one uses a
-                    high-contrast blue.
-                  </p>
-                </ui-card-content>
-                <ui-card-footer style="justify-content: flex-end">
-                  <ui-button
-                    [variant]="ButtonVariant.Secondary"
-                    style="background: white; color: #2563eb; border: none"
-                    >Action</ui-button
-                  >
-                </ui-card-footer>
-              </ui-card>
-
-              <!-- Blue Outlined Card -->
-              <ui-card
-                style="
-                  --card-bg: #ffffff;
-                  --card-border-color: #2563eb;
-                  --card-border-width: 2px;
-                  --card-color: #1e3a8a;
-                  --card-shadow: none;
-                  --card-radius: 12px;
-                  max-width: 350px;
-                "
-              >
-                <ui-card-header>
-                  <ui-card-title style="font-size: 22px; font-weight: 600; color: #2563eb"
-                    >Outlined Card</ui-card-title
-                  >
-                  <ui-card-description style="color: #60a5fa">Blue Border</ui-card-description>
-                </ui-card-header>
-                <ui-card-content>
-                  <p>Outlined cards have a visual boundary. This one uses a bold blue border.</p>
-                </ui-card-content>
-                <ui-card-footer style="justify-content: flex-end">
-                  <ui-button
-                    [variant]="ButtonVariant.Outline"
-                    style="color: #2563eb; border-color: #2563eb"
-                    >Action</ui-button
-                  >
-                </ui-card-footer>
-              </ui-card>
-
-              <!-- Angular Material Horizontal Card -->
-              <ui-card
-                style="
-                  display: flex;
-                  flex-direction: row;
-                  max-width: 500px;
-                  overflow: hidden;
-                  grid-column: 1 / -1;
-                  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-                "
-              >
-                <div
-                  style="
-                    width: 200px;
-                    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-                    background-size: cover;
-                    background-position: center;
-                  "
-                ></div>
-                <div style="flex: 1; display: flex; flex-direction: column">
-                  <ui-card-header>
-                    <ui-card-title>Shiba Inu</ui-card-title>
-                    <ui-card-description>Dog Breed</ui-card-description>
-                  </ui-card-header>
-                  <ui-card-content style="flex: 1">
-                    <p style="color: #71717a">
-                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of
-                      dog from Japan.
-                    </p>
-                  </ui-card-content>
-                  <ui-card-footer style="justify-content: flex-end">
-                    <ui-button [variant]="ButtonVariant.Ghost">LIKE</ui-button>
-                    <ui-button [variant]="ButtonVariant.Ghost">SHARE</ui-button>
-                  </ui-card-footer>
-                </div>
-              </ui-card>
-            </div>
-          </section>
-        </div>
-
-  <!-- Carousel Section -->
-  <section id="carousel-demo" class="mt-8">
-    <h1>Carousel Demo</h1>
-
-    <div class="grid grid-cols-1 gap-12 mt-4">
-      <!-- Basic Carousel -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Basic Carousel</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          A simple carousel with navigation buttons. Click the arrows or swipe to navigate.
-        </p>
-        <div style="max-width: 360px; margin: 0 auto">
-          <ui-carousel>
-            <ui-carousel-content>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">1</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">2</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">3</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">4</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">5</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
-        </div>
-      </div>
-
-      <!-- Multiple Items -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Size Variants (Multiple Items Visible)</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          Show multiple slides at once using CSS variables. This example shows 3 items at a time.
-        </p>
-        <div style="max-width: 600px; margin: 0 auto">
-          <ui-carousel [opts]="{ align: 'start' }">
-            <ui-carousel-content
+            <ui-carousel
+              [opts]="{ align: 'start' }"
               style="
-                --carousel-content-margin: -4px;
+                --carousel-nav-bg: rgba(15, 23, 42, 0.95);
+                --carousel-nav-border: 1px solid #334155;
+                --carousel-nav-color: #e2e8f0;
+                --carousel-nav-hover-bg: #1e293b;
+                --carousel-nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                --carousel-nav-hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
               "
             >
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 33.333%;
-                  --carousel-item-padding-left: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
+              <ui-carousel-content style="--carousel-content-margin: -8px">
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-left: 8px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card
                       style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
+                        --card-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+                        --card-border-color: #1d4ed8;
+                        --card-color: #ffffff;
+                        --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                       "
                     >
-                      <span style="font-size: 1.875rem; font-weight: 600">1</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 33.333%;
-                  --carousel-item-padding-left: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
+                      <ui-card-header>
+                        <ui-card-title style="color: #ffffff">Feature 1</ui-card-title>
+                        <ui-card-description style="color: #bfdbfe"
+                          >Advanced Analytics</ui-card-description
+                        >
+                      </ui-card-header>
+                      <ui-card-content>
+                        <p style="color: #e0e7ff; font-size: 14px">
+                          Track your metrics with powerful visualization tools and real-time data.
+                        </p>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-left: 8px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card
                       style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
+                        --card-bg: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                        --card-border-color: #6d28d9;
+                        --card-color: #ffffff;
+                        --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                       "
                     >
-                      <span style="font-size: 1.875rem; font-weight: 600">2</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 33.333%;
-                  --carousel-item-padding-left: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
+                      <ui-card-header>
+                        <ui-card-title style="color: #ffffff">Feature 2</ui-card-title>
+                        <ui-card-description style="color: #ddd6fe"
+                          >Smart Automation</ui-card-description
+                        >
+                      </ui-card-header>
+                      <ui-card-content>
+                        <p style="color: #ede9fe; font-size: 14px">
+                          Automate workflows and save time with intelligent task management.
+                        </p>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-left: 8px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card
                       style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
+                        --card-bg: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+                        --card-border-color: #be185d;
+                        --card-color: #ffffff;
+                        --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                       "
                     >
-                      <span style="font-size: 1.875rem; font-weight: 600">3</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 33.333%;
-                  --carousel-item-padding-left: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
+                      <ui-card-header>
+                        <ui-card-title style="color: #ffffff">Feature 3</ui-card-title>
+                        <ui-card-description style="color: #fbcfe8"
+                          >Team Collaboration</ui-card-description
+                        >
+                      </ui-card-header>
+                      <ui-card-content>
+                        <p style="color: #fce7f3; font-size: 14px">
+                          Work together seamlessly with real-time collaboration features.
+                        </p>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-left: 8px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card
                       style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
+                        --card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                        --card-border-color: #047857;
+                        --card-color: #ffffff;
+                        --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
                       "
                     >
-                      <span style="font-size: 1.875rem; font-weight: 600">4</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 33.333%;
-                  --carousel-item-padding-left: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">5</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
+                      <ui-card-header>
+                        <ui-card-title style="color: #ffffff">Feature 4</ui-card-title>
+                        <ui-card-description style="color: #d1fae5"
+                          >Security First</ui-card-description
+                        >
+                      </ui-card-header>
+                      <ui-card-content>
+                        <p style="color: #ecfdf5; font-size: 14px">
+                          Enterprise-grade security with end-to-end encryption and compliance.
+                        </p>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+                
+     
+    
+
+    <!-- Checkbox Demo -->
+    <section class="mb-12">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold mb-2">Checkbox</h2>
+        <p class="text-muted-foreground">
+          A control that allows the user to toggle between checked and not checked.
+        </p>
+      </div>
+
+      <!-- Basic Checkbox -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Basic checkboxes</h3>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-3">
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-1"></ui-checkbox>
+              <label for="checkbox-1" class="text-sm font-medium">Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-2" [checked]="true"></ui-checkbox>
+              <label for="checkbox-2" class="text-sm font-medium">Checkbox (checked)</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-3" [disabled]="true"></ui-checkbox>
+              <label for="checkbox-3" class="text-sm font-medium opacity-50">Checkbox (disabled)</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-4" [disabled]="true" [checked]="true"></ui-checkbox>
+              <label for="checkbox-4" class="text-sm font-medium opacity-50">Checkbox (disabled, checked)</label>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Vertical Orientation -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Vertical Orientation</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          Set orientation to "vertical" for up/down scrolling carousel.
-        </p>
-        <div style="max-width: 320px; margin: 0 auto">
-          <ui-carousel
-            orientation="vertical"
-            [opts]="{ align: 'start' }"
-            style="--carousel-height: 300px"
-          >
-            <ui-carousel-content
-              style="
-                --carousel-content-margin: -4px;
-                height: 300px;
-              "
-            >
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-top: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">1</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-top: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">2</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-top: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">3</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-top: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">4</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-top: 4px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 1.875rem; font-weight: 600">5</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
+      <!-- Checkbox with FormControl -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Checkboxes with label</h3>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-start space-x-3">
+              <ui-checkbox id="terms-1"></ui-checkbox>
+              <div class="grid gap-1.5">
+                <label for="terms-1" class="text-sm font-medium leading-none">
+                  Accept terms and conditions
+                </label>
+                <p class="text-sm text-muted-foreground">
+                  You agree to our Terms of Service and Privacy Policy.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <ui-checkbox id="mobile-1" [checked]="true"></ui-checkbox>
+              <div class="grid gap-1.5">
+                <label for="mobile-1" class="text-sm font-medium leading-none">
+                  Use different settings for my mobile devices
+                </label>
+                <p class="text-sm text-muted-foreground">
+                  You can manage your mobile notifications in the mobile settings page.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Loop Enabled -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Loop Enabled</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          Enable infinite looping by setting loop: true in options.
+      <!-- Indeterminate Checkbox -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Indeterminate checkbox</h3>
+        <p class="text-sm text-muted-foreground mb-3">
+          The indeterminate style indicates partial selection.
         </p>
-        <div style="max-width: 360px; margin: 0 auto">
-          <ui-carousel [opts]="{ loop: true }">
-            <ui-carousel-content>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">1</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">2</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card>
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">3</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex items-center space-x-2">
+            <ui-checkbox id="indeterminate-demo" [indeterminate]="true"></ui-checkbox>
+            <label for="indeterminate-demo" class="text-sm font-medium">Indeterminate</label>
+          </div>
         </div>
       </div>
 
-      <!-- Autoplay -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Autoplay</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          Automatically advance slides every 3 seconds with autoplay enabled.
+      <!-- Select All (Nested Checkboxes) -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Select all</h3>
+        <p class="text-sm text-muted-foreground mb-3">
+          Parent checkbox selects or deselects all child checkboxes. Shows indeterminate state when some are selected.
         </p>
-        <div style="max-width: 360px; margin: 0 auto">
-          <ui-carousel [opts]="{ autoplay: true, autoplayInterval: 3000, loop: true }">
-            <ui-carousel-content>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card style="--card-bg: #fef3c7; --card-border-color: #fbbf24">
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">🚀</span>
-                    </ui-card-content>
-                  </ui-card>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-3">
+            <div class="flex items-center space-x-2 pb-2 border-b">
+              <ui-checkbox
+                id="select-all"
+                [checked]="allComplete()"
+                [indeterminate]="someComplete()"
+                (checkedChange)="setAll($event)"
+              ></ui-checkbox>
+              <label for="select-all" class="text-sm font-semibold">
+                {{ task().name }}
+              </label>
+            </div>
+            <div class="ml-6 flex flex-col space-y-2">
+              @for (subtask of task().subtasks; track subtask.name) {
+                <div class="flex items-center space-x-2">
+                  <ui-checkbox
+                    [id]="subtask.name"
+                    [(checked)]="subtask.completed"
+                    (checkedChange)="updateAllComplete()"
+                  ></ui-checkbox>
+                  <label [for]="subtask.name" class="text-sm font-medium">
+                    {{ subtask.name }}
+                  </label>
                 </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card style="--card-bg: #dbeafe; --card-border-color: #3b82f6">
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">⭐</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item>
-                <div style="padding: 4px">
-                  <ui-card style="--card-bg: #dcfce7; --card-border-color: #22c55e">
-                    <ui-card-content
-                      style="
-                        display: flex;
-                        aspect-ratio: 1;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 24px;
-                      "
-                    >
-                      <span style="font-size: 2.25rem; font-weight: 600">🎨</span>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
+              }
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Dark Theme Customization -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Dark Theme Customization</h2>
-        <p class="text-sm text-muted-foreground mb-4">
-          Fully customizable with CSS variables - darker colors and custom navigation styling.
+      <!-- Custom Styling -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Custom colors</h3>
+        <p class="text-sm text-muted-foreground mb-3">
+          Customize checkbox colors using CSS variables.
         </p>
-        <div
-          style="
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 32px;
-            border-radius: 12px;
-          "
-        >
-          <ui-carousel
-            [opts]="{ align: 'start' }"
-            style="
-              --carousel-nav-bg: rgba(15, 23, 42, 0.95);
-              --carousel-nav-border: 1px solid #334155;
-              --carousel-nav-color: #e2e8f0;
-              --carousel-nav-hover-bg: #1e293b;
-              --carousel-nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-              --carousel-nav-hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-            "
-          >
-            <ui-carousel-content style="--carousel-content-margin: -8px">
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-left: 8px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card
-                    style="
-                      --card-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-                      --card-border-color: #1d4ed8;
-                      --card-color: #ffffff;
-                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-                    "
-                  >
-                    <ui-card-header>
-                      <ui-card-title style="color: #ffffff">Feature 1</ui-card-title>
-                      <ui-card-description style="color: #bfdbfe"
-                        >Advanced Analytics</ui-card-description
-                      >
-                    </ui-card-header>
-                    <ui-card-content>
-                      <p style="color: #e0e7ff; font-size: 14px">
-                        Track your metrics with powerful visualization tools and real-time data.
-                      </p>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-left: 8px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card
-                    style="
-                      --card-bg: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-                      --card-border-color: #6d28d9;
-                      --card-color: #ffffff;
-                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-                    "
-                  >
-                    <ui-card-header>
-                      <ui-card-title style="color: #ffffff">Feature 2</ui-card-title>
-                      <ui-card-description style="color: #ddd6fe"
-                        >Smart Automation</ui-card-description
-                      >
-                    </ui-card-header>
-                    <ui-card-content>
-                      <p style="color: #ede9fe; font-size: 14px">
-                        Automate workflows and save time with intelligent task management.
-                      </p>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-left: 8px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card
-                    style="
-                      --card-bg: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-                      --card-border-color: #be185d;
-                      --card-color: #ffffff;
-                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-                    "
-                  >
-                    <ui-card-header>
-                      <ui-card-title style="color: #ffffff">Feature 3</ui-card-title>
-                      <ui-card-description style="color: #fbcfe8"
-                        >Team Collaboration</ui-card-description
-                      >
-                    </ui-card-header>
-                    <ui-card-content>
-                      <p style="color: #fce7f3; font-size: 14px">
-                        Work together seamlessly with real-time collaboration features.
-                      </p>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-              <ui-carousel-item
-                style="
-                  --carousel-item-basis: 50%;
-                  --carousel-item-padding-left: 8px;
-                "
-              >
-                <div style="padding: 4px">
-                  <ui-card
-                    style="
-                      --card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
-                      --card-border-color: #047857;
-                      --card-color: #ffffff;
-                      --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-                    "
-                  >
-                    <ui-card-header>
-                      <ui-card-title style="color: #ffffff">Feature 4</ui-card-title>
-                      <ui-card-description style="color: #d1fae5"
-                        >Security First</ui-card-description
-                      >
-                    </ui-card-header>
-                    <ui-card-content>
-                      <p style="color: #ecfdf5; font-size: 14px">
-                        Enterprise-grade security with end-to-end encryption and compliance.
-                      </p>
-                    </ui-card-content>
-                  </ui-card>
-                </div>
-              </ui-carousel-item>
-            </ui-carousel-content>
-            <ui-carousel-previous />
-            <ui-carousel-next />
-          </ui-carousel>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center space-x-2">
+              <ui-checkbox
+                id="green"
+                [checked]="true"
+                style="--primary: #10b981; --primary-foreground: white; --border: #059669"
+              ></ui-checkbox>
+              <label for="green" class="text-sm font-medium">Green</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox
+                id="purple"
+                [checked]="true"
+                style="--primary: #8b5cf6; --primary-foreground: white; --border: #7c3aed"
+              ></ui-checkbox>
+              <label for="purple" class="text-sm font-medium">Purple</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox
+                id="pink"
+                [checked]="true"
+                style="--primary: #ec4899; --primary-foreground: white; --border: #db2777"
+              ></ui-checkbox>
+              <label for="pink" class="text-sm font-medium">Pink</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox
+                id="orange"
+                [checked]="true"
+                style="--primary: #f97316; --primary-foreground: white; --border: #ea580c"
+              ></ui-checkbox>
+              <label for="orange" class="text-sm font-medium">Orange</label>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+
+    </section>
+ 

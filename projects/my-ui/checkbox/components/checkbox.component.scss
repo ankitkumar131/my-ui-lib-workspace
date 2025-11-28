@@ -1,0 +1,82 @@
+:host {
+  display: inline-flex;
+  vertical-align: top;
+
+  // Define CSS variables locally to avoid global pollution
+  --background: #ffffff;
+  --foreground: hsl(222.2, 47.4%, 11.2%);
+  
+  --primary: hsl(221.2, 83.2%, 53.3%);
+  --primary-foreground: #ffffff;
+  
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --ring: hsl(215, 20.2%, 65.1%);
+  --ring-offset: #ffffff;
+
+  // Dark theme (media query)
+  @media (prefers-color-scheme: dark) {
+    --background: hsl(222.2, 47.4%, 11.2%);
+    --foreground: hsl(210, 40%, 98%);
+    
+    --primary: hsl(217.2, 91.2%, 59.8%);
+    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+    
+    --border: hsl(217.2, 32.6%, 17.5%);
+    --ring: hsl(217.2, 32.6%, 17.5%);
+    --ring-offset: hsl(222.2, 47.4%, 11.2%);
+  }
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  
+  height: 1rem; /* 16px */
+  width: 1rem; /* 16px */
+  flex-shrink: 0;
+  border-radius: 0.125rem; /* 2px */
+  border: 1px solid var(--border);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  // Focus styles
+  &:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--ring-offset), 0 0 0 4px var(--ring);
+  }
+  
+  // Disabled state
+  &:disabled, &[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  // Checked state
+  &[data-state="checked"] {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  // Indeterminate state (same as checked)
+  &[data-state="indeterminate"] {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  // SVG Icon
+  svg {
+    height: 1rem;
+    width: 1rem;
+    pointer-events: none;
+  }
+}

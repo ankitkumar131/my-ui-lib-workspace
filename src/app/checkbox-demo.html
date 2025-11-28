@@ -1,0 +1,79 @@
+<!-- Checkbox Demo -->
+<section class="mb-12">
+  <h2 class="text-2xl font-bold mb-4">Checkbox</h2>
+  <div class="grid gap-6 p-6 border rounded-lg">
+    <!-- Basic Usage -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Basic Usage</h3>
+      <div class="flex items-center space-x-2">
+        <ui-checkbox id="basic"></ui-checkbox>
+        <label
+          for="basic"
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Accept terms and conditions
+        </label>
+      </div>
+    </div>
+
+    <!-- Checked State -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Checked State</h3>
+      <div class="flex items-center space-x-2">
+        <ui-checkbox id="checked" [checked]="true"></ui-checkbox>
+        <label
+          for="checked"
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Subscribe to newsletter
+        </label>
+      </div>
+    </div>
+
+    <!-- Disabled State -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Disabled State</h3>
+      <div class="flex items-center space-x-2">
+        <ui-checkbox id="disabled" [disabled]="true"></ui-checkbox>
+        <label
+          for="disabled"
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Disabled option
+        </label>
+      </div>
+    </div>
+
+    <!-- Disabled & Checked -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Disabled & Checked</h3>
+      <div class="flex items-center space-x-2">
+        <ui-checkbox id="disabled-checked" [disabled]="true" [checked]="true"></ui-checkbox>
+        <label
+          for="disabled-checked"
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Disabled & Checked
+        </label>
+      </div>
+    </div>
+
+    <!-- Custom Styling -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Custom Styling</h3>
+      <div class="flex items-center space-x-2">
+        <ui-checkbox
+          id="custom"
+          [checked]="true"
+          style="--primary: #10b981; --primary-foreground: white; --border: #059669"
+        ></ui-checkbox>
+        <label
+          for="custom"
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Custom green checkbox
+        </label>
+      </div>
+    </div>
+  </div>
+</section>

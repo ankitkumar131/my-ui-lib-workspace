@@ -18,3 +18,4 @@ export * from './label/public-api';
 export * from './input/public-api';
 export * from './popover/public-api';
 export * from './select/public-api';
+export * from './checkbox/public-api';

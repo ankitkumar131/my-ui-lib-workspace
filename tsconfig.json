@@ -63,6 +63,9 @@
       ],
       "@my-ui/carousel": [
         "projects/my-ui/carousel/index.ts"
+      ],
+      "@my-ui/checkbox": [
+        "projects/my-ui/checkbox/index.ts"
       ]
     }
   },
