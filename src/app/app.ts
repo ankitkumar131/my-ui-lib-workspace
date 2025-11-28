@@ -80,6 +80,7 @@ import {
   CarouselPreviousComponent,
   CarouselNextComponent
 } from '@my-ui/carousel';
+import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
 
 
 @Component({
@@ -149,7 +150,8 @@ import {
     CarouselContentComponent,
     CarouselItemComponent,
     CarouselPreviousComponent,
-    CarouselNextComponent
+    CarouselNextComponent,
+    UiCheckboxModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -206,4 +208,40 @@ export class App {
     const day = date.getDay();
     return day === 0 || day === 6; // Sunday or Saturday
   };
+  
+  // Checkbox demo states
+  task = signal({
+    name: 'Select All',
+    completed: false,
+    subtasks: [
+      { name: 'Task 1', completed: false },
+      { name: 'Task 2', completed: false },
+      { name: 'Task 3', completed: false },
+    ],
+  });
+
+  allComplete = signal(false);
+  
+  updateAllComplete() {
+    const task = this.task();
+    this.allComplete.set(task.subtasks != null && task.subtasks.every(t => t.completed));
+  }
+
+  someComplete(): boolean {
+    const task = this.task();
+    if (task.subtasks == null) {
+      return false;
+    }
+    return task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete();
+  }
+
+  setAll(completed: boolean) {
+    const task = this.task();
+    this.allComplete.set(completed);
+    if (task.subtasks == null) {
+      return;
+    }
+    task.subtasks.forEach(t => (t.completed = completed));
+    this.task.set({...task});
+  }
 }
