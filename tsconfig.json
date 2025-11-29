@@ -66,6 +66,9 @@
       ],
       "@my-ui/checkbox": [
         "projects/my-ui/checkbox/index.ts"
+      ],
+      "@my-ui/collapsible": [
+        "projects/my-ui/collapsible/index.ts"
       ]
     }
   },

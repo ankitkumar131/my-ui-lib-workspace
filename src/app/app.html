@@ -45,11 +45,18 @@
       <li class="toc-item">
         <a href="#calendar-demo" class="toc-link">Calendar</a>
       </li>
+
       <li class="toc-item">
         <a href="#card-demo" class="toc-link">Card</a>
       </li>
       <li class="toc-item">
         <a href="#carousel-demo" class="toc-link">Carousel</a>
+      </li>
+      <li class="toc-item">
+        <a href="#checkbox-demo" class="toc-link">Checkbox</a>
+      </li>
+      <li class="toc-item">
+        <a href="#collapsible-demo" class="toc-link">Collapsible</a>
       </li>
     </ul>
   </nav>
@@ -3525,6 +3532,7 @@
     
 
     <!-- Checkbox Demo -->
+     <h1 id="checkbox-demo">Checkbox Demo</h1>
     <section class="mb-12">
       <div class="mb-6">
         <h2 class="text-3xl font-bold mb-2">Checkbox</h2>
@@ -3686,4 +3694,867 @@
       </div>
 
     </section>
- 
+
+    <!-- Collapsible Section -->
+    <section id="collapsible-demo" class="mt-8">
+      <h1>Collapsible Demo</h1>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Collapsible -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Collapsible</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            A simple collapsible component that can be toggled to show or hide content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Can I use this in my project?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Yes. This component is free and open source. You can use it in your projects.
+                  Check the documentation for more details on implementation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible with styled content -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Styled Content</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible with rich content including lists and multiple paragraphs.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                What are the features?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4">
+                  <p class="text-sm mb-2">This component includes:</p>
+                  <ul class="text-sm list-disc list-inside space-y-1">
+                    <li>Smooth animations</li>
+                    <li>Accessible keyboard navigation</li>
+                    <li>Customizable styling with CSS variables</li>
+                    <li>Easy integration with Angular</li>
+                  </ul>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Multiple Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Multiple Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Multiple independent collapsible components in a stack.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @peduarte starred 3 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/primitives</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/colors</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@stitches/react</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @shuding starred 2 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/swr</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/next.js</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible initially open -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Initially Open</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible component that starts in an open state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible [open]="true">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Important Information
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible starts in an open state by default. This is useful for content
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+      
+
+    <!-- Collapsible Section -->
+    <section id="collapsible-demo" class="mt-8">
+      <h1>Collapsible Demo</h1>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Collapsible -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Collapsible</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            A simple collapsible component that can be toggled to show or hide content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Can I use this in my project?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Yes. This component is free and open source. You can use it in your projects.
+                  Check the documentation for more details on implementation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible with styled content -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Styled Content</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible with rich content including lists and multiple paragraphs.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                What are the features?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4">
+                  <p class="text-sm mb-2">This component includes:</p>
+                  <ul class="text-sm list-disc list-inside space-y-1">
+                    <li>Smooth animations</li>
+                    <li>Accessible keyboard navigation</li>
+                    <li>Customizable styling with CSS variables</li>
+                    <li>Easy integration with Angular</li>
+                  </ul>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Multiple Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Multiple Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Multiple independent collapsible components in a stack.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @peduarte starred 3 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/primitives</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/colors</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@stitches/react</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @shuding starred 2 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/swr</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/next.js</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible initially open -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Initially Open</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible component that starts in an open state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible [open]="true">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Important Information
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible starts in an open state by default. This is useful for content
+                  that you want to be visible initially, but still allow users to collapse it if needed.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Nested Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Nested Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsibles can be nested inside each other for hierarchical content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Frontend Development
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2">
+                  <p class="text-sm mb-2">Popular frameworks and technologies:</p>
+                  
+                  <!-- Nested collapsible -->
+                  <ui-collapsible class="ml-4">
+                    <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Ghost" class="w-full justify-between text-sm">
+                      JavaScript Frameworks
+                      <span slot="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </ui-button>
+                    <ui-collapsible-content>
+                      <div class="p-3 ml-4 text-sm space-y-1">
+                        <div>• React</div>
+                        <div>• Angular</div>
+                        <div>• Vue.js</div>
+                        <div>• Svelte</div>
+                      </div>
+                    </ui-collapsible-content>
+                  </ui-collapsible>
+
+                  <!-- Another nested collapsible -->
+                  <ui-collapsible class="ml-4">
+                    <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Ghost" class="w-full justify-between text-sm">
+                      CSS Frameworks
+                      <span slot="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </ui-button>
+                    <ui-collapsible-content>
+                      <div class="p-3 ml-4 text-sm space-y-1">
+                        <div>• Tailwind CSS</div>
+                        <div>• Bootstrap</div>
+                        <div>• Material UI</div>
+                      </div>
+                    </ui-collapsible-content>
+                  </ui-collapsible>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Custom Animation Speed -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Custom Animation Speed</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Control animation speed using CSS variables.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-3">
+            <!-- Fast animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 150ms;">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Fast Animation (150ms)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible opens and closes very quickly with a 150ms animation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Slow animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 600ms;">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Slow Animation (600ms)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible has a slower, more dramatic animation at 600ms.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Bouncy animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 400ms; --collapsible-animation-easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Bouncy Animation (Custom Easing)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible uses a bouncy easing function for a playful effect.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Custom Styled Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Custom Styled Themes</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Different visual themes using custom CSS styling.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-3">
+            <!-- Gradient theme -->
+            <ui-collapsible>
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;"
+              >
+                Gradient Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm" style="background: #f3f4f6; border-radius: 0 0 0.5rem 0.5rem;">
+                  Beautiful gradient-styled collapsible with custom background and rounded corners.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Success theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #10b981; color: white; border: none;"
+              >
+                Success Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #d1fae5; padding: 1rem; border-radius: 0 0 0.5rem 0.5rem; color: #065f46;">
+                  ✓ Operation completed successfully! Your changes have been saved.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Warning theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #f59e0b; color: white; border: none;"
+              >
+                Warning Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #fef3c7; padding: 1rem; border-radius: 0 0 0.5rem 0.5rem; color: #92400e;">
+                  ⚠ Please review the following items before proceeding with this action.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Dark theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #1f2937; color: white; border: 1px solid #374151;"
+              >
+                Dark Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #111827; color: #d1d5db; padding: 1rem; border: 1px solid #374151; border-top: none; border-radius: 0 0 0.5rem 0.5rem;">
+                  Sleek dark mode design perfect for night-time viewing or professional dashboards.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- FAQ Style Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">FAQ Style</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Frequently Asked Questions layout with numbered items.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">1</span>
+                    <span class="font-medium">What is this component library?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      This is a collection of accessible, customizable Angular components inspired by shadcn/ui. 
+                      It provides a modern UI toolkit for building beautiful applications.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">2</span>
+                    <span class="font-medium">How do I customize the styles?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      All components support CSS variables for easy customization. You can override variables globally 
+                      or per-component using inline styles or custom classes. Check the manual for available CSS variables.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">3</span>
+                    <span class="font-medium">Is it accessible?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      Yes! All components are built with accessibility in mind, featuring proper ARIA attributes, 
+                      keyboard navigation support, and screen reader compatibility.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Icon Rotation Demo -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Animated Icons</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Icons that rotate smoothly when toggling state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between collapsible-with-icon-rotation">
+                Click to see icon rotation
+                <span slot="icon" style="transition: transform 200ms ease;">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="collapsible-icon"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Notice how the chevron icon rotates 180 degrees when you open and close this collapsible. 
+                  This provides better visual feedback to users.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
