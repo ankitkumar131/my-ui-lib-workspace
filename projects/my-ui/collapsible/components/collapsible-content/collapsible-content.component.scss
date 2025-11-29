@@ -1,0 +1,19 @@
+:host {
+  display: block;
+
+  // CSS Variables for customization
+  --collapsible-content-padding: 0;
+  --collapsible-content-margin: 0;
+  --collapsible-animation-duration: 250ms;
+  --collapsible-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-content {
+  overflow: hidden;
+  transition: height var(--collapsible-animation-duration) var(--collapsible-animation-easing);
+}
+
+.collapsible-content-inner {
+  padding: var(--collapsible-content-padding);
+  margin: var(--collapsible-content-margin);
+}
