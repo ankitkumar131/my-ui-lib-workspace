@@ -1,0 +1,5 @@
+<div *ngIf="isOpen()" class="collapsible-content" [attr.data-state]="isOpen() ? 'open' : 'closed'">
+  <div class="collapsible-content-inner">
+    <ng-content></ng-content>
+  </div>
+</div>

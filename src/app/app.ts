@@ -81,6 +81,7 @@ import {
   CarouselNextComponent
 } from '@my-ui/carousel';
 import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
+import { UiCollapsibleModule } from '../../projects/my-ui/collapsible';
 
 
 @Component({
@@ -151,7 +152,8 @@ import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
     CarouselItemComponent,
     CarouselPreviousComponent,
     CarouselNextComponent,
-    UiCheckboxModule
+    UiCheckboxModule,
+    UiCollapsibleModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
