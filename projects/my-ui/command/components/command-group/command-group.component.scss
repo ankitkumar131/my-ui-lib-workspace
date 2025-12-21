@@ -1,0 +1,28 @@
+.command-group {
+  padding: var(--command-group-padding, 4px 0);
+  
+  &:not(:first-child) {
+    margin-top: var(--command-group-spacing, 8px);
+  }
+}
+
+.command-group-heading {
+  padding: var(--command-group-heading-padding, 8px 12px 4px);
+  font-size: var(--command-group-heading-font-size, 12px);
+  font-weight: var(--command-group-heading-font-weight, 600);
+  color: var(--command-group-heading-color, hsl(215.4 16.3% 46.9%));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.command-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--command-group-items-gap, 2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .command-group-heading {
+    color: var(--command-group-heading-color, hsl(215 20.2% 65.1%));
+  }
+}
