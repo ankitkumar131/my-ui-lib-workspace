@@ -61,6 +61,9 @@
       <li class="toc-item">
         <a href="#command-demo" class="toc-link">Command</a>
       </li>
+      <li class="toc-item">
+        <a href="#combobox-demo" class="toc-link">Combobox</a>
+      </li>
     </ul>
   </nav>
 
@@ -4811,6 +4814,304 @@
             <li><strong>Escape</strong> - Clear search and reset</li>
             <li><strong>Type</strong> - Filter items in real-time</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combobox Section -->
+    <section id="combobox-demo" class="mt-8">
+      <h1>Combobox Demo</h1>
+      <p class="text-sm text-gray-600 mb-4">
+        Combobox is a composition pattern combining Popover + Command + Button components.
+        It provides autocomplete functionality with search and selection.
+      </p>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Combobox -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Combobox</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Select a framework from the searchable dropdown.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedFramework()) {
+                {{ getSelectedLabel(selectedFramework(), frameworks) }}
+              } @else {
+                Select framework...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search framework..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No framework found.</ui-command-empty>
+                    <ui-command-group>
+                      @for (framework of frameworks; track framework.value) {
+                        <ui-command-item (selected)="selectedFramework.set(framework.value)">
+                          {{ framework.label }}
+                          @if (selectedFramework() === framework.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedFramework()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedFramework(), frameworks) }}</strong></p>
+          }
+        </div>
+
+        <!-- Combobox with Status Icons -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Combobox with Icons</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Status selector with icons for each option.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedStatus()) {
+                {{ getSelectedLabel(selectedStatus(), statuses) }}
+              } @else {
+                Select status...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search status..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No status found.</ui-command-empty>
+                    <ui-command-group>
+                      @for (status of statuses; track status.value) {
+                        <ui-command-item (selected)="selectedStatus.set(status.value)">
+                          @switch (status.value) {
+                            @case ('backlog') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; opacity: 0.5;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                              </svg>
+                            }
+                            @case ('todo') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #3b82f6;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                              </svg>
+                            }
+                            @case ('in-progress') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #f59e0b;">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                              </svg>
+                            }
+                            @case ('done') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #10b981;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <path d="m9 11 3 3L22 4"></path>
+                              </svg>
+                            }
+                            @case ('canceled') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #ef4444;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m15 9-6 6m0-6 6 6"></path>
+                              </svg>
+                            }
+                          }
+                          {{ status.label }}
+                          @if (selectedStatus() === status.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedStatus()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedStatus(), statuses) }}</strong></p>
+          }
+        </div>
+
+        <!-- Combobox with Grouped Options -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Combobox with Groups</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Language selector with grouped options.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedLanguage()) {
+                {{ getSelectedLabel(selectedLanguage(), languages) }}
+              } @else {
+                Select language...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search language..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No language found.</ui-command-empty>
+                    
+                    <ui-command-group heading="Popular">
+                      @for (lang of getLanguagesByGroup('Popular'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+ 
+                    <ui-command-separator></ui-command-separator>
+ 
+                    <ui-command-group heading="European">
+                      @for (lang of getLanguagesByGroup('European'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+ 
+                    <ui-command-separator></ui-command-separator>
+ 
+                    <ui-command-group heading="Asian">
+                      @for (lang of getLanguagesByGroup('Asian'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedLanguage()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedLanguage(), languages) }}</strong></p>
+          }
+        </div>
+
+        <!-- Composition Pattern Info -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Composition Pattern</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            The Combobox is built by composing three existing components:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li><strong>Popover</strong> - Provides the dropdown container</li>
+            <li><strong>Command</strong> - Handles search and keyboard navigation</li>
+            <li><strong>Button</strong> - Acts as the trigger</li>
+          </ul>
+          <p class="text-sm text-gray-600 mt-4">
+            This composition approach provides maximum flexibility and reusability without creating additional components.
+          </p>
         </div>
       </div>
     </section>

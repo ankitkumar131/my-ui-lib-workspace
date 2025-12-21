@@ -264,4 +264,47 @@ export class App {
     task.subtasks.forEach(t => (t.completed = completed));
     this.task.set({...task});
   }
+
+  // Combobox demo states
+  selectedFramework = signal('');
+  selectedStatus = signal('');
+  selectedLanguage = signal('');
+
+  frameworks = [
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+    { value: 'svelte', label: 'Svelte' },
+    { value: 'nextjs', label: 'Next.js' },
+  ];
+
+  statuses = [
+    { value: 'backlog', label: 'Backlog' },
+    { value: 'todo', label: 'Todo' },
+    { value: 'in-progress', label: 'In Progress' },
+    { value: 'done', label: 'Done' },
+    { value: 'canceled', label: 'Canceled' },
+  ];
+
+  languages = [
+    { value: 'en', label: 'English', group: 'Popular' },
+    { value: 'es', label: 'Spanish', group: 'Popular' },
+    { value: 'fr', label: 'French', group: 'Popular' },
+    { value: 'de', label: 'German', group: 'European' },
+    { value: 'it', label: 'Italian', group: 'European' },
+    { value: 'pt', label: 'Portuguese', group: 'European' },
+    { value: 'zh', label: 'Chinese', group: 'Asian' },
+    { value: 'ja', label: 'Japanese', group: 'Asian' },
+    { value: 'ko', label: 'Korean', group: 'Asian' },
+  ];
+
+  getLanguagesByGroup(group: string) {
+    return this.languages.filter(lang => lang.group === group);
+  }
+
+  getSelectedLabel(value: string, options: any[]) {
+    const option = options.find(opt => opt.value === value);
+    return option ? option.label : '';
+  }
 }
+
