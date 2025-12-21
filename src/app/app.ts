@@ -82,6 +82,16 @@ import {
 } from '@my-ui/carousel';
 import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
 import { UiCollapsibleModule } from '../../projects/my-ui/collapsible';
+import {
+  CommandComponent,
+  CommandInputComponent,
+  CommandListComponent,
+  CommandEmptyComponent,
+  CommandGroupComponent,
+  CommandItemComponent,
+  CommandSeparatorComponent,
+  CommandShortcutComponent
+} from '@my-ui/command';
 
 
 @Component({
@@ -153,7 +163,15 @@ import { UiCollapsibleModule } from '../../projects/my-ui/collapsible';
     CarouselPreviousComponent,
     CarouselNextComponent,
     UiCheckboxModule,
-    UiCollapsibleModule
+    UiCollapsibleModule,
+    CommandComponent,
+    CommandInputComponent,
+    CommandListComponent,
+    CommandEmptyComponent,
+    CommandGroupComponent,
+    CommandItemComponent,
+    CommandSeparatorComponent,
+    CommandShortcutComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

@@ -1,0 +1,11 @@
+.command-separator {
+  height: var(--command-separator-height, 1px);
+  background-color: var(--command-separator-color, hsl(214.3 31.8% 91.4%));
+  margin: var(--command-separator-margin, 8px 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .command-separator {
+    background-color: var(--command-separator-color, hsl(217.2 32.6% 17.5%));
+  }
+}
