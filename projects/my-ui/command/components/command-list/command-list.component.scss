@@ -1,0 +1,34 @@
+.command-list {
+  max-height: var(--command-list-max-height, 300px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--command-list-padding, 8px);
+  
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--command-scrollbar-track, transparent);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--command-scrollbar-thumb, hsl(215.4 16.3% 46.9% / 0.3));
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--command-scrollbar-thumb-hover, hsl(215.4 16.3% 46.9% / 0.5));
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .command-list::-webkit-scrollbar-thumb {
+    background: var(--command-scrollbar-thumb, hsl(215 20.2% 65.1% / 0.3));
+    
+    &:hover {
+      background: var(--command-scrollbar-thumb-hover, hsl(215 20.2% 65.1% / 0.5));
+    }
+  }
+}

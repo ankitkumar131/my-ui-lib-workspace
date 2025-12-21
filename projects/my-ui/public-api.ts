@@ -20,3 +20,4 @@ export * from './popover/public-api';
 export * from './select/public-api';
 export * from './checkbox/public-api';
 export * from './collapsible/public-api';
+export * from './command/public-api';

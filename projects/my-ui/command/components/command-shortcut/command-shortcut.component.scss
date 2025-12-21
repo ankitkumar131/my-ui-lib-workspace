@@ -1,0 +1,13 @@
+.command-shortcut {
+  margin-left: auto;
+  font-size: var(--command-shortcut-font-size, 12px);
+  color: var(--command-shortcut-color, hsl(215.4 16.3% 46.9%));
+  font-family: var(--command-shortcut-font-family, monospace);
+  letter-spacing: 0.05em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .command-shortcut {
+    color: var(--command-shortcut-color, hsl(215 20.2% 65.1%));
+  }
+}

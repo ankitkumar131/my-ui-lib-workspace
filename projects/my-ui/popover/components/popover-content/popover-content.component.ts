@@ -8,7 +8,6 @@ import {
   inject,
   effect
 } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { PopoverComponent } from '../popover/popover.component';
 import { PopoverSide, PopoverAlign } from '../../types/popover-placement.type';
 
@@ -17,7 +16,7 @@ import { PopoverSide, PopoverAlign } from '../../types/popover-placement.type';
   templateUrl: './popover-content.component.html',
   styleUrls: ['./popover-content.component.scss'],
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   host: {
     '[class.popover-open]': 'popover.isOpen()',
     'role': 'dialog'
