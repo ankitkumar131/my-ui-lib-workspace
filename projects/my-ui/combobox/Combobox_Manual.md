@@ -2,54 +2,76 @@
 
 ## Overview
 
-The Combobox component is a searchable dropdown component that combines a text input with a list of selectable options. It provides autocomplete functionality with filtering and keyboard navigation. The component is fully customizable via CSS variables and follows the shadcn/ui design patterns.
+The Combobox is **not a standalone component** but rather a **composition pattern** that combines existing components to create an autocomplete input with a searchable dropdown list.
+
+**Components Used:**
+
+- **Popover** - Provides the dropdown container
+- **Command** - Handles search and keyboard navigation
+- **Button** - Acts as the trigger
+
+This approach provides maximum flexibility and reusability without creating additional components.
 
 ---
 
-## Installation & Import
-
-### Import the Component
+## Import
 
 ```typescript
-import { UiComboboxModule } from '@my-ui/combobox';
+// Import the three components needed
+import { PopoverComponent, PopoverContentComponent, PopoverTriggerDirective } from '@my-ui/popover';
+import {
+  CommandComponent,
+  CommandInputComponent,
+  CommandListComponent,
+  CommandEmptyComponent,
+  CommandGroupComponent,
+  CommandItemComponent,
+} from '@my-ui/command';
+import { Button } from '@my-ui/button';
 ```
 
-### Import in Standalone Component
+---
+
+## Component Imports
+
+Add the required components to your Angular component's `imports` array:
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { PopoverComponent, PopoverContentComponent, PopoverTriggerDirective } from '@my-ui/popover';
 import {
-  UiComboboxModule,
-  ComboboxComponent,
-  ComboboxTriggerDirective,
-  ComboboxContentComponent,
-  ComboboxInputComponent,
-  ComboboxListComponent,
-  ComboboxItemComponent,
-  ComboboxEmptyComponent,
-} from '@my-ui/combobox';
+  CommandComponent,
+  CommandInputComponent,
+  CommandListComponent,
+  CommandItemComponent,
+  CommandEmptyComponent,
+} from '@my-ui/command';
+import { Button } from '@my-ui/button';
 
 @Component({
-  selector: 'app-example',
+  selector: 'app-my-component',
   standalone: true,
-  imports: [UiComboboxModule],
-  // or import individual components
-  // imports: [ComboboxComponent, ComboboxTriggerDirective, ...]
+  imports: [
+    PopoverComponent,
+    PopoverContentComponent,
+    PopoverTriggerDirective,
+    CommandComponent,
+    CommandInputComponent,
+    CommandListComponent,
+    CommandItemComponent,
+    CommandEmptyComponent,
+    Button,
+  ],
+  templateUrl: './my-component.component.html',
 })
-export class ExampleComponent {}
-```
+export class MyComponent {
+  selectedValue = signal('');
 
-### Import in NgModule
-
-```typescript
-import { NgModule } from '@angular/core';
-import { UiComboboxModule } from '@my-ui/combobox';
-
-@NgModule({
-  imports: [UiComboboxModule],
-  // ...
-})
-export class AppModule {}
+  options = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+  ];
+}
 ```
 
 ---
@@ -58,6 +80,7 @@ export class AppModule {}
 
 ### Simple Combobox
 
+<<<<<<< HEAD
 ```typescript
 export class MyComponent {
   frameworks = [
@@ -123,10 +146,56 @@ export class ComboboxDemo {
 
   onValueChange(value: string | null) {
     console.log('Selected:', value);
+=======
+```html
+<ui-popover>
+  <ui-button uiPopoverTrigger variant="outline">
+    @if (selectedValue()) { {{ getLabel(selectedValue()) }} } @else { Select option... }
+    <ChevronIcon />
+  </ui-button>
+
+  <ui-popover-content align="start">
+    <div style="width: 250px">
+      <ui-command>
+        <ui-command-input placeholder="Search..."></ui-command-input>
+        <ui-command-list>
+          <ui-command-empty>No results found.</ui-command-empty>
+          <ui-command-group>
+            @for (option of options; track option.value) {
+            <ui-command-item (selected)="selectedValue.set(option.value)">
+              {{ option.label }} @if (selectedValue() === option.value) {
+              <CheckIcon />
+              }
+            </ui-command-item>
+            }
+          </ui-command-group>
+        </ui-command-list>
+      </ui-command>
+    </div>
+  </ui-popover-content>
+</ui-popover>
+```
+
+### Component TypeScript
+
+```typescript
+export class MyComponent {
+  selectedValue = signal('');
+
+  options = [
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ];
+
+  getLabel(value: string): string {
+    return this.options.find((opt) => opt.value === value)?.label || '';
+>>>>>>> 0197966 (ui combobox is a mixture of other already made components)
   }
 }
 ```
 
+<<<<<<< HEAD
 ```html
 <ui-combobox
   [items]="frameworks"
@@ -427,10 +496,13 @@ The Combobox component is built with accessibility in mind:
 3. **Handle empty states**: Always include `ui-combobox-empty`
 4. **Consider performance**: For large datasets, implement virtual scrolling
 
+=======
+>>>>>>> 0197966 (ui combobox is a mixture of other already made components)
 ---
 
 ## Advanced Examples
 
+<<<<<<< HEAD
 ### With Custom Trigger Button
 
 ```html
@@ -489,10 +561,77 @@ The Combobox component is built with accessibility in mind:
     </ui-combobox-content>
   </ui-combobox>
 </div>
+=======
+### With Icons
+
+```html
+<ui-popover>
+  <ui-button uiPopoverTrigger variant="outline">
+    {{ selectedStatus() || 'Select status...' }}
+  </ui-button>
+
+  <ui-popover-content>
+    <ui-command>
+      <ui-command-input placeholder="Search status..."></ui-command-input>
+      <ui-command-list>
+        <ui-command-empty>No status found.</ui-command-empty>
+        <ui-command-group>
+          @for (status of statuses; track status.value) {
+          <ui-command-item (selected)="selectedStatus.set(status.value)">
+            <StatusIcon [type]="status.value" />
+            {{ status.label }} @if (selectedStatus() === status.value) {
+            <CheckIcon />
+            }
+          </ui-command-item>
+          }
+        </ui-command-group>
+      </ui-command-list>
+    </ui-command>
+  </ui-popover-content>
+</ui-popover>
+```
+
+### With Grouped Options
+
+```html
+<ui-popover>
+  <ui-button uiPopoverTrigger variant="outline">
+    {{ selectedLanguage() || 'Select language...' }}
+  </ui-button>
+
+  <ui-popover-content>
+    <ui-command>
+      <ui-command-input placeholder="Search language..."></ui-command-input>
+      <ui-command-list>
+        <ui-command-empty>No language found.</ui-command-empty>
+
+        <ui-command-group heading="Popular">
+          @for (lang of popularLanguages; track lang.value) {
+          <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+            {{ lang.label }}
+          </ui-command-item>
+          }
+        </ui-command-group>
+
+        <ui-command-separator></ui-command-separator>
+
+        <ui-command-group heading="Others">
+          @for (lang of otherLanguages; track lang.value) {
+          <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+            {{ lang.label }}
+          </ui-command-item>
+          }
+        </ui-command-group>
+      </ui-command-list>
+    </ui-command>
+  </ui-popover-content>
+</ui-popover>
+>>>>>>> 0197966 (ui combobox is a mixture of other already made components)
 ```
 
 ---
 
+<<<<<<< HEAD
 ## Troubleshooting
 
 ### Dropdown Not Showing
@@ -543,3 +682,234 @@ Ensure there are no z-index conflicts with other elements overlaying the combobo
 3. **Styling States**: Use `[data-state="open"]` and `[data-state="closed"]` selectors
 4. **Null Handling**: The component gracefully handles null/empty values and labels
 5. **Integration**: Easily integrate with Angular Forms using `[(value)]`
+=======
+## Component Breakdown
+
+### 1. Popover (Container)
+
+Provides the dropdown functionality:
+
+- `<ui-popover>` - Main container
+- `uiPopoverTrigger` - Directive for the button
+- `<ui-popover-content>` - Dropdown content
+
+### 2. Command (Search & Selection)
+
+Handles search and keyboard navigation:
+
+- `<ui-command>` - Command container
+- `<ui-command-input>` - Search input
+- `<ui-command-list>` - Items list
+- `<ui-command-item>` - Individual items
+- `<ui-command-empty>` - Empty state
+
+### 3. Button (Trigger)
+
+Acts as the combobox trigger:
+
+- Displays selected value or placeholder
+- Shows chevron icon
+- Opens/closes the popover
+
+---
+
+## State Management
+
+### Using Signals (Recommended)
+
+```typescript
+export class MyComponent {
+  selectedValue = signal('');
+
+  onSelect(value: string) {
+    this.selectedValue.set(value);
+    // Optionally close popover programmatically
+  }
+}
+```
+
+### Using Regular Properties
+
+```typescript
+export class MyComponent {
+  selectedValue = '';
+
+  onSelect(value: string) {
+    this.selectedValue = value;
+  }
+}
+```
+
+---
+
+## Styling
+
+### Button Width
+
+```html
+<ui-button uiPopoverTrigger style="width: 250px">
+  <!-- content -->
+</ui-button>
+```
+
+### Dropdown Width
+
+```html
+<ui-popover-content>
+  <div style="width: 250px">
+    <ui-command>
+      <!-- content -->
+    </ui-command>
+  </div>
+</ui-popover-content>
+```
+
+### Custom Alignment
+
+```html
+<ui-popover-content align="start">
+  <!-- Aligns to the start of the trigger -->
+</ui-popover-content>
+
+<ui-popover-content align="center">
+  <!-- Centers with the trigger -->
+</ui-popover-content>
+
+<ui-popover-content align="end">
+  <!-- Aligns to the end of the trigger -->
+</ui-popover-content>
+```
+
+---
+
+## Features
+
+✅ **Search** - Real-time filtering as you type  
+✅ **Keyboard Navigation** - Full arrow key support  
+✅ **Selection** - Click or press Enter to select  
+✅ **Empty State** - Customizable no-results message  
+✅ **Grouping** - Organize options into groups  
+✅ **Icons** - Add icons to options  
+✅ **Checkmarks** - Show selected item  
+✅ **Dark Mode** - Automatic dark mode support  
+✅ **Accessible** - ARIA attributes and keyboard support  
+✅ **Customizable** - Full control over styling
+
+---
+
+## Keyboard Navigation
+
+Inherited from the Command component:
+
+| Key            | Action                    |
+| -------------- | ------------------------- |
+| `ArrowDown`    | Navigate to next item     |
+| `ArrowUp`      | Navigate to previous item |
+| `Enter`        | Select active item        |
+| `Escape`       | Close dropdown            |
+| Type to search | Filter items in real-time |
+
+---
+
+## Accessibility
+
+### ARIA Attributes
+
+- Button has `role="combobox"`
+- Button has `aria-expanded` state
+- Command items have proper ARIA roles
+- Active items have `aria-selected`
+
+### Screen Reader Support
+
+- Proper semantic markup
+- ARIA attributes for state communication
+- Focus management
+
+### Keyboard Support
+
+Full keyboard navigation as described above.
+
+---
+
+## Best Practices
+
+✅ Use clear, concise option labels  
+✅ Group related options together  
+✅ Show checkmark for selected item  
+✅ Provide helpful empty state messages  
+✅ Set appropriate button and dropdown widths  
+✅ Use signals for reactive state management  
+✅ Test keyboard navigation thoroughly  
+❌ Don't make the option list too long  
+❌ Don't forget to handle the selected state
+
+---
+
+## Use Cases
+
+- **Form Fields** - Searchable select inputs
+- **Filters** - Filterable dropdown filters
+- **Settings** - Configuration selectors
+- **Language Picker** - Language/locale selection
+- **Status Selector** - Task/project status
+- **Category Picker** - Searchable categories
+
+---
+
+## Comparison with Select
+
+| Feature       | Combobox | Select     |
+| ------------- | -------- | ---------- |
+| Search        | ✅ Yes   | ❌ No      |
+| Keyboard Nav  | ✅ Full  | ⚠️ Basic   |
+| Grouping      | ✅ Yes   | ✅ Yes     |
+| Icons         | ✅ Yes   | ⚠️ Limited |
+| Customization | ✅ Full  | ⚠️ Limited |
+| Complexity    | Higher   | Lower      |
+
+**Use Combobox when:**
+
+- You have many options (>10)
+- Search is important
+- You need full customization
+- You want rich content (icons, etc.)
+
+**Use Select when:**
+
+- You have few options (<10)
+- Simple selection is enough
+- Native behavior is preferred
+
+---
+
+## Browser Support
+
+Compatible with all modern browsers:
+
+- Chrome 88+
+- Firefox 87+
+- Safari 14+
+- Edge 88+
+
+Requires support for:
+
+- CSS custom properties
+- ES6+ JavaScript
+- Angular 17+ (for control flow syntax)
+
+---
+
+## Summary
+
+The Combobox is a powerful composition pattern that:
+
+- 🎯 **Combines** Popover + Command + Button
+- 🔍 **Provides** Search and filtering
+- ⌨️ **Supports** Full keyboard navigation
+- 🎨 **Allows** Complete customization
+- ♿ **Ensures** Full accessibility
+- 📦 **Requires** No additional components
+
+Perfect for searchable dropdowns, autocomplete inputs, and filterable selectors!
+>>>>>>> 0197966 (ui combobox is a mixture of other already made components)
