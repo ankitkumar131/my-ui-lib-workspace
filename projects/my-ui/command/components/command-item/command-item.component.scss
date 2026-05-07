@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--command-item-radius, 6px);
+  padding: var(--command-item-padding, 8px 12px);
+  font-size: var(--command-item-font-size, 14px);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  outline: none;
+  background-color: transparent !important;
+  
+  &:hover:not(.disabled):not(.active) {
+    background-color: var(--command-item-hover-bg, hsl(240 4.8% 95.9%)) !important;
+  }
+  
+  &.active:not(.disabled) {
+    background-color: var(--command-item-active-bg, hsl(240 5.9% 90%)) !important;
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.command-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    &:hover:not(.disabled):not(.active) {
+      background-color: var(--command-item-hover-bg, hsl(240 3.7% 15.9%)) !important;
+    }
+    
+    &.active:not(.disabled) {
+      background-color: var(--command-item-active-bg, hsl(240 3.7% 15.9%)) !important;
+    }
+  }
+}

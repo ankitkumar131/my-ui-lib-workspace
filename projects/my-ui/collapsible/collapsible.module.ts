@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CollapsibleComponent } from './components/collapsible.component';
-import { CollapsibleTriggerComponent } from './components/collapsible-trigger.component';
-import { CollapsibleContentComponent } from './components/collapsible-content.component';
+import { CollapsibleComponent } from './components/collapsible/collapsible.component';
 import { CollapsibleTriggerDirective } from './directives/collapsible-trigger.directive';
+import { CollapsibleContentComponent } from './components/collapsible-content/collapsible-content.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     CollapsibleComponent,
-    CollapsibleTriggerComponent,
-    CollapsibleContentComponent,
-    CollapsibleTriggerDirective
+    CollapsibleTriggerDirective,
+    CollapsibleContentComponent
   ],
   exports: [
     CollapsibleComponent,
-    CollapsibleTriggerComponent,
-    CollapsibleContentComponent,
-    CollapsibleTriggerDirective
+    CollapsibleTriggerDirective,
+    CollapsibleContentComponent
   ]
 })
 export class UiCollapsibleModule { }

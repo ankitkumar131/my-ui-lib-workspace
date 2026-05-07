@@ -18,6 +18,7 @@ export * from './select/public-api';
 export * from './checkbox/public-api';
 export * from './collapsible/public-api';
 export * from './combobox/public-api';
+export * from './command/public-api';
 export * from './card/public-api';
 export * from './calendar/public-api';
 export * from './carousel/public-api';

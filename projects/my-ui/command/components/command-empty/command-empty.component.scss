@@ -1,0 +1,12 @@
+.command-empty {
+  padding: var(--command-empty-padding, 24px 16px);
+  text-align: center;
+  font-size: var(--command-empty-font-size, 14px);
+  color: var(--command-empty-color, hsl(215.4 16.3% 46.9%));
+}
+
+@media (prefers-color-scheme: dark) {
+  .command-empty {
+    color: var(--command-empty-color, hsl(215 20.2% 65.1%));
+  }
+}

@@ -45,6 +45,7 @@
       <li class="toc-item">
         <a href="#calendar-demo" class="toc-link">Calendar</a>
       </li>
+
       <li class="toc-item">
         <a href="#card-demo" class="toc-link">Card</a>
       </li>
@@ -56,6 +57,9 @@
       </li>
       <li class="toc-item">
         <a href="#collapsible-demo" class="toc-link">Collapsible</a>
+      </li>
+      <li class="toc-item">
+        <a href="#command-demo" class="toc-link">Command</a>
       </li>
       <li class="toc-item">
         <a href="#combobox-demo" class="toc-link">Combobox</a>
@@ -2725,6 +2729,157 @@
                     >
                     <ui-button [variant]="ButtonVariant.Ghost" style="color: #059669">â­</ui-button>
                   </div>
+<<<<<<< HEAD
+=======
+                </ui-carousel-item>
+                <ui-carousel-item
+                  style="--carousel-item-basis: 50%; --carousel-item-padding-left: 8px"
+                >
+                  <div style="padding: 4px">
+                    <ui-card
+                      style="
+                        --card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                        --card-border-color: #047857;
+                        --card-color: #ffffff;
+                        --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                      "
+                    >
+                      <ui-card-header>
+                        <ui-card-title style="color: #ffffff">Feature 4</ui-card-title>
+                        <ui-card-description style="color: #d1fae5"
+                          >Security First</ui-card-description
+                        >
+                      </ui-card-header>
+                      <ui-card-content>
+                        <p style="color: #ecfdf5; font-size: 14px">
+                          Enterprise-grade security with end-to-end encryption and compliance.
+                        </p>
+                      </ui-card-content>
+                    </ui-card>
+                  </div>
+                </ui-carousel-item>
+              </ui-carousel-content>
+              <ui-carousel-previous />
+              <ui-carousel-next />
+            </ui-carousel>
+          </div>
+        </div>
+                
+     
+    
+
+    <!-- Checkbox Demo -->
+     <h1 id="checkbox-demo">Checkbox Demo</h1>
+    <section class="mb-12">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold mb-2">Checkbox</h2>
+        <p class="text-muted-foreground">
+          A control that allows the user to toggle between checked and not checked.
+        </p>
+      </div>
+
+      <!-- Basic Checkbox -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Basic checkboxes</h3>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-3">
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-1"></ui-checkbox>
+              <label for="checkbox-1" class="text-sm font-medium">Checkbox</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-2" [checked]="true"></ui-checkbox>
+              <label for="checkbox-2" class="text-sm font-medium">Checkbox (checked)</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-3" [disabled]="true"></ui-checkbox>
+              <label for="checkbox-3" class="text-sm font-medium opacity-50">Checkbox (disabled)</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ui-checkbox id="checkbox-4" [disabled]="true" [checked]="true"></ui-checkbox>
+              <label for="checkbox-4" class="text-sm font-medium opacity-50">Checkbox (disabled, checked)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkbox with FormControl -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Checkboxes with label</h3>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-start space-x-3">
+              <ui-checkbox id="terms-1"></ui-checkbox>
+              <div class="grid gap-1.5">
+                <label for="terms-1" class="text-sm font-medium leading-none">
+                  Accept terms and conditions
+                </label>
+                <p class="text-sm text-muted-foreground">
+                  You agree to our Terms of Service and Privacy Policy.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <ui-checkbox id="mobile-1" [checked]="true"></ui-checkbox>
+              <div class="grid gap-1.5">
+                <label for="mobile-1" class="text-sm font-medium leading-none">
+                  Use different settings for my mobile devices
+                </label>
+                <p class="text-sm text-muted-foreground">
+                  You can manage your mobile notifications in the mobile settings page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indeterminate Checkbox -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Indeterminate checkbox</h3>
+        <p class="text-sm text-muted-foreground mb-3">
+          The indeterminate style indicates partial selection.
+        </p>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex items-center space-x-2">
+            <ui-checkbox id="indeterminate-demo" [indeterminate]="true"></ui-checkbox>
+            <label for="indeterminate-demo" class="text-sm font-medium">Indeterminate</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select All (Nested Checkboxes) -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">Select all</h3>
+        <p class="text-sm text-muted-foreground mb-3">
+          Parent checkbox selects or deselects all child checkboxes. Shows indeterminate state when some are selected.
+        </p>
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+          <div class="flex flex-col space-y-3">
+            <div class="flex items-center space-x-2 pb-2 border-b">
+              <ui-checkbox
+                id="select-all"
+                [checked]="allComplete()"
+                [indeterminate]="someComplete()"
+                (checkedChange)="setAll($event)"
+              ></ui-checkbox>
+              <label for="select-all" class="text-sm font-semibold">
+                {{ task().name }}
+              </label>
+            </div>
+            <div class="ml-6 flex flex-col space-y-2">
+              @for (subtask of task().subtasks; track subtask.name) {
+                <div class="flex items-center space-x-2">
+                  <ui-checkbox
+                    [id]="subtask.name"
+                    [(checked)]="subtask.completed"
+                    (checkedChange)="updateAllComplete()"
+                  ></ui-checkbox>
+                  <label [for]="subtask.name" class="text-sm font-medium">
+                    {{ subtask.name }}
+                  </label>
+>>>>>>> master
                 </div>
                 <div
                   style="
@@ -2770,6 +2925,7 @@
                 </ui-card-footer>
               </ui-card>
 
+<<<<<<< HEAD
               <!-- 5. Action Area Card -->
               <ui-card
                 style="
@@ -3947,3 +4103,1422 @@
       </section>
       </main>
     </div>
+=======
+    </section>
+
+    <!-- Collapsible Section -->
+    <section id="collapsible-demo" class="mt-8">
+      <h1>Collapsible Demo</h1>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Collapsible -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Collapsible</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            A simple collapsible component that can be toggled to show or hide content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Can I use this in my project?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Yes. This component is free and open source. You can use it in your projects.
+                  Check the documentation for more details on implementation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible with styled content -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Styled Content</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible with rich content including lists and multiple paragraphs.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                What are the features?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4">
+                  <p class="text-sm mb-2">This component includes:</p>
+                  <ul class="text-sm list-disc list-inside space-y-1">
+                    <li>Smooth animations</li>
+                    <li>Accessible keyboard navigation</li>
+                    <li>Customizable styling with CSS variables</li>
+                    <li>Easy integration with Angular</li>
+                  </ul>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Multiple Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Multiple Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Multiple independent collapsible components in a stack.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @peduarte starred 3 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/primitives</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/colors</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@stitches/react</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @shuding starred 2 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/swr</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/next.js</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible initially open -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Initially Open</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible component that starts in an open state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible [open]="true">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Important Information
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible starts in an open state by default. This is useful for content
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+      
+
+    <!-- Collapsible Section -->
+    <section id="collapsible-demo" class="mt-8">
+      <h1>Collapsible Demo</h1>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Collapsible -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Collapsible</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            A simple collapsible component that can be toggled to show or hide content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Can I use this in my project?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Yes. This component is free and open source. You can use it in your projects.
+                  Check the documentation for more details on implementation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible with styled content -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Styled Content</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible with rich content including lists and multiple paragraphs.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                What are the features?
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4">
+                  <p class="text-sm mb-2">This component includes:</p>
+                  <ul class="text-sm list-disc list-inside space-y-1">
+                    <li>Smooth animations</li>
+                    <li>Accessible keyboard navigation</li>
+                    <li>Customizable styling with CSS variables</li>
+                    <li>Easy integration with Angular</li>
+                  </ul>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Multiple Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Multiple Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Multiple independent collapsible components in a stack.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @peduarte starred 3 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/primitives</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@radix-ui/colors</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>@stitches/react</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                @shuding starred 2 repositories
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/swr</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>⭐</span>
+                    <span>vercel/next.js</span>
+                  </div>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Collapsible initially open -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Initially Open</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsible component that starts in an open state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible [open]="true">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Important Information
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible starts in an open state by default. This is useful for content
+                  that you want to be visible initially, but still allow users to collapse it if needed.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Nested Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Nested Collapsibles</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Collapsibles can be nested inside each other for hierarchical content.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Frontend Development
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 space-y-2">
+                  <p class="text-sm mb-2">Popular frameworks and technologies:</p>
+                  
+                  <!-- Nested collapsible -->
+                  <ui-collapsible class="ml-4">
+                    <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Ghost" class="w-full justify-between text-sm">
+                      JavaScript Frameworks
+                      <span slot="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </ui-button>
+                    <ui-collapsible-content>
+                      <div class="p-3 ml-4 text-sm space-y-1">
+                        <div>• React</div>
+                        <div>• Angular</div>
+                        <div>• Vue.js</div>
+                        <div>• Svelte</div>
+                      </div>
+                    </ui-collapsible-content>
+                  </ui-collapsible>
+
+                  <!-- Another nested collapsible -->
+                  <ui-collapsible class="ml-4">
+                    <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Ghost" class="w-full justify-between text-sm">
+                      CSS Frameworks
+                      <span slot="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </ui-button>
+                    <ui-collapsible-content>
+                      <div class="p-3 ml-4 text-sm space-y-1">
+                        <div>• Tailwind CSS</div>
+                        <div>• Bootstrap</div>
+                        <div>• Material UI</div>
+                      </div>
+                    </ui-collapsible-content>
+                  </ui-collapsible>
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Custom Animation Speed -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Custom Animation Speed</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Control animation speed using CSS variables.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-3">
+            <!-- Fast animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 150ms;">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Fast Animation (150ms)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible opens and closes very quickly with a 150ms animation.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Slow animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 600ms;">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Slow Animation (600ms)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible has a slower, more dramatic animation at 600ms.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Bouncy animation -->
+            <ui-collapsible style="--collapsible-animation-duration: 400ms; --collapsible-animation-easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);">
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between">
+                Bouncy Animation (Custom Easing)
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  This collapsible uses a bouncy easing function for a playful effect.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Custom Styled Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Custom Styled Themes</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Different visual themes using custom CSS styling.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-3">
+            <!-- Gradient theme -->
+            <ui-collapsible>
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;"
+              >
+                Gradient Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm" style="background: #f3f4f6; border-radius: 0 0 0.5rem 0.5rem;">
+                  Beautiful gradient-styled collapsible with custom background and rounded corners.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Success theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #10b981; color: white; border: none;"
+              >
+                Success Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #d1fae5; padding: 1rem; border-radius: 0 0 0.5rem 0.5rem; color: #065f46;">
+                  ✓ Operation completed successfully! Your changes have been saved.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Warning theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #f59e0b; color: white; border: none;"
+              >
+                Warning Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #fef3c7; padding: 1rem; border-radius: 0 0 0.5rem 0.5rem; color: #92400e;">
+                  ⚠ Please review the following items before proceeding with this action.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+
+            <!-- Dark theme -->
+            <ui-collapsible style="--collapsible-content-padding: 1rem;">
+              <ui-button 
+                uiCollapsibleTrigger 
+                class="w-full justify-between"
+                style="background: #1f2937; color: white; border: 1px solid #374151;"
+              >
+                Dark Theme
+                <span slot="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="text-sm" style="background: #111827; color: #d1d5db; padding: 1rem; border: 1px solid #374151; border-top: none; border-radius: 0 0 0.5rem 0.5rem;">
+                  Sleek dark mode design perfect for night-time viewing or professional dashboards.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- FAQ Style Collapsibles -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">FAQ Style</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Frequently Asked Questions layout with numbered items.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900 space-y-2">
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">1</span>
+                    <span class="font-medium">What is this component library?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      This is a collection of accessible, customizable Angular components inspired by shadcn/ui. 
+                      It provides a modern UI toolkit for building beautiful applications.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">2</span>
+                    <span class="font-medium">How do I customize the styles?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      All components support CSS variables for easy customization. You can override variables globally 
+                      or per-component using inline styles or custom classes. Check the manual for available CSS variables.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+
+            <ui-collapsible>
+              <div class="border rounded-lg overflow-hidden">
+                <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between p-4 hover:bg-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold">3</span>
+                    <span class="font-medium">Is it accessible?</span>
+                  </div>
+                  <span slot="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </ui-button>
+                <ui-collapsible-content>
+                  <div class="px-4 pb-4 pt-0 text-sm text-muted-foreground border-t">
+                    <div class="pt-3">
+                      Yes! All components are built with accessibility in mind, featuring proper ARIA attributes, 
+                      keyboard navigation support, and screen reader compatibility.
+                    </div>
+                  </div>
+                </ui-collapsible-content>
+              </div>
+            </ui-collapsible>
+          </div>
+        </div>
+
+        <!-- Icon Rotation Demo -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Animated Icons</h2>
+          <p class="text-sm text-muted-foreground mb-3">
+            Icons that rotate smoothly when toggling state.
+          </p>
+          <div class="p-6 border rounded-lg bg-white dark:bg-gray-900">
+            <ui-collapsible>
+              <ui-button uiCollapsibleTrigger [variant]="ButtonVariant.Outline" class="w-full justify-between collapsible-with-icon-rotation">
+                Click to see icon rotation
+                <span slot="icon" style="transition: transform 200ms ease;">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="collapsible-icon"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </ui-button>
+              <ui-collapsible-content>
+                <div class="p-4 text-sm">
+                  Notice how the chevron icon rotates 180 degrees when you open and close this collapsible. 
+                  This provides better visual feedback to users.
+                </div>
+              </ui-collapsible-content>
+            </ui-collapsible>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Command Section -->
+    <section id="command-demo" class="mt-8">
+      <h1>Command Demo</h1>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Command -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Command Menu</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            A simple command menu with search functionality. Try typing to filter items.
+          </p>
+          <div style="max-width: 450px">
+            <ui-command>
+              <ui-command-input placeholder="Type a command..."></ui-command-input>
+              <ui-command-list>
+                <ui-command-empty>No results found.</ui-command-empty>
+                <ui-command-item>Calendar</ui-command-item>
+                <ui-command-item>Search Emoji</ui-command-item>
+                <ui-command-item>Calculator</ui-command-item>
+                <ui-command-item>Settings</ui-command-item>
+                <ui-command-item>Profile</ui-command-item>
+              </ui-command-list>
+            </ui-command>
+          </div>
+        </div>
+
+        <!-- Command with Groups -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Command with Groups</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Organize commands into logical groups with headings.
+          </p>
+          <div style="max-width: 450px">
+            <ui-command>
+              <ui-command-input></ui-command-input>
+              <ui-command-list>
+                <ui-command-empty>No results found.</ui-command-empty>
+                
+                <ui-command-group heading="Suggestions">
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Calendar
+                  </ui-command-item>
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Search Emoji
+                  </ui-command-item>
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                      <line x1="8" y1="6" x2="16" y2="6"></line>
+                      <line x1="8" y1="10" x2="16" y2="10"></line>
+                      <line x1="8" y1="14" x2="16" y2="14"></line>
+                      <line x1="8" y1="18" x2="16" y2="18"></line>
+                    </svg>
+                    Calculator
+                  </ui-command-item>
+                </ui-command-group>
+                
+                <ui-command-separator></ui-command-separator>
+                
+                <ui-command-group heading="Settings">
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Profile
+                  </ui-command-item>
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    Billing
+                  </ui-command-item>
+                  <ui-command-item>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="margin-right: 8px"
+                    >
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path
+                        d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l-4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l-4.2-4.2"
+                      ></path>
+                    </svg>
+                    Settings
+                  </ui-command-item>
+                </ui-command-group>
+              </ui-command-list>
+            </ui-command>
+          </div>
+        </div>
+
+        <!-- Command with Keyboard Shortcuts -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Command with Keyboard Shortcuts</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Display keyboard shortcuts alongside commands for better discoverability.
+          </p>
+          <div style="max-width: 450px">
+            <ui-command>
+              <ui-command-input placeholder="Search commands..."></ui-command-input>
+              <ui-command-list>
+                <ui-command-empty>No results found.</ui-command-empty>
+                
+                <ui-command-group heading="File">
+                  <ui-command-item>
+                    New File
+                    <ui-command-shortcut>⌘N</ui-command-shortcut>
+                  </ui-command-item>
+                  <ui-command-item>
+                    Open File
+                    <ui-command-shortcut>⌘O</ui-command-shortcut>
+                  </ui-command-item>
+                  <ui-command-item>
+                    Save
+                    <ui-command-shortcut>⌘S</ui-command-shortcut>
+                  </ui-command-item>
+                </ui-command-group>
+                
+                <ui-command-separator></ui-command-separator>
+                
+                <ui-command-group heading="Edit">
+                  <ui-command-item>
+                    Copy
+                    <ui-command-shortcut>⌘C</ui-command-shortcut>
+                  </ui-command-item>
+                  <ui-command-item>
+                    Paste
+                    <ui-command-shortcut>⌘V</ui-command-shortcut>
+                  </ui-command-item>
+                  <ui-command-item>
+                    Undo
+                    <ui-command-shortcut>⌘Z</ui-command-shortcut>
+                  </ui-command-item>
+                  <ui-command-item>
+                    Redo
+                    <ui-command-shortcut>⌘⇧Z</ui-command-shortcut>
+                  </ui-command-item>
+                </ui-command-group>
+              </ui-command-list>
+            </ui-command>
+          </div>
+        </div>
+
+        <!-- Command in Popover -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Command in Popover</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Use Command inside a Popover for a dropdown command menu. The popover alignment can be adjusted.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger>Open Command Menu</ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 350px">
+                <ui-command>
+                  <ui-command-input placeholder="Search..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No results found.</ui-command-empty>
+                    <ui-command-group heading="Quick Actions">
+                      <ui-command-item>Dashboard</ui-command-item>
+                      <ui-command-item>Projects</ui-command-item>
+                      <ui-command-item>Team</ui-command-item>
+                    </ui-command-group>
+                    <ui-command-separator></ui-command-separator>
+                    <ui-command-group heading="Account">
+                      <ui-command-item>Profile</ui-command-item>
+                      <ui-command-item>Settings</ui-command-item>
+                      <ui-command-item>Logout</ui-command-item>
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+        </div>
+
+        <!-- Keyboard Navigation Info -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Keyboard Navigation</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            The Command component supports full keyboard navigation:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li><strong>↑ / ↓</strong> - Navigate between items</li>
+            <li><strong>Enter</strong> - Select active item</li>
+            <li><strong>Escape</strong> - Clear search and reset</li>
+            <li><strong>Type</strong> - Filter items in real-time</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combobox Section -->
+    <section id="combobox-demo" class="mt-8">
+      <h1>Combobox Demo</h1>
+      <p class="text-sm text-gray-600 mb-4">
+        Combobox is a composition pattern combining Popover + Command + Button components.
+        It provides autocomplete functionality with search and selection.
+      </p>
+
+      <div class="grid grid-cols-1 gap-6 mt-4">
+        <!-- Basic Combobox -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Basic Combobox</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Select a framework from the searchable dropdown.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedFramework()) {
+                {{ getSelectedLabel(selectedFramework(), frameworks) }}
+              } @else {
+                Select framework...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search framework..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No framework found.</ui-command-empty>
+                    <ui-command-group>
+                      @for (framework of frameworks; track framework.value) {
+                        <ui-command-item (selected)="selectedFramework.set(framework.value)">
+                          {{ framework.label }}
+                          @if (selectedFramework() === framework.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedFramework()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedFramework(), frameworks) }}</strong></p>
+          }
+        </div>
+
+        <!-- Combobox with Status Icons -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Combobox with Icons</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Status selector with icons for each option.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedStatus()) {
+                {{ getSelectedLabel(selectedStatus(), statuses) }}
+              } @else {
+                Select status...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search status..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No status found.</ui-command-empty>
+                    <ui-command-group>
+                      @for (status of statuses; track status.value) {
+                        <ui-command-item (selected)="selectedStatus.set(status.value)">
+                          @switch (status.value) {
+                            @case ('backlog') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; opacity: 0.5;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                              </svg>
+                            }
+                            @case ('todo') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #3b82f6;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                              </svg>
+                            }
+                            @case ('in-progress') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #f59e0b;">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                              </svg>
+                            }
+                            @case ('done') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #10b981;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <path d="m9 11 3 3L22 4"></path>
+                              </svg>
+                            }
+                            @case ('canceled') {
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; color: #ef4444;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m15 9-6 6m0-6 6 6"></path>
+                              </svg>
+                            }
+                          }
+                          {{ status.label }}
+                          @if (selectedStatus() === status.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedStatus()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedStatus(), statuses) }}</strong></p>
+          }
+        </div>
+
+        <!-- Combobox with Grouped Options -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Combobox with Groups</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            Language selector with grouped options.
+          </p>
+          <ui-popover>
+            <ui-button uiPopoverTrigger variant="outline" style="width: 250px; justify-content: space-between;">
+              @if (selectedLanguage()) {
+                {{ getSelectedLabel(selectedLanguage(), languages) }}
+              } @else {
+                Select language...
+              }
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="opacity: 0.5; margin-left: auto;"
+              >
+                <path d="m7 15 5 5 5-5"></path>
+                <path d="m7 9 5-5 5 5"></path>
+              </svg>
+            </ui-button>
+            <ui-popover-content align="start">
+              <div style="width: 250px">
+                <ui-command>
+                  <ui-command-input placeholder="Search language..."></ui-command-input>
+                  <ui-command-list>
+                    <ui-command-empty>No language found.</ui-command-empty>
+                    
+                    <ui-command-group heading="Popular">
+                      @for (lang of getLanguagesByGroup('Popular'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+ 
+                    <ui-command-separator></ui-command-separator>
+ 
+                    <ui-command-group heading="European">
+                      @for (lang of getLanguagesByGroup('European'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+ 
+                    <ui-command-separator></ui-command-separator>
+ 
+                    <ui-command-group heading="Asian">
+                      @for (lang of getLanguagesByGroup('Asian'); track lang.value) {
+                        <ui-command-item (selected)="selectedLanguage.set(lang.value)">
+                          {{ lang.label }}
+                          @if (selectedLanguage() === lang.value) {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              style="margin-left: auto;"
+                            >
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          }
+                        </ui-command-item>
+                      }
+                    </ui-command-group>
+                  </ui-command-list>
+                </ui-command>
+              </div>
+            </ui-popover-content>
+          </ui-popover>
+          @if (selectedLanguage()) {
+            <p class="text-sm text-gray-600 mt-2">Selected: <strong>{{ getSelectedLabel(selectedLanguage(), languages) }}</strong></p>
+          }
+        </div>
+
+        <!-- Composition Pattern Info -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Composition Pattern</h2>
+          <p class="text-sm text-gray-600 mb-4">
+            The Combobox is built by composing three existing components:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li><strong>Popover</strong> - Provides the dropdown container</li>
+            <li><strong>Command</strong> - Handles search and keyboard navigation</li>
+            <li><strong>Button</strong> - Acts as the trigger</li>
+          </ul>
+          <p class="text-sm text-gray-600 mt-4">
+            This composition approach provides maximum flexibility and reusability without creating additional components.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+>>>>>>> master

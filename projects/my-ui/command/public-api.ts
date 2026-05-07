@@ -1,0 +1,9 @@
+export { CommandComponent } from './components/command/command.component';
+export { CommandInputComponent } from './components/command-input/command-input.component';
+export { CommandListComponent } from './components/command-list/command-list.component';
+export { CommandEmptyComponent } from './components/command-empty/command-empty.component';
+export { CommandGroupComponent } from './components/command-group/command-group.component';
+export { CommandItemComponent } from './components/command-item/command-item.component';
+export { CommandSeparatorComponent } from './components/command-separator/command-separator.component';
+export { CommandShortcutComponent } from './components/command-shortcut/command-shortcut.component';
+export { UiCommandModule } from './command.module';
