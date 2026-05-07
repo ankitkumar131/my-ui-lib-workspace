@@ -1,6 +1,24 @@
-import { Component, Input, Output, EventEmitter, forwardRef, booleanAttribute, ChangeDetectorRef } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+  booleanAttribute,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgIf } from '@angular/common';
+
+export interface CheckboxChange {
+  checked: boolean;
+  indeterminate: boolean;
+  value: unknown;
+  target: {
+    checked: boolean;
+    value: unknown;
+  };
+}
 
 @Component({
   selector: 'ui-checkbox',
@@ -17,37 +35,74 @@ import { NgIf } from '@angular/common';
   ]
 })
 export class CheckboxComponent implements ControlValueAccessor {
-  @Input({ transform: booleanAttribute }) checked: boolean = false;
+  private _checked = false;
+  private _defaultCheckedInitialized = false;
+
+  @Input({ transform: booleanAttribute })
+  set checked(value: boolean) {
+    this._checked = value;
+  }
+  get checked(): boolean {
+    return this._checked;
+  }
+
+  @Input({ transform: booleanAttribute })
+  set defaultChecked(value: boolean) {
+    if (!this._defaultCheckedInitialized) {
+      this._checked = value;
+      this._defaultCheckedInitialized = true;
+    }
+  }
+
   @Input({ transform: booleanAttribute }) disabled: boolean = false;
   @Input({ transform: booleanAttribute }) required: boolean = false;
   @Input({ transform: booleanAttribute }) indeterminate: boolean = false;
+  @Input({ alias: 'aria-invalid', transform: booleanAttribute }) ariaInvalid: boolean = false;
   @Input() id: string = '';
   @Input() name: string = '';
-  @Input() value: any = '';
-  
-  @Output() checkedChange = new EventEmitter<boolean>();
+  @Input() value: unknown = '';
 
-  onChange = (_: any) => {};
+  @Output() checkedChange = new EventEmitter<boolean>();
+  @Output() indeterminateChange = new EventEmitter<boolean>();
+  @Output() change = new EventEmitter<CheckboxChange>();
+
+  onChange = (_: boolean) => {};
   onTouched = () => {};
 
   constructor(private cdr: ChangeDetectorRef) {}
+
+  get ariaChecked(): 'true' | 'false' | 'mixed' {
+    return this.indeterminate ? 'mixed' : this.checked ? 'true' : 'false';
+  }
+
+  get state(): 'checked' | 'unchecked' | 'indeterminate' {
+    return this.indeterminate ? 'indeterminate' : this.checked ? 'checked' : 'unchecked';
+  }
 
   toggle(event: Event) {
     event.preventDefault();
     if (this.disabled) return;
 
-    // Reset indeterminate state on user click
     if (this.indeterminate) {
       this.indeterminate = false;
+      this.indeterminateChange.emit(false);
     }
 
     this.checked = !this.checked;
     this.onChange(this.checked);
     this.onTouched();
     this.checkedChange.emit(this.checked);
+    this.change.emit({
+      checked: this.checked,
+      indeterminate: this.indeterminate,
+      value: this.value,
+      target: {
+        checked: this.checked,
+        value: this.value,
+      },
+    });
   }
 
-  // ControlValueAccessor implementation
   writeValue(value: any): void {
     this.checked = !!value;
     this.cdr.markForCheck();

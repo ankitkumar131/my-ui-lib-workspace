@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.combobox-empty {
+  padding: var(--combobox-empty-padding, 12px 8px);
+  text-align: center;
+  font-size: var(--combobox-empty-font-size, 0.875rem);
+  color: hsl(var(--muted-foreground, 215.4 16.3% 46.9%));
+}

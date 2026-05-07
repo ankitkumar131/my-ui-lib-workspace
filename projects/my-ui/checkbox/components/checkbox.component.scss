@@ -72,6 +72,12 @@ button {
     border-color: var(--primary);
     color: var(--primary-foreground);
   }
+
+  &[aria-invalid="true"],
+  &[data-invalid] {
+    border-color: var(--destructive, hsl(0, 84.2%, 60.2%));
+    box-shadow: 0 0 0 1px var(--destructive, hsl(0, 84.2%, 60.2%));
+  }
   
   // SVG Icon
   svg {

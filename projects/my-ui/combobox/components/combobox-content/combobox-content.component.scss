@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  position: absolute;
+  z-index: var(--combobox-content-z-index, 50);
+  top: calc(100% + var(--combobox-content-offset, 4px));
+  left: 0;
+  width: var(--combobox-content-width, 100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-4px) scale(0.98);
+  transition:
+    opacity var(--combobox-animation-duration, 150ms) var(--combobox-animation-easing, cubic-bezier(0.4, 0, 0.2, 1)),
+    transform var(--combobox-animation-duration, 150ms) var(--combobox-animation-easing, cubic-bezier(0.4, 0, 0.2, 1)),
+    visibility 0s linear var(--combobox-animation-duration, 150ms);
+}
+
+:host([data-state="open"]) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity var(--combobox-animation-duration, 150ms) var(--combobox-animation-easing, cubic-bezier(0.4, 0, 0.2, 1)),
+    transform var(--combobox-animation-duration, 150ms) var(--combobox-animation-easing, cubic-bezier(0.4, 0, 0.2, 1)),
+    visibility 0s;
+}
+
+.combobox-content {
+  background: hsl(var(--popover, 0 0% 100%));
+  border: 1px solid hsl(var(--border, 214.3 31.8% 91.4%));
+  border-radius: var(--combobox-content-border-radius, calc(var(--radius, 0.5rem) - 2px));
+  box-shadow: var(--combobox-content-shadow, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1));
+  max-height: var(--combobox-content-max-height, 300px);
+  overflow-y: auto;
+  padding: var(--combobox-content-padding, 4px);
+}
+
+// Scrollbar styling
+.combobox-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.combobox-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.combobox-content::-webkit-scrollbar-thumb {
+  background: hsl(var(--border, 214.3 31.8% 91.4%));
+  border-radius: 4px;
+}
+
+.combobox-content::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground, 220 8.9% 46.1%));
+}

@@ -1,4 +1,6 @@
 import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import {
   Accordion,
   AccordionContent,
@@ -80,12 +82,23 @@ import {
   CarouselPreviousComponent,
   CarouselNextComponent
 } from '@my-ui/carousel';
-import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
-
+import { UiCheckboxModule } from '@my-ui/checkbox';
+import { UiCollapsibleModule } from '@my-ui/collapsible';
+import {
+  UiComboboxModule,
+  ComboboxComponent,
+  ComboboxTriggerDirective,
+  ComboboxContentComponent,
+  ComboboxInputComponent,
+  ComboboxListComponent,
+  ComboboxItemComponent,
+  ComboboxEmptyComponent
+} from '@my-ui/combobox';
 
 @Component({
   selector: 'app-root',
   imports: [
+    CommonModule,
     Accordion,
     AccordionContent,
     AccordionItem,
@@ -151,7 +164,12 @@ import { UiCheckboxModule } from '../../projects/my-ui/checkbox';
     CarouselItemComponent,
     CarouselPreviousComponent,
     CarouselNextComponent,
-    UiCheckboxModule
+
+    UiCheckboxModule,
+    UiCollapsibleModule,
+    UiComboboxModule,
+    FormsModule
+
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
@@ -210,6 +228,10 @@ export class App {
   };
   
   // Checkbox demo states
+  termsAccepted = false;
+  marketingAccepted = true;
+  securityAlerts = false;
+
   task = signal({
     name: 'Select All',
     completed: false,
@@ -243,5 +265,45 @@ export class App {
     }
     task.subtasks.forEach(t => (t.completed = completed));
     this.task.set({...task});
+  }
+
+  setSubtask(index: number, completed: boolean) {
+    const task = this.task();
+    const subtasks = task.subtasks.map((subtask, subtaskIndex) =>
+      subtaskIndex === index ? { ...subtask, completed } : subtask
+    );
+
+    this.task.set({ ...task, subtasks });
+    this.updateAllComplete();
+  }
+
+  // Combobox Demo
+  frameworks = [
+    { value: 'next.js', label: 'Next.js' },
+    { value: 'sveltekit', label: 'SvelteKit' },
+    { value: 'nuxt.js', label: 'Nuxt.js' },
+    { value: 'remix', label: 'Remix' },
+    { value: 'astro', label: 'Astro' },
+  ];
+  
+  selectedFramework: string | null = null;
+  
+  getSelectedFrameworkLabel() {
+    return this.frameworks.find(f => f.value === this.selectedFramework)?.label;
+  }
+
+  mixedItems = [
+    { value: 'option1', label: 'Option 1' },
+    { value: null, label: 'Option with null value' },
+    { value: 'option3', label: null },
+    { value: '', label: 'Option with empty value' },
+    { value: 'option5', label: 'Option 5' },
+  ];
+  
+  selectedMixedValue: string | null = null;
+  
+  getSelectedMixedLabel() {
+    const item = this.mixedItems.find(i => i.value === this.selectedMixedValue);
+    return item ? (item.label || '(Empty Label)') : null;
   }
 }

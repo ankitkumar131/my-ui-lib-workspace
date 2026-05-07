@@ -1,10 +1,7 @@
-export * from './accordion/public-api';
-export * from './aspect-ratio/public-api';
-export * from './accordion/public-api';
-export * from './aspect-ratio/public-api';
-export * from './button/public-api';
-export * from './accordion/public-api';
-export * from './aspect-ratio/public-api';
+/*
+ * Public API Surface of my-ui
+ */
+
 export * from './accordion/public-api';
 export * from './aspect-ratio/public-api';
 export * from './button/public-api';
@@ -19,3 +16,8 @@ export * from './input/public-api';
 export * from './popover/public-api';
 export * from './select/public-api';
 export * from './checkbox/public-api';
+export * from './collapsible/public-api';
+export * from './combobox/public-api';
+export * from './card/public-api';
+export * from './calendar/public-api';
+export * from './carousel/public-api';

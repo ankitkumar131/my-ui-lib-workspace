@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.combobox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--combobox-list-gap, 1px);
+  padding: var(--combobox-list-padding, 4px 0);
+}

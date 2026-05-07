@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.combobox-root {
+  position: relative;
+  display: inline-block;
+  width: var(--combobox-width, 100%);
+}
