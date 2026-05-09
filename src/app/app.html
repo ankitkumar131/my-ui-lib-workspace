@@ -62,6 +62,9 @@
         <a href="#command-demo" class="toc-link">Command</a>
       </li>
       <li class="toc-item">
+        <a href="#context-menu-demo" class="toc-link">Context Menu</a>
+      </li>
+      <li class="toc-item">
         <a href="#combobox-demo" class="toc-link">Combobox</a>
       </li>
     </ul>
@@ -3823,6 +3826,181 @@
                   </ui-collapsible-content>
                 </ui-collapsible>
               </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Command Section -->
+        <section id="command-demo" class="component-demo-section">
+          <div class="component-demo-heading">
+            <p class="component-eyebrow">Command</p>
+            <h1>Command Demo</h1>
+            <p>
+              Searchable quick actions styled to match shadcn/ui with grouped items,
+              shortcuts, empty state, and scrollable results.
+            </p>
+          </div>
+
+          <div class="demo-grid">
+            <article class="demo-panel">
+              <h2>Basic</h2>
+              <ui-command class="demo-command">
+                <ui-command-input placeholder="Type a command or search..."></ui-command-input>
+                <ui-command-list>
+                  <ui-command-empty>No results found.</ui-command-empty>
+
+                  <ui-command-group heading="Suggestions">
+                    <ui-command-item value="calendar" [keywords]="['date', 'schedule']" (selected)="runCommand('Calendar')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                        <path d="M16 2v4M8 2v4M3 10h18"></path>
+                      </svg>
+                      <span>Calendar</span>
+                    </ui-command-item>
+                    <ui-command-item value="search-emoji" [keywords]="['emoji', 'icons']" (selected)="runCommand('Search Emoji')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path>
+                      </svg>
+                      <span>Search Emoji</span>
+                    </ui-command-item>
+                    <ui-command-item value="calculator" [keywords]="['math']" (selected)="runCommand('Calculator')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                        <path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+                      </svg>
+                      <span>Calculator</span>
+                    </ui-command-item>
+                  </ui-command-group>
+
+                  <ui-command-separator></ui-command-separator>
+
+                  <ui-command-group heading="Settings">
+                    <ui-command-item value="profile" (selected)="runCommand('Profile')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 21a8 8 0 0 0-16 0"></path>
+                        <circle cx="12" cy="8" r="4"></circle>
+                      </svg>
+                      <span>Profile</span>
+                      <ui-command-shortcut>⌘P</ui-command-shortcut>
+                    </ui-command-item>
+                    <ui-command-item value="billing" (selected)="runCommand('Billing')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <path d="M2 10h20"></path>
+                      </svg>
+                      <span>Billing</span>
+                      <ui-command-shortcut>⌘B</ui-command-shortcut>
+                    </ui-command-item>
+                    <ui-command-item value="settings" (selected)="runCommand('Settings')">
+                      <svg class="command-item-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.7 1.7 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H2.9a2 2 0 1 1 0-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6c.37 0 .73-.14 1-.4.26-.28.4-.64.4-1.01V3a2 2 0 1 1 4 0v.09c0 .37.14.73.4 1.01.27.26.63.4 1 .4a1.7 1.7 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c0 .37.14.73.4 1 .28.26.64.4 1.01.4H21a2 2 0 1 1 0 4h-.09c-.37 0-.73.14-1.01.4-.26.27-.4.63-.4 1Z"></path>
+                      </svg>
+                      <span>Settings</span>
+                      <ui-command-shortcut>⌘S</ui-command-shortcut>
+                    </ui-command-item>
+                  </ui-command-group>
+                </ui-command-list>
+              </ui-command>
+              <p class="demo-muted">Last action: {{ commandAction() }}</p>
+            </article>
+
+            <article class="demo-panel">
+              <h2>Scrollable</h2>
+              <ui-command class="demo-command demo-command-scroll">
+                <ui-command-input placeholder="Search pages..."></ui-command-input>
+                <ui-command-list style="--command-list-max-height: 220px">
+                  <ui-command-empty>No pages found.</ui-command-empty>
+
+                  <ui-command-group heading="Pages">
+                    <ui-command-item value="home" (selected)="runCommand('Home')"><span>Home</span></ui-command-item>
+                    <ui-command-item value="products" (selected)="runCommand('Products')"><span>Products</span></ui-command-item>
+                    <ui-command-item value="pricing" (selected)="runCommand('Pricing')"><span>Pricing</span></ui-command-item>
+                    <ui-command-item value="blog" (selected)="runCommand('Blog')"><span>Blog</span></ui-command-item>
+                    <ui-command-item value="docs" (selected)="runCommand('Docs')"><span>Docs</span></ui-command-item>
+                    <ui-command-item value="support" (selected)="runCommand('Support')"><span>Support</span></ui-command-item>
+                    <ui-command-item value="careers" (selected)="runCommand('Careers')"><span>Careers</span></ui-command-item>
+                    <ui-command-item value="settings-team" (selected)="runCommand('Team Settings')"><span>Team Settings</span></ui-command-item>
+                  </ui-command-group>
+                </ui-command-list>
+              </ui-command>
+            </article>
+          </div>
+        </section>
+
+        <!-- Context Menu Section -->
+        <section id="context-menu-demo" class="component-demo-section">
+          <div class="component-demo-heading">
+            <p class="component-eyebrow">Overlay</p>
+            <h1>Context Menu Demo</h1>
+            <p>
+              Right click the card below to open a shadcn-style context menu with
+              shortcuts, nested content, checkbox items, and radio items.
+            </p>
+          </div>
+
+          <div class="demo-grid">
+            <article class="demo-panel">
+              <h2>Context Menu</h2>
+              <ui-context-menu>
+                <div class="context-menu-trigger-surface" [uiContextMenuTriggerFor]="contextMenuTemplate">
+                  Right click here
+                </div>
+
+                <ng-template #contextMenuTemplate>
+                  <ui-context-menu-content>
+                    <ui-context-menu-item (itemSelect)="runCommand('Back')">
+                      Back
+                      <ui-context-menu-shortcut>⌘[</ui-context-menu-shortcut>
+                    </ui-context-menu-item>
+                    <ui-context-menu-item disabled>
+                      Forward
+                      <ui-context-menu-shortcut>⌘]</ui-context-menu-shortcut>
+                    </ui-context-menu-item>
+                    <ui-context-menu-item (itemSelect)="runCommand('Reload')">
+                      Reload
+                      <ui-context-menu-shortcut>⌘R</ui-context-menu-shortcut>
+                    </ui-context-menu-item>
+
+                    <ui-context-menu-sub>
+                      <ui-context-menu-sub-trigger>More Tools</ui-context-menu-sub-trigger>
+                      <ui-context-menu-sub-content>
+                        <ui-context-menu-item (itemSelect)="runCommand('Save Page As')">Save Page As...</ui-context-menu-item>
+                        <ui-context-menu-item (itemSelect)="runCommand('Create Shortcut')">Create Shortcut...</ui-context-menu-item>
+                        <ui-context-menu-item (itemSelect)="runCommand('Name Window')">Name Window...</ui-context-menu-item>
+                        <ui-context-menu-separator></ui-context-menu-separator>
+                        <ui-context-menu-item (itemSelect)="runCommand('Developer Tools')">Developer Tools</ui-context-menu-item>
+                      </ui-context-menu-sub-content>
+                    </ui-context-menu-sub>
+
+                    <ui-context-menu-separator></ui-context-menu-separator>
+
+                    <ui-context-menu-checkbox-item [checked]="showBookmarksBar()" (checkedChange)="toggleBookmarksBar()">
+                      Show Bookmarks Bar
+                    </ui-context-menu-checkbox-item>
+                    <ui-context-menu-checkbox-item [checked]="showFullUrls()" (checkedChange)="toggleFullUrls()">
+                      Show Full URLs
+                    </ui-context-menu-checkbox-item>
+
+                    <ui-context-menu-separator></ui-context-menu-separator>
+                    <ui-context-menu-label inset>People</ui-context-menu-label>
+                    <ui-context-menu-radio-group [value]="selectedPerson()">
+                      <ui-context-menu-radio-item [checked]="selectedPerson() === 'pedro'" (itemSelect)="selectPerson('pedro')">
+                        Pedro Duarte
+                      </ui-context-menu-radio-item>
+                      <ui-context-menu-radio-item [checked]="selectedPerson() === 'colm'" (itemSelect)="selectPerson('colm')">
+                        Colm Tuite
+                      </ui-context-menu-radio-item>
+                    </ui-context-menu-radio-group>
+                  </ui-context-menu-content>
+                </ng-template>
+              </ui-context-menu>
+
+              <p class="demo-muted">
+                Last action: {{ commandAction() }} · Person: {{ selectedPerson() }} · Bookmarks:
+                {{ showBookmarksBar() ? 'on' : 'off' }}
+              </p>
             </article>
           </div>
         </section>

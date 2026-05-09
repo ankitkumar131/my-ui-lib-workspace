@@ -22,3 +22,4 @@ export * from './command/public-api';
 export * from './card/public-api';
 export * from './calendar/public-api';
 export * from './carousel/public-api';
+export * from './context-menu/public-api';

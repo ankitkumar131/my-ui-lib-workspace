@@ -1,7 +1,7 @@
 .command-separator {
   height: var(--command-separator-height, 1px);
   background-color: var(--command-separator-color, hsl(214.3 31.8% 91.4%));
-  margin: var(--command-separator-margin, 8px 0);
+  margin: var(--command-separator-margin, 0.25rem 0);
 }
 
 @media (prefers-color-scheme: dark) {

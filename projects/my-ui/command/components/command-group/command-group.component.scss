@@ -1,24 +1,25 @@
 .command-group {
-  padding: var(--command-group-padding, 4px 0);
-  
+  padding: var(--command-group-padding, 0.25rem);
+
   &:not(:first-child) {
-    margin-top: var(--command-group-spacing, 8px);
+    margin-top: var(--command-group-spacing, 0.25rem);
   }
 }
 
 .command-group-heading {
-  padding: var(--command-group-heading-padding, 8px 12px 4px);
-  font-size: var(--command-group-heading-font-size, 12px);
-  font-weight: var(--command-group-heading-font-weight, 600);
+  padding: var(--command-group-heading-padding, 0.375rem 0.5rem);
+  font-size: var(--command-group-heading-font-size, 0.75rem);
+  font-weight: var(--command-group-heading-font-weight, 500);
   color: var(--command-group-heading-color, hsl(215.4 16.3% 46.9%));
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .command-group-items {
   display: flex;
   flex-direction: column;
-  gap: var(--command-group-items-gap, 2px);
+  gap: var(--command-group-items-gap, 0.125rem);
 }
 
 @media (prefers-color-scheme: dark) {

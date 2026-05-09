@@ -1,0 +1,39 @@
+.context-menu-radio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--context-menu-radio-item-gap, 0.5rem);
+  min-height: var(--context-menu-radio-item-min-height, 2rem);
+  cursor: default;
+  user-select: none;
+  border-radius: var(--context-menu-radio-item-radius, 0.375rem);
+  padding: var(--context-menu-radio-item-padding, 0.375rem 0.5rem);
+  font-size: var(--context-menu-radio-item-font-size, 0.875rem);
+  background: var(--context-menu-radio-item-bg, transparent);
+  color: var(--context-menu-radio-item-color, inherit);
+
+  &:hover {
+    background: var(--context-menu-radio-item-hover-bg, hsl(210 40% 96.1%));
+    color: var(--context-menu-radio-item-hover-color, inherit);
+  }
+}
+
+.context-menu-item-indicator {
+  display: inline-flex;
+  width: var(--context-menu-radio-indicator-width, 1rem);
+  height: var(--context-menu-radio-indicator-height, 1rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.context-menu-radio-dot {
+  width: var(--context-menu-radio-dot-size, 0.5rem);
+  height: var(--context-menu-radio-dot-size, 0.5rem);
+  border-radius: var(--context-menu-radio-dot-radius, 9999px);
+  background: var(--context-menu-radio-dot-color, currentColor);
+}
+
+@media (prefers-color-scheme: dark) {
+  .context-menu-radio-item:hover {
+    background: var(--context-menu-radio-item-hover-bg, hsl(217.2 32.6% 17.5%));
+  }
+}

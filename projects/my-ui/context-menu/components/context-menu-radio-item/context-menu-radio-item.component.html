@@ -1,0 +1,8 @@
+<div class="context-menu-radio-item" (click)="select()">
+  <span class="context-menu-item-indicator">
+    @if (checked) {
+      <span class="context-menu-radio-dot"></span>
+    }
+  </span>
+  <ng-content></ng-content>
+</div>

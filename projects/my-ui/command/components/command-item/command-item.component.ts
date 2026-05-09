@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, inject, HostListener, HostBinding, ElementRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output, inject } from '@angular/core';
 import { CommandComponent } from '../command/command.component';
 
 @Component({
@@ -16,20 +16,14 @@ import { CommandComponent } from '../command/command.component';
 export class CommandItemComponent {
   @Input() disabled: boolean = false;
   @Input() value: string = '';
+  @Input() keywords: string[] = [];
   @Output() selected = new EventEmitter<string>();
-  
+
   private command = inject(CommandComponent, { optional: true });
   private elementRef = inject(ElementRef);
-  
-  // Visibility state for filtering
+
   isVisible: boolean = true;
-  
-  @HostBinding('style.background-color')
-  get backgroundColor(): string {
-    // Return transparent by default, let CSS handle hover/active states
-    return 'transparent';
-  }
-  
+
   @HostBinding('class.active')
   get isActive(): boolean {
     return this.command?.isItemActive(this) || false;
@@ -39,25 +33,28 @@ export class CommandItemComponent {
   get isDisabled(): boolean {
     return this.disabled;
   }
-  
+
   @HostListener('click')
   onClick() {
     if (!this.disabled) {
       this.select();
     }
   }
-  
+
   select() {
     if (!this.disabled) {
       this.selected.emit(this.value);
     }
   }
-  
+
   getSearchText(): string {
-    // Get text content for search filtering
-    return this.elementRef.nativeElement.textContent || this.value || '';
+    return [
+      this.elementRef.nativeElement.textContent || '',
+      this.value || '',
+      ...(this.keywords || []),
+    ].join(' ');
   }
-  
+
   setVisible(visible: boolean) {
     this.isVisible = visible;
   }

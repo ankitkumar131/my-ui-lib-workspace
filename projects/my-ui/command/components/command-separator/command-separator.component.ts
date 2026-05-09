@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, inject } from '@angular/core';
+import { CommandComponent } from '../command/command.component';
 
 @Component({
   selector: 'ui-command-separator',
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
     'role': 'separator'
   }
 })
-export class CommandSeparatorComponent {}
+export class CommandSeparatorComponent {
+  private command = inject(CommandComponent, { optional: true });
+
+  @HostBinding('style.display')
+  get display(): string {
+    return this.command?.hasResults() === false ? 'none' : 'block';
+  }
+}

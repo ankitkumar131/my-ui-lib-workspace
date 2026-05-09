@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input, inject, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild, inject } from '@angular/core';
 import { CommandComponent } from '../command/command.component';
 
 @Component({
@@ -11,11 +11,11 @@ import { CommandComponent } from '../command/command.component';
 export class CommandInputComponent implements AfterViewInit {
   @Input() placeholder: string = 'Type a command or search...';
   @Input() autoFocus: boolean = true;
-  
+
   @ViewChild('inputElement') inputElement!: ElementRef<HTMLInputElement>;
-  
+
   protected command = inject(CommandComponent, { optional: true });
-  
+
   ngAfterViewInit() {
     if (this.autoFocus && this.inputElement) {
       setTimeout(() => {
@@ -23,11 +23,11 @@ export class CommandInputComponent implements AfterViewInit {
       }, 0);
     }
   }
-  
+
   get searchValue(): string {
     return this.command?.searchQuery() || '';
   }
-  
+
   onInput(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.command?.updateSearch(value);

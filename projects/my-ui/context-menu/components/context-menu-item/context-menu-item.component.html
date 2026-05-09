@@ -1,0 +1,8 @@
+<div
+  class="context-menu-item"
+  [class.context-menu-item-inset]="inset"
+  [class.context-menu-item-disabled]="disabled"
+  (click)="onSelect($event)"
+>
+  <ng-content></ng-content>
+</div>

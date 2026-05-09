@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList, computed } from '@angular/core';
+import { CommandItemComponent } from '../command-item/command-item.component';
 
 @Component({
   selector: 'ui-command-group',
@@ -11,4 +12,12 @@ import { Component, Input } from '@angular/core';
 })
 export class CommandGroupComponent {
   @Input() heading: string = '';
+
+  @ContentChildren(CommandItemComponent, { descendants: true })
+  items!: QueryList<CommandItemComponent>;
+
+  hasVisibleItems = computed(() => {
+    const items = this.items?.toArray() || [];
+    return items.some(item => item.isVisible);
+  });
 }

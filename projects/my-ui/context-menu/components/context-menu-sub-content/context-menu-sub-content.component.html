@@ -1,0 +1,5 @@
+@if (subService.open()) {
+  <div class="context-menu-sub-content" (mouseleave)="subService.setOpen(false)">
+    <ng-content></ng-content>
+  </div>
+}

@@ -1,0 +1,10 @@
+<div class="context-menu-checkbox-item" (click)="toggle()">
+  <span class="context-menu-item-indicator">
+    @if (checked) {
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5"></path>
+      </svg>
+    }
+  </span>
+  <ng-content></ng-content>
+</div>

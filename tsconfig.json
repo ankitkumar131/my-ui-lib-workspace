@@ -75,6 +75,9 @@
       ],
       "@my-ui/command": [
         "projects/my-ui/command/index.ts"
+      ],
+      "@my-ui/context-menu": [
+        "projects/my-ui/context-menu/index.ts"
       ]
     }
   },

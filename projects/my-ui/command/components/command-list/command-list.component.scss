@@ -2,21 +2,20 @@
   max-height: var(--command-list-max-height, 300px);
   overflow-y: auto;
   overflow-x: hidden;
-  padding: var(--command-list-padding, 8px);
-  
-  /* Custom scrollbar */
+  padding: var(--command-list-padding, 0.25rem);
+
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: var(--command-scrollbar-track, transparent);
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: var(--command-scrollbar-thumb, hsl(215.4 16.3% 46.9% / 0.3));
     border-radius: 4px;
-    
+
     &:hover {
       background: var(--command-scrollbar-thumb-hover, hsl(215.4 16.3% 46.9% / 0.5));
     }

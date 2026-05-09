@@ -104,6 +104,21 @@ import {
   CommandSeparatorComponent,
   CommandShortcutComponent
 } from '@my-ui/command';
+import {
+  ContextMenuComponent,
+  ContextMenuTriggerDirective,
+  ContextMenuContentComponent,
+  ContextMenuItemComponent,
+  ContextMenuCheckboxItemComponent,
+  ContextMenuRadioGroupComponent,
+  ContextMenuRadioItemComponent,
+  ContextMenuLabelComponent,
+  ContextMenuSeparatorComponent,
+  ContextMenuShortcutComponent,
+  ContextMenuSubComponent,
+  ContextMenuSubTriggerComponent,
+  ContextMenuSubContentComponent,
+} from '@my-ui/context-menu';
 
 @Component({
   selector: 'app-root',
@@ -185,6 +200,19 @@ import {
     CommandItemComponent,
     CommandSeparatorComponent,
     CommandShortcutComponent,
+    ContextMenuComponent,
+    ContextMenuTriggerDirective,
+    ContextMenuContentComponent,
+    ContextMenuItemComponent,
+    ContextMenuCheckboxItemComponent,
+    ContextMenuRadioGroupComponent,
+    ContextMenuRadioItemComponent,
+    ContextMenuLabelComponent,
+    ContextMenuSeparatorComponent,
+    ContextMenuShortcutComponent,
+    ContextMenuSubComponent,
+    ContextMenuSubTriggerComponent,
+    ContextMenuSubContentComponent,
     FormsModule
   ],
   templateUrl: './app.html',
@@ -348,6 +376,27 @@ export class App {
   ];
 
   selectedMixedValue = signal('');
+
+  commandAction = signal('No action selected');
+  showBookmarksBar = signal(true);
+  showFullUrls = signal(false);
+  selectedPerson = signal('pedro');
+
+  runCommand(command: string) {
+    this.commandAction.set(command);
+  }
+
+  toggleBookmarksBar() {
+    this.showBookmarksBar.update((value) => !value);
+  }
+
+  toggleFullUrls() {
+    this.showFullUrls.update((value) => !value);
+  }
+
+  selectPerson(person: string) {
+    this.selectedPerson.set(person);
+  }
 
   getSelectedMixedLabel() {
     const item = this.mixedItems.find(i => i.value === this.selectedMixedValue());

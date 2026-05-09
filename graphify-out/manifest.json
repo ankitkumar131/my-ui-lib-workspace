@@ -1,7 +1,7 @@
 {
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\public-api.ts": {
-    "mtime": 1764515076.4848354,
-    "hash": "196e094de0906068d3e3cae59ff0d532"
+    "mtime": 1778348130.4280624,
+    "hash": "3f8c6e67e5387911682c7526c71f593c"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\accordion\\accordion-type.enum.ts": {
     "mtime": 1763910199.611118,
@@ -356,76 +356,208 @@
     "hash": "f8119f5b8c96396e83de85a2ef424de9"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\checkbox\\components\\checkbox.component.ts": {
-    "mtime": 1764296461.173618,
-    "hash": "aba9bbb0e4c540258ed8793411e7c725"
+    "mtime": 1778346779.2901528,
+    "hash": "5d914a9a21cea79a0f0b1141ec6c361b"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\collapsible.module.ts": {
-    "mtime": 1764515435.9363859,
-    "hash": "3508d9c4d0894189d2d208cf94c49758"
+    "mtime": 1778176281.5593524,
+    "hash": "9b1f987fe67fa9f8f5806346b45f9c83"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\index.ts": {
-    "mtime": 1764515389.2853096,
+    "mtime": 1778176061.5317013,
     "hash": "be1147c7cb38f6011d80d4c002c1df04"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\public-api.ts": {
-    "mtime": 1764515390.8922338,
-    "hash": "3b82d7962ea8d556f2c0d451f95f2c69"
+    "mtime": 1778176281.5643585,
+    "hash": "a0c59635aa71cc7dd44a33b0677165d7"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible-content.component.ts": {
-    "mtime": 1764515447.9006042,
-    "hash": "5ceb169e50ed21246fb648694da5f683"
+    "mtime": 1778346779.3041508,
+    "hash": "e17ede41f0c64b16795f2635af2e25da"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible-trigger.component.ts": {
-    "mtime": 1764515408.868391,
-    "hash": "4ee35e05d6a217855d43d6241cf308f4"
+    "mtime": 1778346779.3051548,
+    "hash": "2034625b7e8bad45008aca6d69a07632"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible.component.ts": {
-    "mtime": 1764515407.608705,
-    "hash": "d02285459aebafc4039390655ae0e82d"
+    "mtime": 1778346779.3061519,
+    "hash": "1a06224681d2998408128c3fe98aade2"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible\\collapsible.component.ts": {
+    "mtime": 1778176134.29084,
+    "hash": "f76193c7aa053c376cdfd3580bc055a8"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible-content\\collapsible-content.component.ts": {
+    "mtime": 1778176134.2888384,
+    "hash": "cdc5b6cdd745b742186d2055da4c75ff"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\directives\\collapsible-trigger.directive.ts": {
+    "mtime": 1778176281.5643585,
+    "hash": "8f9494784b720dcc4368120509bb669d"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\services\\collapsible.service.ts": {
+    "mtime": 1778176134.292842,
+    "hash": "588b3aa8a374b35876e65d9ba359f642"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\combobox.module.ts": {
-    "mtime": 1764514924.250438,
+    "mtime": 1778346779.307148,
     "hash": "af9b460c891eb194443b9b5e345deb27"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\index.ts": {
-    "mtime": 1764514924.292896,
+    "mtime": 1778346779.3831587,
     "hash": "be1147c7cb38f6011d80d4c002c1df04"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\public-api.ts": {
-    "mtime": 1764514924.295048,
+    "mtime": 1778346779.3841555,
     "hash": "f1355c34c2c13d8d662c06d8db2b86be"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox\\combobox.component.ts": {
-    "mtime": 1764514924.2879488,
-    "hash": "cd137e6bf69ce84e2fd3fa5d4bb7f119"
+    "mtime": 1778346779.375156,
+    "hash": "1ef804ddb29ccb2fdce1312de83ee9fa"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-content\\combobox-content.component.ts": {
-    "mtime": 1764514924.2567594,
+    "mtime": 1778346779.3101554,
     "hash": "b4faf207a43bbeac33bdedceacd8860c"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-empty\\combobox-empty.component.ts": {
-    "mtime": 1764514924.263673,
-    "hash": "7e034be9c51e7e5005114870ca22ce56"
+    "mtime": 1778346779.3241642,
+    "hash": "3cf4af8d71ba89f70bf9c1987d29735c"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-input\\combobox-input.component.ts": {
-    "mtime": 1764514924.268473,
-    "hash": "1296bea8d2340cef1369f97eeb5dd0ca"
+    "mtime": 1778346779.3401604,
+    "hash": "b168e788d4f4f0b4ad3063ae9edeecbb"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-item\\combobox-item.component.ts": {
-    "mtime": 1764514924.2756383,
-    "hash": "f03797222a1d73c2a3306d4a6d52b8d3"
+    "mtime": 1778346779.3541484,
+    "hash": "ba50d3eaa16667810aec69c379070a83"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-list\\combobox-list.component.ts": {
-    "mtime": 1764514924.2822783,
+    "mtime": 1778346779.357151,
     "hash": "c83ab040aff1f017815422e191e8c1a2"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\directives\\combobox-trigger.directive.ts": {
-    "mtime": 1764514924.2894652,
-    "hash": "ad6832d0f8864daff5e989ddcdabed7d"
+    "mtime": 1778346779.382157,
+    "hash": "04783d89c7993fc6a1add06b911cdcb8"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\services\\combobox.service.ts": {
-    "mtime": 1764514924.2975576,
-    "hash": "a5f6904fe42c3fce02c473be6225e67c"
+    "mtime": 1778346779.385157,
+    "hash": "e3cad49cfe93cd6b5e3dea91931dd37e"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\command.module.ts": {
+    "mtime": 1778176134.295838,
+    "hash": "0ca03282e520f289fb4ca277e7c1ae0b"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\index.ts": {
+    "mtime": 1778176134.3378434,
+    "hash": "be1147c7cb38f6011d80d4c002c1df04"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\public-api.ts": {
+    "mtime": 1778176134.3378434,
+    "hash": "9dcfb218b324e4e324e9be6176c26d48"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command\\command.component.ts": {
+    "mtime": 1778347142.3298967,
+    "hash": "64c3a5ed192c4e32a6df3dddaf1e515d"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-empty\\command-empty.component.ts": {
+    "mtime": 1778176134.297839,
+    "hash": "7987ee11e8f77e7dae64d5229d0c4373"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-group\\command-group.component.ts": {
+    "mtime": 1778347142.4949322,
+    "hash": "621a26d33d1464594ac9c5c9cf87c7f4"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-input\\command-input.component.ts": {
+    "mtime": 1778347142.3802025,
+    "hash": "02498f0664ee0ac114a9180542cb1f48"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-item\\command-item.component.ts": {
+    "mtime": 1778347142.458583,
+    "hash": "bc8281ac4e7565e26ca246b26bf1d6a9"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-list\\command-list.component.ts": {
+    "mtime": 1778176134.3298452,
+    "hash": "b2f24e01d20b25ca36b63a15a10208eb"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-separator\\command-separator.component.ts": {
+    "mtime": 1778347257.7655528,
+    "hash": "a0d66818cbc67f8a58ff7c7143acef81"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-shortcut\\command-shortcut.component.ts": {
+    "mtime": 1778176134.334842,
+    "hash": "234608ff85634c0d0f9ee58e71cfa852"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\context-menu.module.ts": {
+    "mtime": 1778348129.4870071,
+    "hash": "a65ef6b64bc0c225de374e8453060593"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\index.ts": {
+    "mtime": 1778348129.5026994,
+    "hash": "49f93f2965f9f9198b588239de96a00c"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\public-api.ts": {
+    "mtime": 1778348129.516702,
+    "hash": "58f9ee33e63506316e63ab09ee1f11a7"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu\\context-menu.component.ts": {
+    "mtime": 1778348129.959069,
+    "hash": "fc26d7495cde0650fc603cd71bfb995b"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-checkbox-item\\context-menu-checkbox-item.component.ts": {
+    "mtime": 1778348130.1220653,
+    "hash": "7b4b15b19cb81ade464d159454eecf2f"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-content\\context-menu-content.component.ts": {
+    "mtime": 1778348130.026063,
+    "hash": "1aa74eed84588b791b5b4e9fc70375d5"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-item\\context-menu-item.component.ts": {
+    "mtime": 1778348130.0690608,
+    "hash": "331f0542aef17590be03d2adbe3d3ffc"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-label\\context-menu-label.component.ts": {
+    "mtime": 1778348130.2380583,
+    "hash": "c1add9d75395711df237566c93b560b9"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-radio-group\\context-menu-radio-group.component.ts": {
+    "mtime": 1778348130.1750696,
+    "hash": "571e3ff74f1ff8bc66a564830a973789"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-radio-item\\context-menu-radio-item.component.ts": {
+    "mtime": 1778348130.1910577,
+    "hash": "0742551b2dba8d98331245de22a55372"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-separator\\context-menu-separator.component.ts": {
+    "mtime": 1778348130.2550626,
+    "hash": "0a7bf03311942215d4cd8e334c846e8e"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-shortcut\\context-menu-shortcut.component.ts": {
+    "mtime": 1778348130.2720625,
+    "hash": "460ba033ecd5ec1194f57f56889d464a"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-sub\\context-menu-sub.component.ts": {
+    "mtime": 1778348130.290059,
+    "hash": "7d21045f49b4bc7b12f69f3a92ca53aa"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-sub-content\\context-menu-sub-content.component.ts": {
+    "mtime": 1778348130.3570642,
+    "hash": "4adbc973cd0badc7d2dd6a7cc078b248"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-sub-trigger\\context-menu-sub-trigger.component.ts": {
+    "mtime": 1778348130.3070567,
+    "hash": "dadd61800a826795bc4df92de7523f8c"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\directives\\context-menu-trigger.directive.ts": {
+    "mtime": 1778348129.991068,
+    "hash": "f7ecd285ab3ada1bd347add9810c0287"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\services\\context-menu-sub.service.ts": {
+    "mtime": 1778348129.9400587,
+    "hash": "606e1b5fea46e63ba8cdec008ff86dfe"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\services\\context-menu.service.ts": {
+    "mtime": 1778348129.9220543,
+    "hash": "deb1f75e53ba7a8746788c47c64845f7"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\dropdown-menu\\dropdown-menu.module.ts": {
     "mtime": 1763910199.79081,
@@ -528,8 +660,8 @@
     "hash": "2e1c4590aaace36bc048366afd0a2358"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\popover\\components\\popover-content\\popover-content.component.ts": {
-    "mtime": 1764037130.5428584,
-    "hash": "8c28e1eeb42f0914f24f0266ed2077f6"
+    "mtime": 1778176134.3398397,
+    "hash": "7fdadd14b978add16487237049f0277d"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\popover\\directives\\popover-trigger.directive.ts": {
     "mtime": 1764037130.550227,
@@ -604,8 +736,16 @@
     "hash": "6449efbae2d8b4048b94c617e776c753"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\src\\app\\app.ts": {
-    "mtime": 1764514998.196129,
-    "hash": "97f4121768be02c256f5b08e7ec543c5"
+    "mtime": 1778348130.4640663,
+    "hash": "35edb6740f3f95d4f1eddcb9df40c234"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\findings.md": {
+    "mtime": 1778346778.1022778,
+    "hash": "7d307a32ea4b78f04b2dbbaa70c8028d"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\progress.md": {
+    "mtime": 1778346779.2731555,
+    "hash": "5e2822bd8e2fa6b82aa6bc62bbf5cf84"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\README.md": {
     "mtime": 1763910199.5944362,
@@ -614,6 +754,10 @@
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\RULE.txt": {
     "mtime": 1763910199.5981965,
     "hash": "8c3d8529ac145ed1f578cfb285ee2ac9"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\task_plan.md": {
+    "mtime": 1778346779.4181604,
+    "hash": "c90ac8dbb9f6f8236524033d01a5c842"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\accordion\\Accordion_Manual.md": {
     "mtime": 1763910199.611118,
@@ -804,32 +948,108 @@
     "hash": "0d0ff3732d5304654a840abe3f4ef970"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\checkbox\\components\\checkbox.component.html": {
-    "mtime": 1764296461.1686864,
-    "hash": "dfb8ed5f5a59b295d25eb283c88828c8"
+    "mtime": 1778346779.2751615,
+    "hash": "ce98ad717523faa90fdf1ff11e095c82"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\Collapsible_Manual.md": {
+    "mtime": 1778176134.2828417,
+    "hash": "62e7b098dc04ba44851ec93e52851071"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible\\collapsible.component.html": {
+    "mtime": 1778176134.289837,
+    "hash": "486436a9280437e45abcc2a4cbc90a24"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\collapsible\\components\\collapsible-content\\collapsible-content.component.html": {
+    "mtime": 1778176134.2868502,
+    "hash": "1191b4f73da480d18766ead861d8c0ff"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\Combobox_Manual.md": {
+    "mtime": 1778176134.2938395,
+    "hash": "c8d96d0df9077aea45165f9cddedb27f"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox\\combobox.component.html": {
-    "mtime": 1764514924.2842789,
+    "mtime": 1778346779.3581536,
     "hash": "34afb152af6b110da39708faf27ba80c"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-content\\combobox-content.component.html": {
-    "mtime": 1764514924.2532473,
-    "hash": "ff478d5f81e07d9ccd633be808047a87"
+    "mtime": 1778346779.308158,
+    "hash": "5b15c4dde28fb4c47ff334c9b38a4d99"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-empty\\combobox-empty.component.html": {
-    "mtime": 1764514924.2587607,
-    "hash": "7b7faba17eb1c62104816dbcdcfd2b4b"
+    "mtime": 1778346779.3221583,
+    "hash": "1bc1adaecd321c077e76e6de7591bd79"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-input\\combobox-input.component.html": {
-    "mtime": 1764514924.266152,
-    "hash": "07747d9a2e4a75838a2bb71dbfc36283"
+    "mtime": 1778346779.326159,
+    "hash": "149c8accda64f6857ce8838401ad151e"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-item\\combobox-item.component.html": {
-    "mtime": 1764514924.2715888,
+    "mtime": 1778346779.3411608,
     "hash": "60627596ea3b15becc11818c7a1c751b"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\combobox\\components\\combobox-list\\combobox-list.component.html": {
-    "mtime": 1764514924.27808,
+    "mtime": 1778346779.355155,
     "hash": "296d677e5db0af126028d54a38d70a88"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\Command_Manual.md": {
+    "mtime": 1778350004.0555704,
+    "hash": "97581cb3ca0dcfba83da49d3bf889489"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command\\command.component.html": {
+    "mtime": 1778176134.3358386,
+    "hash": "3f23fa03e0b0c9298a02acada856f215"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-empty\\command-empty.component.html": {
+    "mtime": 1778176134.2968383,
+    "hash": "5b56adffb195096460e664b1cf0c17d4"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-group\\command-group.component.html": {
+    "mtime": 1778347142.518625,
+    "hash": "117a8a68cf058dcd6b278b6bf8054809"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-input\\command-input.component.html": {
+    "mtime": 1778347142.3994877,
+    "hash": "0f6bd0a0d10faee46c247b7e124523fe"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-item\\command-item.component.html": {
+    "mtime": 1778176134.3028471,
+    "hash": "c04b917b139f68d51b8384fffdab0b0f"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-list\\command-list.component.html": {
+    "mtime": 1778176134.3278391,
+    "hash": "ce3551b33be99784e489ef3e0dcc3e94"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-separator\\command-separator.component.html": {
+    "mtime": 1778176134.3308399,
+    "hash": "d7bcab41da861d4cf6336a5cbfa42ffc"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\command\\components\\command-shortcut\\command-shortcut.component.html": {
+    "mtime": 1778176134.3338418,
+    "hash": "0db7f2dea99f5f16336e782b2b21347c"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\Context-Menu_Manual.md": {
+    "mtime": 1778350038.6915448,
+    "hash": "4fd002778ff9c590f3b8d21e5d98b074"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-checkbox-item\\context-menu-checkbox-item.component.html": {
+    "mtime": 1778348130.1391368,
+    "hash": "039f0b5d2d462a438e4c4ed49ff73293"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-item\\context-menu-item.component.html": {
+    "mtime": 1778348130.0880604,
+    "hash": "06c272cbab8a3bd4495c565249faa4fe"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-radio-item\\context-menu-radio-item.component.html": {
+    "mtime": 1778348130.206058,
+    "hash": "1851002ad20dcf6db90b70e6bb0f6317"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-sub-content\\context-menu-sub-content.component.html": {
+    "mtime": 1778348130.3750598,
+    "hash": "2d1f9d77415381ddaa41a9032fc39808"
+  },
+  "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\context-menu\\components\\context-menu-sub-trigger\\context-menu-sub-trigger.component.html": {
+    "mtime": 1778348130.323063,
+    "hash": "6e6a7c8b375000ea3006e4d029f26e75"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\dropdown-menu\\Dropdown-Menu_Manual.md": {
     "mtime": 1763910199.7710106,
@@ -868,8 +1088,8 @@
     "hash": "8b8b365c2a60e1551f41d5e5587a6176"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\popover\\components\\popover-content\\popover-content.component.html": {
-    "mtime": 1764037130.5408566,
-    "hash": "71a073f8aca49155492bc04e705a53ea"
+    "mtime": 1778176134.3388388,
+    "hash": "a9aa2b3bb09d2078e7c9fd9162e1334a"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\projects\\my-ui\\select\\Select_Manual.md": {
     "mtime": 1763920167.9262674,
@@ -912,8 +1132,8 @@
     "hash": "97a8120f9a23baf2e65275f1892c8964"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\src\\app\\app.html": {
-    "mtime": 1764515075.4497178,
-    "hash": "46953de6d7569fdb3469e800c3b43d80"
+    "mtime": 1778348130.503055,
+    "hash": "2bc9e211147c77f14964ba6c9c250154"
   },
   "D:\\drive 1 1Local disk\\Projects\\my-ui-lib-workspace\\src\\app\\checkbox-demo.html": {
     "mtime": 1764296461.196738,

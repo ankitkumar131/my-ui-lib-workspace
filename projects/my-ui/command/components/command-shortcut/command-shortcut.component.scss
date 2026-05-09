@@ -1,9 +1,9 @@
 .command-shortcut {
   margin-left: auto;
-  font-size: var(--command-shortcut-font-size, 12px);
+  font-size: var(--command-shortcut-font-size, 0.75rem);
   color: var(--command-shortcut-color, hsl(215.4 16.3% 46.9%));
-  font-family: var(--command-shortcut-font-family, monospace);
-  letter-spacing: 0.05em;
+  font-family: var(--command-shortcut-font-family, inherit);
+  letter-spacing: 0.025em;
 }
 
 @media (prefers-color-scheme: dark) {

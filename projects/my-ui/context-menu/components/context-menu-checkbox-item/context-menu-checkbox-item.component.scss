@@ -1,0 +1,42 @@
+.context-menu-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: var(--context-menu-checkbox-item-gap, 0.5rem);
+  min-height: var(--context-menu-checkbox-item-min-height, 2rem);
+  cursor: default;
+  user-select: none;
+  border-radius: var(--context-menu-checkbox-item-radius, 0.375rem);
+  padding: var(--context-menu-checkbox-item-padding, 0.375rem 0.5rem);
+  font-size: var(--context-menu-checkbox-item-font-size, 0.875rem);
+  background: var(--context-menu-checkbox-item-bg, transparent);
+  color: var(--context-menu-checkbox-item-color, inherit);
+
+  &:hover {
+    background: var(--context-menu-checkbox-item-hover-bg, hsl(210 40% 96.1%));
+    color: var(--context-menu-checkbox-item-hover-color, inherit);
+  }
+}
+
+.context-menu-item-indicator {
+  display: inline-flex;
+  width: var(--context-menu-checkbox-indicator-width, 1rem);
+  height: var(--context-menu-checkbox-indicator-height, 1rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.context-menu-item-indicator svg {
+  width: var(--context-menu-checkbox-icon-size, 0.875rem);
+  height: var(--context-menu-checkbox-icon-size, 0.875rem);
+  fill: var(--context-menu-checkbox-icon-color, none);
+  stroke: var(--context-menu-checkbox-icon-stroke, currentColor);
+  stroke-width: var(--context-menu-checkbox-icon-stroke-width, 2);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-color-scheme: dark) {
+  .context-menu-checkbox-item:hover {
+    background: var(--context-menu-checkbox-item-hover-bg, hsl(217.2 32.6% 17.5%));
+  }
+}
