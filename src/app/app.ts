@@ -283,7 +283,6 @@ export class App {
     this.task.set({...task});
   }
 
-<<<<<<< HEAD
   setSubtask(index: number, completed: boolean) {
     const task = this.task();
     const subtasks = task.subtasks.map((subtask, subtaskIndex) =>
@@ -294,35 +293,6 @@ export class App {
     this.updateAllComplete();
   }
 
-  // Combobox Demo
-  frameworks = [
-    { value: 'next.js', label: 'Next.js' },
-    { value: 'sveltekit', label: 'SvelteKit' },
-    { value: 'nuxt.js', label: 'Nuxt.js' },
-    { value: 'remix', label: 'Remix' },
-    { value: 'astro', label: 'Astro' },
-  ];
-  
-  selectedFramework: string | null = null;
-  
-  getSelectedFrameworkLabel() {
-    return this.frameworks.find(f => f.value === this.selectedFramework)?.label;
-  }
-
-  mixedItems = [
-    { value: 'option1', label: 'Option 1' },
-    { value: null, label: 'Option with null value' },
-    { value: 'option3', label: null },
-    { value: '', label: 'Option with empty value' },
-    { value: 'option5', label: 'Option 5' },
-  ];
-  
-  selectedMixedValue: string | null = null;
-  
-  getSelectedMixedLabel() {
-    const item = this.mixedItems.find(i => i.value === this.selectedMixedValue);
-    return item ? (item.label || '(Empty Label)') : null;
-=======
   // Combobox demo states
   selectedFramework = signal('');
   selectedStatus = signal('');
@@ -363,7 +333,25 @@ export class App {
   getSelectedLabel(value: string, options: any[]) {
     const option = options.find(opt => opt.value === value);
     return option ? option.label : '';
->>>>>>> master
+  }
+
+  getSelectedFrameworkLabel() {
+    const fw = this.frameworks.find(f => f.value === this.selectedFramework());
+    return fw ? fw.label : '';
+  }
+
+  mixedItems = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: null, label: 'None' },
+    { value: 'option3', label: 'Option 3' },
+  ];
+
+  selectedMixedValue = signal('');
+
+  getSelectedMixedLabel() {
+    const item = this.mixedItems.find(i => i.value === this.selectedMixedValue());
+    return item ? item.label : '';
   }
 }
 
