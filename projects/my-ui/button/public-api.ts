@@ -1,4 +1,7 @@
-export * from './components/button/button.component';
-export * from './components/button-group/button-group.component';
-export * from './button.module';
-export * from './button-type.enum';
+export { ButtonComponent, ButtonComponent as Button } from './components/button/button.component';
+export {
+  ButtonGroupComponent,
+  ButtonGroupComponent as ButtonGroup,
+} from './components/button-group/button-group.component';
+export { UiButtonModule } from './button.module';
+export { ButtonVariant, ButtonSize } from './button-type.enum';

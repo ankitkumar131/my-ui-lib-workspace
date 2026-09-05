@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarService } from '../../services/calendar.service';
-import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/select';
+import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/components/select';
 
 @Component({
   selector: 'ui-calendar-header',

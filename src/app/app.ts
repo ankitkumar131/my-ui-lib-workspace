@@ -7,9 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionType,
-} from '@my-ui/accordion';
-import { AspectRatio } from '@my-ui/aspect-ratio';
-import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/button';
+} from '@my-ui/components/accordion';
+import { AspectRatio } from '@my-ui/components/aspect-ratio';
+import { Button, ButtonGroup, ButtonVariant, ButtonSize } from '@my-ui/components/button';
 import {
   AlertDialogComponent,
   AlertDialogActionComponent,
@@ -20,15 +20,15 @@ import {
   AlertDialogHeaderComponent,
   AlertDialogTitleComponent,
   AlertDialogTriggerComponent,
-} from '@my-ui/alert-dialog';
+} from '@my-ui/components/alert-dialog';
 import {
   AlertComponent,
   AlertTitleComponent,
   AlertDescriptionComponent,
   AlertVariant,
-} from '@my-ui/alert';
-import { AvatarComponent, AvatarImageComponent, AvatarFallbackComponent } from '@my-ui/avatar';
-import { BadgeComponent, BadgeVariant } from '@my-ui/badge';
+} from '@my-ui/components/alert';
+import { AvatarComponent, AvatarImageComponent, AvatarFallbackComponent } from '@my-ui/components/avatar';
+import { BadgeComponent, BadgeVariant } from '@my-ui/components/badge';
 import {
   DropdownMenuComponent,
   DropdownMenuTriggerDirective,
@@ -38,7 +38,7 @@ import {
   DropdownMenuSeparatorComponent,
   DropdownMenuGroupComponent,
   DropdownMenuShortcutComponent,
-} from '@my-ui/dropdown-menu';
+} from '@my-ui/components/dropdown-menu';
 import {
   BreadcrumbComponent,
   BreadcrumbListComponent,
@@ -47,9 +47,9 @@ import {
   BreadcrumbPageComponent,
   BreadcrumbSeparatorComponent,
   BreadcrumbEllipsisComponent,
-} from '@my-ui/breadcrumb';
-import { LabelComponent } from '@my-ui/label';
-import { InputComponent, InputErrorComponent } from '@my-ui/input';
+} from '@my-ui/components/breadcrumb';
+import { LabelComponent } from '@my-ui/components/label';
+import { InputComponent, InputErrorComponent } from '@my-ui/components/input';
 import {
   SelectComponent,
   SelectTriggerComponent,
@@ -59,13 +59,13 @@ import {
   SelectGroupComponent,
   SelectLabelComponent,
   SelectSeparatorComponent
-} from '@my-ui/select';
+} from '@my-ui/components/select';
 import {
   PopoverComponent,
   PopoverTriggerDirective,
   PopoverContentComponent
-} from '@my-ui/popover';
-import { CalendarComponent } from '@my-ui/calendar';
+} from '@my-ui/components/popover';
+import { CalendarComponent } from '@my-ui/components/calendar';
 import {
   CardComponent,
   CardHeaderComponent,
@@ -74,16 +74,16 @@ import {
   CardActionComponent,
   CardContentComponent,
   CardFooterComponent
-} from '@my-ui/card';
+} from '@my-ui/components/card';
 import {
   CarouselComponent,
   CarouselContentComponent,
   CarouselItemComponent,
   CarouselPreviousComponent,
   CarouselNextComponent
-} from '@my-ui/carousel';
-import { UiCheckboxModule } from '@my-ui/checkbox';
-import { UiCollapsibleModule } from '@my-ui/collapsible';
+} from '@my-ui/components/carousel';
+import { UiCheckboxModule } from '@my-ui/components/checkbox';
+import { UiCollapsibleModule } from '@my-ui/components/collapsible';
 import {
   UiComboboxModule,
   ComboboxComponent,
@@ -93,7 +93,7 @@ import {
   ComboboxListComponent,
   ComboboxItemComponent,
   ComboboxEmptyComponent
-} from '@my-ui/combobox';
+} from '@my-ui/components/combobox';
 import {
   CommandComponent,
   CommandInputComponent,
@@ -103,7 +103,7 @@ import {
   CommandItemComponent,
   CommandSeparatorComponent,
   CommandShortcutComponent
-} from '@my-ui/command';
+} from '@my-ui/components/command';
 import {
   ContextMenuComponent,
   ContextMenuTriggerDirective,
@@ -118,7 +118,7 @@ import {
   ContextMenuSubComponent,
   ContextMenuSubTriggerComponent,
   ContextMenuSubContentComponent,
-} from '@my-ui/context-menu';
+} from '@my-ui/components/context-menu';
 
 @Component({
   selector: 'app-root',

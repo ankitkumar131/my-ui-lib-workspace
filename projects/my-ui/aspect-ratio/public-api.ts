@@ -1,3 +1,6 @@
-export * from './components/aspect-ratio/aspect-ratio.component';
-export * from './aspect-ratio.module';
-export * from './aspect-ratio-type.enum';
+export {
+  AspectRatioComponent,
+  AspectRatioComponent as AspectRatio,
+} from './components/aspect-ratio/aspect-ratio.component';
+export { UiAspectRatioModule } from './aspect-ratio.module';
+export { AspectRatioType } from './aspect-ratio-type.enum';
