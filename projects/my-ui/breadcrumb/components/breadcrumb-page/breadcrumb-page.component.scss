@@ -3,11 +3,9 @@
 }
 
 .breadcrumb-page {
-  color: var(--breadcrumb-page-color, #71717a);
+  color: var(--breadcrumb-page-color, var(--ui-muted-foreground));
   font-weight: 400;
   cursor: default;
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--breadcrumb-page-color, #a1a1aa);
-  }
+  
 }

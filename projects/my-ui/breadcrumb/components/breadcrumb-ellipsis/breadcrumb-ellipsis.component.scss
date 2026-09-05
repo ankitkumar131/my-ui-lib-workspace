@@ -9,11 +9,9 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  color: var(--breadcrumb-ellipsis-color, #09090b);
+  color: var(--breadcrumb-ellipsis-color, var(--ui-foreground));
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--breadcrumb-ellipsis-color, #fafafa);
-  }
+  
 
   svg {
     width: 16px;

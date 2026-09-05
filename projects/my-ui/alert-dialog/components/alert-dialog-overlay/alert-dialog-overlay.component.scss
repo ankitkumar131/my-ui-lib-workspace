@@ -9,9 +9,7 @@
     z-index: 50;
     display: block;
 
-    @media (prefers-color-scheme: dark) {
-        --overlay-bg: rgba(0, 0, 0, 0.7);
-    }
+    
 }
 
 .overlay-backdrop {

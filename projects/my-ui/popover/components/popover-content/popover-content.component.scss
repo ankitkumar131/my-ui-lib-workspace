@@ -43,23 +43,23 @@
   }
   
   &::-webkit-scrollbar-track {
-    background: var(--popover-scrollbar-track-bg, #f1f1f1);
+    background: var(--popover-scrollbar-track-bg, var(--ui-muted));
     border-radius: var(--popover-scrollbar-border-radius, 4px);
   }
   
   &::-webkit-scrollbar-thumb {
-    background: var(--popover-scrollbar-thumb-bg, #888);
+    background: var(--popover-scrollbar-thumb-bg, var(--ui-foreground-subtle));
     border-radius: var(--popover-scrollbar-border-radius, 4px);
     
     &:hover {
-      background: var(--popover-scrollbar-thumb-hover-bg, #555);
+      background: var(--popover-scrollbar-thumb-hover-bg, var(--ui-muted-foreground));
     }
   }
   
   /* Firefox Scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: var(--popover-scrollbar-thumb-bg, #888) 
-                   var(--popover-scrollbar-track-bg, #f1f1f1);
+  scrollbar-color: var(--popover-scrollbar-thumb-bg, var(--ui-foreground-subtle)) 
+                   var(--popover-scrollbar-track-bg, var(--ui-muted));
   
   // When calendar is inside, remove padding
   &:has(ui-calendar) {
@@ -67,29 +67,7 @@
   }
   
   // Dark mode
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--popover-bg, #18181b);
-    color: var(--popover-color, #fafafa);
-    border-color: var(--popover-border-color, #27272a);
-    box-shadow: var(--popover-shadow, 
-      0 10px 15px -3px rgba(0, 0, 0, 0.4), 
-      0 4px 6px -2px rgba(0, 0, 0, 0.3));
-    
-    &::-webkit-scrollbar-track {
-      background: var(--popover-scrollbar-track-bg, #27272a);
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background: var(--popover-scrollbar-thumb-bg, #52525b);
-      
-      &:hover {
-        background: var(--popover-scrollbar-thumb-hover-bg, #71717a);
-      }
-    }
-    
-    scrollbar-color: var(--popover-scrollbar-thumb-bg, #52525b) 
-                     var(--popover-scrollbar-track-bg, #27272a);
-  }
+  
 }
 
 @keyframes popoverFadeIn {

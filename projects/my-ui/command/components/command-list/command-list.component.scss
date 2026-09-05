@@ -13,21 +13,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--command-scrollbar-thumb, hsl(215.4 16.3% 46.9% / 0.3));
+    background: var(--command-scrollbar-thumb, color-mix(in srgb, var(--ui-muted-foreground) 30%, transparent));
     border-radius: 4px;
 
     &:hover {
-      background: var(--command-scrollbar-thumb-hover, hsl(215.4 16.3% 46.9% / 0.5));
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .command-list::-webkit-scrollbar-thumb {
-    background: var(--command-scrollbar-thumb, hsl(215 20.2% 65.1% / 0.3));
-    
-    &:hover {
-      background: var(--command-scrollbar-thumb-hover, hsl(215 20.2% 65.1% / 0.5));
+      background: var(--command-scrollbar-thumb-hover, color-mix(in srgb, var(--ui-muted-foreground) 50%, transparent));
     }
   }
 }

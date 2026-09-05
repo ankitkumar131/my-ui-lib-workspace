@@ -4,8 +4,8 @@
   max-width: 100%; // Don't overflow viewport
   padding: var(--calendar-padding, 12px);
   border-radius: var(--calendar-radius, 8px);
-  border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, #e5e7eb);
-  background-color: var(--calendar-bg, #ffffff);
+  border: var(--calendar-border-width, 1px) solid var(--calendar-border-color, var(--ui-border));
+  background-color: var(--calendar-bg, var(--ui-popover));
   box-shadow: var(--calendar-shadow, none);
   font-family: var(--calendar-font-family, inherit);
   overflow: visible;
@@ -27,8 +27,5 @@
   }
   
   // Dark mode
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--calendar-bg, #18181b);
-    border-color: var(--calendar-border-color, #27272a);
-  }
+  
 }

@@ -7,13 +7,13 @@
   align-items: center;
   gap: 8px;
   padding: var(--combobox-input-padding, 8px);
-  border-bottom: 1px solid hsl(var(--border, 214.3 31.8% 91.4%));
+  border-bottom: 1px solid var(--border, var(--ui-border));
 }
 
 .combobox-input-icon {
   flex-shrink: 0;
   opacity: 0.5;
-  color: hsl(var(--foreground, 222.2 84% 4.9%));
+  color: var(--foreground, var(--ui-foreground));
 }
 
 .combobox-input {
@@ -22,12 +22,12 @@
   border: none;
   background: transparent;
   font-size: var(--combobox-input-font-size, 0.875rem);
-  color: hsl(var(--foreground, 222.2 84% 4.9%));
+  color: var(--foreground, var(--ui-foreground));
   height: var(--combobox-input-height, 32px);
   padding: 0;
 
   &::placeholder {
-    color: hsl(var(--muted-foreground, 215.4 16.3% 46.9%));
+    color: var(--muted-foreground, var(--ui-muted-foreground));
   }
 
   &:focus {

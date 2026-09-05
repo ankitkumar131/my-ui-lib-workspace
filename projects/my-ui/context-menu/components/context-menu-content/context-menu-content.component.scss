@@ -1,8 +1,8 @@
 :host {
   display: block;
-  --context-menu-bg: hsl(0 0% 100%);
-  --context-menu-foreground: hsl(222.2 84% 4.9%);
-  --context-menu-border: hsl(214.3 31.8% 91.4%);
+  --context-menu-bg: var(--ui-popover);
+  --context-menu-foreground: var(--ui-foreground);
+  --context-menu-border: var(--ui-border);
   --context-menu-radius: 0.5rem;
   --context-menu-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -28,13 +28,5 @@
   to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    --context-menu-bg: hsl(222.2 84% 4.9%);
-    --context-menu-foreground: hsl(210 40% 98%);
-    --context-menu-border: hsl(217.2 32.6% 17.5%);
   }
 }

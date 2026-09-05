@@ -1,18 +1,14 @@
 :host {
-    --dropdown-bg: hsl(0, 0%, 100%);
-    --dropdown-foreground: hsl(222.2, 47.4%, 11.2%);
-    --dropdown-border: hsl(214.3, 31.8%, 91.4%);
+    --dropdown-bg: var(--ui-popover);
+    --dropdown-foreground: var(--ui-foreground);
+    --dropdown-border: var(--ui-border);
     --dropdown-radius: 0.5rem;
     --dropdown-padding: 0.25rem;
     --dropdown-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --dropdown-min-width: 12rem;
     --dropdown-max-width: 20rem;
 
-    @media (prefers-color-scheme: dark) {
-        --dropdown-bg: hsl(222.2, 47.4%, 11.2%);
-        --dropdown-foreground: hsl(210, 40%, 98%);
-        --dropdown-border: hsl(217.2, 32.6%, 17.5%);
-    }
+    
 }
 
 .dropdown-menu-content {

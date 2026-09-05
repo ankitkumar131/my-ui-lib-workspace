@@ -1,11 +1,9 @@
 :host {
-    --description-color: hsl(215.4, 16.3%, 46.9%);
+    --description-color: var(--ui-muted-foreground);
 
     display: block;
 
-    @media (prefers-color-scheme: dark) {
-        --description-color: hsl(215.4, 16.3%, 65.1%);
-    }
+    
 }
 
 .dialog-description {

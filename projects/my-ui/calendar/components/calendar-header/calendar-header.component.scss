@@ -42,7 +42,7 @@
   .ui-calendar-month-year {
     font-size: var(--calendar-header-font-size, 14px);
     font-weight: var(--calendar-header-font-weight, 600);
-    color: var(--calendar-header-color, #09090b);
+    color: var(--calendar-header-color, var(--ui-foreground));
   }
   
   .ui-calendar-nav-button {
@@ -54,13 +54,13 @@
     border: none;
     border-radius: var(--calendar-nav-button-radius, 6px);
     background-color: var(--calendar-nav-button-bg, transparent);
-    color: var(--calendar-nav-button-color, #6b7280);
+    color: var(--calendar-nav-button-color, var(--ui-muted-foreground));
     cursor: pointer;
     transition: var(--calendar-nav-button-transition, background-color 0.2s, color 0.2s);
     
     &:hover:not(:disabled) {
-      background-color: var(--calendar-nav-button-hover-bg, #f3f4f6);
-      color: var(--calendar-nav-button-hover-color, #09090b);
+      background-color: var(--calendar-nav-button-hover-bg, var(--ui-muted));
+      color: var(--calendar-nav-button-hover-color, var(--ui-foreground));
     }
     
     &:disabled {
@@ -79,18 +79,5 @@
   }
   
   // Dark mode
-  @media (prefers-color-scheme: dark) {
-    .ui-calendar-month-year {
-      color: var(--calendar-header-color, #fafafa);
-    }
-    
-    .ui-calendar-nav-button {
-      color: var(--calendar-nav-button-color, #9ca3af);
-      
-      &:hover:not(:disabled) {
-        background-color: var(--calendar-nav-button-hover-bg, #27272a);
-        color: var(--calendar-nav-button-hover-color, #fafafa);
-      }
-    }
-  }
+  
 }

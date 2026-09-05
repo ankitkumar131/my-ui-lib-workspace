@@ -4,28 +4,28 @@
   height: 36px;
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid var(--input-border, #e5e7eb);
-  background-color: var(--input-background, #ffffff);
-  color: var(--input-foreground, #09090b);
+  border: 1px solid var(--input-border, var(--ui-border));
+  background-color: var(--input-background, var(--ui-popover));
+  color: var(--input-foreground, var(--ui-foreground));
   font-size: 14px;
   line-height: 1.5;
   transition: border-color 0.2s, box-shadow 0.2s;
   
   &::placeholder {
-    color: var(--input-placeholder, #9ca3af);
+    color: var(--input-placeholder, var(--ui-foreground-subtle));
   }
   
   &:focus {
     outline: none;
-    border-color: var(--input-focus-border, #2196f3);
+    border-color: var(--input-focus-border, var(--ui-focus));
     box-shadow: 0 0 0 3px var(--input-focus-ring, rgba(33, 150, 243, 0.1));
   }
   
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
-    background-color: var(--input-disabled-bg, #f5f5f5);
-    color: var(--input-disabled-text, #a1a1aa);
+    background-color: var(--input-disabled-bg, var(--ui-muted));
+    color: var(--input-disabled-text, var(--ui-foreground-subtle));
   }
   
   &[type="file"] {
@@ -36,52 +36,30 @@
       margin-right: 8px;
       padding: 4px 12px;
       border-radius: 4px;
-      border: 1px solid var(--input-border, #e5e7eb);
-      background-color: var(--input-file-button-bg, #f9fafb);
-      color: var(--input-foreground, #09090b);
+      border: 1px solid var(--input-border, var(--ui-border));
+      background-color: var(--input-file-button-bg, var(--ui-muted));
+      color: var(--input-foreground, var(--ui-foreground));
       font-size: 14px;
       cursor: pointer;
       transition: background-color 0.2s;
       
       &:hover {
-        background-color: var(--input-file-button-hover, #f3f4f6);
+        background-color: var(--input-file-button-hover, var(--ui-accent));
       }
     }
   }
   
   // Dark mode
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--input-background, #18181b);
-    border-color: var(--input-border, #27272a);
-    color: var(--input-foreground, #fafafa);
-    
-    &::placeholder {
-      color: var(--input-placeholder, #71717a);
-    }
-    
-    &:disabled {
-      background-color: var(--input-disabled-bg, #09090b);
-      color: var(--input-disabled-text, #52525b);
-    }
-    
-    &[type="file"]::file-selector-button {
-      background-color: var(--input-file-button-bg, #27272a);
-      border-color: var(--input-border, #3f3f46);
-      
-      &:hover {
-        background-color: var(--input-file-button-hover, #3f3f46);
-      }
-    }
-  }
+  
 }
 
 // Error state
 .ui-input.error,
 .ui-input[aria-invalid="true"] {
-  border-color: var(--input-error-border, #dc2626);
+  border-color: var(--input-error-border, var(--ui-destructive));
   
   &:focus {
-    border-color: var(--input-error-border, #dc2626);
+    border-color: var(--input-error-border, var(--ui-destructive));
     box-shadow: 0 0 0 3px var(--input-error-ring, rgba(220, 38, 38, 0.1));
   }
 }

@@ -21,15 +21,15 @@
   width: var(--carousel-nav-size, 40px);
   height: var(--carousel-nav-size, 40px);
   border-radius: var(--carousel-nav-radius, 50%);
-  border: var(--carousel-nav-border, 1px solid #e5e7eb);
+  border: var(--carousel-nav-border, 1px solid var(--ui-border));
   background: var(--carousel-nav-bg, rgba(255, 255, 255, 0.9));
-  color: var(--carousel-nav-color, #18181b);
+  color: var(--carousel-nav-color, var(--ui-primary));
   cursor: pointer;
   transition: var(--carousel-nav-transition, all 0.2s);
   box-shadow: var(--carousel-nav-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
 
   &:hover:not(:disabled) {
-    background: var(--carousel-nav-hover-bg, #ffffff);
+    background: var(--carousel-nav-hover-bg, var(--ui-popover));
     box-shadow: var(--carousel-nav-hover-shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
   }
 
@@ -57,14 +57,3 @@
 }
 
 // Dark mode
-@media (prefers-color-scheme: dark) {
-  .ui-carousel-next-button {
-    background: var(--carousel-nav-bg, rgba(24, 24, 27, 0.9));
-    border-color: var(--carousel-nav-border-color, #3f3f46);
-    color: var(--carousel-nav-color, #fafafa);
-
-    &:hover:not(:disabled) {
-      background: var(--carousel-nav-hover-bg, #18181b);
-    }
-  }
-}

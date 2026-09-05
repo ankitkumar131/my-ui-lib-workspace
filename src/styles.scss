@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Shared design tokens for @my-ui/components (light + dark).
+// This is the single place where component colors are defined.
+@use '../projects/my-ui/styles/tokens' as ui-tokens;
+
+@include ui-tokens.ui-theme;
+
 html,
 body {
   min-height: 100%;
   margin: 0;
-  background: #ffffff;
-  color: #0f172a;
+  background: var(--ui-background);
+  color: var(--ui-foreground);
 }
+
 
 @layer base {
   button:not(:disabled),

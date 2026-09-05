@@ -5,9 +5,9 @@
   height: 100%;
   overflow: hidden;
   border-radius: 0.75rem;
-  background: hsl(0 0% 100%);
-  color: hsl(222.2 84% 4.9%);
-  border: 1px solid hsl(214.3 31.8% 91.4%);
+  background: var(--command-bg, var(--ui-card));
+  color: var(--command-foreground, var(--ui-foreground));
+  border: 1px solid var(--command-border, var(--ui-border));
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
@@ -16,27 +16,12 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: var(--command-bg, transparent);
-  color: var(--command-foreground, hsl(222.2 84% 4.9%));
+  background-color: transparent;
   border-radius: var(--command-radius, 0.75rem);
-  border: var(--command-border-width, 0) solid var(--command-border, transparent);
   overflow: hidden;
 }
 
 :host(:focus-visible) {
-  outline: 2px solid hsl(221.2 83.2% 53.3% / 0.4);
+  outline: 2px solid color-mix(in srgb, var(--ui-brand) 40%, transparent);
   outline-offset: 2px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    background: hsl(222.2 84% 4.9%);
-    color: hsl(210 40% 98%);
-    border-color: hsl(217.2 32.6% 17.5%);
-  }
-
-  .command-container {
-    background-color: var(--command-bg, hsl(222.2 84% 4.9%));
-    color: var(--command-foreground, hsl(210 40% 98%));
-  }
 }

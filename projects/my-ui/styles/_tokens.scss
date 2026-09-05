@@ -1,0 +1,110 @@
+/**
+ * Design tokens — single source of truth for @my-ui/components.
+ *
+ * Every component references these CSS custom properties instead of
+ * hard-coding colors. Dark mode is handled exclusively here via
+ * `prefers-color-scheme`, so component stylesheets contain no duplicated
+ * dark-mode blocks.
+ *
+ * Usage (consumer global stylesheet, e.g. src/styles.scss):
+ *
+ *   @use '@my-ui/components/styles/tokens' as ui-tokens;
+ *   @include ui-tokens.ui-theme;
+ *
+ * Consumers can override any token before/after the include, e.g.:
+ *
+ *   :root {
+ *     --ui-brand: #7c3aed;            // re-brand every component
+ *     --ui-border-radius: 10px;       // rounder corners everywhere
+ *   }
+ */
+
+@mixin ui-theme {
+  :root {
+    // ---- neutrals (zinc scale) ----
+    --ui-background: #ffffff;
+    --ui-foreground: #09090b;
+    --ui-card: #ffffff;
+    --ui-popover: #ffffff;
+    --ui-muted: #f4f4f5;
+    --ui-muted-foreground: #71717a;
+    --ui-foreground-subtle: #a1a1aa;
+    --ui-border: #e4e4e7;
+    --ui-border-strong: #d4d4d8;
+    --ui-input: #e4e4e7;
+    --ui-surface-translucent: rgba(255, 255, 255, 0.9);
+
+    // ---- brand ----
+    --ui-brand: #2563eb;
+    --ui-brand-strong: #1d4ed8;
+    --ui-brand-active: #1e40af;
+    --ui-brand-foreground: #ffffff;
+    --ui-focus: #2196f3;
+    --ui-focus-ring: rgba(33, 150, 243, 0.1);
+
+    // ---- semantic ----
+    --ui-primary: #18181b;
+    --ui-primary-foreground: #fafafa;
+    --ui-secondary: #f4f4f5;
+    --ui-secondary-foreground: #18181b;
+    --ui-accent: #f4f4f5;
+    --ui-accent-foreground: #18181b;
+    --ui-destructive: #dc2626;
+    --ui-destructive-strong: #b91c1c;
+    --ui-destructive-active: #991b1b;
+    --ui-destructive-foreground: #ffffff;
+    --ui-selection: #eff6ff;
+    --ui-selection-foreground: #18181b;
+
+    // ---- shape ----
+    --ui-border-radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      // ---- neutrals (zinc scale) ----
+      --ui-background: #09090b;
+      --ui-foreground: #fafafa;
+      --ui-card: #09090b;
+      --ui-popover: #18181b;
+      --ui-muted: #27272a;
+      --ui-muted-foreground: #a1a1aa;
+      --ui-foreground-subtle: #52525b;
+      --ui-border: #27272a;
+      --ui-border-strong: #3f3f46;
+      --ui-input: #27272a;
+      --ui-surface-translucent: rgba(24, 24, 27, 0.9);
+
+      // ---- brand ----
+      --ui-brand: #3b82f6;
+      --ui-brand-strong: #2563eb;
+      --ui-brand-active: #1d4ed8;
+      --ui-brand-foreground: #18181b;
+      --ui-focus: #60a5fa;
+      --ui-focus-ring: rgba(96, 165, 250, 0.1);
+
+      // ---- semantic ----
+      --ui-primary: #fafafa;
+      --ui-primary-foreground: #18181b;
+      --ui-secondary: #27272a;
+      --ui-secondary-foreground: #fafafa;
+      --ui-accent: #27272a;
+      --ui-accent-foreground: #fafafa;
+      --ui-destructive: #f87171;
+      --ui-destructive-strong: #ef4444;
+      --ui-destructive-active: #dc2626;
+      --ui-destructive-foreground: #fafafa;
+      --ui-selection: #1e3a8a;
+      --ui-selection-foreground: #e4e4e7;
+    }
+  }
+}
+
+/**
+ * Same token set scoped to a component `:host` — for rare cases where a
+ * component must be self-themed when used without the global theme
+ * (e.g. widgets embedded into a shadow-DOM host).
+ */
+@mixin ui-theme-host {
+  @include ui-theme;
+}

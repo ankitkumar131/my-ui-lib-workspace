@@ -16,7 +16,7 @@
   color: var(--context-menu-item-color, inherit);
 
   &:hover {
-    background: var(--context-menu-item-hover-bg, hsl(210 40% 96.1%));
+    background: var(--context-menu-item-hover-bg, var(--ui-accent));
     color: var(--context-menu-item-hover-color, inherit);
   }
 }
@@ -28,12 +28,4 @@
 .context-menu-item-disabled {
   pointer-events: none;
   opacity: var(--context-menu-item-disabled-opacity, 0.5);
-}
-
-@media (prefers-color-scheme: dark) {
-  .context-menu-item {
-    &:hover {
-      background: var(--context-menu-item-hover-bg, hsl(217.2 32.6% 17.5%));
-    }
-  }
 }
