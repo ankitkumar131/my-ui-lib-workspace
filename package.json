@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\" \"projects/**/*.{ts,html,scss,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss}\" \"projects/**/*.{ts,html,scss,json}\"",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless && ng test my-ui --watch=false --browsers=ChromeHeadless",
+    "test:lib": "ng test my-ui"
   },
   "prettier": {
     "printWidth": 100,

@@ -107,6 +107,13 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/my-ui/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss"
+          }
         }
       }
     }
