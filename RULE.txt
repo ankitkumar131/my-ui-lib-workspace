@@ -1,254 +1,139 @@
 Foundation Rules — Angular UI Component Library (the source of truth)
 
-These are the foundational rules your project will be built on and always follow. Copy this into your repo as FOUNDATION.md or README top section. Rules are short, prescriptive, and enforceable — intended to be automated where possible (linters, CI) and followed by every contributor.
+These are the working rules for this repository. They describe how the codebase is actually organized today; contributors should follow them and propose rule changes via PR when conventions evolve.
 
 Purpose & scope
 
-Build a reusable, production-grade Angular UI component library (consumer package + demo app) modeled on modern design systems (Material-like UX, but original).
+Build a reusable, production-grade Angular UI component library (consumer package + demo app) modeled on modern design systems (shadcn/Radix-style composition, original implementation).
 
-Ship small, focused components (e.g. ui-button, ui-card, ui-badge) that are accessible, themeable, responsive, performant, and well-documented.
+Ship small, focused components (ui-button, ui-card, ui-badge, …) that are accessible, themeable, responsive, performant, and well-documented.
 
 Core principles (always)
 
 Stable & supported APIs — No deprecated Angular/TS/DOM APIs. If something is deprecated, replace before merging.
 
-Minimal public surface — Export only what’s required (modules, components, types). Keep internal helpers private.
+Minimal public surface — Each component folder exposes a public-api.ts; export only what consumers need. Keep internal helpers private.
 
-Accessibility first — Keyboard + screen reader support is required for interactive components.
+Accessibility first — Keyboard + screen reader support is required for interactive components (focusable triggers, Escape/arrow handling where applicable, ARIA only when native semantics are insufficient).
 
-Design tokens & theming — Centralized variables + CSS variables for runtime theming.
+Design tokens & theming — All colors come from projects/my-ui/styles/_tokens.scss (--ui-* custom properties). Components never hard-code palette colors and never define their own dark-mode media blocks; dark mode is handled once in the token file.
 
-Small bundles & tree-shaking — Provide per-component imports if needed; avoid side-effectful top-level code.
+Small bundles & tree-shaking — Every component is a published secondary entry point (@my-ui/components/<name>) so deep imports stay small. Avoid side-effectful top-level code.
 
-Mobile-first responsive design — Test at all breakpoints listed below.
+Mobile-first responsive design — Use the respond() mixin from styles/_mixins.scss at the breakpoints listed below.
 
-Predictable naming — Component selectors and classes follow ui- prefix.
+Predictable naming — Component element selectors use the ui- prefix (kebab-case). CSS classes use ui-<component> (or a compact component-class like .button-container) with __ / -- BEM-style parts where useful.
+
+Repository layout (actual)
+
+my-ui-lib-workspace/            (Angular CLI multi-project workspace)
+├─ src/                          demo app (component playground)
+├─ projects/my-ui/               @my-ui/components — the library
+│  ├─ <component>/               one folder per component, e.g. button/
+│  │  ├─ ng-package.json         secondary entry point (entryFile: public-api.ts)
+│  │  ├─ public-api.ts           canonical exports (raw + alias names)
+│  │  ├─ index.ts                re-exports public-api.ts (source-map convenience)
+│  │  ├─ <component>.module.ts   optional NgModule wrapper (components are standalone)
+│  │  ├─ components/<part>/      part.component.ts / .html / .scss
+│  │  ├─ directives/ services/ types/  as needed
+│  │  └─ <Component>_Manual.md   usage manual (legacy docs, kept up to date)
+│  └─ styles/                    _tokens.scss, _mixins.scss (shipped in the package)
+├─ scripts/                      one-off maintenance scripts
+└─ .github/workflows/ci.yml      lint -> test -> build pipeline
 
 Naming & file conventions
 
 Component element selectors: ui-<name> (kebab-case). Example: ui-button, ui-card.
+Attribute directives: ui<Name> camelCase, e.g. uiDropdownMenuTrigger, uiCollapsibleTrigger.
+Component classes: ButtonComponent, SelectTriggerComponent. Where shadcn parity is useful, public-api.ts also exports an alias (ButtonComponent as Button).
+Modules (legacy wrappers): Ui<Button|Card>Module. New components are standalone — no module needed.
+Files: button.component.ts, button.component.html, button.component.scss; types in *.types.ts or *-type.enum.ts.
+Public exports: everything a consumer may import goes in the component's public-api.ts (and thus the root public-api.ts re-export).
 
-Module class names: Ui<Button|Card|Badge>Module.
+Imports & entry points
 
-Component classes: UiButtonComponent, UiCardComponent.
-
-File names: button.component.ts, button.component.html, button.component.scss, button.types.ts (for interfaces).
-
-CSS classes: BEM-like with ui-<component> root and __ or -- for parts/modifiers (e.g. .ui-button, .ui-button__icon, .ui-button--primary).
-
-Generation & workflow rules
-
-Always use Angular CLI to create components/services/pipes:
-
-Component: ng generate component <name> --project=my-ui --style=scss --export
-
-Service: ng generate service services/<name> --project=my-ui
-
-Do not hand-create the canonical files unless documented with strong justification and a ticket.
-
-Add every new public export to projects/my-ui/src/public-api.ts.
-
-TypeScript & API design
-
-strict: true enabled in tsconfig.lib.json. No any in public APIs.
-
-Public interfaces/types live in separate files under src/lib/interfaces/ or src/lib/models/. Example: button.types.ts.
-
-Use OnPush change detection for UI components unless proven otherwise.
-
-Inputs/Outputs must have explicit types and JSDoc comments. Avoid long parameter lists — prefer small, composable inputs.
-
-HTML & template rules
-
-No inline HTML templates inside .ts files. Use separate .html.
-
-Prefer native interactive elements (<button>, <a>, <input>) for native semantics.
-
-Keep templates declarative and free of heavy logic. Use small helper methods; avoid work on every CD cycle.
+Inside the workspace, always import via package aliases (tsconfig paths):
+  @my-ui/components          → root entry (all components)
+  @my-ui/components/button   → secondary entry (tree-shakeable)
+Never use relative imports across component folders; secondary entry points must import each other by package name only (required by ng-packagr).
 
 SCSS & styling rules (enforced)
 
-Use px as the standard measurement for component styling (spacing, sizing, typography).
-
-No inline styles in templates and no SCSS inside .ts files. All styles must be .scss files.
-
-No global style leakage: component styles should be scoped; use :host and component class prefixes.
-
-Create and use global SCSS partials for design tokens: _variables.scss, _mixins.scss, _theme.scss.
-
+All palette/semantic colors come from _tokens.scss (--ui-background, --ui-foreground, --ui-card, --ui-popover, --ui-muted, --ui-muted-foreground, --ui-border, --ui-accent, --ui-brand, --ui-focus, --ui-destructive, --ui-selection, …). Component CSS references tokens, e.g. var(--select-trigger-bg, var(--ui-popover)).
+No prefers-color-scheme blocks in component stylesheets — dark mode lives exclusively in _tokens.scss.
+Prefer px for spacing/sizing; rem is acceptable for typography and radii. Never introduce other units ad hoc.
+No inline styles in templates and no SCSS/HTML inside .ts files. Use separate .html/.scss files.
+Scoped styles only: use :host and component class prefixes. ::ng-deep only where child-element projection requires it (existing pattern in button/button-group) — prefer avoiding it in new code.
 Avoid !important. Avoid global selectors that can clash with consumer apps.
-
-Provide CSS custom properties (variables) mapping from SCSS tokens to enable runtime overrides.
+Component-level CSS vars keep their --<component>-* names as the public override API (e.g. --select-trigger-height, --dropdown-item-hover-bg). Defaults must resolve to shared tokens.
+color-mix() is allowed for derived shades (hover/active states).
 
 Theming & design tokens
 
-Maintain a single source of truth for colors, spacing, radii, typography, and z-index in src/lib/styles/.
+Single source of truth: projects/my-ui/styles/_tokens.scss (light + dark via prefers-color-scheme, emitted at :root by the ui-theme mixin).
+Consumers add to their global stylesheet:
+  @use '@my-ui/components/styles/tokens' as ui-tokens;
+  @include ui-tokens.ui-theme;
+Consumers override any token (e.g. :root { --ui-brand: #7c3aed; }) or any component var (e.g. .ui-select-trigger { --select-trigger-height: 48px; }).
+Adding a color? Add/extend a token first, then use var(--ui-*) in the component.
 
-Example token file (SCSS + CSS var mapping):
+Breakpoints & responsive targets (canonical)
 
-$ui-color-primary: #1976d2; and --ui-color-primary: #1976d2;
-
-Expose a small mixin or core() entry that consumers can import to apply base styles and variables.
-
-Document how consumers override tokens (example consumer styles.scss snippet).
-
-Breakpoints & responsive targets
-
-Use these exact breakpoints (mobile-first, px):
-
-mobile-s: 320px
-
-mobile-m: 375px
-
-mobile-l: 425px
-
-tablet: 768px
-
-laptop: 1024px
-
-laptop-l: 1440px
-
-4k: 2560px
-Provide SCSS mixins/helpers so component authors can write @include respond(tablet) { ... }.
+mobile-s 320px, mobile-m 375px, mobile-l 425px, tablet 768px, laptop 1024px, laptop-l 1440px, 4k 2560px.
+Use @include respond(tablet) { … } from styles/_mixins.scss.
 
 Accessibility (A11Y)
 
-All interactive components must:
-
-Be keyboard operable (tab, enter/space, arrow keys where applicable).
-
-Use ARIA only when native semantics are insufficient.
-
-Provide focus styles and not remove focus outlines.
-
-Include examples for aria-label/aria-describedby for icon-only controls.
-
-Add automated A11Y checks (axe/pa11y) to CI for stories/demos.
+Interactive components must be keyboard operable (Tab, Enter/Space, Escape, arrow keys where applicable) — see existing handlers in menus, dialogs, combobox.
+Use ARIA only when native semantics are insufficient; keep aria-expanded/aria-checked/role in sync with component state.
+Never remove focus outlines without a replacement focus-visible style.
 
 Animations & motion
 
-Prefer CSS transitions or Angular's @angular/animations. Keep durations short (typical 150–300ms).
-
-Respect prefers-reduced-motion — provide reduced-motion fallbacks.
-
-Avoid heavy JS-based animations that block the main thread.
+CSS transitions/animations, 120–300ms. Respect prefers-reduced-motion where motion is essential.
 
 Performance & change detection
 
-Prefer ChangeDetectionStrategy.OnPush for components.
-
-Keep component DOM shallow; avoid deep ngFor without trackBy.
-
-Lazy-load heavy resources/assets (icons, images). Provide icon component that accepts SVGs.
+Prefer ChangeDetectionStrategy.OnPush for new components (not yet retrofitted across the library — do not add default-CD components).
+Avoid deep ngFor without trackBy; lazy-load heavy resources.
 
 Testing & quality gates
 
-Unit tests for every component (Karma/Jest). Aim ≥ 80% coverage for core components.
+Unit tests (Karma + Jasmine) per component, colocated as *.spec.ts next to the component. Interactive components (select, combobox, menus, calendar) must keep coverage as they evolve.
+Run locally: npm test (watch) or npm run test:ci (ChromeHeadless, used in CI).
+Lint must pass: npm run lint (ESLint flat config; selectors, no-explicit-any, no-unused-vars enforced).
+Format before committing: npm run format (Prettier, 100 cols, single quotes).
 
-Storybook stories for each state/variant and visual regression tests (Percy/Chromatic) for critical components.
+CI pipeline (.github/workflows/ci.yml)
 
-Linting: ESLint (TS), Stylelint (SCSS), and Prettier formatting enforced.
-
-CI pipeline must run: lint, test, build:lib, storybook:build (where applicable). PRs blocked on failing checks.
+Runs on pushes/PRs to master: lint → test:ci → build:lib → build. PRs are expected to keep all four green.
 
 Packaging & distribution
 
-Build library with ng-packagr (ng build my-ui) and publish dist/my-ui.
-
-package.json in library must use peerDependencies for Angular packages (no bundling of Angular).
-
-Default single entry point; add secondary entry-points only if necessary for bundle size and organization.
+Library builds with ng-packagr (npm run build:lib → dist/my-ui). Package name @my-ui/components with one secondary entry point per component folder.
+Library package.json declares peerDependencies only (@angular/common, core, forms, cdk, rxjs) — never bundles Angular.
+Consume deep imports for smaller bundles: import { Button } from '@my-ui/components/button'.
 
 Versioning & release process
 
-Use Semantic Versioning (semver).
-
-Enforce conventional commit messages to generate changelogs (optional automation).
-
-Release flow: PR → review → CI → manual publish (token required). Tag releases and update changelog.
+Semantic Versioning. Conventional commit messages (fix:, feat:, chore:, refactor: …).
+Release flow: PR → review → CI green → manual publish of dist/my-ui. Tag releases and update the changelog.
 
 Documentation & demos
 
-Maintain Storybook and a apps/demo app showing integration examples.
-
-Each component must have: API table, accessibility notes, theming notes, example usages, and responsive screenshots.
-
-Keep docs in sync with releases.
+Every component keeps a demo section in src/app/app.html and a <Component>_Manual.md in its folder; update both when the public API changes.
+Document the component's CSS variable override API in the manual.
 
 Security & dependencies
 
-Minimal external dependencies. Encourage SVG icons over icon font packages.
+Minimal external dependencies (Angular + CDK only). SVG icons over icon fonts. npm audit before releases.
 
-Run npm audit regularly. Approve dependency upgrades via PR with changelog review.
+Quick enforcement checklist (PR template)
 
-Code review & PR rules
-
-Every PR requires: one approving reviewer, passing CI checks, and a PR description describing changes and migration notes if API changed.
-
-PR template checklist must include: Lint, Tests, Stories, A11Y checks, Responsive check at all breakpoints, Docs updated.
-
-Enforcements & automation
-
-CI enforces lint/test/build before merge.
-
-Pre-commit hooks optional (project choice). If not using husky, CI gates are mandatory.
-
-Use automated formatters (Prettier) and linters to reduce style disputes.
-
-Naming guidelines for core components (starter)
-
-Button → ui-button
-
-Card → ui-card
-
-Input → ui-input
-
-Badge → ui-badge
-
-Avatar → ui-avatar
-
-Modal → ui-modal
-
-Tooltip → ui-tooltip
-
-Menu → ui-menu
-
-Snackbar → ui-snackbar
-(Keep selector, module, and file names consistent with these mappings.)
-
-Example file layout for a component (must follow)
-projects/my-ui/src/lib/button/
-├─ button.component.ts
-├─ button.component.html
-├─ button.component.scss
-├─ button.types.ts            // interfaces, sizes, variants
-├─ button.module.ts
-├─ button.stories.ts          // Storybook
-├─ button.spec.ts
-
-Quick enforcement checklist (put in PR template)
-
- Generated with Angular CLI (or documented exception)
-
- No deprecated APIs used
-
- SCSS uses px units; no inline styles in templates/TS
-
- Interfaces/types in separate files
-
- Component exported in public-api.ts
-
- Accessibility checks added/passed
-
- Storybook story and demo example included
-
- Tests added and passing at CI
-
- Responsive verified at required breakpoints
-
- Documentation updated
-
-
-
- "ng-packagr": "^20.0.0",
-    // "ng-packagr" : "^18.2.1",
+ Lint passes (npm run lint)
+ Tests pass (npm run test:ci), specs added for changed behavior
+ build:lib and build succeed
+ No hard-coded palette colors; no new dark-mode blocks (tokens only)
+ No any in public APIs; selectors follow ui- prefix
+ Accessibility checked (keyboard + ARIA state)
+ Docs/manual/demo updated

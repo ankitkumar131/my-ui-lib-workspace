@@ -1,59 +1,58 @@
 # MyUiLibWorkspace
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+Angular 20 workspace containing **@my-ui/components** — a shadcn-style UI component library — and a demo app that exercises every component.
 
-## Development server
+## Workspace layout
 
-To start a local development server, run:
+| Path | What it is |
+| --- | --- |
+| `projects/my-ui/` | The library (`@my-ui/components`), one folder per component |
+| `projects/my-ui/styles/` | Design tokens (`_tokens.scss`) and mixins (`_mixins.scss`) — the single source of truth for colors/dark mode |
+| `src/` | Demo app (component playground) |
+| `.github/workflows/ci.yml` | CI: lint → test → build |
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Commands
 
 ```bash
-ng generate component component-name
+npm ci            # install
+npm start         # dev server (demo app) on http://localhost:4200
+npm run build:lib # build @my-ui/components into dist/my-ui
+npm run build     # build the demo app (production)
+npm test          # unit tests (watch mode)
+npm run test:ci   # unit tests, headless (what CI runs)
+npm run lint      # ESLint (TS + templates)
+npm run format    # Prettier
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Importing components
 
-```bash
-ng generate --help
+```ts
+// everything
+import { Button, SelectComponent } from '@my-ui/components';
+
+// tree-shakeable deep import (secondary entry point)
+import { Button } from '@my-ui/components/button';
+import { UiCheckboxModule } from '@my-ui/components/checkbox';
 ```
 
-## Building
+## Theming
 
-To build the project run:
+Include the theme once in your global stylesheet:
 
-```bash
-ng build
+```scss
+@use '@my-ui/components/styles/tokens' as ui-tokens;
+
+@include ui-tokens.ui-theme;
+
+// optional: rebrand or tune the whole library
+:root {
+  --ui-brand: #7c3aed;
+  --ui-border-radius: 10px;
+}
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Dark mode is driven by `prefers-color-scheme` and defined only in the token file. Individual components can be customized through their CSS custom properties (e.g. `--select-trigger-height`, `--dropdown-item-hover-bg`) — defaults always resolve back to the shared tokens.
 
-## Running unit tests
+## Conventions
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+See [RULE.txt](RULE.txt) for naming, structure, theming, a11y, and PR requirements.
