@@ -12,12 +12,12 @@
   outline: none;
 
   &:hover:not(.disabled):not(.active) {
-    background-color: var(--command-item-hover-bg, hsl(240 4.8% 95.9%));
+    background-color: var(--command-item-hover-bg, var(--ui-accent));
   }
 
   &.active:not(.disabled) {
-    background-color: var(--command-item-active-bg, hsl(240 4.8% 95.9%));
-    color: var(--command-item-active-color, hsl(222.2 84% 4.9%));
+    background-color: var(--command-item-active-bg, var(--ui-accent));
+    color: var(--command-item-active-color, var(--ui-foreground));
   }
 
   &.disabled {
@@ -32,17 +32,4 @@
   align-items: center;
   gap: 0.5rem;
   width: 100%;
-}
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    &:hover:not(.disabled):not(.active) {
-      background-color: var(--command-item-hover-bg, hsl(240 3.7% 15.9%));
-    }
-
-    &.active:not(.disabled) {
-      background-color: var(--command-item-active-bg, hsl(240 3.7% 15.9%));
-      color: var(--command-item-active-color, hsl(210 40% 98%));
-    }
-  }
 }

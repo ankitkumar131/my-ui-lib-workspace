@@ -1,12 +1,10 @@
 :host {
     --dropdown-item-padding: 0.5rem 0.75rem;
-    --dropdown-item-hover-bg: hsl(210, 40%, 96.1%);
+    --dropdown-item-hover-bg: var(--ui-accent);
     --dropdown-item-font-size: 0.875rem;
     --dropdown-item-radius: 0.375rem;
 
-    @media (prefers-color-scheme: dark) {
-        --dropdown-item-hover-bg: hsl(215, 27.9%, 16.9%);
-    }
+    
 }
 
 .dropdown-menu-item {

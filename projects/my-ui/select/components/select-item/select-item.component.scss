@@ -15,12 +15,12 @@
   outline: none;
   
   &:hover:not(.disabled) {
-    background-color: var(--select-item-hover-bg, #f9fafb);
+    background-color: var(--select-item-hover-bg, var(--ui-muted));
   }
   
   &.selected {
-    background-color: var(--select-item-selected-bg, #eff6ff);
-    color: var(--select-item-selected-color, #2196f3);
+    background-color: var(--select-item-selected-bg, var(--ui-selection));
+    color: var(--select-item-selected-color, var(--ui-focus));
     font-weight: var(--select-item-selected-font-weight, 500);
   }
   
@@ -36,14 +36,5 @@
     color: var(--select-indicator-color, inherit);
   }
   
-  @media (prefers-color-scheme: dark) {
-    &:hover:not(.disabled) {
-      background-color: var(--select-item-hover-bg, #27272a);
-    }
-    
-    &.selected {
-      background-color: var(--select-item-selected-bg, #1e3a8a);
-      color: var(--select-item-selected-color, #60a5fa);
-    }
-  }
+  
 }

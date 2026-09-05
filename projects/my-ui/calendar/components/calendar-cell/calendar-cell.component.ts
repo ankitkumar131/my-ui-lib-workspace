@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, HostListener } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarDay } from '../../types/calendar.types';
 

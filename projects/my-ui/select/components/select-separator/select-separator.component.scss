@@ -5,9 +5,7 @@
 .ui-select-separator {
   height: 1px;
   margin: 4px 0;
-  background-color: #e5e7eb;
+  background-color: var(--ui-border);
   
-  @media (prefers-color-scheme: dark) {
-    background-color: #27272a;
-  }
+  
 }

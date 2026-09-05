@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ContentChildren, QueryList, OnDestroy, Input, Optional, ElementRef } from '@angular/core';
+import { Component, AfterContentInit, ContentChildren, QueryList, OnDestroy, Optional, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { Subscription } from 'rxjs';
@@ -21,7 +21,7 @@ import { Subscription } from 'rxjs';
   }
 })
 export class CarouselContentComponent implements AfterContentInit, OnDestroy {
-  @ContentChildren('carouselItem') items!: QueryList<any>;
+  @ContentChildren('carouselItem') items!: QueryList<ElementRef<HTMLElement>>;
   
   private subscriptions: Subscription[] = [];
   currentIndex = 0;

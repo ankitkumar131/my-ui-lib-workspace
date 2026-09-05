@@ -12,7 +12,7 @@ import { SelectService } from '../../select.service';
 export class SelectComponent implements OnDestroy {
   private _updatingFromParent = false;
   
-  @Input() set selected(value: any) {
+  @Input() set selected(value: unknown) {
     this._updatingFromParent = true;
     this.selectService.selectedValue.set(value);
     // Give Angular a chance to process before clearing flag
@@ -24,7 +24,7 @@ export class SelectComponent implements OnDestroy {
     return this.selectService.selectedValue();
   }
 
-  @Output() selectedChange = new EventEmitter<any>();
+  @Output() selectedChange = new EventEmitter<unknown>();
 
   constructor(private selectService: SelectService) {
     // Only emit when user selects (not when parent updates)

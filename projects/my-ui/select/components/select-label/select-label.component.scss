@@ -6,9 +6,7 @@
   padding: 8px 12px 4px;
   font-size: 12px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--ui-muted-foreground);
   
-  @media (prefers-color-scheme: dark) {
-    color: #9ca3af;
-  }
+  
 }

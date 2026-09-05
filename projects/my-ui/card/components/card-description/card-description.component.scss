@@ -2,10 +2,8 @@
   display: block;
   font-size: var(--card-description-font-size, 14px);
   line-height: var(--card-description-line-height, 1.5);
-  color: var(--card-description-color, #71717a);
+  color: var(--card-description-color, var(--ui-muted-foreground));
   
   // Dark mode
-  @media (prefers-color-scheme: dark) {
-    color: var(--card-description-color, #a1a1aa);
-  }
+  
 }

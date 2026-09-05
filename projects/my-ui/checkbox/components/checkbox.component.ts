@@ -103,16 +103,16 @@ export class CheckboxComponent implements ControlValueAccessor {
     });
   }
 
-  writeValue(value: any): void {
+  writeValue(value: unknown): void {
     this.checked = !!value;
     this.cdr.markForCheck();
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: boolean) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 

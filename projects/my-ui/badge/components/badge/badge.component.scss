@@ -19,8 +19,8 @@
     border: var(--ui-badge-border, 1px solid transparent);
 
     /* Colors - allow full override */
-    background-color: var(--ui-badge-bg, hsl(222, 47%, 11%));
-    color: var(--ui-badge-color, hsl(210, 40%, 98%));
+    background-color: var(--ui-badge-bg, var(--ui-primary));
+    color: var(--ui-badge-color, var(--ui-foreground));
     border-color: var(--ui-badge-border-color, transparent);
 }
 
@@ -35,32 +35,32 @@
 
 /* Default variant */
 .ui-badge--default {
-    --ui-badge-bg: var(--ui-badge-default-bg, hsl(222, 47%, 11%));
-    --ui-badge-color: var(--ui-badge-default-color, hsl(210, 40%, 98%));
-    --ui-badge-border-color: var(--ui-badge-default-border, hsl(222, 47%, 11%));
-    --ui-badge-hover-bg: var(--ui-badge-default-hover-bg, hsl(222, 47%, 15%));
+    --ui-badge-bg: var(--ui-badge-default-bg, var(--ui-primary));
+    --ui-badge-color: var(--ui-badge-default-color, var(--ui-foreground));
+    --ui-badge-border-color: var(--ui-badge-default-border, var(--ui-primary));
+    --ui-badge-hover-bg: var(--ui-badge-default-hover-bg, color-mix(in srgb, var(--ui-primary) 92%, var(--ui-background)));
 }
 
 /* Secondary variant */
 .ui-badge--secondary {
-    --ui-badge-bg: var(--ui-badge-secondary-bg, hsl(210, 40%, 96.1%));
-    --ui-badge-color: var(--ui-badge-secondary-color, hsl(222.2, 47.4%, 11.2%));
-    --ui-badge-border-color: var(--ui-badge-secondary-border, hsl(210, 40%, 96.1%));
-    --ui-badge-hover-bg: var(--ui-badge-secondary-hover-bg, hsl(210, 40%, 92%));
+    --ui-badge-bg: var(--ui-badge-secondary-bg, var(--ui-accent));
+    --ui-badge-color: var(--ui-badge-secondary-color, var(--ui-foreground));
+    --ui-badge-border-color: var(--ui-badge-secondary-border, var(--ui-accent));
+    --ui-badge-hover-bg: var(--ui-badge-secondary-hover-bg, color-mix(in srgb, var(--ui-secondary) 85%, var(--ui-foreground)));
 }
 
 /* Destructive variant */
 .ui-badge--destructive {
-    --ui-badge-bg: var(--ui-badge-destructive-bg, hsl(0, 84.2%, 60.2%));
-    --ui-badge-color: var(--ui-badge-destructive-color, hsl(210, 40%, 98%));
-    --ui-badge-border-color: var(--ui-badge-destructive-border, hsl(0, 84.2%, 60.2%));
-    --ui-badge-hover-bg: var(--ui-badge-destructive-hover-bg, hsl(0, 84.2%, 55%));
+    --ui-badge-bg: var(--ui-badge-destructive-bg, var(--ui-destructive));
+    --ui-badge-color: var(--ui-badge-destructive-color, var(--ui-foreground));
+    --ui-badge-border-color: var(--ui-badge-destructive-border, var(--ui-destructive));
+    --ui-badge-hover-bg: var(--ui-badge-destructive-hover-bg, var(--ui-destructive-strong));
 }
 
 /* Outline variant */
 .ui-badge--outline {
     --ui-badge-bg: var(--ui-badge-outline-bg, transparent);
-    --ui-badge-color: var(--ui-badge-outline-color, hsl(222.2, 47.4%, 11.2%));
-    --ui-badge-border-color: var(--ui-badge-outline-border, hsl(214.3, 31.8%, 91.4%));
-    --ui-badge-hover-bg: var(--ui-badge-outline-hover-bg, hsl(210, 40%, 96.1%));
+    --ui-badge-color: var(--ui-badge-outline-color, var(--ui-foreground));
+    --ui-badge-border-color: var(--ui-badge-outline-border, var(--ui-border));
+    --ui-badge-hover-bg: var(--ui-badge-outline-hover-bg, var(--ui-accent));
 }

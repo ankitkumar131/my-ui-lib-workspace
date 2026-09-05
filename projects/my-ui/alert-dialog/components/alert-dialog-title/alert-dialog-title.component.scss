@@ -1,11 +1,9 @@
 :host {
-    --title-color: hsl(222.2, 47.4%, 11.2%);
+    --title-color: var(--ui-foreground);
 
     display: block;
 
-    @media (prefers-color-scheme: dark) {
-        --title-color: hsl(210, 40%, 98%);
-    }
+    
 }
 
 .dialog-title {

@@ -12,7 +12,7 @@
   color: var(--context-menu-sub-trigger-color, inherit);
 
   &:hover {
-    background: var(--context-menu-sub-trigger-hover-bg, hsl(210 40% 96.1%));
+    background: var(--context-menu-sub-trigger-hover-bg, var(--ui-accent));
     color: var(--context-menu-sub-trigger-hover-color, inherit);
   }
 }
@@ -26,10 +26,4 @@
   stroke-width: var(--context-menu-sub-trigger-icon-stroke-width, 2);
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-@media (prefers-color-scheme: dark) {
-  .context-menu-sub-trigger:hover {
-    background: var(--context-menu-sub-trigger-hover-bg, hsl(217.2 32.6% 17.5%));
-  }
 }

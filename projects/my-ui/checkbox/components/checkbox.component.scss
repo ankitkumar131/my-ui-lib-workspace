@@ -2,29 +2,12 @@
   display: inline-flex;
   vertical-align: top;
 
-  // Define CSS variables locally to avoid global pollution
-  --background: #ffffff;
-  --foreground: hsl(222.2, 47.4%, 11.2%);
-  
-  --primary: hsl(221.2, 83.2%, 53.3%);
-  --primary-foreground: #ffffff;
-  
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --ring: hsl(215, 20.2%, 65.1%);
-  --ring-offset: #ffffff;
-
-  // Dark theme (media query)
-  @media (prefers-color-scheme: dark) {
-    --background: hsl(222.2, 47.4%, 11.2%);
-    --foreground: hsl(210, 40%, 98%);
-    
-    --primary: hsl(217.2, 91.2%, 59.8%);
-    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
-    
-    --border: hsl(217.2, 32.6%, 17.5%);
-    --ring: hsl(217.2, 32.6%, 17.5%);
-    --ring-offset: hsl(222.2, 47.4%, 11.2%);
-  }
+  // Palette — derived from the shared design tokens (see styles/_tokens.scss)
+  --primary: var(--ui-brand);
+  --primary-foreground: var(--ui-brand-foreground);
+  --border: var(--ui-border);
+  --ring: var(--ui-focus);
+  --ring-offset: var(--ui-background);
 }
 
 button {
@@ -75,8 +58,8 @@ button {
 
   &[aria-invalid="true"],
   &[data-invalid] {
-    border-color: var(--destructive, hsl(0, 84.2%, 60.2%));
-    box-shadow: 0 0 0 1px var(--destructive, hsl(0, 84.2%, 60.2%));
+    border-color: var(--destructive, var(--ui-destructive));
+    box-shadow: 0 0 0 1px var(--destructive, var(--ui-destructive));
   }
   
   // SVG Icon

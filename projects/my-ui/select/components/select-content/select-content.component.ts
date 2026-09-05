@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, AfterViewChecked, effect, inject, Injector } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, effect, inject, Injector } from '@angular/core';
 import { SelectService } from '../../select.service';
 import { CommonModule } from '@angular/common';
 
@@ -44,8 +44,6 @@ export class SelectContentComponent implements OnInit {
     
     if (selectedItem && content) {
       // Calculate position to scroll within container only (don't scroll page)
-      const itemRect = selectedItem.getBoundingClientRect();
-      const containerRect = content.getBoundingClientRect();
       const itemOffsetTop = selectedItem.offsetTop;
       const containerHeight = content.clientHeight;
       const itemHeight = selectedItem.clientHeight;

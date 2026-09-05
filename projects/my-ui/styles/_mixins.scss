@@ -1,0 +1,40 @@
+/**
+ * Shared Sass helpers for @my-ui/components.
+ *
+ * Breakpoints are the canonical project targets (mobile-first, px):
+ *   mobile-s 320px, mobile-m 375px, mobile-l 425px, tablet 768px,
+ *   laptop 1024px, laptop-l 1440px, 4k 2560px
+ *
+ * Usage:
+ *   @use '@my-ui/components/styles/mixins' as ui;
+ *   .sidebar { @include ui.respond(tablet) { display: flex; } }
+ */
+
+@use 'sass:map';
+
+$breakpoints: (
+  'mobile-s': 320px,
+  'mobile-m': 375px,
+  'mobile-l': 425px,
+  'tablet': 768px,
+  'laptop': 1024px,
+  'laptop-l': 1440px,
+  '4k': 2560px,
+) !default;
+
+@mixin respond($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Unknown breakpoint `#{$name}`. Available: #{map.keys($breakpoints)}';
+  }
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+/** Visible focus outline that respects keyboard navigation. */
+@mixin focus-ring($color: var(--ui-focus)) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}

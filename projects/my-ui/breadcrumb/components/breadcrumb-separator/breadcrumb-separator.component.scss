@@ -5,12 +5,10 @@
 .breadcrumb-separator {
   display: inline-flex;
   align-items: center;
-  color: var(--breadcrumb-separator-color, #71717a);
+  color: var(--breadcrumb-separator-color, var(--ui-muted-foreground));
   user-select: none;
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--breadcrumb-separator-color, #a1a1aa);
-  }
+  
 
   svg {
     width: 16px;

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarService } from '../../services/calendar.service';
-import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/select';
+import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent } from '@my-ui/components/select';
 
 @Component({
   selector: 'ui-calendar-header',
@@ -62,12 +62,12 @@ export class CalendarHeaderComponent {
     this.nextClick.emit();
   }
 
-  onMonthSelect(value: any) {
+  onMonthSelect(value: string | number) {
     const monthValue = typeof value === 'string' ? parseInt(value, 10) : value;
     this.monthChange.emit(monthValue);
   }
 
-  onYearSelect(value: any) {
+  onYearSelect(value: string | number) {
     const yearValue = typeof value === 'string' ? parseInt(value, 10) : value;
     this.yearChange.emit(yearValue);
   }

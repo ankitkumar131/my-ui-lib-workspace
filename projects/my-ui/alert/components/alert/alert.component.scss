@@ -1,8 +1,8 @@
 :host {
-    --alert-background: 0 0% 100%;
-    --alert-foreground: 222.2 84% 4.9%;
-    --alert-border: 214.3 31.8% 91.4%;
-    --alert-destructive: 0 84.2% 60.2%;
+    --alert-background: var(--ui-background);
+    --alert-foreground: var(--ui-foreground);
+    --alert-border: var(--ui-border);
+    --alert-destructive: var(--ui-destructive);
 
     display: block;
     width: 100%;
@@ -12,9 +12,9 @@
     position: relative;
     // width: 100%;
     border-radius: 0.5rem;
-    border: 1px solid hsl(var(--alert-border));
-    background-color: hsl(var(--alert-background));
-    color: hsl(var(--alert-foreground));
+    border: 1px solid var(--alert-border);
+    background-color: var(--alert-background);
+    color: var(--alert-foreground);
     padding: 1rem;
     display: flex;
     gap: 0.75rem;
@@ -25,7 +25,7 @@
         width: 1rem; // 16px
         height: 1rem;
         margin-top: 0.125rem; // Align with text line-height
-        color: hsl(var(--alert-foreground));
+        color: var(--alert-foreground);
 
         svg {
             width: 100%;
@@ -44,11 +44,11 @@
 
 // Destructive variant
 .alert[data-variant="destructive"] {
-    border-color: hsl(var(--alert-destructive) / 0.5);
-    color: hsl(var(--alert-destructive));
+    border-color: color-mix(in srgb, var(--alert-destructive) 50%, transparent);
+    color: var(--alert-destructive);
     // Important: No background color change for destructive in shadcn
 
     ::ng-deep [slot='icon'] {
-        color: hsl(var(--alert-destructive));
+        color: var(--alert-destructive);
     }
 }

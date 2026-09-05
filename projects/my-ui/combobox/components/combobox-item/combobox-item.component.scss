@@ -13,24 +13,24 @@
   font-size: var(--combobox-item-font-size, 0.875rem);
   border-radius: var(--combobox-item-border-radius, calc(var(--radius, 0.5rem) - 4px));
   transition: background-color var(--combobox-animation-duration, 200ms) ease;
-  color: hsl(var(--foreground, 222.2 84% 4.9%));
+  color: var(--foreground, var(--ui-foreground));
   outline: none;
 
   &:hover {
-    background: hsl(var(--accent, 210 40% 96.1%));
-    color: hsl(var(--accent-foreground, 222.2 47.4% 11.2%));
+    background: var(--accent, var(--ui-accent));
+    color: var(--accent-foreground, var(--ui-accent-foreground));
   }
 
   &:focus {
-    background: hsl(var(--accent, 210 40% 96.1%));
-    color: hsl(var(--accent-foreground, 222.2 47.4% 11.2%));
+    background: var(--accent, var(--ui-accent));
+    color: var(--accent-foreground, var(--ui-accent-foreground));
   }
 }
 
 :host(.highlighted) .combobox-item,
 :host([data-highlighted]) .combobox-item {
-  background: hsl(var(--accent, 210 40% 96.1%));
-  color: hsl(var(--accent-foreground, 222.2 47.4% 11.2%));
+  background: var(--accent, var(--ui-accent));
+  color: var(--accent-foreground, var(--ui-accent-foreground));
 }
 
 :host(.selected) .combobox-item {
@@ -45,5 +45,5 @@
 .combobox-item-check {
   flex-shrink: 0;
   margin-left: auto;
-  color: hsl(var(--primary, 222.2 47.4% 11.2%));
+  color: var(--primary, var(--ui-primary));
 }

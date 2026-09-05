@@ -1,67 +1,40 @@
 :host {
-  // Define CSS variables locally to avoid global pollution
-  --radius: 0;  // Default: no border-radius
+  // Layout tokens (component-specific)
+  --radius: 0; // default: square corners — use the `rounded` input for a pill shape
   --font-size: 0.875rem;
   --font-size-sm: 0.75rem;
   --font-size-lg: 1rem;
   --font-weight-medium: 500;
   --icon-spacing: 0.5rem;
-  
-  // Light theme (default)
-  --background: #ffffff;
-  --foreground: hsl(222.2, 47.4%, 11.2%);
-  
-  --primary: hsl(221.2, 83.2%, 53.3%);
-  --primary-foreground: #ffffff;
-  --primary-hover: hsl(221.2, 83.2%, 45%);
-  --primary-active: hsl(221.2, 83.2%, 40%);
-  
-  --secondary: hsl(210, 40%, 96.1%);
-  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
-  --secondary-hover: hsl(210, 40%, 92%);
-  --secondary-active: hsl(210, 40%, 88%);
-  
-  --destructive: hsl(12, 74%, 49%);
-  --destructive-foreground: #ffffff;
-  --destructive-hover: hsl(12, 74%, 40%);
-  --destructive-active: hsl(12, 74%, 35%);
-  
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --accent: hsl(210, 40%, 96.1%);
-  --accent-active: hsl(210, 40%, 90%);
-  
-  --muted: hsl(215.4, 16.3%, 96.9%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  
+
+  // Palette — derived from the shared design tokens (see styles/_tokens.scss).
+  // Light + dark values come from the tokens; override these vars to customize.
+  --background: var(--ui-background);
+  --foreground: var(--ui-foreground);
+
+  --primary: var(--ui-brand);
+  --primary-foreground: var(--ui-brand-foreground);
+  --primary-hover: var(--ui-brand-strong);
+  --primary-active: var(--ui-brand-active);
+
+  --secondary: var(--ui-secondary);
+  --secondary-foreground: var(--ui-secondary-foreground);
+  --secondary-hover: color-mix(in srgb, var(--ui-secondary) 85%, var(--ui-foreground));
+  --secondary-active: color-mix(in srgb, var(--ui-secondary) 75%, var(--ui-foreground));
+
+  --destructive: var(--ui-destructive);
+  --destructive-foreground: var(--ui-destructive-foreground);
+  --destructive-hover: var(--ui-destructive-strong);
+  --destructive-active: var(--ui-destructive-active);
+
+  --border: var(--ui-border);
+  --accent: var(--ui-accent);
+  --accent-active: color-mix(in srgb, var(--ui-accent) 85%, var(--ui-foreground));
+
+  --muted: var(--ui-muted);
+  --muted-foreground: var(--ui-muted-foreground);
+
   display: inline-flex;
-  
-  // Dark theme (media query)
-  @media (prefers-color-scheme: dark) {
-    --background: hsl(222.2, 47.4%, 11.2%);
-    --foreground: hsl(210, 40%, 98%);
-    
-    --primary: hsl(217.2, 91.2%, 59.8%);
-    --primary-foreground: hsl(222.2, 47.4%, 11.2%);
-    --primary-hover: hsl(217.2, 91.2%, 50%);
-    --primary-active: hsl(217.2, 91.2%, 45%);
-    
-    --secondary: hsl(215, 27.9%, 16.9%);
-    --secondary-foreground: hsl(210, 40%, 98%);
-    --secondary-hover: hsl(215, 27.9%, 22%);
-    --secondary-active: hsl(215, 27.9%, 27%);
-    
-    --destructive: hsl(12, 74%, 49%);
-    --destructive-foreground: hsl(210, 40%, 98%);
-    --destructive-hover: hsl(12, 74%, 40%);
-    --destructive-active: hsl(12, 74%, 35%);
-    
-    --border: hsl(217.2, 32.6%, 17.5%);
-    --accent: hsl(215, 27.9%, 16.9%);
-    --accent-active: hsl(215, 27.9%, 22%);
-    
-    --muted: hsl(215.4, 16.3%, 22.9%);
-    --muted-foreground: hsl(215.4, 16.3%, 65.1%);
-  }
 }
 
 :host ::ng-deep button {

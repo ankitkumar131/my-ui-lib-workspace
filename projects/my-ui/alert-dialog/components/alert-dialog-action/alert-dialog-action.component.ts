@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { ButtonComponent } from '../../../button/components/button/button.component';
-import { ButtonVariant, ButtonSize } from '../../../button/button-type.enum';
+import { ButtonComponent } from '@my-ui/components/button';
+import { ButtonVariant, ButtonSize } from '@my-ui/components/button';
 import { AlertDialogService } from '../../alert-dialog.service';
 
 @Component({

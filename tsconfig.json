@@ -16,69 +16,12 @@
     "module": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@my-ui/accordion": [
-        "projects/my-ui/accordion/index.ts"
-      ],
-      "@my-ui/aspect-ratio": [
-        "projects/my-ui/aspect-ratio/index.ts"
-      ],
-      "@my-ui/button": [
-        "projects/my-ui/button/index.ts"
-      ],
-      "@my-ui/alert-dialog": [
-        "projects/my-ui/alert-dialog/index.ts"
-      ],
-      "@my-ui/alert": [
-        "projects/my-ui/alert/index.ts"
-      ],
-      "@my-ui/avatar": [
-        "projects/my-ui/avatar/index.ts"
-      ],
-      "@my-ui/badge": [
-        "projects/my-ui/badge/index.ts"
-      ],
-      "@my-ui/breadcrumb": [
-        "projects/my-ui/breadcrumb/index.ts"
-      ],
-      "@my-ui/dropdown-menu": [
-        "projects/my-ui/dropdown-menu/index.ts"
-      ],
-      "@my-ui/label": [
-        "projects/my-ui/label/index.ts"
-      ],
-      "@my-ui/input": [
-        "projects/my-ui/input/index.ts"
-      ],
-      "@my-ui/popover": [
-        "projects/my-ui/popover/index.ts"
-      ],
-      "@my-ui/select": [
-        "projects/my-ui/select/index.ts"
-      ],
-      "@my-ui/calendar": [
-        "projects/my-ui/calendar/index.ts"
-      ],
-      "@my-ui/card": [
-        "projects/my-ui/card/index.ts"
-      ],
-      "@my-ui/carousel": [
-        "projects/my-ui/carousel/index.ts"
-      ],
-      "@my-ui/checkbox": [
-        "projects/my-ui/checkbox/index.ts"
-      ],
-      "@my-ui/collapsible": [
-        "projects/my-ui/collapsible/index.ts"
-      ],
-      "@my-ui/combobox": [
-        "projects/my-ui/combobox/index.ts"
-      ],
-      "@my-ui/command": [
-        "projects/my-ui/command/index.ts"
-      ],
-      "@my-ui/context-menu": [
-        "projects/my-ui/context-menu/index.ts"
-      ]
+          "@my-ui/components": [
+                "projects/my-ui/public-api.ts"
+          ],
+          "@my-ui/components/*": [
+                "projects/my-ui/*/public-api.ts"
+          ]
     }
   },
   "references": [

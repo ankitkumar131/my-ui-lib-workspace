@@ -12,7 +12,7 @@
   color: var(--context-menu-radio-item-color, inherit);
 
   &:hover {
-    background: var(--context-menu-radio-item-hover-bg, hsl(210 40% 96.1%));
+    background: var(--context-menu-radio-item-hover-bg, var(--ui-accent));
     color: var(--context-menu-radio-item-hover-color, inherit);
   }
 }
@@ -30,10 +30,4 @@
   height: var(--context-menu-radio-dot-size, 0.5rem);
   border-radius: var(--context-menu-radio-dot-radius, 9999px);
   background: var(--context-menu-radio-dot-color, currentColor);
-}
-
-@media (prefers-color-scheme: dark) {
-  .context-menu-radio-item:hover {
-    background: var(--context-menu-radio-item-hover-bg, hsl(217.2 32.6% 17.5%));
-  }
 }

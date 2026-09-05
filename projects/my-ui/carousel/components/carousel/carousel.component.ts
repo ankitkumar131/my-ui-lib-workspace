@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterContentInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface CarouselOptions {
@@ -33,7 +33,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   
   currentIndex = 0;
   slideCount = 0;
-  private autoplayTimer?: any;
+  private autoplayTimer: ReturnType<typeof setInterval> | undefined;
   private touchStartX = 0;
   private touchStartY = 0;
   private isDragging = false;

@@ -22,7 +22,7 @@ import { Subject, takeUntil } from 'rxjs';
     exportAs: 'uiDropdownMenuTrigger'
 })
 export class DropdownMenuTriggerDirective implements OnDestroy {
-    @Input('uiDropdownMenuTriggerFor') contentTemplate!: TemplateRef<any>;
+    @Input('uiDropdownMenuTriggerFor') contentTemplate!: TemplateRef<unknown>;
     @Input() align: 'start' | 'center' | 'end' = 'start';
 
     private overlayRef: OverlayRef | null = null;
