@@ -84,16 +84,7 @@ import {
 } from '@my-ui/components/carousel';
 import { UiCheckboxModule } from '@my-ui/components/checkbox';
 import { UiCollapsibleModule } from '@my-ui/components/collapsible';
-import {
-  UiComboboxModule,
-  ComboboxComponent,
-  ComboboxTriggerDirective,
-  ComboboxContentComponent,
-  ComboboxInputComponent,
-  ComboboxListComponent,
-  ComboboxItemComponent,
-  ComboboxEmptyComponent
-} from '@my-ui/components/combobox';
+import { UiComboboxModule } from '@my-ui/components/combobox';
 import {
   CommandComponent,
   CommandInputComponent,
@@ -358,7 +349,7 @@ export class App {
     return this.languages.filter(lang => lang.group === group);
   }
 
-  getSelectedLabel(value: string, options: any[]) {
+  getSelectedLabel(value: string, options: { value: string; label: string }[]) {
     const option = options.find(opt => opt.value === value);
     return option ? option.label : '';
   }

@@ -1,4 +1,4 @@
-import { Component, signal, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, signal, HostListener } from '@angular/core';
 
 @Component({
   selector: 'ui-popover',

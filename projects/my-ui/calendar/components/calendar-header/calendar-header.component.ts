@@ -62,12 +62,12 @@ export class CalendarHeaderComponent {
     this.nextClick.emit();
   }
 
-  onMonthSelect(value: any) {
+  onMonthSelect(value: string | number) {
     const monthValue = typeof value === 'string' ? parseInt(value, 10) : value;
     this.monthChange.emit(monthValue);
   }
 
-  onYearSelect(value: any) {
+  onYearSelect(value: string | number) {
     const yearValue = typeof value === 'string' ? parseInt(value, 10) : value;
     this.yearChange.emit(yearValue);
   }

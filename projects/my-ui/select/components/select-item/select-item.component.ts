@@ -9,7 +9,7 @@ import { SelectService } from '../../select.service';
   imports: []
 })
 export class SelectItemComponent implements AfterViewInit {
-  @Input() value: any;
+  @Input() value: unknown;
   @Input({ transform: booleanAttribute }) disabled?: boolean = false;
 
   private itemLabel: string = '';

@@ -56,8 +56,7 @@ export class AlertDialogContentComponent implements AfterViewInit, OnDestroy {
   }
 
   @HostListener('keydown.tab', ['$event'])
-  onTabKey(event: any) {
-    const keyboardEvent = event as KeyboardEvent;
+  onTabKey(keyboardEvent: KeyboardEvent) {
     if (!this.dialogContent) return;
 
     const focusableElements = Array.from(

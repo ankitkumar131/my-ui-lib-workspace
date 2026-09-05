@@ -1,4 +1,4 @@
-import { Component, Optional, OnInit, inject, Host, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { AccordionItemComponent } from '../../components/accordion-item/accordion-item.component';
 import { Subscription } from 'rxjs';
 

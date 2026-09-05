@@ -103,21 +103,24 @@ export class CalendarComponent implements OnInit {
         newSelection = date;
         break;
         
-      case 'multiple':
+      case 'multiple': {
         const currentMultiple = Array.isArray(this.selected) ? this.selected : [];
-        const existingIndex = currentMultiple.findIndex(d => 
+        const existingIndex = currentMultiple.findIndex(d =>
           this.calendarService.isSameDay(d, date)
         );
-        
+
         if (existingIndex >= 0) {
           newSelection = currentMultiple.filter((_, i) => i !== existingIndex);
         } else {
           newSelection = [...currentMultiple, date];
         }
         break;
+      }
         
-      case 'range':
-        const currentRange = this.isDateRange(this.selected) ? this.selected : { from: new Date(), to: undefined };
+      case 'range': {
+        const currentRange = this.isDateRange(this.selected)
+          ? this.selected
+          : { from: new Date(), to: undefined };
         
         if (!currentRange.from || (currentRange.from && currentRange.to)) {
           // Start new range
@@ -131,6 +134,7 @@ export class CalendarComponent implements OnInit {
           }
         }
         break;
+      }
     }
 
     this.selectedChange.emit(newSelection);
@@ -177,7 +181,7 @@ export class CalendarComponent implements OnInit {
     return this.calendarService.isRangeEnd(date, this.selected);
   }
 
-  private isDateRange(value: any): value is DateRange {
-    return value && typeof value === 'object' && 'from' in value;
+  private isDateRange(value: unknown): value is DateRange {
+    return !!value && typeof value === 'object' && 'from' in value;
   }
 }

@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
 export class SelectService {
   // State signals
   isOpen = signal<boolean>(false);
-  selectedValue = signal<any>(null);
+  selectedValue = signal<unknown>(null);
   selectedLabel = signal<string>('');
 
   // Methods
@@ -20,7 +20,7 @@ export class SelectService {
     this.isOpen.update(value => !value);
   }
 
-  selectValue(value: any, label: string) {
+  selectValue(value: unknown, label: string) {
     this.selectedValue.set(value);
     this.selectedLabel.set(label);
     this.close();
